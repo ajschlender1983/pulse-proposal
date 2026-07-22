@@ -34,7 +34,7 @@
 *{box-sizing:border-box;}
 html,body{margin:0;padding:0;background:var(--void);}
 .page{
-  width:1920px; height:5720px;
+  width:1920px; height:8280px;
   position:relative; overflow:hidden;
   font-family:var(--font-primary); color:var(--light);
   background:
@@ -290,6 +290,200 @@ strong{font-weight:600; color:var(--light);}
 }
 .retainer-note strong{color:var(--light);}
 .retainer-note strong.spectrum{color:var(--teal); font-weight:600;}
+
+/* Magenta variant for the brand film featured section */
+.feature.magenta{
+  border-color:var(--magenta-24);
+  background:
+    radial-gradient(600px 400px at 100% 0%, rgba(194,47,205,0.06), transparent 60%),
+    linear-gradient(180deg, rgba(194,47,205,0.04) 0%, rgba(31,24,36,0.4) 100%);
+}
+.feature.magenta .feature-head .kicker{color:var(--magenta);}
+.feature.magenta .feature-head h1 em{color:var(--magenta);}
+
+.film-thumbnail-block{
+  display:flex; flex-direction:column; gap:10px;
+}
+.thumbnail-strip{
+  display:grid;
+  grid-template-columns:repeat(5, 1fr);
+  gap:12px;
+  border:1px solid var(--magenta-24);
+  border-radius:14px;
+  overflow:hidden;
+  padding:14px;
+  background:var(--dark-64);
+}
+.thumbnail-strip .frame{
+  position:relative;
+  aspect-ratio:4/5;
+  border-radius:8px;
+  overflow:hidden;
+  background:var(--void);
+}
+.thumbnail-strip .frame img{
+  width:100%; height:100%;
+  object-fit:cover; display:block;
+}
+.thumbnail-strip .frame .frame-label{
+  position:absolute; bottom:0; left:0; right:0;
+  padding:8px 10px;
+  background:linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.85) 100%);
+  color:var(--light);
+  font-family:var(--font-mono); font-size:11px;
+  letter-spacing:0.12em; text-transform:uppercase;
+}
+.thumbnail-strip .frame .frame-num{
+  position:absolute; top:8px; left:10px;
+  font-family:var(--font-mono); font-size:11px;
+  letter-spacing:0.14em; color:var(--magenta);
+  text-shadow:0 1px 3px rgba(0,0,0,0.6);
+}
+.thumbnail-caption{
+  font-family:var(--font-mono); font-size:12px;
+  letter-spacing:0.14em; text-transform:uppercase;
+  color:var(--midtone-64);
+  padding:0 4px;
+}
+
+.rules-strip{
+  display:grid;
+  grid-template-columns:repeat(5, 1fr);
+  gap:10px;
+}
+.rule-chip{
+  padding:14px 16px;
+  border:1px solid var(--magenta-24);
+  background:rgba(194,47,205,0.04);
+  border-radius:10px;
+  font-size:15px; line-height:1.35; color:var(--light-64);
+  display:flex; flex-direction:column; gap:4px;
+}
+.rule-chip .rule-num{
+  font-family:var(--font-mono); font-size:12px;
+  letter-spacing:0.16em; color:var(--magenta);
+}
+.rule-chip .rule-name{color:var(--light); font-weight:500;}
+
+/* Collapsible sections inside the brand-film feature */
+.filmdrop{
+  border:1px solid var(--accent-24);
+  border-radius:12px;
+  background:var(--dark-64);
+}
+.filmdrop summary{
+  list-style:none;
+  padding:18px 24px;
+  cursor:pointer;
+  display:flex; align-items:center; justify-content:space-between;
+  font-family:var(--font-mono); font-size:15px; letter-spacing:0.16em;
+  text-transform:uppercase; color:var(--light);
+  user-select:none;
+}
+.filmdrop summary::-webkit-details-marker{display:none;}
+.filmdrop summary .caret{color:var(--magenta); font-size:14px; transition:transform 0.2s;}
+.filmdrop[open] summary .caret{transform:rotate(180deg);}
+.filmdrop .drop-body{
+  padding:0 24px 22px;
+  color:var(--light-64);
+}
+
+/* Storyboard acts */
+.act{
+  padding:18px 22px;
+  border:1px solid var(--magenta-24);
+  border-left:5px solid var(--magenta);
+  background:rgba(194,47,205,0.04);
+  border-radius:10px;
+  margin-bottom:14px;
+}
+.act .act-tag{
+  font-family:var(--font-mono); font-size:12px;
+  letter-spacing:0.16em; color:var(--magenta);
+  text-transform:uppercase;
+}
+.act .act-name{
+  font-size:22px; font-weight:400; letter-spacing:-0.01em;
+  color:var(--light); margin:4px 0 12px; line-height:1.15;
+}
+.act .act-name em{
+  font-family:var(--font-display); font-style:italic; color:var(--magenta);
+}
+.shot-list{display:flex; flex-direction:column; gap:8px; margin:0; padding:0; list-style:none;}
+.shot{
+  display:grid;
+  grid-template-columns:80px 100px 1fr;
+  gap:14px;
+  padding:10px 0;
+  border-top:1px dashed var(--accent-24);
+  align-items:baseline;
+  font-size:15px; line-height:1.45;
+}
+.shot:first-child{border-top:none;}
+.shot .shot-num{font-family:var(--font-mono); font-size:12px; letter-spacing:0.14em; color:var(--magenta); text-transform:uppercase;}
+.shot .shot-time{font-family:var(--font-mono); font-size:12px; letter-spacing:0.08em; color:var(--midtone);}
+.shot .shot-body{color:var(--light-64);}
+.shot .shot-body strong{color:var(--light);}
+
+/* EBI cards */
+.ebi-grid{
+  display:grid;
+  grid-template-columns:repeat(2, 1fr);
+  gap:12px;
+}
+.ebi{
+  padding:14px 18px;
+  border:1px solid var(--magenta-24);
+  background:rgba(194,47,205,0.03);
+  border-radius:10px;
+}
+.ebi .ebi-num{
+  font-family:var(--font-mono); font-size:11px;
+  letter-spacing:0.16em; color:var(--magenta);
+  text-transform:uppercase; margin-bottom:6px;
+}
+.ebi .ebi-title{
+  color:var(--light); font-size:16px; font-weight:500;
+  line-height:1.3; margin-bottom:6px;
+}
+.ebi .ebi-body{color:var(--light-64); font-size:14px; line-height:1.45;}
+.ebi .ebi-body strong{color:var(--light);}
+
+/* Keep vs replace grid */
+.kvr-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:16px;
+}
+.kvr{
+  padding:16px 20px;
+  border-radius:10px;
+}
+.kvr.keep{border:1px solid var(--green-24); background:rgba(99,224,132,0.04);}
+.kvr.replace{border:1px solid var(--magenta-24); background:rgba(194,47,205,0.04);}
+.kvr .kvr-label{
+  font-family:var(--font-mono); font-size:11px;
+  letter-spacing:0.16em; text-transform:uppercase;
+  margin-bottom:8px;
+}
+.kvr.keep .kvr-label{color:var(--green);}
+.kvr.replace .kvr-label{color:var(--magenta);}
+.kvr .kvr-title{color:var(--light); font-size:18px; font-weight:500; margin-bottom:6px;}
+.kvr .kvr-body{color:var(--light-64); font-size:15px; line-height:1.5;}
+.kvr .kvr-body strong{color:var(--light);}
+.kvr-frame-strip{
+  margin-top:14px;
+  border-radius:10px; overflow:hidden;
+  border:1px solid var(--accent-24);
+}
+.kvr-frame-strip img{width:100%; display:block;}
+.kvr-frame-caption{
+  padding:10px 14px; background:var(--dark-64);
+  font-family:var(--font-mono); font-size:11px;
+  letter-spacing:0.14em; text-transform:uppercase;
+  color:var(--midtone);
+  border-top:1px solid var(--accent-24);
+}
 
 /* Green variant for the September Sprint / Row-04 featured section */
 .feature.green{
@@ -592,6 +786,236 @@ strong{font-weight:600; color:var(--light);}
     <div class="retainer-note">
       <strong>This is what the retainer buys — access.</strong> The aligned humans across the whole spectrum are already in these rooms. <strong class="spectrum">Investor · Advisor · Ambassador · Customer · Partner.</strong> Same rooms, activated by proximity, not by media buy.
     </div>
+  </section>
+
+  <section class="feature magenta">
+    <div class="feature-head">
+      <div class="kicker">The brand film · Creative Direction applied · July 2026</div>
+      <h1 style="font-size:64px; font-weight:300; letter-spacing:-0.02em; line-height:1.02; margin:0;">Cast real life, <em class="verb" style="color:var(--magenta);">not the after photo.</em></h1>
+      <p class="lede">Storyboard reworked to the new Creative Direction. <strong style="color:var(--light);">Keep</strong> the doomscroll opening — it's the strongest thing we have. <strong style="color:var(--light);">Retire</strong> the forest goddess. Sell the interruption, not the enlightenment. Click any card below to go deep.</p>
+    </div>
+
+    <div class="film-thumbnail-block">
+      <div class="thumbnail-strip">
+        <div class="frame">
+          <img src="assets/film-ref/01-mid-commute.png" alt="Mid-commute reference frame">
+          <div class="frame-num">01</div>
+          <div class="frame-label">Mid-commute</div>
+        </div>
+        <div class="frame">
+          <img src="assets/film-ref/02-real-work.png" alt="Real work reference frame">
+          <div class="frame-num">02</div>
+          <div class="frame-label">Real work</div>
+        </div>
+        <div class="frame">
+          <img src="assets/film-ref/03-after-state.png" alt="Un-staged after-state reference frame">
+          <div class="frame-num">03</div>
+          <div class="frame-label">Un-staged after-state</div>
+        </div>
+        <div class="frame">
+          <img src="assets/film-ref/04-culture.png" alt="Culture-first reference frame">
+          <div class="frame-num">04</div>
+          <div class="frame-label">Culture-first</div>
+        </div>
+        <div class="frame">
+          <img src="assets/film-ref/05-phones.png" alt="Phones-in-hand reference frame">
+          <div class="frame-num">05</div>
+          <div class="frame-label">Phones in hand</div>
+        </div>
+      </div>
+      <div class="thumbnail-caption">The new visual register · lead with these frames · from the July 2026 image recommendation</div>
+    </div>
+
+    <div class="rules-strip">
+      <div class="rule-chip">
+        <div class="rule-num">01</div>
+        <div><span class="rule-name">Mid-moment</span>, not after-photo</div>
+      </div>
+      <div class="rule-chip">
+        <div class="rule-num">02</div>
+        <div><span class="rule-name">Real light</span>, real places</div>
+      </div>
+      <div class="rule-chip">
+        <div class="rule-num">03</div>
+        <div><span class="rule-name">Warmth</span> over serenity</div>
+      </div>
+      <div class="rule-chip">
+        <div class="rule-num">04</div>
+        <div><span class="rule-name">Phones exist</span></div>
+      </div>
+      <div class="rule-chip">
+        <div class="rule-num">05</div>
+        <div><span class="rule-name">Cast for urbanites</span></div>
+      </div>
+    </div>
+
+    <details class="filmdrop" open>
+      <summary><span>Keep vs. replace — what the current frame gets right and what to retire</span><span class="caret">▾</span></summary>
+      <div class="drop-body">
+        <div class="kvr-grid">
+          <div class="kvr keep">
+            <div class="kvr-label">Keep</div>
+            <div class="kvr-title">The doomscroller</div>
+            <div class="kvr-body">Blue phone-glow on a face at 11:40pm is a real, recognizable moment. The <strong>strongest thing we have.</strong> Anchor the film here.</div>
+          </div>
+          <div class="kvr replace">
+            <div class="kvr-label">Replace</div>
+            <div class="kvr-title">The forest goddess</div>
+            <div class="kvr-body">Closed eyes + hand-on-heart + dappled golden-hour = wellness-industry stock character. Codes as prayer/manifestation. <strong>Retire the pose.</strong> Replace with same-person, three-minutes-later.</div>
+          </div>
+        </div>
+        <div class="kvr-frame-strip">
+          <img src="assets/film-ref/current-frame.png" alt="The current brand-film split frame — doomscroll vs forest goddess">
+          <div class="kvr-frame-caption">The current frame · left works · right doesn't · Creative Direction, July 2026</div>
+        </div>
+      </div>
+    </details>
+
+    <details class="filmdrop">
+      <summary><span>The reworked storyboard — 3 acts · 90 seconds · 12 shots</span><span class="caret">▾</span></summary>
+      <div class="drop-body">
+
+        <div class="act">
+          <div class="act-tag">Act 1 · 0–30s</div>
+          <h3 class="act-name">The <em>interruption.</em></h3>
+          <ul class="shot-list">
+            <li class="shot">
+              <div class="shot-num">01</div>
+              <div class="shot-time">0–5s</div>
+              <div class="shot-body"><strong>11:40pm bedroom.</strong> Same doomscroll frame we've validated. Blue phone-glow on the face. Held long enough to earn the emotion.</div>
+            </li>
+            <li class="shot">
+              <div class="shot-num">02</div>
+              <div class="shot-time">5–10s</div>
+              <div class="shot-body">Close on the hand. The <strong>ring pulses.</strong> Other hand touches it — a small, involuntary tell. No mystical CG halo. Just contact.</div>
+            </li>
+            <li class="shot">
+              <div class="shot-num">03</div>
+              <div class="shot-time">10–15s</div>
+              <div class="shot-body">Phone goes <strong>face-down on the bed.</strong> Camera holds on the ring. The gesture IS the ad.</div>
+            </li>
+            <li class="shot">
+              <div class="shot-num">04</div>
+              <div class="shot-time">15–22s</div>
+              <div class="shot-body">Wide bed shot. Same person. <strong>Eyes open. Not smiling. Present.</strong> The credible three-minutes-later.</div>
+            </li>
+            <li class="shot">
+              <div class="shot-num">05</div>
+              <div class="shot-time">22–30s</div>
+              <div class="shot-body">Cut. Same person, next morning. Making coffee. <strong>Phone in hand — checking the weather.</strong> Ring still on. Phones exist. The ring changes the relationship, doesn't erase it.</div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="act">
+          <div class="act-tag">Act 2 · 30–60s</div>
+          <h3 class="act-name">The <em>habitat.</em></h3>
+          <ul class="shot-list">
+            <li class="shot">
+              <div class="shot-num">06</div>
+              <div class="shot-time">30–36s</div>
+              <div class="shot-body">Cast rotation begins. <strong>Mid-commute.</strong> Young Black man on packed transit. Ring visible. Phone in pocket. Ordinary density.</div>
+            </li>
+            <li class="shot">
+              <div class="shot-num">07</div>
+              <div class="shot-time">36–42s</div>
+              <div class="shot-body"><strong>Real work.</strong> Mid-40s designer at desk, evening screen. Ring on the mouse hand. Pulse. Small exhale. Nobody in wellness shoots this.</div>
+            </li>
+            <li class="shot">
+              <div class="shot-num">08</div>
+              <div class="shot-time">42–48s</div>
+              <div class="shot-body"><strong>Kitchen.</strong> Latino father cooking, kid running past, phone on counter. Ring pulses. He looks up — notices his kid. Warmth over serenity.</div>
+            </li>
+            <li class="shot">
+              <div class="shot-num">09</div>
+              <div class="shot-time">48–54s</div>
+              <div class="shot-body"><strong>Culture-first.</strong> Two friends on the subway, phones in hand, mid-laugh. Rings visible. Not lifestyle — actual conversation.</div>
+            </li>
+            <li class="shot">
+              <div class="shot-num">10</div>
+              <div class="shot-time">54–60s</div>
+              <div class="shot-body"><strong>Hero shot.</strong> Macro, slow. Ring on a hand as the pulse fires. Titanium texture catches light. Product porn — earned.</div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="act">
+          <div class="act-tag">Act 3 · 60–90s</div>
+          <h3 class="act-name">The <em>loop.</em></h3>
+          <ul class="shot-list">
+            <li class="shot">
+              <div class="shot-num">11</div>
+              <div class="shot-time">60–72s</div>
+              <div class="shot-body"><strong>Montage.</strong> 4 quick cuts of phones going face-down in different contexts — office, sidewalk, kitchen counter, elevator. A ring on every hand. The gesture, repeated.</div>
+            </li>
+            <li class="shot">
+              <div class="shot-num">12</div>
+              <div class="shot-time">72–90s</div>
+              <div class="shot-body">Return to the bedroom. Lock screen reads <strong>8:47pm.</strong> Hand with ring puts the phone down. Fade to black. Title: <strong>"Pulse. The off-switch you wear."</strong> Small mark: pulsemindfulness.com.</div>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </details>
+
+    <details class="filmdrop">
+      <summary><span>10 EBI design passes — what changed and why</span><span class="caret">▾</span></summary>
+      <div class="drop-body">
+        <div class="ebi-grid">
+          <div class="ebi">
+            <div class="ebi-num">EBI 01 · Open on the truth</div>
+            <div class="ebi-title">Keep the doomscroll cold-open.</div>
+            <div class="ebi-body">Considered opening on the ring gesture and flashing back. Rejected — too on-the-nose. The doomscroll earns the interruption. <strong>No title card. Trust the image.</strong></div>
+          </div>
+          <div class="ebi">
+            <div class="ebi-num">EBI 02 · Make the interruption tactile</div>
+            <div class="ebi-title">Hand-touches-ring, not CG halo.</div>
+            <div class="ebi-body">Original brief implied the pulse. Better: a visible tell — the other hand touches the ring instinctively. Physical, not mystical. <strong>No visual FX on the ring itself.</strong></div>
+          </div>
+          <div class="ebi">
+            <div class="ebi-num">EBI 03 · Earn "three minutes later"</div>
+            <div class="ebi-title">Stay with the doomscroller through daylight.</div>
+            <div class="ebi-body">The critique named this shot specifically. Same person, same bed, still there — and then the morning after. No cast swap in Act 1. <strong>The credible delta is one person, one arc.</strong></div>
+          </div>
+          <div class="ebi">
+            <div class="ebi-num">EBI 04 · Cast for vibe</div>
+            <div class="ebi-title">Plurality with personal style.</div>
+            <div class="ebi-body">Age, body, skin, style plurality — but every cast member has a specific taste. Not "diverse extras." <strong>The 64-year-old is cool. The teen is cool. Different codes.</strong></div>
+          </div>
+          <div class="ebi">
+            <div class="ebi-num">EBI 05 · Phones are partners</div>
+            <div class="ebi-title">Show intentional phone use.</div>
+            <div class="ebi-body">Every original shot showed the phone going away. Better: include Shot 05 — <strong>checking the weather.</strong> The ring changes the relationship. It doesn't demonize the device.</div>
+          </div>
+          <div class="ebi">
+            <div class="ebi-num">EBI 06 · Compress to 3 acts</div>
+            <div class="ebi-title">Interruption. Habitat. Loop.</div>
+            <div class="ebi-body">Original 12-shots-at-7s-each read as an ambient reel. Reorganized as Interruption (0–30) · Habitat (30–60) · Loop (60–90). <strong>Hits harder. Easier to cut down to 30s.</strong></div>
+          </div>
+          <div class="ebi">
+            <div class="ebi-num">EBI 07 · Score the ambient, name it</div>
+            <div class="ebi-title">Low frequencies, no bells.</div>
+            <div class="ebi-body">Reference: Nils Frahm-adjacent, Nick Hakim, textural Bon Iver. Warmth in the low end. <strong>No singing bowls. No breath tracks. No handpan.</strong></div>
+          </div>
+          <div class="ebi">
+            <div class="ebi-num">EBI 08 · One line at the end</div>
+            <div class="ebi-title">"The off-switch you wear."</div>
+            <div class="ebi-body">Pulled from the investor overview. One line only. Specs (21-day battery, screen-free, titanium) live in the 30s cut-downs. <strong>The film delivers the promise, not the spec sheet.</strong></div>
+          </div>
+          <div class="ebi">
+            <div class="ebi-num">EBI 09 · Give the ring a hero moment</div>
+            <div class="ebi-title">Slow-mo macro in Act 2.</div>
+            <div class="ebi-body">Shot 10 is the reward — 3 seconds, titanium texture, the pulse firing. <strong>Product porn, but earned by the emotional runway before it.</strong></div>
+          </div>
+          <div class="ebi">
+            <div class="ebi-num">EBI 10 · Close where we opened</div>
+            <div class="ebi-title">The bedroom, at 8:47pm.</div>
+            <div class="ebi-body">End on a lock screen reading 8:47pm. Same room, different time — the customer chose the evening this time. <strong>Closes the loop the doomscroller opened.</strong></div>
+          </div>
+        </div>
+      </div>
+    </details>
   </section>
 
   <div class="footer">
