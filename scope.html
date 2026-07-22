@@ -34,7 +34,7 @@
 *{box-sizing:border-box;}
 html,body{margin:0;padding:0;background:var(--void);}
 .page{
-  width:1920px; height:8280px;
+  width:1920px; height:9960px;
   position:relative; overflow:hidden;
   font-family:var(--font-primary); color:var(--light);
   background:
@@ -80,6 +80,7 @@ strong{font-weight:600; color:var(--light);}
 .row.gold    { border-left:5px solid var(--gold); }
 .row.green   { border-left:5px solid var(--green); }
 .row.accent  { border-left:5px solid var(--accent); }
+.row.orange  { border-left:5px solid var(--orange); }
 
 .row .init{display:flex; flex-direction:column; gap:6px;}
 .row .init .num-tag{font-family:var(--font-mono); font-size:15px; letter-spacing:0.14em; text-transform:uppercase; font-weight:500;}
@@ -89,6 +90,7 @@ strong{font-weight:600; color:var(--light);}
 .row.gold .init .num-tag    { color:var(--gold); }
 .row.green .init .num-tag   { color:var(--green); }
 .row.accent .init .num-tag  { color:var(--accent); }
+.row.orange .init .num-tag  { color:var(--orange); }
 
 .row .cell{font-size:18px; line-height:1.4; color:var(--light-64);}
 .row .cell strong{color:var(--light);}
@@ -290,6 +292,180 @@ strong{font-weight:600; color:var(--light);}
 }
 .retainer-note strong{color:var(--light);}
 .retainer-note strong.spectrum{color:var(--teal); font-weight:600;}
+
+/* ===== Moats thesis strip ===== */
+.moats-section{
+  background:
+    radial-gradient(500px 320px at 88% 0%, rgba(86,76,112,0.10), transparent 60%),
+    linear-gradient(180deg, rgba(86,76,112,0.05) 0%, rgba(31,24,36,0.4) 100%);
+  border:1px solid var(--accent);
+  border-radius:14px;
+  padding:22px 28px;
+  display:flex; flex-direction:column; gap:16px;
+}
+.moats-head{display:flex; justify-content:space-between; align-items:baseline; gap:20px; flex-wrap:wrap;}
+.moats-head .kicker{color:var(--accent-64); letter-spacing:0.16em;}
+.moats-head .caption{color:var(--midtone-64); font-family:var(--font-mono); font-size:14px; letter-spacing:0.12em; text-transform:uppercase;}
+.moats-head h2{
+  font-size:34px; font-weight:400; letter-spacing:-0.01em; line-height:1.1;
+  margin:0; color:var(--light);
+}
+.moats-head h2 em{
+  font-family:var(--font-display); font-style:italic; color:var(--light-64); font-weight:400;
+}
+.moats-grid{
+  display:grid;
+  grid-template-columns:repeat(7, 1fr);
+  gap:10px;
+}
+.moat{
+  padding:12px 14px;
+  border:1px solid var(--accent-24);
+  background:var(--dark-64);
+  border-radius:8px;
+  display:flex; flex-direction:column; gap:4px;
+}
+.moat .m-num{
+  font-family:var(--font-mono); font-size:11px;
+  letter-spacing:0.14em; color:var(--accent);
+}
+.moat .m-name{
+  color:var(--light); font-size:14px; font-weight:500;
+  line-height:1.25;
+}
+.moat .m-sub{color:var(--light-64); font-size:12px; line-height:1.35;}
+.moats-foot{
+  padding:12px 16px;
+  border:1px dashed var(--accent-24);
+  border-radius:8px;
+  font-size:15px; line-height:1.4; color:var(--light-64);
+}
+.moats-foot strong{color:var(--light);}
+.moats-foot strong.q4{color:var(--gold);}
+
+/* ===== Partner touchpoint matrix ===== */
+.partner-matrix{
+  background:
+    radial-gradient(500px 320px at 8% 0%, rgba(106,223,217,0.08), transparent 60%),
+    linear-gradient(180deg, rgba(106,223,217,0.03) 0%, rgba(31,24,36,0.4) 100%);
+  border:1px solid var(--teal-24);
+  border-radius:14px;
+  padding:22px 28px;
+  display:flex; flex-direction:column; gap:16px;
+}
+.pm-head{display:flex; justify-content:space-between; align-items:baseline; gap:20px;}
+.pm-head .kicker{color:var(--teal);}
+.pm-head h2{
+  font-size:34px; font-weight:400; letter-spacing:-0.01em; line-height:1.1;
+  margin:0; color:var(--light);
+}
+.pm-head h2 em{
+  font-family:var(--font-display); font-style:italic; color:var(--teal); font-weight:400;
+}
+.pm-lede{font-size:16px; line-height:1.5; color:var(--light-64); margin:0; max-width:1400px;}
+.pm-lede strong{color:var(--light);}
+
+.pm-table{
+  display:grid;
+  grid-template-columns:220px repeat(5, 1fr) 260px;
+  gap:0;
+  border:1px solid var(--accent-24);
+  border-radius:12px;
+  overflow:hidden;
+  background:var(--dark-64);
+}
+.pm-table > div{
+  padding:12px 14px;
+  border-right:1px solid var(--accent-24);
+  border-bottom:1px solid var(--accent-24);
+  font-size:14px; line-height:1.35;
+}
+.pm-table > div:nth-child(7n){border-right:none;}
+.pm-table > div:nth-last-child(-n+7){border-bottom:none;}
+
+.pm-header{
+  background:rgba(86,76,112,0.15);
+  font-family:var(--font-mono); font-size:11px;
+  letter-spacing:0.14em; text-transform:uppercase;
+  color:var(--midtone); font-weight:500;
+}
+.pm-partner{
+  font-weight:500; color:var(--light);
+}
+.pm-partner .role{
+  font-family:var(--font-mono); font-size:11px;
+  color:var(--midtone-64); letter-spacing:0.10em;
+  text-transform:uppercase; margin-top:2px; display:block;
+}
+.pm-cell{color:var(--light-64);}
+.pm-cell.hit{
+  color:var(--light);
+  background:rgba(106,223,217,0.06);
+}
+.pm-cell.hit .role{
+  font-family:var(--font-mono); font-size:10px;
+  color:var(--teal); letter-spacing:0.12em;
+  text-transform:uppercase; margin-top:2px; display:block;
+}
+.pm-cell.dim{color:var(--midtone-64); text-align:center;}
+.pm-moat{color:var(--light-64);}
+.pm-moat strong{color:var(--gold); font-weight:500;}
+
+.pm-legend{
+  display:flex; align-items:center; gap:14px; flex-wrap:wrap;
+  font-family:var(--font-mono); font-size:12px;
+  letter-spacing:0.1em; color:var(--midtone-64);
+}
+.pm-legend .dot{
+  display:inline-block; width:12px; height:12px;
+  background:rgba(106,223,217,0.4); border:1px solid var(--teal-24);
+  border-radius:3px; margin-right:6px; vertical-align:middle;
+}
+
+/* ===== Radha advisor callout ===== */
+.advisor-callout{
+  border:1px solid var(--green-24);
+  border-left:5px solid var(--green);
+  background:linear-gradient(180deg, rgba(99,224,132,0.04) 0%, rgba(31,24,36,0.4) 100%);
+  border-radius:12px;
+  padding:22px 26px;
+  display:grid;
+  grid-template-columns:1.4fr 1fr;
+  gap:24px;
+}
+.advisor-body h4{
+  font-family:var(--font-mono); font-size:12px;
+  letter-spacing:0.16em; text-transform:uppercase;
+  color:var(--green); margin:0 0 8px;
+}
+.advisor-body .title{
+  font-size:22px; font-weight:500; color:var(--light); line-height:1.2;
+  margin:0 0 10px;
+}
+.advisor-body .title em{
+  font-family:var(--font-display); font-style:italic; color:var(--green); font-weight:400;
+}
+.advisor-body p{font-size:15px; line-height:1.5; color:var(--light-64); margin:0 0 8px;}
+.advisor-body p strong{color:var(--light);}
+.advisor-body .link{
+  color:var(--green); text-decoration:none;
+  border-bottom:1px dotted var(--green-24);
+}
+.advisor-body .link:hover{border-bottom-style:solid;}
+.advisor-facts{
+  background:var(--dark-64);
+  border-radius:10px;
+  padding:16px 20px;
+  display:flex; flex-direction:column; gap:10px;
+  font-size:14px; color:var(--light-64); line-height:1.4;
+}
+.advisor-facts .f-label{
+  font-family:var(--font-mono); font-size:10px;
+  letter-spacing:0.14em; color:var(--midtone-64);
+  text-transform:uppercase;
+}
+.advisor-facts .f-value{color:var(--light);}
+.advisor-facts .f-value strong{color:var(--green);}
 
 /* Magenta variant for the brand film featured section */
 .feature.magenta{
@@ -530,8 +706,58 @@ strong{font-weight:600; color:var(--light);}
 
   <div class="hero">
     <h1>Sprint scope. What Adam <em class="verb">owns</em>.</h1>
-    <p>Five initiatives. Each one names the deliverable, the target, and how it converts into performance pay. Every dollar accountable to the <strong>$175 CAC</strong> frame.</p>
+    <p>Six initiatives. Each one names the deliverable, the target, and how it converts into performance pay. Every dollar accountable to the <strong>$175 CAC</strong> frame — and to the moats below.</p>
   </div>
+
+  <section class="moats-section">
+    <div class="moats-head">
+      <div>
+        <div class="kicker">The moats · in an AI-native world</div>
+        <h2>Seven things that <em>compound</em>.</h2>
+      </div>
+      <div class="caption">Everything below serves at least one</div>
+    </div>
+    <div class="moats-grid">
+      <div class="moat">
+        <div class="m-num">01</div>
+        <div class="m-name">Hardware</div>
+        <div class="m-sub">The physical object AI can't replicate.</div>
+      </div>
+      <div class="moat">
+        <div class="m-num">02</div>
+        <div class="m-name">Distribution</div>
+        <div class="m-sub">Where the ring reaches hands.</div>
+      </div>
+      <div class="moat">
+        <div class="m-num">03</div>
+        <div class="m-name">Community network effects</div>
+        <div class="m-sub">Every wearer makes the next one more likely.</div>
+      </div>
+      <div class="moat">
+        <div class="m-num">04</div>
+        <div class="m-name">Community-feedback velocity</div>
+        <div class="m-sub">Speed of implementing what users tell us.</div>
+      </div>
+      <div class="moat">
+        <div class="m-num">05</div>
+        <div class="m-name">Partner integration</div>
+        <div class="m-sub">Named rooms and named humans.</div>
+      </div>
+      <div class="moat">
+        <div class="m-num">06</div>
+        <div class="m-name">Speed of implementation</div>
+        <div class="m-sub">General product + market velocity.</div>
+      </div>
+      <div class="moat">
+        <div class="m-num">07</div>
+        <div class="m-name">Innovation wins</div>
+        <div class="m-sub">Category-defining moves that stick.</div>
+      </div>
+    </div>
+    <div class="moats-foot">
+      <strong>The story we tell with evidence by <strong class="q4">Q4</strong> — the priced-round open.</strong> Every dollar spent between now and then compounds into one of these seven, or it doesn't happen.
+    </div>
+  </section>
 
   <div class="table">
     <div class="thead">
@@ -596,12 +822,88 @@ strong{font-weight:600; color:var(--light);}
       <div class="deps"><span class="deps-tag">Dependencies</span><span class="deps-body">Latest <strong>financials + data room</strong> access · existing <strong>VC CRM</strong> read/write · <strong>Johan available for investor meetings</strong> · attribution rules signed (what counts as "Adam-sourced") · preempt deck template.</span></div>
     </div>
 
+    <div class="row orange">
+      <div class="init">
+        <div class="num-tag">06</div>
+        <div class="name">Ritualize the Sync · shared-felt-experience</div>
+      </div>
+      <div class="cell">Someone obsessed with making the product <strong>sticky and shareable.</strong> Design + spec the <strong>Pulse Sync ritual</strong> (coordinated pulse moments · couples / trio / family modes · public anchor rituals). Weekly community-feedback loop that pipes directly into the product roadmap.</div>
+      <div class="cell">By day 60 — Sync ritual specced · <strong>30% of Founding Community</strong> using a shared moment weekly · <strong>1 public anchor ritual</strong> live (Iceland-eclipse coordinated pulse · Alive LA sunrise sync).</div>
+      <div class="perf">Bonus on Sync-attributed 30-day retention<div class="sub" style="margin-top:4px;">+ $500 per public anchor ritual launched.</div></div>
+      <div class="deps"><span class="deps-tag">Dependencies</span><span class="deps-body">Product team access · engineering capacity for the Sync layer (or spec-only if not-yet-built) · <strong>Radha Agrawal as advisor</strong> (see below) · Founding Community list · Impact.com attribution for shared-code tracking.</span></div>
+    </div>
+
   </div>
 
   <div class="summary">
     <div class="left">Base retainer: <strong>$3,000 / month</strong> + expenses at cost. Performance activates on delivery.</div>
     <div class="right">Day-30 · Assess · Extend or wrap</div>
   </div>
+
+  <section class="partner-matrix">
+    <div class="pm-head">
+      <div>
+        <div class="kicker">Partner touchpoints · the same aligned humans, across the calendar</div>
+        <h2>One <em>audience</em>. Multiple touchpoints. Named.</h2>
+      </div>
+    </div>
+    <p class="pm-lede">Each of these partners is already Adam-connected. They're all going to be at these events — meaning <strong>a broad audience meets Pulse in multiple rooms, from multiple messengers, over one summer.</strong> The matrix below reads left→right: <strong>who is behind it · where you meet them · which moat it serves.</strong></p>
+
+    <div class="pm-table">
+      <div class="pm-header">Partner</div>
+      <div class="pm-header">Iceland Eclipse<br><span style="font-size:9px;">Aug 11–15</span></div>
+      <div class="pm-header">Alive LA<br><span style="font-size:9px;">Sept 13</span></div>
+      <div class="pm-header">LBF Austin<br><span style="font-size:9px;">Sept 19</span></div>
+      <div class="pm-header">Portal Austin<br><span style="font-size:9px;">Fall 2026</span></div>
+      <div class="pm-header">Submersive ATX<br><span style="font-size:9px;">2026</span></div>
+      <div class="pm-header">Moat served</div>
+
+      <div class="pm-partner">Radha Agrawal<span class="role">Daybreaker CEO · Belong Center founder · Opus investor · <strong style="color:var(--green);">recommended advisor</strong></span></div>
+      <div class="pm-cell dim">—</div>
+      <div class="pm-cell hit">Host<span class="role">Alive LA</span></div>
+      <div class="pm-cell hit">Home<span class="role">Austin LBF</span></div>
+      <div class="pm-cell dim">—</div>
+      <div class="pm-cell dim">—</div>
+      <div class="pm-moat"><strong>Community network effects</strong> · Community-feedback velocity</div>
+
+      <div class="pm-partner">Patrick Kronfli<span class="role">Unify.org · dear friend from Austin</span></div>
+      <div class="pm-cell hit">Ceremonies<span class="role">Welcome + Eclipse</span></div>
+      <div class="pm-cell dim">—</div>
+      <div class="pm-cell dim">—</div>
+      <div class="pm-cell dim">—</div>
+      <div class="pm-cell dim">—</div>
+      <div class="pm-moat"><strong>Distribution</strong> · Community network effects</div>
+
+      <div class="pm-partner">Corvas Brinkerhoff<span class="role">Meow Wolf co-founder · Opus investor · Submersive founder</span></div>
+      <div class="pm-cell dim">—</div>
+      <div class="pm-cell dim">—</div>
+      <div class="pm-cell dim">—</div>
+      <div class="pm-cell dim">—</div>
+      <div class="pm-cell hit">Host<span class="role">In-room integration</span></div>
+      <div class="pm-moat"><strong>Innovation wins</strong> · Partner integration</div>
+
+      <div class="pm-partner">Portal advisor bench<span class="role">Tim Ferriss, Mark Hyman, Miki Agrawal, Justin Kan</span></div>
+      <div class="pm-cell dim">—</div>
+      <div class="pm-cell dim">—</div>
+      <div class="pm-cell dim">—</div>
+      <div class="pm-cell hit">Members<span class="role">601 Rio Grande</span></div>
+      <div class="pm-cell dim">—</div>
+      <div class="pm-moat"><strong>Partner integration</strong> · Distribution</div>
+
+      <div class="pm-partner">Adam Schlender<span class="role">Growth partner · the through-line</span></div>
+      <div class="pm-cell hit">On-site<span class="role">Aug 10–16</span></div>
+      <div class="pm-cell hit">On-site<span class="role">Sept 13</span></div>
+      <div class="pm-cell hit">On-site<span class="role">Sept 19</span></div>
+      <div class="pm-cell hit">On-site<span class="role">Salons + demos</span></div>
+      <div class="pm-cell hit">On-site<span class="role">Ring in room</span></div>
+      <div class="pm-moat"><strong>Speed of implementation</strong> · everything above</div>
+    </div>
+
+    <div class="pm-legend">
+      <span><span class="dot"></span> partner activates at this touchpoint</span>
+      <span style="margin-left:auto;">Six touchpoints. Five partners. One audience.</span>
+    </div>
+  </section>
 
   <section class="feature">
     <div class="feature-head">
@@ -708,6 +1010,34 @@ strong{font-weight:600; color:var(--light);}
       <div class="feature-poster">
         <img src="assets/daybreaker-alive-la.png" alt="Daybreaker Alive LA — Sunrise to Sunset Festival — September 13, Santa Monica Pier">
         <div class="caption">Daybreaker Alive · Sept 13 LA · Sept 26 NYC · daybreaker.com</div>
+      </div>
+    </div>
+
+    <div class="advisor-callout">
+      <div class="advisor-body">
+        <h4>Independent recommendation · beyond the partnership</h4>
+        <div class="title">Radha as <em>advisor.</em> Chips in the game.</div>
+        <p><strong>Radha Agrawal is immaculately masterful at community building.</strong> Daybreaker grew to <strong>800,000+ people across 60+ cities without paid advertising.</strong> Her book <em>Belong</em> is used as a community-building blueprint in universities and by teams at Deepak Chopra / Tony Hsieh scale.</p>
+        <p>Her <a class="link" href="https://www.mindvalley.com/belonging" target="_blank" rel="noopener">Mindvalley course "Build Your Dream Community"</a> is 17 days of the exact identity-shifts, somatic exercises, and biochemistry needed to rally people. This is the playbook Pulse needs for <strong>sticky, shareable, product-led community.</strong></p>
+        <p>I recommend engaging Radha as a <strong>real, integrated advisor</strong> — independent of the bigger partnership watch. Her lens will particularly light up on the <strong>Pulse Sync shared-felt-experience</strong> (Row 06). This is where community mastery meets product roadmap.</p>
+      </div>
+      <div class="advisor-facts">
+        <div>
+          <div class="f-label">Recommended engagement</div>
+          <div class="f-value"><strong>0.25–0.5%</strong> advisory equity · 12-mo vest · monthly touch on community mechanics + Sync feature</div>
+        </div>
+        <div>
+          <div class="f-label">Where she shows up</div>
+          <div class="f-value">Sept 13 Alive LA · Sept 19 Austin LBF · monthly async on the Sync roadmap</div>
+        </div>
+        <div>
+          <div class="f-label">Moat lens</div>
+          <div class="f-value"><strong>Community network effects</strong> + <strong>Community-feedback velocity</strong> — the two hardest to replicate.</div>
+        </div>
+        <div>
+          <div class="f-label">Course link</div>
+          <div class="f-value"><a class="link" href="https://www.mindvalley.com/belonging" target="_blank" rel="noopener">mindvalley.com/belonging</a></div>
+        </div>
       </div>
     </div>
 
@@ -1012,6 +1342,64 @@ strong{font-weight:600; color:var(--light);}
             <div class="ebi-num">EBI 10 · Close where we opened</div>
             <div class="ebi-title">The bedroom, at 8:47pm.</div>
             <div class="ebi-body">End on a lock screen reading 8:47pm. Same room, different time — the customer chose the evening this time. <strong>Closes the loop the doomscroller opened.</strong></div>
+          </div>
+        </div>
+      </div>
+    </details>
+
+    <details class="filmdrop">
+      <summary><span>10 more EBI passes · round 2 · script-level refinements</span><span class="caret">▾</span></summary>
+      <div class="drop-body">
+        <div class="ebi-grid">
+          <div class="ebi">
+            <div class="ebi-num">EBI 11 · Kill the voiceover impulse</div>
+            <div class="ebi-title">Text-on-screen or nothing.</div>
+            <div class="ebi-body">No narrator. Voiceovers age the film and read as ad-agency default. If we need words, place them as clean type-cards. <strong>The images earn the message.</strong></div>
+          </div>
+          <div class="ebi">
+            <div class="ebi-num">EBI 12 · Name the enemy, once</div>
+            <div class="ebi-title">"85% of us can't switch off."</div>
+            <div class="ebi-body">Somewhere in Act 2 — a single type-card, 2 seconds. From the investor overview. The film has an antagonist: overstimulation. <strong>Say it once. Never again.</strong></div>
+          </div>
+          <div class="ebi">
+            <div class="ebi-num">EBI 13 · Beat construction</div>
+            <div class="ebi-title">Hook → tension → interruption → relief → habitat → loop.</div>
+            <div class="ebi-body">Six emotional beats. Storyboard as-is has them but out of order. <strong>Resequence: doom (hook) → pulse (tension) → phone-down (interruption) → present bed (relief) → morning coffee (habitat) → the loop.</strong></div>
+          </div>
+          <div class="ebi">
+            <div class="ebi-num">EBI 14 · Casting granularity</div>
+            <div class="ebi-title">Write six casting sheets, not five.</div>
+            <div class="ebi-body">Doomscroller · Designer · Kitchen dad · Subway friends · Hero-shot hand · Closer. <strong>Each with a 2-line character brief.</strong> Not "diverse person 30s" — a specific human with a specific taste.</div>
+          </div>
+          <div class="ebi">
+            <div class="ebi-num">EBI 15 · The ring gets its verb</div>
+            <div class="ebi-title">"Pulls" — the ring pulls you out.</div>
+            <div class="ebi-body">From the investor overview: <em>"pulls the wearer out of autopilot."</em> Every beat where the ring fires, the language and gesture are the same verb: PULL. <strong>Consistent grammar of the product.</strong></div>
+          </div>
+          <div class="ebi">
+            <div class="ebi-num">EBI 16 · Sound-design ledger</div>
+            <div class="ebi-title">Three cues, three registers.</div>
+            <div class="ebi-body">1. Low sub-bass hum for the doomscroll (physical) · 2. A single soft haptic-cadence tick when the ring pulses (mechanical, not chime) · 3. Room-tone for the after (breath, distant traffic). <strong>No music in Act 1. Music enters at Act 2 shot 06.</strong></div>
+          </div>
+          <div class="ebi">
+            <div class="ebi-num">EBI 17 · Cut down the cut-downs</div>
+            <div class="ebi-title">Three 30-second variants, one 6-second bump.</div>
+            <div class="ebi-body">30s A: Act 1 only. 30s B: Act 2 hero moment + tagline. 30s C: montage + tagline. 6s bump: the phone going face-down. <strong>Every social spec pre-planned. Nothing recut in a rush.</strong></div>
+          </div>
+          <div class="ebi">
+            <div class="ebi-num">EBI 18 · Ring on the hero shot needs a body</div>
+            <div class="ebi-title">Not floating in white space.</div>
+            <div class="ebi-body">The 3-second macro (Shot 10) needs to be attached to a person doing something — cooking, typing, holding a coffee cup. <strong>Product porn only works if the ring belongs to a life.</strong></div>
+          </div>
+          <div class="ebi">
+            <div class="ebi-num">EBI 19 · Type-card grammar</div>
+            <div class="ebi-title">One weight. One case. One mono for utility.</div>
+            <div class="ebi-body">Any type on screen matches the brand deck's type stack: TT Norms Pro light for headlines · DM Mono for utility · Playfair italic for the single verb we want to land. <strong>No sub-titles in mixed case, no fancy kerning. Discipline reads.</strong></div>
+          </div>
+          <div class="ebi">
+            <div class="ebi-num">EBI 20 · End frame, not end card</div>
+            <div class="ebi-title">The last image is the tagline.</div>
+            <div class="ebi-body">Consider closing on the phone-down shot instead of a corporate outro card. Overlay: <em>"Pulse. The off-switch you wear."</em> · fade. <strong>The last frame is the argument.</strong></div>
           </div>
         </div>
       </div>
