@@ -34,7 +34,7 @@
 *{box-sizing:border-box;}
 html,body{margin:0;padding:0;background:var(--void);}
 .page{
-  width:1920px; height:4900px;
+  width:1920px; height:5720px;
   position:relative; overflow:hidden;
   font-family:var(--font-primary); color:var(--light);
   background:
@@ -223,6 +223,73 @@ strong{font-weight:600; color:var(--light);}
   height:1px; background:var(--accent-24); border:none;
   margin:0 0 18px; border-top:1px dashed var(--accent-24); background:transparent;
 }
+
+/* Teal variant for the Adam-network doors section */
+.feature.teal{
+  border-color:var(--teal-24);
+  background:
+    radial-gradient(600px 400px at 100% 0%, rgba(106,223,217,0.06), transparent 60%),
+    linear-gradient(180deg, rgba(106,223,217,0.04) 0%, rgba(31,24,36,0.4) 100%);
+}
+.feature.teal .feature-head .kicker{color:var(--teal);}
+.feature.teal .feature-head h1 em{color:var(--teal);}
+
+.venue-grid{
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:20px;
+}
+.venue-card{
+  background:var(--dark-64);
+  border:1px solid var(--accent-24);
+  border-left:5px solid var(--teal);
+  border-radius:12px;
+  padding:22px 24px;
+  display:flex; flex-direction:column; gap:12px;
+}
+.venue-card .v-kicker{
+  font-family:var(--font-mono); font-size:12px; letter-spacing:0.16em;
+  text-transform:uppercase; color:var(--teal); font-weight:500;
+}
+.venue-card .v-name{
+  font-size:26px; font-weight:400; letter-spacing:-0.01em; line-height:1.1;
+  margin:0; color:var(--light);
+}
+.venue-card .v-name em{
+  font-family:var(--font-display); font-style:italic; color:var(--teal); font-weight:400;
+}
+.venue-card .v-tagline{
+  font-size:15px; color:var(--light-64); line-height:1.4;
+  font-family:var(--font-mono); letter-spacing:0.02em;
+}
+.venue-card .v-body{
+  font-size:16px; line-height:1.5; color:var(--light-64);
+}
+.venue-card .v-body strong{color:var(--light);}
+.venue-card .v-meta{
+  margin-top:auto;
+  padding-top:14px;
+  border-top:1px dashed var(--accent-24);
+  display:flex; flex-direction:column; gap:12px;
+}
+.venue-card .v-meta-row{display:flex; flex-direction:column; gap:4px;}
+.venue-card .v-meta-label{
+  font-family:var(--font-mono); font-size:11px; letter-spacing:0.14em;
+  text-transform:uppercase; color:var(--midtone-64);
+}
+.venue-card .v-meta-value{font-size:15px; color:var(--light-64); line-height:1.4;}
+.venue-card .v-meta-value strong{color:var(--teal); font-weight:600;}
+
+.retainer-note{
+  padding:18px 26px;
+  background:var(--teal-8);
+  border:1px solid var(--teal-24);
+  border-radius:10px;
+  font-size:17px; line-height:1.5;
+  color:var(--light-64);
+}
+.retainer-note strong{color:var(--light);}
+.retainer-note strong.spectrum{color:var(--teal); font-weight:600;}
 
 /* Green variant for the September Sprint / Row-04 featured section */
 .feature.green{
@@ -460,6 +527,71 @@ strong{font-weight:600; color:var(--light);}
         <p><strong>Why this compounds.</strong> Unlike a booth or a media buy, the Founding Community becomes the seed for Pulse Plus subscription attach, the sample base for K-factor measurement, and the story we tell every VC on the priced-round preempt. Same dollars, three downstream uses.</p>
       </div>
     </details>
+  </section>
+
+  <section class="feature teal">
+    <div class="feature-head">
+      <div class="kicker">The Adam-network doors · virtually free</div>
+      <h1 style="font-size:60px; font-weight:300; letter-spacing:-0.02em; line-height:1.02; margin:0;">Adam's Rolodex, <em class="verb" style="color:var(--teal);">operationalized.</em></h1>
+      <p class="lede">Three venues in Austin and SF where the aligned humans already gather — Opus investors, ambassadors, and customers-in-waiting. Pulse presence at each costs almost nothing because the doors are already open.</p>
+    </div>
+
+    <div class="venue-grid">
+      <div class="venue-card">
+        <div class="v-kicker">The Portal · Austin</div>
+        <h3 class="v-name">Members club for <em>human flourishing.</em></h3>
+        <div class="v-tagline">601 Rio Grande · Downtown Austin · Fall 2026 flagship</div>
+        <div class="v-body">Members: founders, creatives, wellness leaders, cultural changemakers. Advisor bench: <strong>Tim Ferriss (investor), Dr. Mark Hyman, Miki Agrawal, Justin Kan.</strong> Programming: salons, keynotes, movement, immersive experiences, rooftop stage.</div>
+        <div class="v-meta">
+          <div class="v-meta-row">
+            <div class="v-meta-label">Pulse presence</div>
+            <div class="v-meta-value">Salon talk hosted by Adam + Johan · demo table in the members' lounge · Founding Community seat drop.</div>
+          </div>
+          <div class="v-meta-row">
+            <div class="v-meta-label">Cost estimate</div>
+            <div class="v-meta-value"><strong>$0–1k</strong> · member-hosted / in-kind</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="venue-card">
+        <div class="v-kicker">The Portal · SF</div>
+        <h3 class="v-name">The <em>original.</em></h3>
+        <div class="v-tagline">Marin / San Francisco · open since 2024 · 30+ reciprocal partner clubs</div>
+        <div class="v-body">The Portal's first flagship. Same club, coastal counterpart. Same warm connection through the advisor bench. Smaller room, tighter demographic — better format for private founder programming and one-on-ones.</div>
+        <div class="v-meta">
+          <div class="v-meta-row">
+            <div class="v-meta-label">Pulse presence</div>
+            <div class="v-meta-value">Private founder dinner · movement-studio integration · ambassador-recruitment brunch.</div>
+          </div>
+          <div class="v-meta-row">
+            <div class="v-meta-label">Cost estimate</div>
+            <div class="v-meta-value"><strong>$0–1k</strong> · member-hosted / in-kind</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="venue-card">
+        <div class="v-kicker">Submersive · Austin</div>
+        <h3 class="v-name">Immersive-art <em>bathhouse.</em></h3>
+        <div class="v-tagline">901 Barton Springs Rd · 25k sq ft · saunas · cold plunges · video · lasers · opens 2026</div>
+        <div class="v-body"><strong>Corvas Brinkerhoff</strong> (Meow Wolf co-founder) is an <strong>existing Opus investor.</strong> Direct line. Their stated positioning: <em>"beyond relaxation into elevated states of consciousness — awe, wonder, transcendence, hyper-presence."</em> A ring belongs in that room.</div>
+        <div class="v-meta">
+          <div class="v-meta-row">
+            <div class="v-meta-label">Pulse presence</div>
+            <div class="v-meta-value">Ring worn during sessions · co-branded state-change moment · reciprocal cross-promo with the launch.</div>
+          </div>
+          <div class="v-meta-row">
+            <div class="v-meta-label">Cost estimate</div>
+            <div class="v-meta-value"><strong>$0</strong> · investor-relationship coordination</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="retainer-note">
+      <strong>This is what the retainer buys — access.</strong> The aligned humans across the whole spectrum are already in these rooms. <strong class="spectrum">Investor · Advisor · Ambassador · Customer · Partner.</strong> Same rooms, activated by proximity, not by media buy.
+    </div>
   </section>
 
   <div class="footer">
