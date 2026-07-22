@@ -54,7 +54,7 @@
 html,body{margin:0;padding:0;background:var(--void);}
 
 .page{
-  width:1920px; height:1350px;
+  width:1920px; height:1400px;
   position:relative; overflow:hidden;
   font-family:var(--font-primary); color:var(--light);
   background:
@@ -97,8 +97,9 @@ strong{font-weight:600; color:var(--light);}
 .baseline-row .desc{flex:1; color:var(--light-64); font-size:20px; line-height:1.45;}
 .baseline-row .desc strong{color:var(--light);}
 
-.options{display:grid; grid-template-columns:repeat(3,1fr); gap:20px; flex:1;}
-.opt{display:flex; flex-direction:column; gap:14px; padding:26px 28px;}
+.options{display:grid; grid-template-columns:repeat(4,1fr); gap:16px; flex:1;}
+.opt{display:flex; flex-direction:column; gap:12px; padding:22px 22px;}
+.card.optD{border-left:5px solid var(--green);}
 .opt-head{display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:2px;}
 .opt-tag{font-family:var(--font-mono); font-size:15px; letter-spacing:0.16em; text-transform:uppercase; font-weight:500;}
 .opt-title{font-size:30px; font-weight:500; line-height:1.15; letter-spacing:-0.01em; margin:0;}
@@ -111,6 +112,7 @@ strong{font-weight:600; color:var(--light);}
 .opt-mult.teal{color:var(--teal); background:var(--teal-8); border:1px solid var(--teal-24);}
 .opt-mult.mag{color:var(--magenta); background:rgba(194,47,205,0.08); border:1px solid rgba(194,47,205,0.24);}
 .opt-mult.gold{color:var(--gold); background:var(--gold-8); border:1px solid var(--gold-24);}
+.opt-mult.green{color:var(--green); background:var(--green-8); border:1px solid var(--green-24);}
 
 .read{background:var(--teal-8); border:1px solid var(--teal-24); border-radius:16px; padding:20px 28px; display:flex; align-items:flex-start; gap:20px;}
 .read-tag{font-family:var(--font-mono); font-size:15px; letter-spacing:0.16em; text-transform:uppercase; color:var(--teal); font-weight:500; flex:0 0 130px; margin-top:2px;}
@@ -144,7 +146,7 @@ strong{font-weight:600; color:var(--light);}
 
   <div class="hero">
     <h1><span class="num">$3K</span>. What can it <em class="verb">buy</em>?</h1>
-    <p>Every option benchmarked against the same $3,000 on Meta or Reddit at the current <strong>$175 blended CAC</strong>. Baseline first, then three alternatives — same dollars, different levers, different multiples.</p>
+    <p>Every option benchmarked against the same $3,000 on Meta or Reddit at the current <strong>$175 blended CAC</strong>. Baseline first, then four alternatives — same dollars, different levers, different multiples.</p>
   </div>
 
   <div class="card baseline">
@@ -216,11 +218,25 @@ strong{font-weight:600; color:var(--light);}
       </div>
     </div>
 
+    <div class="card optD opt">
+      <div class="opt-head">
+        <div class="opt-tag" style="color:var(--green);">Option D</div>
+        <div class="kicker dim">$3,000</div>
+      </div>
+      <h3 class="opt-title">Brand film production</h3>
+      <p class="opt-desc">One <strong>60–90 second brand film</strong> — founder or user story, scrappy but on-brand — plus 3–4 social cut-downs. Multi-purpose asset used on landing page, ad creative, VC pitch, and partnership decks.</p>
+      <div class="opt-result">
+        <div class="big num">~20–40 attributed customers</div>
+        <div class="small">Compounds through repeated use across every channel that runs it.</div>
+        <div class="opt-mult green">≈ 1.2–2.3× ads · asset compounds</div>
+      </div>
+    </div>
+
   </div>
 
   <div class="read">
     <div class="read-tag">The read</div>
-    <div class="read-body">Options B and C beat ads on the day but are <strong>one-off levers</strong> layered on top of the current stack. Only <strong>Option A</strong> builds infrastructure — a referral program, warmed partnerships, an activated UGC bench — that compounds past month one. Ads are the guaranteed floor, and today they are underwater.</div>
+    <div class="read-body">Options B and C beat ads on the day but are <strong>one-off levers</strong>. <strong>Option D</strong> compounds as an asset — the same brand film keeps working across every channel that runs it. Only <strong>Option A</strong> builds compounding <strong>infrastructure</strong> — referral program, warmed partnerships, activated UGC bench. Ads are the guaranteed floor, and today they are underwater.</div>
   </div>
 
   <div class="footer">

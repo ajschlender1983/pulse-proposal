@@ -34,7 +34,7 @@
 *{box-sizing:border-box;}
 html,body{margin:0;padding:0;background:var(--void);}
 .page{
-  width:1920px; height:1350px;
+  width:1920px; height:1400px;
   position:relative; overflow:hidden;
   font-family:var(--font-primary); color:var(--light);
   background:
@@ -62,10 +62,19 @@ strong{font-weight:600; color:var(--light);}
 .thead > div{font-family:var(--font-mono); font-size:15px; letter-spacing:0.16em; text-transform:uppercase; color:var(--midtone);}
 
 .row{
-  display:grid; grid-template-columns:1fr 1.6fr 1.2fr 1.35fr; gap:20px;
+  display:grid; grid-template-columns:1fr 1.6fr 1.2fr 1.35fr; gap:20px 20px;
   background:var(--dark-64); border:1px solid var(--accent-24); border-radius:14px;
-  padding:20px 26px; align-items:start;
+  padding:18px 26px 14px; align-items:start;
 }
+.row .deps{
+  grid-column:1 / -1; margin-top:8px; padding-top:12px;
+  border-top:1px dashed var(--accent-24);
+  font-size:15px; color:var(--midtone); line-height:1.4;
+  display:flex; align-items:baseline; gap:14px;
+}
+.row .deps .deps-tag{font-family:var(--font-mono); font-size:12px; letter-spacing:0.16em; text-transform:uppercase; color:var(--midtone-64); flex:0 0 auto;}
+.row .deps .deps-body{flex:1; color:var(--light-64);}
+.row .deps .deps-body strong{color:var(--light);}
 .row.teal    { border-left:5px solid var(--teal); }
 .row.magenta { border-left:5px solid var(--magenta); }
 .row.gold    { border-left:5px solid var(--gold); }
@@ -141,6 +150,7 @@ strong{font-weight:600; color:var(--light);}
       <div class="cell"><strong>10 unique creative concepts × 3 variations each = 30 test assets</strong>, handed to the creative team. TikTok simultaneous test setup on Pulse's account. Winner selection + porting to Meta / Reddit.</div>
       <div class="cell"><strong>3 winning concepts</strong> identified in 21 days. Top winner beats the <strong>$175 CAC</strong> baseline on TikTok.</div>
       <div class="perf">10% commission on TikTok-attributed sales<div class="sub" style="margin-top:4px;">+ $500 per winning concept ported to Meta / Reddit.</div></div>
+      <div class="deps"><span class="deps-tag">Dependencies</span><span class="deps-body">Access to Pulse's <strong>TikTok account</strong> for posting and testing · separate TikTok ad-test budget · <strong>Joyce positioning brief locked</strong> so concepts inherit from one anchor · <strong>Impact.com attribution wired</strong> at checkout · creative team available for production of 30 assets.</span></div>
     </div>
 
     <div class="row magenta">
@@ -151,6 +161,7 @@ strong{font-weight:600; color:var(--light);}
       <div class="cell">Impact.com program <strong>built and launched</strong>. Founding Circle (~15 top customers) activated with codes. Attribution wired at checkout. Success path published for scale.</div>
       <div class="cell"><strong>20 referral-attributed sales</strong> in month 1.</div>
       <div class="perf">10% commission on referral-attributed sales<div class="sub" style="margin-top:4px;">Uncapped. Paid on close, monthly.</div></div>
+      <div class="deps"><span class="deps-tag">Dependencies</span><span class="deps-body">Access to <strong>Impact.com</strong> account and admin · Shopify dev capacity for checkout attribution wiring · <strong>Founding Circle customer list</strong> (top 15 keepers) with permission to contact · Elliot approval on referral-code discount rate.</span></div>
     </div>
 
     <div class="row gold">
@@ -161,6 +172,7 @@ strong{font-weight:600; color:var(--light);}
       <div class="cell">One event delivered — <strong>Portal (SF), Daybreaker (NYC), or Mindvalley (LA)</strong>. Booth + demo units + on-site UGC capture + partnership seeding in the room.</div>
       <div class="cell"><strong>30 direct sales</strong> on-site + <strong>15 UGC clips</strong> captured.</div>
       <div class="perf">10% commission on event-attributed sales<div class="sub" style="margin-top:4px;">Same rate as other channels I own.</div></div>
+      <div class="deps"><span class="deps-tag">Dependencies</span><span class="deps-body">Separate <strong>event budget</strong> (venue, travel, booth, materials — est. $5-8k, at cost) · <strong>10-20 demo units</strong> allocated · <strong>Johan available</strong> for at least one founder-led day on-site · date locked 3+ weeks out.</span></div>
     </div>
 
     <div class="row green">
@@ -171,6 +183,7 @@ strong{font-weight:600; color:var(--light);}
       <div class="cell">4 warm intros — <strong>Daybreaker (Rada), Unify (Patrick), Insight Timer, Mindvalley</strong>. Pitch decks tailored per partner. Introduction sequence run through founder + advisors.</div>
       <div class="cell"><strong>1 signed LOI or engagement</strong> by day 30.</div>
       <div class="perf">$100 per ring on top-tier partnership deals<div class="sub" style="margin-top:4px;">On top of the 10% channel commission.</div></div>
+      <div class="deps"><span class="deps-tag">Dependencies</span><span class="deps-body"><strong>Johan available for founder-led calls</strong> · pitch deck materials (the priced-round preempt deck, adapted per partner) · warm-intro paths through Adam's network · Joyce sign-off on positioning per partner.</span></div>
     </div>
 
     <div class="row accent">
@@ -181,6 +194,7 @@ strong{font-weight:600; color:var(--light);}
       <div class="cell">Preempt deck v1 + <strong>10 warm re-engagements</strong> across VC and angel network. Warm intros to Adam-sourced angels and micro-VCs from the Opus / SoundBed / Voice network.</div>
       <div class="cell"><strong>2 warm intros to qualified leads</strong> sourced through Adam.</div>
       <div class="perf">4% commission on Adam-sourced capital closed<div class="sub" style="margin-top:4px;">Paid on close. Uncapped.</div></div>
+      <div class="deps"><span class="deps-tag">Dependencies</span><span class="deps-body">Latest <strong>financials + data room</strong> access · existing <strong>VC CRM</strong> read/write · <strong>Johan available for investor meetings</strong> · attribution rules signed (what counts as "Adam-sourced") · preempt deck template.</span></div>
     </div>
 
   </div>
