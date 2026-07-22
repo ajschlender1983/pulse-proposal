@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pulse · Sprint Scope</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=DM+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+@font-face{font-family:'TT Norms Pro';src:url('fonts/TT-Norms-Pro-Light.ttf') format('truetype');font-weight:300;font-style:normal;font-display:swap;}
+@font-face{font-family:'TT Norms Pro';src:url('fonts/TT-Norms-Pro-Regular.ttf') format('truetype');font-weight:400;font-style:normal;font-display:swap;}
+@font-face{font-family:'TT Norms Pro';src:url('fonts/TT-Norms-Pro-Italic.ttf') format('truetype');font-weight:400;font-style:italic;font-display:swap;}
+@font-face{font-family:'TT Norms Pro';src:url('fonts/TT-Norms-Pro-DemiBold.ttf') format('truetype');font-weight:600;font-style:normal;font-display:swap;}
+@font-face{font-family:'TT Norms Pro';src:url('fonts/TT-Norms-Pro-Bold.ttf') format('truetype');font-weight:700;font-style:normal;font-display:swap;}
+:root{
+  --void:rgb(14,10,20); --surface:rgb(18,14,24);
+  --dark:rgba(31,24,36,1); --accent:rgba(86,76,112,1);
+  --light:rgba(228,225,230,1); --midtone:rgba(154,144,163,1);
+  --teal:rgba(106,223,217,1); --magenta:rgba(194,47,205,1);
+  --gold:rgba(255,215,100,1); --green:rgba(99,224,132,1);
+  --orange:rgba(240,147,94,1);
+  --void-64:rgba(14,10,20,0.64); --dark-64:rgba(31,24,36,0.64);
+  --dark-24:rgba(31,24,36,0.24); --accent-64:rgba(86,76,112,0.64);
+  --accent-24:rgba(86,76,112,0.24); --accent-8:rgba(86,76,112,0.08);
+  --light-64:rgba(228,225,230,0.64); --light-24:rgba(228,225,230,0.24);
+  --midtone-64:rgba(154,144,163,0.64);
+  --teal-64:rgba(106,223,217,0.64); --teal-24:rgba(106,223,217,0.24); --teal-8:rgba(106,223,217,0.08);
+  --gold-64:rgba(255,215,100,0.64); --gold-24:rgba(255,215,100,0.24); --gold-8:rgba(255,215,100,0.08);
+  --green-64:rgba(99,224,132,0.64); --green-24:rgba(99,224,132,0.24); --green-8:rgba(99,224,132,0.08);
+  --magenta-24:rgba(194,47,205,0.24); --magenta-8:rgba(194,47,205,0.08);
+  --font-primary:'TT Norms Pro','DM Sans',-apple-system,sans-serif;
+  --font-display:'Playfair Display',Georgia,serif;
+  --font-mono:'DM Mono','SF Mono',Menlo,Consolas,monospace;
+}
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;background:var(--void);}
+.page{
+  width:1920px; height:1350px;
+  position:relative; overflow:hidden;
+  font-family:var(--font-primary); color:var(--light);
+  background:
+    radial-gradient(1200px 1200px at 88% -8%, rgba(106,223,217,0.10), transparent 60%),
+    radial-gradient(1000px 1000px at 8% 112%, rgba(194,47,205,0.10), transparent 60%),
+    linear-gradient(180deg,rgb(18,14,24) 0%,rgb(31,24,36) 100%);
+  padding:56px 96px 40px;
+  display:flex; flex-direction:column; gap:22px;
+}
+.kicker{font-family:var(--font-mono); font-size:18px; letter-spacing:0.16em; text-transform:uppercase; color:var(--teal); font-weight:500;}
+.kicker.dim{color:var(--midtone);}
+.num{font-variant-numeric:tabular-nums;}
+em.verb{font-family:var(--font-display); font-style:italic; color:var(--teal); opacity:0.9; font-weight:400;}
+strong{font-weight:600; color:var(--light);}
+
+.header{display:flex; justify-content:space-between; align-items:flex-start;}
+.lockup svg{height:32px; width:auto;}
+.hero{margin-top:2px;}
+.hero h1{font-size:96px; font-weight:300; letter-spacing:-0.03em; line-height:1.0; margin:0;}
+.hero p{font-size:24px; line-height:1.4; color:var(--light-64); margin:18px 0 0; max-width:1520px;}
+
+.table{display:flex; flex-direction:column; gap:8px; flex:1;}
+
+.thead{display:grid; grid-template-columns:1fr 1.6fr 1.2fr 1.35fr; gap:20px; padding:0 26px 8px; border-bottom:1px solid var(--accent-24);}
+.thead > div{font-family:var(--font-mono); font-size:15px; letter-spacing:0.16em; text-transform:uppercase; color:var(--midtone);}
+
+.row{
+  display:grid; grid-template-columns:1fr 1.6fr 1.2fr 1.35fr; gap:20px;
+  background:var(--dark-64); border:1px solid var(--accent-24); border-radius:14px;
+  padding:20px 26px; align-items:start;
+}
+.row.teal    { border-left:5px solid var(--teal); }
+.row.magenta { border-left:5px solid var(--magenta); }
+.row.gold    { border-left:5px solid var(--gold); }
+.row.green   { border-left:5px solid var(--green); }
+.row.accent  { border-left:5px solid var(--accent); }
+
+.row .init{display:flex; flex-direction:column; gap:6px;}
+.row .init .num-tag{font-family:var(--font-mono); font-size:15px; letter-spacing:0.14em; text-transform:uppercase; font-weight:500;}
+.row .init .name{font-size:22px; font-weight:500; line-height:1.15;}
+.row.teal .init .num-tag    { color:var(--teal); }
+.row.magenta .init .num-tag { color:var(--magenta); }
+.row.gold .init .num-tag    { color:var(--gold); }
+.row.green .init .num-tag   { color:var(--green); }
+.row.accent .init .num-tag  { color:var(--accent); }
+
+.row .cell{font-size:18px; line-height:1.4; color:var(--light-64);}
+.row .cell strong{color:var(--light);}
+
+.row .perf{font-size:18px; line-height:1.4; color:var(--gold); font-weight:500;}
+.row .perf .sub{color:var(--light-64); font-weight:400;}
+
+.summary{
+  background:var(--teal-8); border:1px solid var(--teal-24); border-radius:14px;
+  padding:18px 28px; display:flex; justify-content:space-between; align-items:center; gap:30px;
+}
+.summary .left{font-size:20px; color:var(--light);}
+.summary .left strong{color:var(--teal); font-weight:600;}
+.summary .right{font-family:var(--font-mono); font-size:16px; letter-spacing:0.14em; text-transform:uppercase; color:var(--midtone);}
+
+.footer{display:flex; justify-content:space-between; align-items:center; font-size:16px; color:var(--midtone-64); font-family:var(--font-mono); letter-spacing:0.1em; text-transform:uppercase;}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="pulse-wm" viewBox="0 0 391 157">
+  <path fill="currentColor" d="M353.012 120.96C328.187 120.96 309.693 102.965 309.693 77.807C309.693 54.3147 326.521 35.1543 351.013 35.1543C375.672 35.1543 391 52.9818 391 75.8076V82.4721H325.688C327.521 96.4675 338.184 106.298 352.846 106.298C362.843 106.298 371.84 101.966 376.671 92.9687L389.334 99.4665C382.17 113.462 369.007 120.96 353.012 120.96ZM326.355 71.8089H374.505C373.839 58.8132 364.342 49.9828 350.847 49.9828C337.018 49.9828 328.021 59.6463 326.355 71.8089Z"/>
+  <path fill="currentColor" d="M267.664 120.96C252.502 120.96 240.839 114.962 234.508 102.799L247.17 95.8016C251.336 103.966 258 106.965 266.997 106.965C276.327 106.965 283.492 103.133 283.492 95.9682C283.492 78.8072 236.674 91.8029 236.674 60.6465C236.674 46.3178 249.336 35.8213 267.164 35.8213C282.325 35.8213 292.655 42.819 297.82 52.3159L285.158 59.4802C281.659 52.3159 274.995 49.8167 267.497 49.8167C259.833 49.8167 253.168 53.8154 253.168 60.3133C253.168 76.9745 299.986 64.8118 299.986 95.635C299.986 111.13 284.991 120.96 267.664 120.96Z"/>
+  <path fill="currentColor" d="M199.974 0H216.469V119.128H199.974V0Z"/>
+  <path fill="currentColor" d="M139.423 105.131C154.585 105.131 162.916 91.9685 162.916 76.8068V37.4863H179.41V78.8061C179.41 102.465 165.081 121.126 139.423 121.126C114.098 121.126 99.7695 102.298 99.7695 78.6395V37.4863H116.264V76.9734C116.264 91.9685 124.428 105.131 139.423 105.131Z"/>
+  <path fill="currentColor" d="M16.4946 156.614H0V78.14C0 53.8146 18.8272 35.4873 43.4857 35.4873C68.1443 35.4873 86.8049 54.8143 86.8049 78.14C86.8049 102.799 68.9774 121.126 44.1522 121.126C33.1558 121.126 23.1591 116.294 16.4946 108.963V156.614ZM43.4857 105.631C58.6474 105.631 70.3103 93.1351 70.3103 78.3066C70.3103 63.3115 58.6474 51.1488 43.4857 51.1488C28.1574 51.1488 16.4946 63.3115 16.4946 78.3066C16.4946 93.1351 28.1574 105.631 43.4857 105.631Z"/>
+</symbol>
+</defs></svg>
+
+<div class="page">
+
+  <div class="header">
+    <div class="lockup"><svg viewBox="0 0 391 157" style="height:32px;color:var(--light);"><use href="#pulse-wm"/></svg></div>
+    <div style="text-align:right;">
+      <div class="kicker">Sprint scope</div>
+      <div style="font-family:var(--font-mono);font-size:14px;letter-spacing:0.12em;color:var(--midtone-64);text-transform:uppercase;margin-top:4px;">Prepared by Adam Schlender · July 2026</div>
+    </div>
+  </div>
+
+  <div class="hero">
+    <h1>Sprint scope. What Adam <em class="verb">owns</em>.</h1>
+    <p>Five initiatives. Each one names the deliverable, the target, and how it converts into performance pay. Every dollar accountable to the <strong>$175 CAC</strong> frame.</p>
+  </div>
+
+  <div class="table">
+    <div class="thead">
+      <div>Initiative</div>
+      <div>Deliverable I own</div>
+      <div>Target</div>
+      <div>Performance component</div>
+    </div>
+
+    <div class="row teal">
+      <div class="init">
+        <div class="num-tag">01</div>
+        <div class="name">Creative Testing Engine</div>
+      </div>
+      <div class="cell"><strong>10 unique creative concepts × 3 variations each = 30 test assets</strong>, handed to the creative team. TikTok simultaneous test setup on Pulse's account. Winner selection + porting to Meta / Reddit.</div>
+      <div class="cell"><strong>3 winning concepts</strong> identified in 21 days. Top winner beats the <strong>$175 CAC</strong> baseline on TikTok.</div>
+      <div class="perf">10% commission on TikTok-attributed sales<div class="sub" style="margin-top:4px;">+ $500 per winning concept ported to Meta / Reddit.</div></div>
+    </div>
+
+    <div class="row magenta">
+      <div class="init">
+        <div class="num-tag">02</div>
+        <div class="name">Referral Program</div>
+      </div>
+      <div class="cell">Impact.com program <strong>built and launched</strong>. Founding Circle (~15 top customers) activated with codes. Attribution wired at checkout. Success path published for scale.</div>
+      <div class="cell"><strong>20 referral-attributed sales</strong> in month 1.</div>
+      <div class="perf">10% commission on referral-attributed sales<div class="sub" style="margin-top:4px;">Uncapped. Paid on close, monthly.</div></div>
+    </div>
+
+    <div class="row gold">
+      <div class="init">
+        <div class="num-tag">03</div>
+        <div class="name">Sponsored Event</div>
+      </div>
+      <div class="cell">One event delivered — <strong>Portal (SF), Daybreaker (NYC), or Mindvalley (LA)</strong>. Booth + demo units + on-site UGC capture + partnership seeding in the room.</div>
+      <div class="cell"><strong>30 direct sales</strong> on-site + <strong>15 UGC clips</strong> captured.</div>
+      <div class="perf">10% commission on event-attributed sales<div class="sub" style="margin-top:4px;">Same rate as other channels I own.</div></div>
+    </div>
+
+    <div class="row green">
+      <div class="init">
+        <div class="num-tag">04</div>
+        <div class="name">Named Partnership Outreach</div>
+      </div>
+      <div class="cell">4 warm intros — <strong>Daybreaker (Rada), Unify (Patrick), Insight Timer, Mindvalley</strong>. Pitch decks tailored per partner. Introduction sequence run through founder + advisors.</div>
+      <div class="cell"><strong>1 signed LOI or engagement</strong> by day 30.</div>
+      <div class="perf">$100 per ring on top-tier partnership deals<div class="sub" style="margin-top:4px;">On top of the 10% channel commission.</div></div>
+    </div>
+
+    <div class="row accent">
+      <div class="init">
+        <div class="num-tag">05</div>
+        <div class="name">Fundraising Leads</div>
+      </div>
+      <div class="cell">Preempt deck v1 + <strong>10 warm re-engagements</strong> across VC and angel network. Warm intros to Adam-sourced angels and micro-VCs from the Opus / SoundBed / Voice network.</div>
+      <div class="cell"><strong>2 warm intros to qualified leads</strong> sourced through Adam.</div>
+      <div class="perf">4% commission on Adam-sourced capital closed<div class="sub" style="margin-top:4px;">Paid on close. Uncapped.</div></div>
+    </div>
+
+  </div>
+
+  <div class="summary">
+    <div class="left">Base retainer: <strong>$3,000 / month</strong> + expenses at cost. Performance activates on delivery.</div>
+    <div class="right">Day-30 · Assess · Extend or wrap</div>
+  </div>
+
+  <div class="footer">
+    <span>$175 CAC · $229 retail · $83 COGS · every activity scored weekly</span>
+    <span>Pulse · Sprint scope · July 2026</span>
+  </div>
+
+</div>
+
+</body>
+</html>
