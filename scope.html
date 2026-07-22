@@ -34,7 +34,7 @@
 *{box-sizing:border-box;}
 html,body{margin:0;padding:0;background:var(--void);}
 .page{
-  width:1920px; height:1400px;
+  width:1920px; height:3060px;
   position:relative; overflow:hidden;
   font-family:var(--font-primary); color:var(--light);
   background:
@@ -56,7 +56,7 @@ strong{font-weight:600; color:var(--light);}
 .hero h1{font-size:96px; font-weight:300; letter-spacing:-0.03em; line-height:1.0; margin:0;}
 .hero p{font-size:24px; line-height:1.4; color:var(--light-64); margin:18px 0 0; max-width:1520px;}
 
-.table{display:flex; flex-direction:column; gap:8px; flex:1;}
+.table{display:flex; flex-direction:column; gap:8px;}
 
 .thead{display:grid; grid-template-columns:1fr 1.6fr 1.2fr 1.35fr; gap:20px; padding:0 26px 8px; border-bottom:1px solid var(--accent-24);}
 .thead > div{font-family:var(--font-mono); font-size:15px; letter-spacing:0.16em; text-transform:uppercase; color:var(--midtone);}
@@ -105,6 +105,124 @@ strong{font-weight:600; color:var(--light);}
 .summary .right{font-family:var(--font-mono); font-size:16px; letter-spacing:0.14em; text-transform:uppercase; color:var(--midtone);}
 
 .footer{display:flex; justify-content:space-between; align-items:center; font-size:16px; color:var(--midtone-64); font-family:var(--font-mono); letter-spacing:0.1em; text-transform:uppercase;}
+
+/* ====== Featured activation ====== */
+.feature{
+  margin-top:12px;
+  background:
+    radial-gradient(600px 400px at 100% 0%, rgba(255,215,100,0.06), transparent 60%),
+    linear-gradient(180deg, rgba(255,215,100,0.04) 0%, rgba(31,24,36,0.4) 100%);
+  border:1px solid var(--gold-24);
+  border-radius:16px;
+  padding:36px 44px;
+  display:flex; flex-direction:column; gap:26px;
+}
+.feature-head{display:flex; flex-direction:column; gap:8px;}
+.feature-head .kicker{color:var(--gold);}
+.feature-head h2{
+  font-size:64px; font-weight:300; letter-spacing:-0.02em; line-height:1.02; margin:0;
+}
+.feature-head h2 em{
+  font-family:var(--font-display); font-style:italic; color:var(--gold); opacity:0.95; font-weight:400;
+}
+.feature-head .lede{
+  font-size:22px; color:var(--light-64); margin:0; max-width:1520px; line-height:1.4;
+}
+
+.feature-grid{
+  display:grid;
+  grid-template-columns:1fr 620px;
+  gap:32px;
+  align-items:start;
+}
+.feature-col{display:flex; flex-direction:column; gap:16px;}
+
+.feature-card{
+  background:var(--dark-64);
+  border:1px solid var(--accent-24);
+  border-radius:12px;
+  padding:22px 26px;
+}
+.feature-card .card-label{
+  font-family:var(--font-mono); font-size:13px; letter-spacing:0.16em;
+  text-transform:uppercase; color:var(--gold); font-weight:500;
+  display:block; margin-bottom:14px;
+}
+.feature-card ul{margin:0; padding:0; list-style:none; display:flex; flex-direction:column; gap:12px;}
+.feature-card ul li{
+  font-size:18px; line-height:1.45; color:var(--light-64);
+  padding-left:22px; position:relative;
+}
+.feature-card ul li::before{
+  content:"·"; position:absolute; left:6px; top:-4px;
+  color:var(--gold); font-size:28px; font-weight:700; line-height:1;
+}
+.feature-card ul li strong{color:var(--light);}
+
+.tier-table{display:flex; flex-direction:column; gap:10px;}
+.tier{
+  display:grid; grid-template-columns:180px 130px 1fr; gap:16px;
+  padding:14px 18px;
+  border-radius:10px;
+  background:rgba(255,215,100,0.04);
+  border:1px solid var(--gold-24);
+  align-items:baseline;
+}
+.tier .tname{
+  font-family:var(--font-mono); font-size:14px; letter-spacing:0.14em;
+  text-transform:uppercase; color:var(--gold); font-weight:500;
+}
+.tier .tcost{
+  font-size:22px; font-weight:600; color:var(--light);
+  font-variant-numeric:tabular-nums;
+}
+.tier .tdesc{font-size:15px; line-height:1.45; color:var(--light-64);}
+.tier .tdesc strong{color:var(--light);}
+
+.feature-poster{
+  border:1px solid var(--gold-24);
+  border-radius:12px;
+  overflow:hidden;
+  background:var(--void);
+  align-self:start;
+}
+.feature-poster img{display:block; width:100%; height:auto;}
+.feature-poster .caption{
+  padding:12px 18px;
+  font-family:var(--font-mono); font-size:12px;
+  letter-spacing:0.14em; text-transform:uppercase;
+  color:var(--midtone-64); background:var(--dark-64);
+  border-top:1px solid var(--accent-24);
+}
+
+.backstory{
+  border:1px solid var(--accent-24); border-radius:12px;
+  background:var(--dark-64);
+  padding:0;
+}
+.backstory summary{
+  list-style:none;
+  padding:20px 26px;
+  cursor:pointer;
+  display:flex; align-items:center; justify-content:space-between;
+  font-family:var(--font-mono); font-size:15px; letter-spacing:0.16em;
+  text-transform:uppercase; color:var(--light);
+  user-select:none;
+}
+.backstory summary::-webkit-details-marker{display:none;}
+.backstory summary .caret{color:var(--gold); font-size:14px; transition:transform 0.2s;}
+.backstory[open] summary .caret{transform:rotate(180deg);}
+.backstory .backstory-body{
+  padding:0 26px 22px;
+  display:flex; flex-direction:column; gap:14px;
+  font-size:17px; line-height:1.55; color:var(--light-64);
+}
+.backstory .backstory-body p{margin:0;}
+.backstory .backstory-body strong{color:var(--light);}
+.backstory .backstory-body .div-line{
+  height:1px; background:var(--accent-24); border:none;
+  margin:0 0 18px; border-top:1px dashed var(--accent-24); background:transparent;
+}
 </style>
 </head>
 <body>
@@ -167,12 +285,12 @@ strong{font-weight:600; color:var(--light);}
     <div class="row gold">
       <div class="init">
         <div class="num-tag">03</div>
-        <div class="name">Sponsored Event</div>
+        <div class="name">Anchor Event · Iceland Eclipse</div>
       </div>
-      <div class="cell">One event delivered — <strong>Portal (SF), Daybreaker (NYC), or Mindvalley (LA)</strong>. Booth + demo units + on-site UGC capture + partnership seeding in the room.</div>
-      <div class="cell"><strong>30 direct sales</strong> on-site + <strong>15 UGC clips</strong> captured.</div>
-      <div class="perf">10% commission on event-attributed sales<div class="sub" style="margin-top:4px;">Same rate as other channels I own.</div></div>
-      <div class="deps"><span class="deps-tag">Dependencies</span><span class="deps-body">Separate <strong>event budget</strong> (venue, travel, booth, materials — est. $5-8k, at cost) · <strong>10-20 demo units</strong> allocated · <strong>Johan available</strong> for at least one founder-led day on-site · date locked 3+ weeks out.</span></div>
+      <div class="cell">Founder-led activation at <strong>Iceland Eclipse Festival · Aug 11–15 · Snæfellsnes Peninsula</strong>. Coordinated with <strong>Unify.org</strong> (Patrick Kronfli, host of the opening + eclipse ceremonies). Seeded rings on curated attendees, founder dinner in Adam's network, on-site UGC + partnership seeding. <em style="color:var(--gold);opacity:0.85;">See featured activation ↓</em></div>
+      <div class="cell"><strong>50 attributed sales</strong> (direct + post-event ring codes) + <strong>8 UGC clips</strong> + <strong>1 brand-film short cut</strong>.</div>
+      <div class="perf">10% commission on event-attributed sales<div class="sub" style="margin-top:4px;">+ $100 / ring on any Unify-partnership deal that closes downstream.</div></div>
+      <div class="deps"><span class="deps-tag">Dependencies</span><span class="deps-body">Confirmation from <strong>Patrick Kronfli (Unify)</strong> on activation format · <strong>demo rings</strong> allocated (tier-dependent) + Icelandic customs sorted · <strong>Johan or Adam on-site Aug 10–16</strong> · separate <strong>activation budget</strong> ($5–20k depending on tier, below) · optional on-site content team.</span></div>
     </div>
 
     <div class="row green">
@@ -203,6 +321,66 @@ strong{font-weight:600; color:var(--light);}
     <div class="left">Base retainer: <strong>$3,000 / month</strong> + expenses at cost. Performance activates on delivery.</div>
     <div class="right">Day-30 · Assess · Extend or wrap</div>
   </div>
+
+  <section class="feature">
+    <div class="feature-head">
+      <div class="kicker">Featured activation · Row 03</div>
+      <h1 style="font-size:64px; font-weight:300; letter-spacing:-0.02em; line-height:1.02; margin:0;">The Iceland <em class="verb" style="color:var(--gold);">Eclipse.</em></h1>
+      <p class="lede">Once-in-a-century total solar eclipse over Iceland — <strong style="color:var(--light);">Aug 12, 2026</strong>. Row 03 anchors here. The pitch, the poster, and what it costs.</p>
+    </div>
+
+    <div class="feature-grid">
+      <div class="feature-col">
+        <div class="feature-card">
+          <span class="card-label">The pitch</span>
+          <ul>
+            <li>Total solar eclipse over Iceland — <strong>Aug 12, 2026</strong>. First since 1954. Next in 2196.</li>
+            <li>Iceland Eclipse Festival · Aug 11–15 · Snæfellsnes Peninsula · <strong>3,333 curated attendees. Celestial Voyager passes already sold out.</strong></li>
+            <li><strong>Unify.org (Patrick Kronfli) hosts</strong> the Welcome Ceremony + the Eclipse Ceremony — a 45-min ritual with 15 musicians and a 30-person choir at totality.</li>
+            <li>Speaker roster is a Pulse-audience bullseye: <strong>Rick Doblin (MAPS), astronauts Sian Proctor / Jeanette Epps / Ron Garan, East Forest, Imogen Heap, Alex + Allyson Grey, Jordan Amadio (consciousness researcher).</strong></li>
+            <li>The eclipse forms <strong>a ring of light around the sun. So does Pulse.</strong> A reflection-point moment, staged as ritual — Pulse's positioning made physical.</li>
+          </ul>
+        </div>
+
+        <div class="feature-card">
+          <span class="card-label">Penciled economics · three activation tiers</span>
+          <div class="tier-table">
+            <div class="tier">
+              <div class="tname">Tier 1 · Lightweight</div>
+              <div class="tcost">$3–8k</div>
+              <div class="tdesc">Adam-only travel · <strong>10–20 rings seeded</strong> on Patrick, Unify team, adjacent speakers · founder dinner (12–20 pax) · <strong>5+ warm intros</strong> to VC and influencer targets already booked to attend.</div>
+            </div>
+            <div class="tier">
+              <div class="tname">Tier 2 · Moment</div>
+              <div class="tcost">$8–20k</div>
+              <div class="tdesc">Adam + Johan travel · <strong>40–80 rings seeded</strong> on curated attendees · <strong>1 videographer × 3 days</strong> · co-hosted micro-experience in Unify's Connect track.</div>
+            </div>
+            <div class="tier">
+              <div class="tname">Tier 3 · Anchor</div>
+              <div class="tcost">$20–60k</div>
+              <div class="tdesc">Full crew (Adam + Johan + content team) · <strong>100–150 rings seeded</strong> + named partnership with Unify (rings worn by ceremony leads) · <strong>2-day documentary shoot</strong> → 1 brand film + 8–12 social cuts.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="feature-poster">
+        <img src="assets/eclipse-lineup.png" alt="Iceland Eclipse Festival 2026 lineup poster">
+        <div class="caption">Iceland Eclipse Festival · lineup · icelandeclipse.com</div>
+      </div>
+    </div>
+
+    <details class="backstory" open>
+      <summary><span>The backstory — how this comes together</span><span class="caret">▾</span></summary>
+      <div class="backstory-body">
+        <p><strong>Patrick Kronfli is a dear friend from Austin.</strong> He co-runs Unify.org and hosts both the Welcome Ceremony and the Eclipse Ceremony at Iceland Eclipse. I'm already in contact with him about a low-cost activation.</p>
+        <p><strong>Unify.org has been coordinating synchronized global meditations for decades</strong> — one of the inspirations behind how I think about ritual, reflection, and shared consciousness. Their audience and Pulse's overlap heavily.</p>
+        <p><strong>The theme fits perfectly.</strong> An eclipse is a ring — a black disc encircled by radiant light. Pulse is a ring worn on the finger to reflect and regulate. Same visual, same reflection-point framing, different scale. This is a launch moment that doesn't feel like a launch.</p>
+        <p><strong>Half a dozen speakers and confirmed attendees are one degree from my network.</strong> Warm intros to potential investors and Insight Timer / Mindvalley-tier partners happen naturally over a shared meal — I don't have to manufacture the room.</p>
+        <p><strong>The scarcity is real.</strong> Celestial Voyager passes are already sold out. The festival is capped at 3,333. The next Icelandic total eclipse after this one is in 2196. Every asset we capture becomes durable content for the priced-round preempt and every channel that comes after it.</p>
+      </div>
+    </details>
+  </section>
 
   <div class="footer">
     <span>$175 CAC · $229 retail · $83 COGS · every activity scored weekly</span>
