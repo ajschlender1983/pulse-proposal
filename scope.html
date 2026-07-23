@@ -82,6 +82,47 @@ strong{font-weight:600; color:var(--light);}
 .row.accent  { border-left:5px solid var(--accent); }
 .row.orange  { border-left:5px solid var(--orange); }
 
+.row .math-strip{
+  grid-column:1 / -1;
+  padding:12px 16px;
+  background:rgba(240,147,94,0.05);
+  border:1px dashed rgba(240,147,94,0.24);
+  border-left:3px solid var(--orange);
+  border-radius:0 8px 8px 0;
+  display:grid;
+  grid-template-columns:1fr auto 1.4fr auto;
+  gap:16px;
+  align-items:center;
+  font-size:15px; line-height:1.4;
+}
+.row .math-strip .ms-side{display:flex; flex-direction:column; gap:2px;}
+.row .math-strip .ms-label{
+  font-family:var(--font-mono); font-size:11px;
+  letter-spacing:0.14em; text-transform:uppercase; color:var(--midtone-64);
+}
+.row .math-strip .ms-baseline{color:var(--light-64);}
+.row .math-strip .ms-baseline strong{color:var(--orange);}
+.row .math-strip .ms-here{color:var(--light);}
+.row .math-strip .ms-here strong{color:var(--light); font-weight:600;}
+.row .math-strip .ms-arrow{
+  color:var(--midtone); font-family:var(--font-mono);
+  font-size:20px; font-weight:300;
+}
+.row .math-strip .ms-mult{
+  padding:8px 14px;
+  border-radius:20px;
+  font-family:var(--font-mono); font-size:12px;
+  letter-spacing:0.14em; text-transform:uppercase;
+  font-weight:500; white-space:nowrap; color:var(--light);
+  border:1px solid var(--accent);
+}
+.row.teal    .math-strip .ms-mult{border-color:var(--teal);    color:var(--teal);}
+.row.magenta .math-strip .ms-mult{border-color:var(--magenta); color:var(--magenta);}
+.row.gold    .math-strip .ms-mult{border-color:var(--gold);    color:var(--gold);}
+.row.green   .math-strip .ms-mult{border-color:var(--green);   color:var(--green);}
+.row.accent  .math-strip .ms-mult{border-color:var(--accent);  color:var(--light);}
+.row.orange  .math-strip .ms-mult{border-color:var(--orange);  color:var(--orange);}
+
 .row .init{display:flex; flex-direction:column; gap:6px;}
 .row .init .num-tag{font-family:var(--font-mono); font-size:15px; letter-spacing:0.14em; text-transform:uppercase; font-weight:500;}
 .row .init .name{font-size:22px; font-weight:500; line-height:1.15;}
@@ -868,6 +909,18 @@ body.print-mode .feat-card[open]{border:none; background:transparent;}
     </div>
 
     <div class="row teal">
+      <div class="math-strip">
+        <div class="ms-side">
+          <div class="ms-label">$3K on ads →</div>
+          <div class="ms-baseline">17 customers · <strong>$175 CAC</strong> · –$500 net</div>
+        </div>
+        <div class="ms-arrow">→</div>
+        <div class="ms-side">
+          <div class="ms-label">$3K on this →</div>
+          <div class="ms-here"><strong>3 winning concepts</strong> that beat $175 CAC. Every future $3K on ads = <strong>30 customers, not 17</strong>. Effective CAC drops to <strong>~$100</strong>.</div>
+        </div>
+        <div class="ms-mult">≈ 1.8× · leverages every future $</div>
+      </div>
       <div class="init">
         <div class="num-tag">01</div>
         <div class="name">Creative Testing Engine</div>
@@ -879,6 +932,18 @@ body.print-mode .feat-card[open]{border:none; background:transparent;}
     </div>
 
     <div class="row magenta">
+      <div class="math-strip">
+        <div class="ms-side">
+          <div class="ms-label">$3K on ads →</div>
+          <div class="ms-baseline">17 customers · <strong>$175 CAC</strong> · –$500 net</div>
+        </div>
+        <div class="ms-arrow">→</div>
+        <div class="ms-side">
+          <div class="ms-label">$3K on this →</div>
+          <div class="ms-here"><strong>20 referral sales</strong> at <strong>~$25 effective CAC</strong> (10% discount off $259). <strong>18% more customers · 7× lower CAC</strong> than ads.</div>
+        </div>
+        <div class="ms-mult">≈ 7× CAC efficiency</div>
+      </div>
       <div class="init">
         <div class="num-tag">02</div>
         <div class="name">Referral Program</div>
@@ -890,6 +955,18 @@ body.print-mode .feat-card[open]{border:none; background:transparent;}
     </div>
 
     <div class="row gold">
+      <div class="math-strip">
+        <div class="ms-side">
+          <div class="ms-label">$3K on ads →</div>
+          <div class="ms-baseline">17 customers · <strong>$175 CAC</strong> · –$500 net</div>
+        </div>
+        <div class="ms-arrow">→</div>
+        <div class="ms-side">
+          <div class="ms-label">$3–8K here (Tier 1) →</div>
+          <div class="ms-here"><strong>20–40 attributed customers</strong> at <strong>~$100–150 CAC</strong> + <strong>5+ warm VC / influencer intros</strong> from the room + a durable content asset.</div>
+        </div>
+        <div class="ms-mult">≈ 1.5–2.4× + intros + assets</div>
+      </div>
       <div class="init">
         <div class="num-tag">03</div>
         <div class="name">Anchor Event · Iceland Eclipse</div>
@@ -901,6 +978,18 @@ body.print-mode .feat-card[open]{border:none; background:transparent;}
     </div>
 
     <div class="row green">
+      <div class="math-strip">
+        <div class="ms-side">
+          <div class="ms-label">$3K on ads →</div>
+          <div class="ms-baseline">17 customers · <strong>$175 CAC</strong> · –$500 net</div>
+        </div>
+        <div class="ms-arrow">→</div>
+        <div class="ms-side">
+          <div class="ms-label">$3–7K here (Tier 1) →</div>
+          <div class="ms-here"><strong>20–30 rings sold live</strong> at Alive LA + Austin + <strong>150-member Founding Community sold out in 30 days</strong>. ≈ <strong>170 total customers at ~$17 CAC</strong>.</div>
+        </div>
+        <div class="ms-mult">≈ 10× · cohort seed</div>
+      </div>
       <div class="init">
         <div class="num-tag">04</div>
         <div class="name">Named Partnership Outreach · Founding Community Launch</div>
@@ -912,6 +1001,18 @@ body.print-mode .feat-card[open]{border:none; background:transparent;}
     </div>
 
     <div class="row accent">
+      <div class="math-strip">
+        <div class="ms-side">
+          <div class="ms-label">$3K on ads →</div>
+          <div class="ms-baseline">17 customers · <strong>$175 CAC</strong> · –$500 net · $2,482 lifetime contribution</div>
+        </div>
+        <div class="ms-arrow">→</div>
+        <div class="ms-side">
+          <div class="ms-label">$3K on this (retainer time) →</div>
+          <div class="ms-here"><strong>4% of Adam-sourced capital.</strong> If $500K closes → <strong>$20K commission</strong>. If $2M → <strong>$80K</strong>. Same $3K, non-customer path — same moat: <strong>Distribution + Partner integration</strong>.</div>
+        </div>
+        <div class="ms-mult">≈ 8–32× ROI</div>
+      </div>
       <div class="init">
         <div class="num-tag">05</div>
         <div class="name">Fundraising Leads</div>
@@ -923,6 +1024,18 @@ body.print-mode .feat-card[open]{border:none; background:transparent;}
     </div>
 
     <div class="row orange">
+      <div class="math-strip">
+        <div class="ms-side">
+          <div class="ms-label">$3K on ads →</div>
+          <div class="ms-baseline">17 customers · <strong>$175 CAC</strong> · –$500 net · single-shot spend</div>
+        </div>
+        <div class="ms-arrow">→</div>
+        <div class="ms-side">
+          <div class="ms-label">$3K on this (design time) →</div>
+          <div class="ms-here"><strong>Product mechanic</strong> that lifts K-factor + 30-day retention across <strong>every future customer</strong>. If Sync-active customers refer at K=0.5, that's +8 customers per 17 forever — <strong>compounding, not spent</strong>.</div>
+        </div>
+        <div class="ms-mult">Compounding · K-factor lever</div>
+      </div>
       <div class="init">
         <div class="num-tag">06</div>
         <div class="name">Ritualize the Sync · shared-felt-experience</div>
