@@ -123,6 +123,90 @@ strong{font-weight:600; color:var(--light);}
 .row.accent  .math-strip .ms-mult{border-color:var(--accent);  color:var(--light);}
 .row.orange  .math-strip .ms-mult{border-color:var(--orange);  color:var(--orange);}
 
+/* ===== Simplified row v3 — description, actions, break-even, stretch, bonus ===== */
+.row.v3{
+  display:flex; flex-direction:column; gap:12px;
+  padding:20px 28px 16px;
+}
+.row.v3 .r3-head{
+  display:flex; justify-content:space-between; align-items:baseline; gap:20px;
+}
+.row.v3 .r3-head .init{gap:0;}
+.row.v3 .r3-head .init .num-tag{font-size:14px; letter-spacing:0.14em; margin-bottom:2px;}
+.row.v3 .r3-head .init .name{font-size:22px; font-weight:500;}
+.row.v3 .r3-desc{
+  font-size:17px; line-height:1.45; color:var(--light-64);
+}
+.row.v3 .r3-desc strong{color:var(--light);}
+.row.v3 .r3-fields{
+  display:grid;
+  grid-template-columns:0.9fr 1fr 1.3fr 1.2fr;
+  gap:0;
+  border:1px solid var(--accent-24);
+  border-radius:10px;
+  background:rgba(31,24,36,0.4);
+  overflow:hidden;
+}
+.row.v3 .field{
+  padding:14px 16px;
+  border-right:1px solid var(--accent-24);
+  display:flex; flex-direction:column; gap:6px;
+}
+.row.v3 .field:last-child{border-right:none;}
+.row.v3 .field .f-label{
+  font-family:var(--font-mono); font-size:11px;
+  letter-spacing:0.14em; text-transform:uppercase; color:var(--midtone-64);
+}
+.row.v3 .field .f-value{
+  font-size:15px; line-height:1.35; color:var(--light-64);
+}
+.row.v3 .field .f-value strong{color:var(--light);}
+.row.v3 .field .f-big{
+  font-size:22px; font-weight:600; color:var(--light);
+  line-height:1.1;
+  font-variant-numeric:tabular-nums;
+}
+.row.v3 .field .f-big + .f-sub{font-size:13px; color:var(--midtone); line-height:1.3;}
+
+.row.v3 .field.actions   .f-big{color:var(--light);}
+.row.v3 .field.breakeven .f-big{color:var(--orange);}
+.row.v3 .field.stretch   .f-big{color:var(--light);}
+.row.v3 .field.bonus     .f-big{color:var(--gold); font-size:18px;}
+
+.row.v3 .r3-drill{
+  border:1px solid var(--accent-24);
+  border-radius:8px;
+  background:rgba(31,24,36,0.3);
+  padding:0;
+}
+.row.v3 .r3-drill summary{
+  list-style:none; cursor:pointer;
+  padding:10px 16px;
+  font-family:var(--font-mono); font-size:12px;
+  letter-spacing:0.16em; text-transform:uppercase; color:var(--midtone);
+  display:flex; justify-content:space-between; align-items:center;
+}
+.row.v3 .r3-drill summary::-webkit-details-marker{display:none;}
+.row.v3 .r3-drill summary .caret{transition:transform 0.2s; color:var(--accent);}
+.row.v3 .r3-drill[open] summary .caret{transform:rotate(180deg);}
+.row.v3 .r3-drill .r3-drill-body{
+  padding:0 16px 16px;
+  border-top:1px dashed var(--accent-24);
+  padding-top:14px;
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  gap:16px;
+  font-size:14px; line-height:1.45; color:var(--light-64);
+}
+.row.v3 .r3-drill .r3-drill-body strong{color:var(--light);}
+.row.v3 .r3-drill .drill-block{display:flex; flex-direction:column; gap:6px;}
+.row.v3 .r3-drill .drill-label{
+  font-family:var(--font-mono); font-size:10px;
+  letter-spacing:0.14em; text-transform:uppercase; color:var(--midtone-64);
+}
+.row.v3 .r3-drill .drill-body strong{color:var(--light);}
+.row.v3 .deps{margin-top:2px;}
+
 .row .init{display:flex; flex-direction:column; gap:6px;}
 .row .init .num-tag{font-family:var(--font-mono); font-size:15px; letter-spacing:0.14em; text-transform:uppercase; font-weight:500;}
 .row .init .name{font-size:22px; font-weight:500; line-height:1.15;}
@@ -960,149 +1044,244 @@ body.print-mode .feat-card[open]{border:none; background:transparent;}
   </section>
 
   <div class="table">
-    <div class="thead">
-      <div>Initiative</div>
-      <div>Deliverable I own</div>
-      <div>Target</div>
-      <div>Performance component</div>
+    <div class="row teal v3">
+      <div class="r3-head">
+        <div class="init">
+          <div class="num-tag">01</div>
+          <div class="name">Creative Testing Engine</div>
+        </div>
+      </div>
+      <div class="r3-desc">Test 30 ad creative variants on TikTok. Identify the winners. Port them to Meta &amp; Reddit.</div>
+      <div class="r3-fields">
+        <div class="field actions">
+          <div class="f-label">Actions</div>
+          <div class="f-big">30</div>
+          <div class="f-value"><strong>test assets</strong> live on TikTok</div>
+        </div>
+        <div class="field breakeven">
+          <div class="f-label">Break-even @ $175 CAC</div>
+          <div class="f-big">17 sales</div>
+          <div class="f-value">to earn the $3K back at ad-spend baseline</div>
+        </div>
+        <div class="field stretch">
+          <div class="f-label">Stretch (units + CAC)</div>
+          <div class="f-big">30 sales / $3K forever</div>
+          <div class="f-value"><strong>3 winners at ~$100 CAC</strong> — every future $3K becomes 30 customers, not 17.</div>
+        </div>
+        <div class="field bonus">
+          <div class="f-label">Performance bonus</div>
+          <div class="f-big">10% + $500 / winner</div>
+          <div class="f-value">Commission on TikTok-attributed sales · $500 per winning concept ported.</div>
+        </div>
+      </div>
+      <details class="r3-drill"><summary><span>Details ▾ · deliverable + backstory</span><span class="caret">▾</span></summary>
+        <div class="r3-drill-body">
+          <div class="drill-block"><div class="drill-label">Deliverable I own</div><div class="drill-body"><strong>10 unique creative concepts × 3 variations each = 30 test assets</strong>, handed to the creative team. TikTok simultaneous test setup on Pulse's account. Winner selection + porting to Meta / Reddit.</div></div>
+          <div class="drill-block"><div class="drill-label">Vs. paid ads</div><div class="drill-body">$3K on ads = 17 customers · $175 CAC · –$500 net. This spend produces a <strong>system</strong>: every future $3K becomes 30 customers because CAC drops to ~$100.</div></div>
+          <div class="drill-block"><div class="drill-label">Moat lens</div><div class="drill-body"><strong>Distribution</strong> · <strong>Speed of implementation</strong>. Ad efficiency compounds; the creative library becomes an asset.</div></div>
+        </div>
+      </details>
+      <div class="deps"><span class="deps-tag">Dependencies</span><span class="deps-body">Access to Pulse's <strong>TikTok account</strong> · separate TikTok ad-test budget · <strong>Joyce positioning brief locked</strong> · <strong>Impact.com attribution wired</strong> · creative team available for 30 assets.</span></div>
     </div>
 
-    <div class="row teal">
-      <div class="math-strip">
-        <div class="ms-side">
-          <div class="ms-label">$3K on ads →</div>
-          <div class="ms-baseline">17 customers · <strong>$175 CAC</strong> · –$500 net</div>
+    <div class="row magenta v3">
+      <div class="r3-head">
+        <div class="init">
+          <div class="num-tag">02</div>
+          <div class="name">Referral Program</div>
         </div>
-        <div class="ms-arrow">→</div>
-        <div class="ms-side">
-          <div class="ms-label">$3K on this →</div>
-          <div class="ms-here"><strong>3 winning concepts</strong> that beat $175 CAC. Every future $3K on ads = <strong>30 customers, not 17</strong>. Effective CAC drops to <strong>~$100</strong>.</div>
+      </div>
+      <div class="r3-desc">Build the Impact.com referral program. Activate the Founding Circle (top 15 keepers) with codes. Publish a scaling playbook.</div>
+      <div class="r3-fields">
+        <div class="field actions">
+          <div class="f-label">Actions</div>
+          <div class="f-big">15 + 1</div>
+          <div class="f-value"><strong>15 Founding Circle</strong> customers activated · <strong>1 Impact.com program</strong> launched.</div>
         </div>
-        <div class="ms-mult">≈ 1.8× · leverages every future $</div>
+        <div class="field breakeven">
+          <div class="f-label">Break-even @ $175 CAC</div>
+          <div class="f-big">17 sales</div>
+          <div class="f-value">baseline to justify the $3K spend</div>
+        </div>
+        <div class="field stretch">
+          <div class="f-label">Stretch (units + CAC)</div>
+          <div class="f-big">20 sales · ~$25 CAC</div>
+          <div class="f-value"><strong>7× more CAC-efficient</strong> than ads (10% discount off $259).</div>
+        </div>
+        <div class="field bonus">
+          <div class="f-label">Performance bonus</div>
+          <div class="f-big">10% uncapped</div>
+          <div class="f-value">Commission on referral-attributed sales · paid on close, monthly.</div>
+        </div>
       </div>
-      <div class="init">
-        <div class="num-tag">01</div>
-        <div class="name">Creative Testing Engine</div>
-      </div>
-      <div class="cell"><strong>10 unique creative concepts × 3 variations each = 30 test assets</strong>, handed to the creative team. TikTok simultaneous test setup on Pulse's account. Winner selection + porting to Meta / Reddit.</div>
-      <div class="cell"><strong>3 winning concepts</strong> identified in 21 days. Top winner beats the <strong>$175 CAC</strong> baseline on TikTok.</div>
-      <div class="perf">10% commission on TikTok-attributed sales<div class="sub" style="margin-top:4px;">+ $500 per winning concept ported to Meta / Reddit.</div></div>
-      <div class="deps"><span class="deps-tag">Dependencies</span><span class="deps-body">Access to Pulse's <strong>TikTok account</strong> for posting and testing · separate TikTok ad-test budget · <strong>Joyce positioning brief locked</strong> so concepts inherit from one anchor · <strong>Impact.com attribution wired</strong> at checkout · creative team available for production of 30 assets.</span></div>
+      <details class="r3-drill"><summary><span>Details ▾ · deliverable + backstory</span><span class="caret">▾</span></summary>
+        <div class="r3-drill-body">
+          <div class="drill-block"><div class="drill-label">Deliverable I own</div><div class="drill-body">Impact.com program <strong>built and launched</strong>. Founding Circle (~15 top customers) activated with codes. Attribution wired at checkout. Success path published for scale.</div></div>
+          <div class="drill-block"><div class="drill-label">Vs. paid ads</div><div class="drill-body">$3K on ads = 17 customers at $175. Referral path delivers 20 at $25 — <strong>18% more customers, 7× lower CAC</strong>.</div></div>
+          <div class="drill-block"><div class="drill-label">Moat lens</div><div class="drill-body"><strong>Community network effects</strong> · <strong>Distribution</strong>. Every wearer makes the next one more likely.</div></div>
+        </div>
+      </details>
+      <div class="deps"><span class="deps-tag">Dependencies</span><span class="deps-body">Access to <strong>Impact.com</strong> account · Shopify dev capacity · <strong>Founding Circle customer list</strong> · Elliot approval on referral-code discount rate.</span></div>
     </div>
 
-    <div class="row magenta">
-      <div class="math-strip">
-        <div class="ms-side">
-          <div class="ms-label">$3K on ads →</div>
-          <div class="ms-baseline">17 customers · <strong>$175 CAC</strong> · –$500 net</div>
+    <div class="row gold v3">
+      <div class="r3-head">
+        <div class="init">
+          <div class="num-tag">03</div>
+          <div class="name">Anchor Event · Iceland Eclipse</div>
         </div>
-        <div class="ms-arrow">→</div>
-        <div class="ms-side">
-          <div class="ms-label">$3K on this →</div>
-          <div class="ms-here"><strong>20 referral sales</strong> at <strong>~$25 effective CAC</strong> (10% discount off $259). <strong>18% more customers · 7× lower CAC</strong> than ads.</div>
+      </div>
+      <div class="r3-desc">Founder-led activation at Iceland Eclipse Festival (Aug 11–15, Snæfellsnes Peninsula) — coordinated with Unify.org's opening + eclipse ceremonies.</div>
+      <div class="r3-fields">
+        <div class="field actions">
+          <div class="f-label">Actions</div>
+          <div class="f-big">10–20 rings</div>
+          <div class="f-value">seeded on Patrick, Unify team, adjacent speakers · <strong>1 founder dinner</strong> (12–20 pax).</div>
         </div>
-        <div class="ms-mult">≈ 7× CAC efficiency</div>
+        <div class="field breakeven">
+          <div class="f-label">Break-even @ $175 CAC</div>
+          <div class="f-big">17 sales</div>
+          <div class="f-value">Tier 1 activation budget ($3–8K)</div>
+        </div>
+        <div class="field stretch">
+          <div class="f-label">Stretch (units + CAC)</div>
+          <div class="f-big">20–40 sales · $100–150 CAC</div>
+          <div class="f-value"><strong>+ 5 warm VC intros</strong> from the room · <strong>1 brand-film short cut</strong> captured.</div>
+        </div>
+        <div class="field bonus">
+          <div class="f-label">Performance bonus</div>
+          <div class="f-big">10% + $100 / ring</div>
+          <div class="f-value">Event-attributed sales · Unify partnership downstream.</div>
+        </div>
       </div>
-      <div class="init">
-        <div class="num-tag">02</div>
-        <div class="name">Referral Program</div>
-      </div>
-      <div class="cell">Impact.com program <strong>built and launched</strong>. Founding Circle (~15 top customers) activated with codes. Attribution wired at checkout. Success path published for scale.</div>
-      <div class="cell"><strong>20 referral-attributed sales</strong> in month 1.</div>
-      <div class="perf">10% commission on referral-attributed sales<div class="sub" style="margin-top:4px;">Uncapped. Paid on close, monthly.</div></div>
-      <div class="deps"><span class="deps-tag">Dependencies</span><span class="deps-body">Access to <strong>Impact.com</strong> account and admin · Shopify dev capacity for checkout attribution wiring · <strong>Founding Circle customer list</strong> (top 15 keepers) with permission to contact · Elliot approval on referral-code discount rate.</span></div>
+      <details class="r3-drill"><summary><span>Details ▾ · full deliverable + backstory</span><span class="caret">▾</span></summary>
+        <div class="r3-drill-body">
+          <div class="drill-block"><div class="drill-label">Deliverable I own</div><div class="drill-body">Founder-led activation at <strong>Iceland Eclipse Festival · Aug 11–15 · Snæfellsnes Peninsula</strong>. Coordinated with <strong>Unify.org</strong> (Patrick Kronfli, host of the opening + eclipse ceremonies). Seeded rings on curated attendees, founder dinner in Adam's network, on-site UGC + partnership seeding. <em style="color:var(--gold);opacity:0.85;">See featured activation ↓</em></div></div>
+          <div class="drill-block"><div class="drill-label">Vs. paid ads</div><div class="drill-body">$3–8K here delivers 20–40 attributed customers at $100–150 CAC PLUS assets that compound (short film, UGC, warm intros). Ads don't do that.</div></div>
+          <div class="drill-block"><div class="drill-label">Moat lens</div><div class="drill-body"><strong>Partner integration</strong> · <strong>Innovation wins</strong> · <strong>Community network effects</strong>. Ring-shape thematic launch that doesn't feel like a launch.</div></div>
+        </div>
+      </details>
+      <div class="deps"><span class="deps-tag">Dependencies</span><span class="deps-body">Confirmation from <strong>Patrick Kronfli (Unify)</strong> · <strong>demo rings</strong> allocated + Icelandic customs sorted · <strong>Johan or Adam on-site Aug 10–16</strong> · separate activation budget ($5–20k depending on tier) · optional content team.</span></div>
     </div>
 
-    <div class="row gold">
-      <div class="math-strip">
-        <div class="ms-side">
-          <div class="ms-label">$3K on ads →</div>
-          <div class="ms-baseline">17 customers · <strong>$175 CAC</strong> · –$500 net</div>
+    <div class="row green v3">
+      <div class="r3-head">
+        <div class="init">
+          <div class="num-tag">04</div>
+          <div class="name">Named Partnerships · Founding Community Launch</div>
         </div>
-        <div class="ms-arrow">→</div>
-        <div class="ms-side">
-          <div class="ms-label">$3–8K here (Tier 1) →</div>
-          <div class="ms-here"><strong>20–40 attributed customers</strong> at <strong>~$100–150 CAC</strong> + <strong>5+ warm VC / influencer intros</strong> from the room + a durable content asset.</div>
+      </div>
+      <div class="r3-desc">Founding Community cohort launched at Sept 13 Alive LA + Sept 19 Let's Be Friends Austin — capped, numbered, engineered to sell out. Radha + Matthew are Opus investors, warm door.</div>
+      <div class="r3-fields">
+        <div class="field actions">
+          <div class="f-label">Actions</div>
+          <div class="f-big">2 events + 4</div>
+          <div class="f-value"><strong>2 activations</strong> (LA + Austin) · <strong>4 warm intros</strong> (Belong / Daybreaker · Unify · Insight Timer · Mindvalley).</div>
         </div>
-        <div class="ms-mult">≈ 1.5–2.4× + intros + assets</div>
+        <div class="field breakeven">
+          <div class="f-label">Break-even @ $175 CAC</div>
+          <div class="f-big">17 sales</div>
+          <div class="f-value">Tier 1 activation budget ($3–7K)</div>
+        </div>
+        <div class="field stretch">
+          <div class="f-label">Stretch (units + CAC)</div>
+          <div class="f-big">170 sales · ~$17 CAC</div>
+          <div class="f-value"><strong>150-member Founding Community sold out in 30 days</strong> + 20–30 rings on-site.</div>
+        </div>
+        <div class="field bonus">
+          <div class="f-label">Performance bonus</div>
+          <div class="f-big">10% + $100 / ring</div>
+          <div class="f-value">Founding Community rings sold · $100/ring on top-tier partnership deals downstream.</div>
+        </div>
       </div>
-      <div class="init">
-        <div class="num-tag">03</div>
-        <div class="name">Anchor Event · Iceland Eclipse</div>
-      </div>
-      <div class="cell">Founder-led activation at <strong>Iceland Eclipse Festival · Aug 11–15 · Snæfellsnes Peninsula</strong>. Coordinated with <strong>Unify.org</strong> (Patrick Kronfli, host of the opening + eclipse ceremonies). Seeded rings on curated attendees, founder dinner in Adam's network, on-site UGC + partnership seeding. <em style="color:var(--gold);opacity:0.85;">See featured activation ↓</em></div>
-      <div class="cell"><strong>50 attributed sales</strong> (direct + post-event ring codes) + <strong>8 UGC clips</strong> + <strong>1 brand-film short cut</strong>.</div>
-      <div class="perf">10% commission on event-attributed sales<div class="sub" style="margin-top:4px;">+ $100 / ring on any Unify-partnership deal that closes downstream.</div></div>
-      <div class="deps"><span class="deps-tag">Dependencies</span><span class="deps-body">Confirmation from <strong>Patrick Kronfli (Unify)</strong> on activation format · <strong>demo rings</strong> allocated (tier-dependent) + Icelandic customs sorted · <strong>Johan or Adam on-site Aug 10–16</strong> · separate <strong>activation budget</strong> ($5–20k depending on tier, below) · optional on-site content team.</span></div>
+      <details class="r3-drill"><summary><span>Details ▾ · full deliverable + backstory</span><span class="caret">▾</span></summary>
+        <div class="r3-drill-body">
+          <div class="drill-block"><div class="drill-label">Deliverable I own</div><div class="drill-body">4 warm intros — <strong>Belong Center + Daybreaker (Radha + Matthew, existing Opus investors), Unify (Patrick), Insight Timer, Mindvalley</strong>. Founding Community launched at Sept 13 Alive LA + Sept 19 Austin. <em style="color:var(--green);opacity:0.85;">See September Sprint ↓</em></div></div>
+          <div class="drill-block"><div class="drill-label">Vs. paid ads</div><div class="drill-body">$3–7K here → 170 customers at $17 CAC vs. 17 at $175. <strong>10× more customers, 10× lower CAC</strong>. Plus a sold-out mechanic that becomes durable content.</div></div>
+          <div class="drill-block"><div class="drill-label">Moat lens</div><div class="drill-body"><strong>Distribution</strong> · <strong>Community network effects</strong> · <strong>Partner integration</strong>. Sold-out cohort seeds K-factor + Pulse Plus attach + priced-round narrative.</div></div>
+        </div>
+      </details>
+      <div class="deps"><span class="deps-tag">Dependencies</span><span class="deps-body"><strong>Existing Radha + Matthew relationship</strong> · Sept 13 + Sept 19 dates locked · pitch deck materials · Joyce sign-off on offer + pricing · Impact.com attribution for cohort tracking.</span></div>
     </div>
 
-    <div class="row green">
-      <div class="math-strip">
-        <div class="ms-side">
-          <div class="ms-label">$3K on ads →</div>
-          <div class="ms-baseline">17 customers · <strong>$175 CAC</strong> · –$500 net</div>
+    <div class="row accent v3">
+      <div class="r3-head">
+        <div class="init">
+          <div class="num-tag">05</div>
+          <div class="name">Fundraising Leads</div>
         </div>
-        <div class="ms-arrow">→</div>
-        <div class="ms-side">
-          <div class="ms-label">$3–7K here (Tier 1) →</div>
-          <div class="ms-here"><strong>20–30 rings sold live</strong> at Alive LA + Austin + <strong>150-member Founding Community sold out in 30 days</strong>. ≈ <strong>170 total customers at ~$17 CAC</strong>.</div>
+      </div>
+      <div class="r3-desc">Preempt deck v1 + warm re-engagements across Adam's VC and angel network (Opus / SoundBed / Voice). Non-customer path — commission-based.</div>
+      <div class="r3-fields">
+        <div class="field actions">
+          <div class="f-label">Actions</div>
+          <div class="f-big">10 warm re-engagements</div>
+          <div class="f-value">across VC and angel network · <strong>2 qualified lead intros</strong> sourced.</div>
         </div>
-        <div class="ms-mult">≈ 10× · cohort seed</div>
+        <div class="field breakeven">
+          <div class="f-label">Break-even (capital)</div>
+          <div class="f-big">$75K sourced</div>
+          <div class="f-value">4% commission covers the $3K retainer.</div>
+        </div>
+        <div class="field stretch">
+          <div class="f-label">Stretch (capital + $)</div>
+          <div class="f-big">$500K → $20K · $2M → $80K</div>
+          <div class="f-value"><strong>8–32× ROI</strong> if Adam-sourced leads close.</div>
+        </div>
+        <div class="field bonus">
+          <div class="f-label">Performance bonus</div>
+          <div class="f-big">4% uncapped</div>
+          <div class="f-value">Commission on Adam-sourced capital closed · paid on close.</div>
+        </div>
       </div>
-      <div class="init">
-        <div class="num-tag">04</div>
-        <div class="name">Named Partnership Outreach · Founding Community Launch</div>
-      </div>
-      <div class="cell">4 warm intros — <strong>Belong Center + Daybreaker (Radha Agrawal + Matthew Brimer, existing Opus investors), Unify (Patrick Kronfli), Insight Timer, Mindvalley</strong>. <strong>Founding Community</strong> launched at <strong>Sept 13 Alive LA + Sept 19 Let's Be Friends Austin</strong> — capped, numbered, engineered to sell out. <em style="color:var(--green);opacity:0.85;">See September Sprint ↓</em></div>
-      <div class="cell"><strong>1 signed LOI or engagement</strong> by day 30 + <strong>Founding Community cohort sold out</strong> (target cap 150–500 depending on tier).</div>
-      <div class="perf">$100 per ring on top-tier partnership deals<div class="sub" style="margin-top:4px;">+ 10% commission on Founding Community rings sold.</div></div>
-      <div class="deps"><span class="deps-tag">Dependencies</span><span class="deps-body"><strong>Existing Radha + Matthew relationship</strong> activated · Sept 13 + Sept 19 dates locked · pitch deck materials (priced-round preempt, adapted per partner) · Joyce sign-off on Founding Community offer copy + pricing · Impact.com attribution for cohort tracking.</span></div>
+      <details class="r3-drill"><summary><span>Details ▾ · full deliverable + backstory</span><span class="caret">▾</span></summary>
+        <div class="r3-drill-body">
+          <div class="drill-block"><div class="drill-label">Deliverable I own</div><div class="drill-body">Preempt deck v1 + <strong>10 warm re-engagements</strong> across VC and angel network. Warm intros to Adam-sourced angels and micro-VCs from the Opus / SoundBed / Voice network.</div></div>
+          <div class="drill-block"><div class="drill-label">Vs. paid ads</div><div class="drill-body">$3K on ads = $2,482 lifetime contribution. $3K here = potentially $20–80K in commission on a raise close. Different math, same moat.</div></div>
+          <div class="drill-block"><div class="drill-label">Moat lens</div><div class="drill-body"><strong>Distribution</strong> (capital) · <strong>Partner integration</strong>. Capital in enables everything above.</div></div>
+        </div>
+      </details>
+      <div class="deps"><span class="deps-tag">Dependencies</span><span class="deps-body">Latest <strong>financials + data room</strong> · existing <strong>VC CRM</strong> · <strong>Johan available for investor meetings</strong> · attribution rules signed · preempt deck template.</span></div>
     </div>
 
-    <div class="row accent">
-      <div class="math-strip">
-        <div class="ms-side">
-          <div class="ms-label">$3K on ads →</div>
-          <div class="ms-baseline">17 customers · <strong>$175 CAC</strong> · –$500 net · $2,482 lifetime contribution</div>
+    <div class="row orange v3">
+      <div class="r3-head">
+        <div class="init">
+          <div class="num-tag">06</div>
+          <div class="name">Ritualize the Sync · shared-felt-experience</div>
         </div>
-        <div class="ms-arrow">→</div>
-        <div class="ms-side">
-          <div class="ms-label">$3K on this (retainer time) →</div>
-          <div class="ms-here"><strong>4% of Adam-sourced capital.</strong> If $500K closes → <strong>$20K commission</strong>. If $2M → <strong>$80K</strong>. Same $3K, non-customer path — same moat: <strong>Distribution + Partner integration</strong>.</div>
+      </div>
+      <div class="r3-desc">Design + spec the Pulse Sync ritual (coordinated pulse moments · couples / trio / family). Weekly community-feedback loop into the product roadmap. Owns "sticky + shareable."</div>
+      <div class="r3-fields">
+        <div class="field actions">
+          <div class="f-label">Actions</div>
+          <div class="f-big">1 spec + 1 ritual</div>
+          <div class="f-value"><strong>Sync ritual spec</strong> + <strong>1 public anchor ritual</strong> live · weekly community-feedback loop.</div>
         </div>
-        <div class="ms-mult">≈ 8–32× ROI</div>
-      </div>
-      <div class="init">
-        <div class="num-tag">05</div>
-        <div class="name">Fundraising Leads</div>
-      </div>
-      <div class="cell">Preempt deck v1 + <strong>10 warm re-engagements</strong> across VC and angel network. Warm intros to Adam-sourced angels and micro-VCs from the Opus / SoundBed / Voice network.</div>
-      <div class="cell"><strong>2 warm intros to qualified leads</strong> sourced through Adam.</div>
-      <div class="perf">4% commission on Adam-sourced capital closed<div class="sub" style="margin-top:4px;">Paid on close. Uncapped.</div></div>
-      <div class="deps"><span class="deps-tag">Dependencies</span><span class="deps-body">Latest <strong>financials + data room</strong> access · existing <strong>VC CRM</strong> read/write · <strong>Johan available for investor meetings</strong> · attribution rules signed (what counts as "Adam-sourced") · preempt deck template.</span></div>
-    </div>
-
-    <div class="row orange">
-      <div class="math-strip">
-        <div class="ms-side">
-          <div class="ms-label">$3K on ads →</div>
-          <div class="ms-baseline">17 customers · <strong>$175 CAC</strong> · –$500 net · single-shot spend</div>
+        <div class="field breakeven">
+          <div class="f-label">Break-even @ $175 CAC</div>
+          <div class="f-big">17 sales downstream</div>
+          <div class="f-value">via K-factor lift on the existing base.</div>
         </div>
-        <div class="ms-arrow">→</div>
-        <div class="ms-side">
-          <div class="ms-label">$3K on this (design time) →</div>
-          <div class="ms-here"><strong>Product mechanic</strong> that lifts K-factor + 30-day retention across <strong>every future customer</strong>. If Sync-active customers refer at K=0.5, that's +8 customers per 17 forever — <strong>compounding, not spent</strong>.</div>
+        <div class="field stretch">
+          <div class="f-label">Stretch (units + CAC)</div>
+          <div class="f-big">30% weekly-active + K↑</div>
+          <div class="f-value"><strong>30% of Founding Community</strong> using Sync weekly · K=0.5 → +8 customers per 17, forever.</div>
         </div>
-        <div class="ms-mult">Compounding · K-factor lever</div>
+        <div class="field bonus">
+          <div class="f-label">Performance bonus</div>
+          <div class="f-big">Retention $ + $500 / ritual</div>
+          <div class="f-value">Bonus on Sync-attributed 30-day retention · $500 per public anchor ritual launched.</div>
+        </div>
       </div>
-      <div class="init">
-        <div class="num-tag">06</div>
-        <div class="name">Ritualize the Sync · shared-felt-experience</div>
-      </div>
-      <div class="cell">Someone obsessed with making the product <strong>sticky and shareable.</strong> Design + spec the <strong>Pulse Sync ritual</strong> (coordinated pulse moments · couples / trio / family modes · public anchor rituals). Weekly community-feedback loop that pipes directly into the product roadmap.</div>
-      <div class="cell">By day 60 — Sync ritual specced · <strong>30% of Founding Community</strong> using a shared moment weekly · <strong>1 public anchor ritual</strong> live (Iceland-eclipse coordinated pulse · Alive LA sunrise sync).</div>
-      <div class="perf">Bonus on Sync-attributed 30-day retention<div class="sub" style="margin-top:4px;">+ $500 per public anchor ritual launched.</div></div>
-      <div class="deps"><span class="deps-tag">Dependencies</span><span class="deps-body">Product team access · engineering capacity for the Sync layer (or spec-only if not-yet-built) · <strong>Radha Agrawal as advisor</strong> (see below) · Founding Community list · Impact.com attribution for shared-code tracking.</span></div>
+      <details class="r3-drill"><summary><span>Details ▾ · full deliverable + backstory</span><span class="caret">▾</span></summary>
+        <div class="r3-drill-body">
+          <div class="drill-block"><div class="drill-label">Deliverable I own</div><div class="drill-body">Someone obsessed with making the product <strong>sticky and shareable.</strong> Design + spec the <strong>Pulse Sync ritual</strong> (coordinated pulse moments · couples / trio / family modes · public anchor rituals). Weekly community-feedback loop that pipes directly into the product roadmap.</div></div>
+          <div class="drill-block"><div class="drill-label">Vs. paid ads</div><div class="drill-body">$3K on ads = 17 one-shot customers. $3K here = a mechanic that lifts K-factor + retention across <strong>every future customer</strong>. Compounding, not spent.</div></div>
+          <div class="drill-block"><div class="drill-label">Moat lens</div><div class="drill-body"><strong>Community network effects</strong> · <strong>Community-feedback velocity</strong> · <strong>Innovation wins</strong>. Radha as advisor — see Sept Sprint.</div></div>
+        </div>
+      </details>
+      <div class="deps"><span class="deps-tag">Dependencies</span><span class="deps-body">Product team access · engineering capacity for Sync (or spec-only if not-yet-built) · <strong>Radha Agrawal as advisor</strong> · Founding Community list · Impact.com attribution for shared-code tracking.</span></div>
     </div>
 
   </div>
