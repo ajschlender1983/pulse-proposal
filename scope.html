@@ -207,6 +207,47 @@ strong{font-weight:600; color:var(--light);}
 .row.v3 .r3-drill .drill-body strong{color:var(--light);}
 .row.v3 .deps{margin-top:2px;}
 
+/* ===== Impact.com platform callout ===== */
+.impact-callout{
+  display:grid;
+  grid-template-columns:auto 1fr auto;
+  gap:24px;
+  align-items:center;
+  padding:18px 24px;
+  border:1px solid var(--teal-24);
+  border-left:5px solid var(--teal);
+  border-radius:12px;
+  background:
+    radial-gradient(400px 240px at 100% 0%, rgba(106,223,217,0.08), transparent 60%),
+    linear-gradient(180deg, rgba(106,223,217,0.03) 0%, rgba(31,24,36,0.4) 100%);
+  margin-bottom:12px;
+}
+.impact-callout .ic-brand{
+  font-family:var(--font-mono); font-size:14px;
+  letter-spacing:0.16em; text-transform:uppercase;
+  color:var(--teal); font-weight:600;
+  padding:8px 16px;
+  border:1px solid var(--teal);
+  border-radius:20px;
+  white-space:nowrap;
+}
+.impact-callout .ic-body{
+  font-size:15px; line-height:1.5; color:var(--light-64);
+}
+.impact-callout .ic-body strong{color:var(--light);}
+.impact-callout .ic-body em{
+  font-family:var(--font-display); font-style:italic; color:var(--teal);
+  opacity:0.9; font-weight:400;
+}
+.impact-callout .ic-stats{
+  display:flex; gap:20px;
+  font-family:var(--font-mono); font-size:12px;
+  letter-spacing:0.12em; text-transform:uppercase;
+  color:var(--midtone);
+  white-space:nowrap;
+}
+.impact-callout .ic-stats .ic-stat strong{color:var(--teal); font-size:16px; display:block; margin-bottom:2px;}
+
 .row .init{display:flex; flex-direction:column; gap:6px;}
 .row .init .num-tag{font-family:var(--font-mono); font-size:15px; letter-spacing:0.14em; text-transform:uppercase; font-weight:500;}
 .row .init .name{font-size:22px; font-weight:500; line-height:1.15;}
@@ -1088,15 +1129,15 @@ body.print-mode .feat-card[open]{border:none; background:transparent;}
       <div class="r3-head">
         <div class="init">
           <div class="num-tag">02</div>
-          <div class="name">Referral Program</div>
+          <div class="name">Performance Partnerships · Referral Layer</div>
         </div>
       </div>
-      <div class="r3-desc">Build the Impact.com referral program. Activate the Founding Circle (top 15 keepers) with codes. Publish a scaling playbook.</div>
+      <div class="r3-desc"><strong>Stand up Impact.com as the platform</strong> that every downstream performance partnership plugs into. Activate the Founding Circle (top 15 keepers) as first-wave customer-referral partners with dedicated SubIDs. Publish the scaling playbook for named partners (Row 04) to inherit.</div>
       <div class="r3-fields">
         <div class="field actions">
           <div class="f-label">Actions</div>
-          <div class="f-big">15 + 1</div>
-          <div class="f-value"><strong>15 Founding Circle</strong> customers activated · <strong>1 Impact.com program</strong> launched.</div>
+          <div class="f-big">15 partners + platform</div>
+          <div class="f-value"><strong>15 Founding Circle</strong> activated as referral partners · <strong>Impact.com platform</strong> stood up, attributed, and Adam-owned end-to-end.</div>
         </div>
         <div class="field breakeven">
           <div class="f-label">Break-even @ $175 CAC</div>
@@ -1106,22 +1147,22 @@ body.print-mode .feat-card[open]{border:none; background:transparent;}
         <div class="field stretch">
           <div class="f-label">Stretch (units + CAC)</div>
           <div class="f-big">20 sales · ~$25 CAC</div>
-          <div class="f-value"><strong>7× more CAC-efficient</strong> than ads (10% discount off $259).</div>
+          <div class="f-value"><strong>7× more CAC-efficient</strong> than ads (10% discount off $259). Every downstream partner inherits the same infrastructure.</div>
         </div>
         <div class="field bonus">
           <div class="f-label">Performance bonus</div>
           <div class="f-big">10% uncapped</div>
-          <div class="f-value">Commission on referral-attributed sales · paid on close, monthly.</div>
+          <div class="f-value">Commission on referral-attributed sales · dynamic payouts via Impact.com · paid on close, monthly.</div>
         </div>
       </div>
-      <details class="r3-drill"><summary><span>Details ▾ · deliverable + backstory</span><span class="caret">▾</span></summary>
+      <details class="r3-drill"><summary><span>Details ▾ · Impact.com platform + backstory</span><span class="caret">▾</span></summary>
         <div class="r3-drill-body">
-          <div class="drill-block"><div class="drill-label">Deliverable I own</div><div class="drill-body">Impact.com program <strong>built and launched</strong>. Founding Circle (~15 top customers) activated with codes. Attribution wired at checkout. Success path published for scale.</div></div>
-          <div class="drill-block"><div class="drill-label">Vs. paid ads</div><div class="drill-body">$3K on ads = 17 customers at $175. Referral path delivers 20 at $25 — <strong>18% more customers, 7× lower CAC</strong>.</div></div>
-          <div class="drill-block"><div class="drill-label">Moat lens</div><div class="drill-body"><strong>Community network effects</strong> · <strong>Distribution</strong>. Every wearer makes the next one more likely.</div></div>
+          <div class="drill-block"><div class="drill-label">Deliverable I own</div><div class="drill-body"><strong>Impact.com platform stood up and Adam-owned</strong>: brand account provisioned, cross-device attribution wired at checkout, contract templates drafted, dynamic-payout rules configured. Founding Circle (~15 top customers) contracted as referral partners with dedicated SubIDs + promo codes. Success playbook documented so <strong>every downstream partnership (Row 04) inherits the same rails</strong>.</div></div>
+          <div class="drill-block"><div class="drill-label">Vs. paid ads</div><div class="drill-body">$3K on ads = 17 customers at $175 CAC — one-shot spend. $3K here = <strong>the platform + first cohort</strong> that every future partner runs through. Ads don't leave infrastructure behind. This does.</div></div>
+          <div class="drill-block"><div class="drill-label">Moat lens</div><div class="drill-body"><strong>Community network effects</strong> · <strong>Distribution</strong> · <strong>Partner integration</strong>. Impact.com becomes the single spine for referrals, ambassadors, named partners, and creator relationships. One system, every partner.</div></div>
         </div>
       </details>
-      <div class="deps"><span class="deps-tag">Dependencies</span><span class="deps-body">Access to <strong>Impact.com</strong> account · Shopify dev capacity · <strong>Founding Circle customer list</strong> · Elliot approval on referral-code discount rate.</span></div>
+      <div class="deps"><span class="deps-tag">Dependencies</span><span class="deps-body"><strong>Impact.com brand account</strong> + Adam owner-level access · Shopify dev capacity for checkout attribution wiring · <strong>Founding Circle customer list</strong> (top 15 keepers) with permission to contact · Elliot approval on referral-code discount rate + dynamic-payout config.</span></div>
     </div>
 
     <div class="row gold v3">
@@ -1168,15 +1209,15 @@ body.print-mode .feat-card[open]{border:none; background:transparent;}
       <div class="r3-head">
         <div class="init">
           <div class="num-tag">04</div>
-          <div class="name">Named Partnerships · Founding Community Launch</div>
+          <div class="name">Performance Partnerships · Named</div>
         </div>
       </div>
-      <div class="r3-desc">Founding Community cohort launched at Sept 13 Alive LA + Sept 19 Let's Be Friends Austin — capped, numbered, engineered to sell out. Radha + Matthew are Opus investors, warm door.</div>
+      <div class="r3-desc"><strong>Four named performance partners contracted in Impact.com</strong>, each with a dedicated SubID, custom commission structure, and dynamic payout stream. The launch event: Founding Community cohort at Sept 13 Alive LA + Sept 19 LBF Austin.</div>
       <div class="r3-fields">
         <div class="field actions">
           <div class="f-label">Actions</div>
-          <div class="f-big">2 events + 4</div>
-          <div class="f-value"><strong>2 activations</strong> (LA + Austin) · <strong>4 warm intros</strong> (Belong / Daybreaker · Unify · Insight Timer · Mindvalley).</div>
+          <div class="f-big">4 performance partners</div>
+          <div class="f-value"><strong>Belong Center + Daybreaker</strong> (Radha + Matthew, Opus investors) · <strong>Unify</strong> (Patrick) · <strong>Insight Timer</strong> · <strong>Mindvalley</strong>. Contracted, SubID'd, live in Impact.com.</div>
         </div>
         <div class="field breakeven">
           <div class="f-label">Break-even @ $175 CAC</div>
@@ -1186,22 +1227,22 @@ body.print-mode .feat-card[open]{border:none; background:transparent;}
         <div class="field stretch">
           <div class="f-label">Stretch (units + CAC)</div>
           <div class="f-big">170 sales · ~$17 CAC</div>
-          <div class="f-value"><strong>150-member Founding Community sold out in 30 days</strong> + 20–30 rings on-site.</div>
+          <div class="f-value"><strong>150-member Founding Community sold out in 30 days</strong> + 20–30 rings on-site — all attribution routed through Impact.com SubIDs.</div>
         </div>
         <div class="field bonus">
           <div class="f-label">Performance bonus</div>
           <div class="f-big">10% + $100 / ring</div>
-          <div class="f-value">Founding Community rings sold · $100/ring on top-tier partnership deals downstream.</div>
+          <div class="f-value">Commission on Founding Community rings sold via any partner SubID · $100/ring on top-tier partnership deals closed through the platform.</div>
         </div>
       </div>
-      <details class="r3-drill"><summary><span>Details ▾ · full deliverable + backstory</span><span class="caret">▾</span></summary>
+      <details class="r3-drill"><summary><span>Details ▾ · Impact.com contracts + backstory</span><span class="caret">▾</span></summary>
         <div class="r3-drill-body">
-          <div class="drill-block"><div class="drill-label">Deliverable I own</div><div class="drill-body">4 warm intros — <strong>Belong Center + Daybreaker (Radha + Matthew, existing Opus investors), Unify (Patrick), Insight Timer, Mindvalley</strong>. Founding Community launched at Sept 13 Alive LA + Sept 19 Austin. <em style="color:var(--green);opacity:0.85;">See September Sprint ↓</em></div></div>
-          <div class="drill-block"><div class="drill-label">Vs. paid ads</div><div class="drill-body">$3–7K here → 170 customers at $17 CAC vs. 17 at $175. <strong>10× more customers, 10× lower CAC</strong>. Plus a sold-out mechanic that becomes durable content.</div></div>
-          <div class="drill-block"><div class="drill-label">Moat lens</div><div class="drill-body"><strong>Distribution</strong> · <strong>Community network effects</strong> · <strong>Partner integration</strong>. Sold-out cohort seeds K-factor + Pulse Plus attach + priced-round narrative.</div></div>
+          <div class="drill-block"><div class="drill-label">Deliverable I own</div><div class="drill-body">Four named partners contracted in <strong>Impact.com</strong> — <strong>Belong Center + Daybreaker (Radha + Matthew, existing Opus investors), Unify (Patrick), Insight Timer, Mindvalley</strong>. Each partner gets a dedicated SubID, custom commission rate, and a launch-window payout structure. Founding Community rings sell through partner-attributed links + promo codes. <em style="color:var(--green);opacity:0.85;">See September Sprint ↓</em></div></div>
+          <div class="drill-block"><div class="drill-label">Two distinct Radha relationships</div><div class="drill-body">(a) <strong>Belong / Daybreaker as a performance partner</strong> in Impact.com — standard commission structure, attributed via SubID. (b) <strong>Radha herself as recommended advisor</strong> — 0.25–0.5% equity, monthly touch on community mechanics + Sync feature. See the advisor callout below.</div></div>
+          <div class="drill-block"><div class="drill-label">Moat lens</div><div class="drill-body"><strong>Distribution</strong> · <strong>Community network effects</strong> · <strong>Partner integration</strong>. Sold-out cohort seeds K-factor + Pulse Plus attach + priced-round narrative. Every dollar attributable, every partner comparable in Impact.com dashboards.</div></div>
         </div>
       </details>
-      <div class="deps"><span class="deps-tag">Dependencies</span><span class="deps-body"><strong>Existing Radha + Matthew relationship</strong> · Sept 13 + Sept 19 dates locked · pitch deck materials · Joyce sign-off on offer + pricing · Impact.com attribution for cohort tracking.</span></div>
+      <div class="deps"><span class="deps-tag">Dependencies</span><span class="deps-body"><strong>Impact.com contracts drafted per partner</strong> (Adam-owned) + <strong>dedicated SubIDs allocated</strong> · <strong>existing Radha + Matthew relationship</strong> · Sept 13 + Sept 19 dates locked · pitch deck materials · Joyce sign-off on offer + pricing.</span></div>
     </div>
 
     <div class="row accent v3">
@@ -1294,11 +1335,22 @@ body.print-mode .feat-card[open]{border:none; background:transparent;}
   <section class="partner-matrix">
     <div class="pm-head">
       <div>
-        <div class="kicker">Partner touchpoints · the same aligned humans, across the calendar</div>
+        <div class="kicker">Performance partnerships · one audience, multiple rooms</div>
         <h2>One <em>audience</em>. Multiple touchpoints. Named.</h2>
       </div>
     </div>
-    <p class="pm-lede">Each of these partners is already Adam-connected. They're all going to be at these events — meaning <strong>a broad audience meets Pulse in multiple rooms, from multiple messengers, over one summer.</strong> The matrix below reads left→right: <strong>who is behind it · where you meet them · which moat it serves.</strong></p>
+
+    <div class="impact-callout">
+      <div class="ic-brand">Powered by Impact.com</div>
+      <div class="ic-body"><strong>Every partnership runs through Impact.com</strong> — <em>the No. 1 unified performance partnerships platform.</em> Contract management, cross-device attribution, dynamic payouts, custom SubIDs per activation. <strong>Adam owns the platform end-to-end</strong> — setup, recruitment, contracts, attribution wiring, payout ops.</div>
+      <div class="ic-stats">
+        <div class="ic-stat"><strong>330K+</strong>vetted partners</div>
+        <div class="ic-stat"><strong>1.27M</strong>partnerships</div>
+        <div class="ic-stat"><strong>$717M</strong>partner-driven revenue</div>
+      </div>
+    </div>
+
+    <p class="pm-lede">Each of these named partners is already Adam-connected — <strong>every one enters as an Impact.com performance partner</strong> with its own SubID, contract, and payout stream. They're all going to be at these events too — meaning <strong>a broad audience meets Pulse in multiple rooms, from multiple messengers, over one summer.</strong> The matrix below reads left→right: <strong>who is behind it · where you meet them · which moat it serves.</strong></p>
 
     <div class="pm-table">
       <div class="pm-header">Partner</div>
@@ -1510,11 +1562,11 @@ body.print-mode .feat-card[open]{border:none; background:transparent;}
 
     <div class="advisor-callout">
       <div class="advisor-body">
-        <h4>Independent recommendation · beyond the partnership</h4>
-        <div class="title">Radha as <em>advisor.</em> Chips in the game.</div>
-        <p><strong>Radha Agrawal is immaculately masterful at community building.</strong> Daybreaker grew to <strong>800,000+ people across 60+ cities without paid advertising.</strong> Her book <em>Belong</em> is used as a community-building blueprint in universities and by teams at Deepak Chopra / Tony Hsieh scale.</p>
-        <p>Her <a class="link" href="https://www.mindvalley.com/belonging" target="_blank" rel="noopener">Mindvalley course "Build Your Dream Community"</a> is 17 days of the exact identity-shifts, somatic exercises, and biochemistry needed to rally people. This is the playbook Pulse needs for <strong>sticky, shareable, product-led community.</strong></p>
-        <p>I recommend engaging Radha as a <strong>real, integrated advisor</strong> — independent of the bigger partnership watch. Her lens will particularly light up on the <strong>Pulse Sync shared-felt-experience</strong> (Row 06). This is where community mastery meets product roadmap.</p>
+        <h4>Two distinct Radha relationships · advisor + performance partner</h4>
+        <div class="title">Radha as <em>advisor.</em> Chips in the game, separate from the partnership.</div>
+        <p><strong>Two relationships, not one.</strong> Belong / Daybreaker enters as a <strong>named performance partner in Impact.com</strong> (Row 04) — standard commission, dedicated SubID, dynamic payouts. That's the deal for the org. <strong>Radha herself</strong> — the human, the community architect — is what this callout is about: an <strong>advisory relationship with equity</strong>, chips in the game, running in parallel to the partner contract.</p>
+        <p><strong>She is immaculately masterful at community building.</strong> Daybreaker grew to <strong>800,000+ people across 60+ cities without paid advertising.</strong> Her book <em>Belong</em> is a community-building blueprint used in universities and by teams at Deepak Chopra / Tony Hsieh scale. Her <a class="link" href="https://www.mindvalley.com/belonging" target="_blank" rel="noopener">Mindvalley course "Build Your Dream Community"</a> is 17 days of exact identity-shifts, somatic exercises, and biochemistry to rally people — the playbook Pulse needs for <strong>sticky, shareable, product-led community.</strong></p>
+        <p>Her advisor lens lights up on <strong>Pulse Sync shared-felt-experience</strong> (Row 06). This is where community mastery meets the product roadmap — and where the two relationships reinforce each other: her advisor equity aligns her incentive with the platform we're building; her performance-partner deal aligns Daybreaker's audience with the launches we're running.</p>
       </div>
       <div class="advisor-facts">
         <div>
