@@ -778,6 +778,65 @@ body.print-mode .feat-card[open]{border:none; background:transparent;}
 }
 .kvr.keep{border:1px solid var(--green-24); background:rgba(99,224,132,0.04);}
 .kvr.replace{border:1px solid var(--magenta-24); background:rgba(194,47,205,0.04);}
+
+/* ====== Shooting-board arc grid (pulled from the real film library) ====== */
+.board-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  gap:14px;
+  align-items:start;
+}
+.board-act{
+  grid-column:1 / -1;
+  display:flex; justify-content:space-between; align-items:baseline;
+  padding:14px 0 4px;
+  border-bottom:1px solid var(--magenta-24);
+  margin-top:6px;
+}
+.board-act .a-kicker{
+  font-family:var(--font-mono); font-size:14px;
+  letter-spacing:0.16em; text-transform:uppercase; color:var(--magenta);
+  font-weight:500;
+}
+.board-act .a-theme{
+  font-size:16px; color:var(--light-64);
+  font-family:var(--font-display); font-style:italic;
+}
+.board-shot{
+  border:1px solid var(--accent-24); border-radius:10px;
+  overflow:hidden; background:var(--dark-64);
+  display:flex; flex-direction:column;
+}
+.board-shot img{
+  width:100%; height:auto; display:block; object-fit:cover;
+  aspect-ratio: 16 / 10;
+}
+.board-shot .shot-meta{
+  padding:12px 14px;
+  font-size:14px; line-height:1.4; color:var(--light-64);
+  border-top:1px solid var(--accent-24);
+}
+.board-shot .shot-meta .sm-num{
+  font-family:var(--font-mono); font-size:11px;
+  letter-spacing:0.14em; color:var(--magenta);
+  text-transform:uppercase; display:block; margin-bottom:4px;
+}
+.board-shot .shot-meta strong{color:var(--light);}
+
+.board-source{
+  margin-top:12px;
+  padding:14px 20px;
+  border:1px dashed var(--magenta-24);
+  background:rgba(194,47,205,0.04);
+  border-radius:10px;
+  font-size:15px; line-height:1.5;
+  color:var(--light-64);
+  display:flex; align-items:center; justify-content:space-between;
+  gap:20px; flex-wrap:wrap;
+}
+.board-source strong{color:var(--light);}
+.board-source a{color:var(--magenta); text-decoration:none; border-bottom:1px dotted var(--magenta-24); font-family:var(--font-mono); font-size:13px; letter-spacing:0.06em;}
+.board-source a:hover{border-bottom-style:solid;}
 .kvr .kvr-label{
   font-family:var(--font-mono); font-size:11px;
   letter-spacing:0.16em; text-transform:uppercase;
@@ -1405,50 +1464,77 @@ body.print-mode .feat-card[open]{border:none; background:transparent;}
           <strong class="here"> $3K brand film (Option D on the menu) → an asset that compounds across every channel, every partner, every VC deck for the next 24 months.</strong>
         </div>
         <div class="fs-meta">
-          <strong>Creative Direction 5-council storyboard · 10 EBI passes (Round 1) · 10 more EBI passes (Round 2 · script-level).</strong> Storyboard-ready. Uses existing image library — the Creative Direction full deck applied end-to-end.
+          <strong>The film already exists as a shooting board:</strong> 53 frames in the real image library. Three acts (<strong>The Churn · The Return · Together</strong>). 20 EBI passes across two rounds sharpen it into a shoot-ready script.
         </div>
       </div>
       <div class="fs-right">
         <div class="fs-price"><small>Compounding asset</small>$3K</div>
-        <div class="fs-cue">Expand · storyboard + 20 EBIs + reference frames <span class="caret">↓</span></div>
+        <div class="fs-cue">Expand · 3-act arc + 20 EBIs + full board link <span class="caret">↓</span></div>
       </div>
     </summary>
     <section class="feature magenta">
     <div class="feature-head">
-      <div class="kicker">The brand film · Creative Direction applied · July 2026</div>
-      <h1 style="font-size:64px; font-weight:300; letter-spacing:-0.02em; line-height:1.02; margin:0;">Cast real life, <em class="verb" style="color:var(--magenta);">not the after photo.</em></h1>
-      <p class="lede">Storyboard reworked to the new Creative Direction. <strong style="color:var(--light);">Keep</strong> the doomscroll opening — it's the strongest thing we have. <strong style="color:var(--light);">Retire</strong> the forest goddess. Sell the interruption, not the enlightenment. Click any card below to go deep.</p>
+      <div class="kicker">The shooting board · Here & Now Together · 53 frames</div>
+      <h1 style="font-size:64px; font-weight:300; letter-spacing:-0.02em; line-height:1.02; margin:0;">The film <em class="verb" style="color:var(--magenta);">exists.</em> Now shoot it.</h1>
+      <p class="lede">Pulled from the actual image library and world-building work, not the Creative Direction PDF. <strong style="color:var(--light);">Three acts — The Churn · The Return · Together.</strong> Photograph / Illustration / Hybrid, alternating on purpose. Nine representative frames below tell the arc; the <strong style="color:var(--light);">full 53-shot board</strong> links out at the bottom of this card.</p>
     </div>
 
-    <div class="film-thumbnail-block">
-      <div class="thumbnail-strip">
-        <div class="frame">
-          <img src="assets/film-ref/01-mid-commute.png" alt="Mid-commute reference frame">
-          <div class="frame-num">01</div>
-          <div class="frame-label">Mid-commute</div>
-        </div>
-        <div class="frame">
-          <img src="assets/film-ref/02-real-work.png" alt="Real work reference frame">
-          <div class="frame-num">02</div>
-          <div class="frame-label">Real work</div>
-        </div>
-        <div class="frame">
-          <img src="assets/film-ref/03-after-state.png" alt="Un-staged after-state reference frame">
-          <div class="frame-num">03</div>
-          <div class="frame-label">Un-staged after-state</div>
-        </div>
-        <div class="frame">
-          <img src="assets/film-ref/04-culture.png" alt="Culture-first reference frame">
-          <div class="frame-num">04</div>
-          <div class="frame-label">Culture-first</div>
-        </div>
-        <div class="frame">
-          <img src="assets/film-ref/05-phones.png" alt="Phones-in-hand reference frame">
-          <div class="frame-num">05</div>
-          <div class="frame-label">Phones in hand</div>
-        </div>
+    <div class="board-grid">
+      <div class="board-act">
+        <div class="a-kicker">Act I · The Churn</div>
+        <div class="a-theme">"We are all here, and so often we're all somewhere else."</div>
       </div>
-      <div class="thumbnail-caption">The new visual register · lead with these frames · from the July 2026 image recommendation</div>
+      <div class="board-shot">
+        <img src="assets/film-lib/film-42-bubble-train.png" alt="Bubble-train opener — illustrated riders sealed in translucent head-bubbles">
+        <div class="shot-meta"><span class="sm-num">Shot 0 · Illustration · Open</span>Bubbles sealed around every rider's head. <strong>Held. Still. Composed.</strong></div>
+      </div>
+      <div class="board-shot">
+        <img src="assets/film-lib/film-01-open.png" alt="Live commuter train at dusk — the grounding real image">
+        <div class="shot-meta"><span class="sm-num">Shot 2 · Photograph · Open, live</span>Crowded commuter train at dusk. The grounding, real image.</div>
+      </div>
+      <div class="board-shot">
+        <img src="assets/film-lib/film-24-father-before.png" alt="Father on phone, daughter mid-story beside him, unseen">
+        <div class="shot-meta"><span class="sm-num">Shot 4 · Photograph · Father, before</span>Phone in hand. Daughter mid-story beside him, <strong>unseen.</strong></div>
+      </div>
+
+      <div class="board-act">
+        <div class="a-kicker">Act II · The Return</div>
+        <div class="a-theme">"One quiet pulse. And you come back."</div>
+      </div>
+      <div class="board-shot">
+        <img src="assets/film-lib/film-16-ring-ecu.png" alt="Ring signature ECU — first pulse blooms">
+        <div class="shot-meta"><span class="sm-num">Shot 17 · Photograph · Ring ECU</span>The signature. <strong>First pulse blooms.</strong></div>
+      </div>
+      <div class="board-shot">
+        <img src="assets/film-lib/film-04-father-return.png" alt="Father returns — phone face down, meeting daughter at eye level">
+        <div class="shot-meta"><span class="sm-num">Shot 22 · Photograph · Father, return</span>Phone face down. Father at child's <strong>eye level.</strong></div>
+      </div>
+      <div class="board-shot">
+        <img src="assets/film-lib/film-05-couple-return.png" alt="Couple return — foreheads close, hand finds hand">
+        <div class="shot-meta"><span class="sm-num">Shot 24 · Photograph · Couple, return</span>Foreheads close. Hand <strong>finds</strong> hand.</div>
+      </div>
+
+      <div class="board-act">
+        <div class="a-kicker">Act III · Together (Climax)</div>
+        <div class="a-theme">"The moment we were waiting for is right here."</div>
+      </div>
+      <div class="board-shot">
+        <img src="assets/film-lib/film-17-sync-hands.png" alt="Sync hands — every skin tone, every hand pulsing together">
+        <div class="shot-meta"><span class="sm-num">Shot 39 · Photograph · Sync hands</span>Every skin tone. Every hand <strong>pulsing together.</strong></div>
+      </div>
+      <div class="board-shot">
+        <img src="assets/film-lib/film-40-constellation-field-of-light.png" alt="Constellation — cold city redeemed, gold threads actively finding each other">
+        <div class="shot-meta"><span class="sm-num">Shot 51 · Illustration · Constellation</span>Cold city redeemed. <strong>Gold threads finding each other.</strong></div>
+      </div>
+      <div class="board-shot">
+        <img src="assets/film-lib/film-08-tag-ring.png" alt="Tag — one ring, one pulse, ripple settles">
+        <div class="shot-meta"><span class="sm-num">Shot 57 · Photograph · Tag</span>One ring, one pulse. <strong>Ripple settles.</strong></div>
+      </div>
+    </div>
+
+    <div class="board-source">
+      <div>Nine of <strong>53 frames</strong>. Photograph / Illustration / Hybrid alternate on purpose. Pull from the same library for social cut-downs, VC deck stills, and partner assets — one source, many destinations.</div>
+      <a href="https://ajschlender1983.github.io/pulse-mindfulness-clone/journey-images/film.html" target="_blank" rel="noopener">See the full 53-shot shooting board →</a>
     </div>
 
     <div class="rules-strip">
@@ -1474,27 +1560,6 @@ body.print-mode .feat-card[open]{border:none; background:transparent;}
       </div>
     </div>
 
-    <details class="filmdrop" open>
-      <summary><span>Keep vs. replace — what the current frame gets right and what to retire</span><span class="caret">▾</span></summary>
-      <div class="drop-body">
-        <div class="kvr-grid">
-          <div class="kvr keep">
-            <div class="kvr-label">Keep</div>
-            <div class="kvr-title">The doomscroller</div>
-            <div class="kvr-body">Blue phone-glow on a face at 11:40pm is a real, recognizable moment. The <strong>strongest thing we have.</strong> Anchor the film here.</div>
-          </div>
-          <div class="kvr replace">
-            <div class="kvr-label">Replace</div>
-            <div class="kvr-title">The forest goddess</div>
-            <div class="kvr-body">Closed eyes + hand-on-heart + dappled golden-hour = wellness-industry stock character. Codes as prayer/manifestation. <strong>Retire the pose.</strong> Replace with same-person, three-minutes-later.</div>
-          </div>
-        </div>
-        <div class="kvr-frame-strip">
-          <img src="assets/film-ref/current-frame.png" alt="The current brand-film split frame — doomscroll vs forest goddess">
-          <div class="kvr-frame-caption">The current frame · left works · right doesn't · Creative Direction, July 2026</div>
-        </div>
-      </div>
-    </details>
 
     <details class="filmdrop">
       <summary><span>The reworked storyboard — 3 acts · 90 seconds · 12 shots</span><span class="caret">▾</span></summary>
