@@ -34,8 +34,8 @@
 *{box-sizing:border-box;}
 html,body{margin:0;padding:0;background:var(--void);}
 .page{
-  width:1920px; height:9960px;
-  position:relative; overflow:hidden;
+  width:1920px; min-height:1200px;
+  position:relative; overflow:visible;
   font-family:var(--font-primary); color:var(--light);
   background:
     radial-gradient(1200px 1200px at 88% -8%, rgba(106,223,217,0.10), transparent 60%),
@@ -107,6 +107,106 @@ strong{font-weight:600; color:var(--light);}
 .summary .right{font-family:var(--font-mono); font-size:16px; letter-spacing:0.14em; text-transform:uppercase; color:var(--midtone);}
 
 .footer{display:flex; justify-content:space-between; align-items:center; font-size:16px; color:var(--midtone-64); font-family:var(--font-mono); letter-spacing:0.1em; text-transform:uppercase;}
+
+/* ===== Collapsible featured cards (drill-down UX) ===== */
+.feat-card{
+  border:1px solid var(--accent-24);
+  border-radius:16px;
+  overflow:hidden;
+  background:var(--dark-64);
+  transition:background 0.2s;
+}
+.feat-card[open]{background:transparent; border-color:transparent; padding:0;}
+.feat-card > summary{
+  padding:24px 32px;
+  cursor:pointer;
+  list-style:none;
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:24px;
+  align-items:center;
+}
+.feat-card > summary::-webkit-details-marker{display:none;}
+.feat-card[open] > summary{
+  opacity:0.55;
+  padding-bottom:14px;
+  border-bottom:1px dashed var(--accent-24);
+}
+.feat-card[open] > summary .fs-cue::before{content:"COLLAPSE · "; color:var(--midtone);}
+body.print-mode .feat-card > summary{display:none;}
+body.print-mode .feat-card[open]{border:none; background:transparent;}
+.feat-card .fs-left{display:flex; flex-direction:column; gap:10px;}
+.feat-card .fs-kicker{
+  font-family:var(--font-mono); font-size:14px;
+  letter-spacing:0.16em; text-transform:uppercase; font-weight:500;
+}
+.feat-card .fs-title{
+  font-size:44px; font-weight:300; letter-spacing:-0.02em; line-height:1.02;
+  margin:0; color:var(--light);
+}
+.feat-card .fs-title em{font-family:var(--font-display); font-style:italic; font-weight:400;}
+.feat-card .fs-compare{
+  font-size:17px; line-height:1.5; color:var(--light-64);
+  padding:12px 16px;
+  border-left:3px solid var(--orange);
+  background:rgba(240,147,94,0.05);
+  border-radius:0 8px 8px 0;
+}
+.feat-card .fs-compare strong.baseline{color:var(--orange);}
+.feat-card .fs-compare strong.here{color:var(--light);}
+.feat-card .fs-meta{
+  font-size:15px; line-height:1.45; color:var(--midtone);
+}
+.feat-card .fs-meta strong{color:var(--light);}
+.feat-card .fs-right{
+  display:flex; flex-direction:column; align-items:flex-end; gap:8px;
+  padding-left:20px;
+  border-left:1px dashed var(--accent-24);
+  min-width:180px; align-self:stretch; justify-content:center;
+}
+.feat-card .fs-cue{
+  font-family:var(--font-mono); font-size:12px;
+  letter-spacing:0.16em; text-transform:uppercase; color:var(--midtone-64);
+}
+.feat-card .fs-cue .caret{display:inline-block; margin-left:6px; transition:transform 0.2s;}
+.feat-card .fs-price{
+  font-size:22px; font-weight:600; color:var(--light);
+  font-variant-numeric:tabular-nums;
+}
+.feat-card .fs-price small{
+  display:block; font-size:11px; font-weight:400; font-family:var(--font-mono);
+  letter-spacing:0.14em; color:var(--midtone-64);
+  text-transform:uppercase; margin-bottom:4px;
+}
+
+/* Accent-color variants on the summary card */
+.feat-card.gold      { border-left:5px solid var(--gold); }
+.feat-card.gold     .fs-kicker, .feat-card.gold     .fs-title em { color:var(--gold); }
+.feat-card.green     { border-left:5px solid var(--green); }
+.feat-card.green    .fs-kicker, .feat-card.green    .fs-title em { color:var(--green); }
+.feat-card.teal      { border-left:5px solid var(--teal); }
+.feat-card.teal     .fs-kicker, .feat-card.teal     .fs-title em { color:var(--teal); }
+.feat-card.magenta   { border-left:5px solid var(--magenta); }
+.feat-card.magenta  .fs-kicker, .feat-card.magenta  .fs-title em { color:var(--magenta); }
+
+/* Drill-down reminder banner between summary + featureds */
+.drill-banner{
+  padding:18px 24px;
+  border-radius:12px;
+  border:1px solid var(--orange);
+  background:
+    radial-gradient(400px 200px at 100% 0%, rgba(240,147,94,0.08), transparent 60%),
+    linear-gradient(180deg, rgba(240,147,94,0.05) 0%, rgba(31,24,36,0.4) 100%);
+  display:flex; align-items:center; justify-content:space-between; gap:20px;
+  flex-wrap:wrap;
+}
+.drill-banner .db-left{font-size:17px; line-height:1.5; color:var(--light-64);}
+.drill-banner .db-left strong.baseline{color:var(--orange);}
+.drill-banner .db-left strong.here{color:var(--light);}
+.drill-banner .db-right{
+  font-family:var(--font-mono); font-size:12px;
+  letter-spacing:0.16em; text-transform:uppercase; color:var(--midtone);
+}
 
 /* ====== Featured activation ====== */
 .feature{
@@ -905,7 +1005,32 @@ strong{font-weight:600; color:var(--light);}
     </div>
   </section>
 
-  <section class="feature">
+  <div class="drill-banner">
+    <div class="db-left">
+      <strong class="baseline">Every $3K on ads today → 17 customers at $175 CAC · –$500 net.</strong> Every card below is the same $3K (or the tier below it), compared to that baseline. <strong class="here">Click any card to drill into the pitch, the poster, the penciled tiers, and the backstory.</strong>
+    </div>
+    <div class="db-right">Four cards ↓</div>
+  </div>
+
+  <details class="feat-card gold">
+    <summary>
+      <div class="fs-left">
+        <div class="fs-kicker">Featured activation · Row 03</div>
+        <h2 class="fs-title">The Iceland <em>Eclipse.</em></h2>
+        <div class="fs-compare">
+          <strong class="baseline">$3K on ads → 17 customers · –$500 net.</strong>
+          <strong class="here"> $3–8K here (Tier 1 Lightweight) → 10–20 rings seeded on Patrick, Unify team + adjacent speakers · 5+ warm intros to VC / influencer targets already at the festival.</strong>
+        </div>
+        <div class="fs-meta">
+          <strong>Aug 11–15 · Snæfellsnes Peninsula · Iceland Eclipse Festival.</strong> Once-in-a-century total eclipse. Unify.org (Patrick Kronfli) hosts the ceremonies. 3,333-cap, Celestial Voyager tier already sold out. Ring-shape thematic launch that doesn't feel like a launch.
+        </div>
+      </div>
+      <div class="fs-right">
+        <div class="fs-price"><small>Tier 1 · Lightweight</small>$3–8K</div>
+        <div class="fs-cue">Expand · pitch + poster + tiers + backstory <span class="caret">↓</span></div>
+      </div>
+    </summary>
+    <section class="feature">
     <div class="feature-head">
       <div class="kicker">Featured activation · Row 03</div>
       <h1 style="font-size:64px; font-weight:300; letter-spacing:-0.02em; line-height:1.02; margin:0;">The Iceland <em class="verb" style="color:var(--gold);">Eclipse.</em></h1>
@@ -964,8 +1089,27 @@ strong{font-weight:600; color:var(--light);}
       </div>
     </details>
   </section>
+  </details>
 
-  <section class="feature green">
+  <details class="feat-card green">
+    <summary>
+      <div class="fs-left">
+        <div class="fs-kicker">Featured activation · Row 04</div>
+        <h2 class="fs-title">The September <em>Sprint.</em></h2>
+        <div class="fs-compare">
+          <strong class="baseline">$3K on ads → 17 customers · –$500 net.</strong>
+          <strong class="here"> $3–7K here (Tier 1 Micro-drop) → 20–30 rings seeded + sold at Alive LA · 150-member Founding Community cap sold out via a 30-day online window.</strong>
+        </div>
+        <div class="fs-meta">
+          <strong>Sept 13 Alive LA + Sept 19 Let's Be Friends Austin.</strong> Belong Center × Daybreaker. <strong>Radha Agrawal + Matthew Brimer are existing Opus investors</strong> — warm door. Founding Community engineered to sell out publicly. Radha advisor recommendation inside.
+        </div>
+      </div>
+      <div class="fs-right">
+        <div class="fs-price"><small>Tier 1 · Micro drop</small>$3–7K</div>
+        <div class="fs-cue">Expand · pitch + poster + advisor recommendation + tiers <span class="caret">↓</span></div>
+      </div>
+    </summary>
+    <section class="feature green">
     <div class="feature-head">
       <div class="kicker">Featured activation · Row 04</div>
       <h1 style="font-size:64px; font-weight:300; letter-spacing:-0.02em; line-height:1.02; margin:0;">The September <em class="verb" style="color:var(--green);">Sprint.</em></h1>
@@ -1052,8 +1196,27 @@ strong{font-weight:600; color:var(--light);}
       </div>
     </details>
   </section>
+  </details>
 
-  <section class="feature teal">
+  <details class="feat-card teal">
+    <summary>
+      <div class="fs-left">
+        <div class="fs-kicker">The Adam-network doors · virtually free</div>
+        <h2 class="fs-title">Adam's Rolodex, <em>operationalized.</em></h2>
+        <div class="fs-compare">
+          <strong class="baseline">$3K on ads → 17 customers · –$500 net.</strong>
+          <strong class="here"> $0–1K at each of three network venues → same rooms as investor, advisor, ambassador, customer, partner. Warm doors already open.</strong>
+        </div>
+        <div class="fs-meta">
+          <strong>The Portal · Austin · SF · Submersive · Austin.</strong> Tim Ferriss / Mark Hyman / Miki Agrawal / Justin Kan (Portal). <strong>Corvas Brinkerhoff — Meow Wolf co-founder + Opus investor (Submersive).</strong> Access is what the retainer buys.
+        </div>
+      </div>
+      <div class="fs-right">
+        <div class="fs-price"><small>Near-zero cost</small>$0–1K</div>
+        <div class="fs-cue">Expand · three venue cards + retainer note <span class="caret">↓</span></div>
+      </div>
+    </summary>
+    <section class="feature teal">
     <div class="feature-head">
       <div class="kicker">The Adam-network doors · virtually free</div>
       <h1 style="font-size:60px; font-weight:300; letter-spacing:-0.02em; line-height:1.02; margin:0;">Adam's Rolodex, <em class="verb" style="color:var(--teal);">operationalized.</em></h1>
@@ -1117,8 +1280,27 @@ strong{font-weight:600; color:var(--light);}
       <strong>This is what the retainer buys — access.</strong> The aligned humans across the whole spectrum are already in these rooms. <strong class="spectrum">Investor · Advisor · Ambassador · Customer · Partner.</strong> Same rooms, activated by proximity, not by media buy.
     </div>
   </section>
+  </details>
 
-  <section class="feature magenta">
+  <details class="feat-card magenta">
+    <summary>
+      <div class="fs-left">
+        <div class="fs-kicker">Featured · Creative Direction applied</div>
+        <h2 class="fs-title">The Brand <em>Film.</em></h2>
+        <div class="fs-compare">
+          <strong class="baseline">$3K on ads → 17 customers · –$500 net.</strong>
+          <strong class="here"> $3K brand film (Option D on the menu) → an asset that compounds across every channel, every partner, every VC deck for the next 24 months.</strong>
+        </div>
+        <div class="fs-meta">
+          <strong>Creative Direction 5-council storyboard · 10 EBI passes (Round 1) · 10 more EBI passes (Round 2 · script-level).</strong> Storyboard-ready. Uses existing image library — the Creative Direction full deck applied end-to-end.
+        </div>
+      </div>
+      <div class="fs-right">
+        <div class="fs-price"><small>Compounding asset</small>$3K</div>
+        <div class="fs-cue">Expand · storyboard + 20 EBIs + reference frames <span class="caret">↓</span></div>
+      </div>
+    </summary>
+    <section class="feature magenta">
     <div class="feature-head">
       <div class="kicker">The brand film · Creative Direction applied · July 2026</div>
       <h1 style="font-size:64px; font-weight:300; letter-spacing:-0.02em; line-height:1.02; margin:0;">Cast real life, <em class="verb" style="color:var(--magenta);">not the after photo.</em></h1>
@@ -1405,6 +1587,15 @@ strong{font-weight:600; color:var(--light);}
       </div>
     </details>
   </section>
+  </details>
+
+  <script>
+    // Print-mode: force every details open + hide summaries when URL contains ?print
+    if (location.search.indexOf('print') !== -1 || location.hash === '#print') {
+      document.body.classList.add('print-mode');
+      document.querySelectorAll('details').forEach(function(d){ d.setAttribute('open',''); });
+    }
+  </script>
 
   <div class="footer">
     <span>$175 CAC · $229 retail · $83 COGS · every activity scored weekly</span>
