@@ -335,9 +335,10 @@ a.surface p{font-size:13px;color:var(--midtone);}
 </div>
 
 <script>
-/* ===== Gate (prototype role simulation; real auth = Workers magic-link) ===== */
+/* ===== Gate — DISABLED for now (Adam, Jul 28). Re-enable by removing the
+   auto-enter line below; magic-link auth (Workers + Resend) ships at launch. ===== */
 const ROLES = { 'PULSE':'ADMIN', 'TEAM':'TEAM', 'CREATOR':'CREATOR' };
-const saved = sessionStorage.getItem('mc.role');
+const saved = sessionStorage.getItem('mc.role') || 'ADMIN';
 function enterApp(role){
   document.getElementById('gate').style.display = 'none';
   document.getElementById('app').style.display = 'block';

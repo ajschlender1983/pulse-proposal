@@ -130,6 +130,30 @@ details.wd[data-d="7"]{border-left-color:var(--d7);} details.wd[data-d="7"] .w-t
 .phone .ph-done{text-align:center;font-size:11.5px;color:#6E6857;margin-top:12px;font-style:italic;}
 .mapcopy p{font-size:16.5px;}
 
+/* ===== Flow chart ===== */
+.flowchart{display:flex;flex-direction:column;gap:0;margin:26px 0 8px;}
+.fnode{
+  display:grid;grid-template-columns:44px 1fr;gap:18px;align-items:start;
+  background:rgba(31,24,36,0.6);border:1px solid var(--accent-24);border-radius:14px;
+  padding:18px 22px;
+}
+.fnode .f-n{
+  width:34px;height:34px;border-radius:50%;border:1.5px solid var(--teal);
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--font-mono);font-size:13px;color:var(--teal);
+}
+.fnode h4{font-size:17.5px;font-weight:500;color:var(--light);margin-bottom:3px;}
+.fnode h4 span{color:var(--gold);}
+.fnode p{font-size:14px;margin:0;max-width:none;}
+.fnode.viral{border-color:var(--gold-24);border-left:4px solid var(--gold);}
+.fnode.final{border-color:rgba(99,224,132,0.4);border-left:4px solid var(--green);background:rgba(99,224,132,0.05);}
+.fnode.final .f-n{border-color:var(--green);color:var(--green);}
+.farrow{
+  text-align:center;font-family:var(--font-mono);color:var(--midtone-64);
+  font-size:16px;padding:6px 0;line-height:1;
+}
+.farrow small{display:block;font-size:10.5px;letter-spacing:0.14em;text-transform:uppercase;margin-top:3px;}
+
 /* ===== Felt timeline ===== */
 .chapters{display:flex;flex-direction:column;gap:14px;margin-top:26px;}
 .chapter{
@@ -226,9 +250,17 @@ details.dd .dd-body p{font-size:15px;}
     <div class="logo-note">Wordmark placeholders — official partner logos drop in on final</div>
   </header>
 
+  <!-- ================= EXECUTIVE THESIS ================= -->
+  <section class="reveal" style="margin-top:56px;">
+    <h2>The <em>thesis.</em></h2>
+    <div class="thesis-line">
+      For a total campaign cost of <strong>$45,000 over 60 days</strong> — about six weeks of the current ad budget — we test whether this distribution model clears the <strong>1,500 remaining rings</strong> and brings the cost of acquiring a customer down to <strong>$100</strong>. If it works, Pulse has earned the right to raise money for <em>inventory against proven demand.</em> If it doesn't, we spent less than two months of ad spend to find out — and we keep every asset the campaign built.
+    </div>
+  </section>
+
   <!-- ================= THE STORY ================= -->
   <section class="reveal">
-    <h2>First, the <em>story.</em></h2>
+    <h2>The <em>story.</em></h2>
     <p>On <strong>August 12</strong>, for the first time since 1954, the sky over Iceland goes dark in the middle of the day. Two thousand people will be seated in a mandala on the Snæfellsnes Peninsula — a ceremony Unify has spent a year building. At the moment of totality, everyone sets an intention.</p>
     <p><strong>Then the moment passes and Monday comes back.</strong> That's the exact problem Pulse solves: the ring is the physical cue that carries the intention past the moment.</p>
     <p><strong>We are confirmed as a partner, integrated into the primary ceremony.</strong> Adam is on the ground with intimate access to the 500 VIPs — a room that includes investors, partners, and ambassadors, and is worth more than any one of those labels. <strong>And we sell there.</strong> From the Ceremony Garden we announce the integration event — the gathering that carries the totality intention into daily practice — and rings are available on-site, promoted as the way to carry the moment home. Seven weeks later, the batch of 1,500 is gone.</p>
@@ -247,6 +279,49 @@ details.dd .dd-body p{font-size:15px;}
       <div style="display:flex;justify-content:space-around;padding:6px 0;"><i style="width:12px;height:8px;border-radius:2px;background:var(--light);opacity:.7"></i><i style="width:12px;height:8px;border-radius:2px;background:var(--light);opacity:.7"></i><i style="width:12px;height:8px;border-radius:2px;background:var(--light);opacity:.7"></i><i style="width:12px;height:8px;border-radius:2px;background:var(--light);opacity:.7"></i><i style="width:12px;height:8px;border-radius:2px;background:var(--light);opacity:.7"></i><i style="width:12px;height:8px;border-radius:2px;background:var(--light);opacity:.7"></i><i style="width:12px;height:8px;border-radius:2px;background:var(--light);opacity:.7"></i><i style="width:12px;height:8px;border-radius:2px;background:var(--light);opacity:.7"></i></div>
     </div>
     <p style="font-family:var(--font-mono);font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--midtone-64);margin-top:12px;max-width:none;">The brand's film-strip device — the same moment, held at the speed of being here. This grammar runs through every campaign surface.</p>
+  </section>
+
+  <!-- ================= THE FLOW ================= -->
+  <section class="reveal">
+    <h2>How it <em>compounds.</em></h2>
+    <p>Each step produces the fuel for the next one. Step by step:</p>
+    <div class="flowchart">
+      <div class="fnode">
+        <div class="f-n">1</div>
+        <div><h4>Iceland · Aug 11–15 <span>· confirmed</span></h4>
+        <p>Integrated into the primary ceremony. Direct contact with the 500 VIPs. The integration event is announced from the Garden and rings sell on-site.</p></div>
+      </div>
+      <div class="farrow">↓<small>which produces</small></div>
+      <div class="fnode">
+        <div class="f-n">2</div>
+        <div><h4>Assets, sales, and relationships</h4>
+        <p>Once-in-a-century footage · first attributed sales (ECLIPSE100) · warm relationships with investors, partners, and hosts who were in the room.</p></div>
+      </div>
+      <div class="farrow">↓<small>which fuels</small></div>
+      <div class="fnode">
+        <div class="f-n">3</div>
+        <div><h4>September amplification</h4>
+        <p>Unify's 200K newsletter + 2.8M page fire into the campaign, not the past event. Whitelisted ads run from each host's own handle, cut from the Iceland footage.</p></div>
+      </div>
+      <div class="farrow">↓<small>which fills</small></div>
+      <div class="fnode">
+        <div class="f-n">4</div>
+        <div><h4>The Austin anchors · Sept 19–23</h4>
+        <p>Daybreaker's Let's Be Friends + the Portal salon. On-site sales, on-site signups, the crowd for the Week.</p></div>
+      </div>
+      <div class="farrow">↓<small>which launches</small></div>
+      <div class="fnode viral">
+        <div class="f-n">5</div>
+        <div><h4>The Week of Wow · Sept 24–30 <span>· the virality moment</span></h4>
+        <p>Seven days, seven hosts, thousands checking in daily — and posting. Every participant shares their day, every host posts to their own audience, every "___ is one pulse away" line is built to be reposted. The campaign markets itself for seven straight days.</p></div>
+      </div>
+      <div class="farrow">↓<small>which drives</small></div>
+      <div class="fnode final">
+        <div class="f-n">6</div>
+        <div><h4>Sold out · Oct 1</h4>
+        <p>The live inventory bar hits 1,500. The batch is gone — and the next raise is for inventory against demonstrated sell-through, not for growth against a hope.</p></div>
+      </div>
+    </div>
   </section>
 
   <!-- ================= THE WEEK OF WOW ================= -->
@@ -454,9 +529,7 @@ details.dd .dd-body p{font-size:15px;}
   <!-- ================= THE NUMBERS ================= -->
   <section class="reveal">
     <h2>The <em>numbers.</em></h2>
-    <div class="thesis-line">
-      Total fixed cost: <strong>$45,000 over 60 days</strong> — about six weeks of the current ad budget. The test: does this model clear <strong>1,500 rings at ~$100 per customer?</strong> If yes, the next raise funds <em>inventory against proven demand.</em> If no, we spent less than two months of ad spend to find out — and keep everything the campaign built.
-    </div>
+    <p>Every scenario priced against the same alternative: putting the identical $45,000 into Meta ads at today's 1.3× return³. Variable costs (discounts, commissions) only occur when a ring sells — downside is capped at the fixed $45K.</p>
     <table>
       <tr><th>Scenario</th><th>Rings</th><th>Cost / customer</th><th>Net contribution</th><th>vs. same $ on Meta</th></tr>
       <tr><td><strong>Same spend on Meta</strong> (baseline)</td><td class="num">≈255</td><td class="num">$176</td><td class="num neg">−$7.8K</td><td class="num">—</td></tr>
