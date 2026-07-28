@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Unified Pulse · Seven days. Seven pulses.</title>
+<meta name="description" content="A free seven-day presence practice, presented by Pulse and Unify. Sept 24–30. You don't need a Pulse ring to join. Every day is even better with one.">
+<meta property="og:title" content="Unified Pulse · Seven days. Seven hosts. One reset a day.">
+<meta property="og:description" content="Sept 24–30 · free everywhere · presented by Pulse and Unify.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2240%22 fill=%22%23E3F47D%22/></svg>">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300;1,9..40,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ===== Pulse site tokens (simple/styles.css) ===== */
+:root{
+  --cream:#EBE7D4; --cream-warm:#F9F6E5; --ink:#1A1C22; --brown:#423D32;
+  --lime:#E3F47D; --lime-text:#101828; --dark:#0d0d0f; --blue:#B3C7D3;
+  --muted:#8a8578; --muted-64:#6E6857; --line:rgba(26,28,34,0.14);
+  --honey:#C9A227;
+  --font:'DM Sans',-apple-system,sans-serif; --mono:'DM Mono',monospace;
+  --d1:#C9A227; --d2:#3E8E87; --d3:#C06B36; --d4:#8E4E96; --d5:#6E6857; --d6:#5D8A4A; --d7:#42506B;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--font);background:var(--cream);color:var(--ink);line-height:1.55;}
+.container{max-width:1100px;margin:0 auto;padding:0 5vw;}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;}}
+
+/* ===== Nav ===== */
+.nav{display:flex;align-items:center;gap:14px;padding:22px 5vw;max-width:1440px;margin:0 auto;}
+.nav .wm{height:20px;color:var(--ink);}
+.nav .wm svg{height:100%;width:auto;display:block;}
+.nav .n-tag{font-family:var(--mono);font-size:10.5px;letter-spacing:0.16em;text-transform:uppercase;color:var(--muted-64);}
+.nav a.n-cta{margin-left:auto;font-size:13.5px;font-weight:600;background:var(--lime);color:var(--lime-text);padding:9px 20px;border-radius:100px;text-decoration:none;}
+
+/* ===== Inventory strip ===== */
+.urgency{position:sticky;top:0;z-index:50;background:var(--ink);padding:9px 5vw;}
+.urgency-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;gap:16px;}
+.urgency .u-copy{font-family:var(--mono);font-size:11.5px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(249,246,229,0.7);white-space:nowrap;}
+.urgency .u-copy strong{color:var(--lime);}
+.urgency .bar{flex:1;height:5px;border-radius:3px;background:rgba(249,246,229,0.15);overflow:hidden;}
+.urgency .bar-fill{height:100%;border-radius:3px;background:var(--lime);transition:width 1s ease;}
+.urgency a{color:var(--blue);text-decoration:none;font-family:var(--mono);font-size:11.5px;letter-spacing:0.1em;text-transform:uppercase;white-space:nowrap;}
+
+/* ===== Hero with concentric pulse ===== */
+.hero{padding:96px 0 80px;text-align:center;position:relative;overflow:hidden;}
+.pulse-stage{position:relative;width:120px;height:120px;margin:0 auto 40px;}
+.pulse-core{position:absolute;inset:50px;background:var(--ink);border-radius:50%;}
+.pring{position:absolute;inset:0;border:1.5px solid var(--brown);border-radius:50%;opacity:0;animation:ringout 3.6s cubic-bezier(.2,.6,.4,1) infinite;}
+.pring:nth-child(2){animation-delay:1.2s;}
+.pring:nth-child(3){animation-delay:2.4s;}
+@keyframes ringout{0%{transform:scale(0.32);opacity:0;}12%{opacity:0.85;}100%{transform:scale(1.15);opacity:0;}}
+.hero .kicker{font-family:var(--mono);font-size:13px;letter-spacing:0.22em;text-transform:uppercase;color:var(--muted-64);margin-bottom:22px;}
+.hero h1{font-size:clamp(48px,8vw,104px);font-weight:300;letter-spacing:-0.035em;line-height:0.98;color:var(--ink);}
+.hero h1 em{font-style:italic;font-weight:400;color:var(--brown);}
+.hero .sub{font-size:clamp(18px,2.3vw,24px);color:var(--muted-64);max-width:680px;margin:26px auto 0;font-weight:300;}
+.hero .sub strong{color:var(--ink);font-weight:600;}
+.hero .dates{font-family:var(--mono);font-size:13.5px;letter-spacing:0.16em;text-transform:uppercase;color:var(--muted);margin-top:30px;}
+.hero .credit{font-size:13.5px;color:var(--muted);margin-top:8px;}
+.cta-row{display:flex;gap:12px;justify-content:center;margin-top:36px;flex-wrap:wrap;}
+.btn{display:inline-block;padding:16px 34px;border-radius:100px;font-size:16px;font-weight:600;text-decoration:none;border:none;cursor:pointer;font-family:var(--font);transition:transform .16s ease;}
+.btn:hover{transform:translateY(-1px);}
+.btn:focus-visible{outline:3px solid var(--honey);outline-offset:2px;}
+.btn-lime{background:var(--lime);color:var(--lime-text);}
+.btn-ghost{border:1.5px solid var(--ink);color:var(--ink);background:transparent;}
+
+/* ===== Recognition ===== */
+.recognize{padding:88px 0 60px;background:var(--cream-warm);border-top:1px solid var(--line);}
+.recognize .lines{max-width:740px;margin:0 auto;text-align:center;display:flex;flex-direction:column;gap:24px;}
+.recognize .line{font-size:clamp(22px,3.3vw,33px);font-weight:300;color:var(--muted-64);opacity:0;transform:translateY(14px);transition:opacity .7s ease,transform .7s ease;}
+.recognize .line.on{opacity:1;transform:none;}
+.recognize .line strong{color:var(--ink);font-weight:600;}
+.recognize .answer{color:var(--ink);}
+.recognize .answer em{font-style:italic;color:var(--brown);}
+
+/* ===== Film strips (the brand device) ===== */
+.filmband{padding:0;overflow:hidden;position:relative;}
+.filmband.cold{background:var(--cream-warm);padding-bottom:70px;}
+.filmband.warm{background:var(--cream);padding:70px 0;}
+.strip-wrap{position:relative;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--ink);}
+.sprockets{display:flex;justify-content:space-around;padding:7px 0;background:var(--ink);}
+.sprockets i{width:14px;height:9px;border-radius:2.5px;background:var(--cream);opacity:0.85;}
+.strip{display:flex;gap:4px;width:max-content;}
+.strip img{height:150px;width:auto;display:block;}
+.strip.race{animation:race 14s linear infinite;filter:grayscale(1) brightness(0.72) contrast(1.05);}
+.strip.crawl{animation:race 80s linear infinite;filter:sepia(0.35) saturate(1.1) brightness(1.02);}
+@keyframes race{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+.film-cap{max-width:1100px;margin:20px auto 0;padding:0 5vw;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;}
+.film-cap .fc{font-family:var(--mono);font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted-64);}
+.film-cap .fc b{color:var(--ink);font-weight:500;}
+.hinge{display:flex;align-items:center;justify-content:center;gap:14px;padding:44px 0 10px;}
+.hinge .h-dot{position:relative;width:46px;height:46px;}
+.hinge .h-core{position:absolute;inset:19px;background:var(--ink);border-radius:50%;}
+.hinge .h-ring{position:absolute;inset:0;border:1.5px solid var(--brown);border-radius:50%;opacity:0;animation:ringout 3s cubic-bezier(.2,.6,.4,1) infinite;}
+.hinge .h-t{font-family:var(--mono);font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--brown);}
+
+/* ===== How ===== */
+.how{padding:80px 0;background:var(--cream);}
+.h-title{font-size:clamp(30px,4.4vw,50px);font-weight:300;letter-spacing:-0.025em;text-align:center;color:var(--ink);}
+.h-title em{font-style:italic;color:var(--brown);}
+.how-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:44px;}
+@media(max-width:760px){.how-grid{grid-template-columns:1fr;}}
+.how-card{background:var(--cream-warm);border:1px solid var(--line);border-radius:16px;padding:28px;box-shadow:0 10px 30px rgba(66,61,50,0.07);}
+.how-card .n{font-family:var(--mono);font-size:11.5px;letter-spacing:0.16em;color:var(--honey);text-transform:uppercase;font-weight:500;}
+.how-card h3{font-size:20px;font-weight:600;margin:10px 0 8px;color:var(--ink);}
+.how-card p{font-size:15px;color:var(--muted-64);}
+
+/* ===== Days ===== */
+.days{padding:80px 0;background:var(--cream-warm);border-top:1px solid var(--line);}
+.days-grid{display:flex;flex-direction:column;gap:12px;margin-top:44px;}
+.day{display:grid;grid-template-columns:64px 1.1fr 1.4fr auto;gap:20px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px 26px;border-left:5px solid var(--line);opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease;box-shadow:0 8px 24px rgba(66,61,50,0.05);}
+.day.on{opacity:1;transform:none;}
+@media(max-width:860px){.day{grid-template-columns:52px 1fr;}.day .tagline,.day .host-side{grid-column:2;}.day .host-side{text-align:left;}}
+.day .num{font-family:var(--mono);font-size:12px;letter-spacing:0.1em;color:var(--muted);text-transform:uppercase;}
+.day .theme{font-size:23px;font-weight:600;}
+.day .theme small{display:block;font-size:12.5px;font-weight:400;color:var(--muted);margin-top:2px;}
+.day .tagline{font-style:italic;font-size:17.5px;color:var(--muted-64);font-weight:300;}
+.day .tagline b{font-style:normal;font-weight:700;color:var(--ink);}
+.day .host-side{display:flex;align-items:center;gap:10px;justify-content:flex-end;text-align:right;font-size:13.5px;color:var(--muted-64);}
+.day .hs-mini{position:relative;width:44px;height:44px;border-radius:50%;border:2px solid var(--line);flex:0 0 auto;display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:12px;color:var(--muted);background:#fff;overflow:hidden;}
+.day .hs-mini img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+.day .host-side small{display:block;font-size:10.5px;color:var(--muted);}
+.day[data-d="1"]{border-left-color:var(--d1);} .day[data-d="1"] .theme{color:var(--d1);}
+.day[data-d="2"]{border-left-color:var(--d2);} .day[data-d="2"] .theme{color:var(--d2);}
+.day[data-d="3"]{border-left-color:var(--d3);} .day[data-d="3"] .theme{color:var(--d3);}
+.day[data-d="4"]{border-left-color:var(--d4);} .day[data-d="4"] .theme{color:var(--d4);}
+.day[data-d="5"]{border-left-color:var(--d5);} .day[data-d="5"] .theme{color:var(--d5);}
+.day[data-d="6"]{border-left-color:var(--d6);} .day[data-d="6"] .theme{color:var(--d6);}
+.day[data-d="7"]{border-left-color:var(--d7);} .day[data-d="7"] .theme{color:var(--d7);}
+
+/* ===== Ring band (the dark product world) ===== */
+.ring-sec{padding:96px 0;background:var(--dark);color:var(--cream-warm);text-align:center;}
+.ring-sec .big{font-size:clamp(28px,4.2vw,46px);font-weight:300;max-width:820px;margin:0 auto;letter-spacing:-0.02em;line-height:1.2;}
+.ring-sec .big em{font-style:italic;color:var(--lime);}
+.ring-sec .note{font-size:16.5px;color:rgba(249,246,229,0.6);max-width:600px;margin:22px auto 0;}
+.ring-sec .offer{display:inline-block;margin-top:32px;padding:18px 30px;border:1px dashed rgba(227,244,125,0.35);border-radius:14px;}
+.ring-sec .offer .code{font-family:var(--mono);font-size:22px;letter-spacing:0.2em;color:var(--lime);}
+.ring-sec .offer .desc{font-size:13.5px;color:rgba(249,246,229,0.55);margin-top:6px;}
+
+/* ===== Signup ===== */
+.signup{padding:90px 0;background:var(--cream);text-align:center;}
+.signup form{max-width:460px;margin:32px auto 0;display:flex;flex-direction:column;gap:12px;}
+.signup input{padding:16px 20px;border-radius:12px;border:1px solid var(--line);background:#fff;color:var(--ink);font-size:16px;font-family:var(--font);}
+.signup input:focus{outline:none;border-color:var(--honey);}
+.signup .done{display:none;font-size:19px;color:var(--ink);margin-top:28px;}
+.signup .fine{font-size:12.5px;color:var(--muted);margin-top:14px;}
+.footer{padding:40px 5vw;background:var(--ink);color:rgba(249,246,229,0.55);}
+.footer-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;gap:18px;flex-wrap:wrap;font-family:var(--mono);font-size:11px;letter-spacing:0.12em;text-transform:uppercase;}
+.footer .wm{height:15px;color:var(--cream-warm);opacity:0.8;}
+.footer .wm svg{height:100%;width:auto;}
+.footer a{color:var(--blue);text-decoration:none;}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="pulse-wm" viewBox="0 0 391 157">
+  <path fill="currentColor" d="M353.012 120.96C328.187 120.96 309.693 102.965 309.693 77.807C309.693 54.3147 326.521 35.1543 351.013 35.1543C375.672 35.1543 391 52.9818 391 75.8076V82.4721H325.688C327.521 96.4675 338.184 106.298 352.846 106.298C362.843 106.298 371.84 101.966 376.671 92.9687L389.334 99.4665C382.17 113.462 369.007 120.96 353.012 120.96ZM326.355 71.8089H374.505C373.839 58.8132 364.342 49.9828 350.847 49.9828C337.018 49.9828 328.021 59.6463 326.355 71.8089Z"/>
+  <path fill="currentColor" d="M267.664 120.96C252.502 120.96 240.839 114.962 234.508 102.799L247.17 95.8016C251.336 103.966 258 106.965 266.997 106.965C276.327 106.965 283.492 103.133 283.492 95.9682C283.492 78.8072 236.674 91.8029 236.674 60.6465C236.674 46.3178 249.336 35.8213 267.164 35.8213C282.325 35.8213 292.655 42.819 297.82 52.3159L285.158 59.4802C281.659 52.3159 274.995 49.8167 267.497 49.8167C259.833 49.8167 253.168 53.8154 253.168 60.3133C253.168 76.9745 299.986 64.8118 299.986 95.635C299.986 111.13 284.991 120.96 267.664 120.96Z"/>
+  <path fill="currentColor" d="M199.974 0H216.469V119.128H199.974V0Z"/>
+  <path fill="currentColor" d="M139.423 105.131C154.585 105.131 162.916 91.9685 162.916 76.8068V37.4863H179.41V78.8061C179.41 102.465 165.081 121.126 139.423 121.126C114.098 121.126 99.7695 102.298 99.7695 78.6395V37.4863H116.264V76.9734C116.264 91.9685 124.428 105.131 139.423 105.131Z"/>
+  <path fill="currentColor" d="M16.4946 156.614H0V78.14C0 53.8146 18.8272 35.4873 43.4857 35.4873C68.1443 35.4873 86.8049 54.8143 86.8049 78.14C86.8049 102.799 68.9774 121.126 44.1522 121.126C33.1558 121.126 23.1591 116.294 16.4946 108.963V156.614ZM43.4857 105.631C58.6474 105.631 70.3103 93.1351 70.3103 78.3066C70.3103 63.3115 58.6474 51.1488 43.4857 51.1488C28.1574 51.1488 16.4946 63.3115 16.4946 78.3066C16.4946 93.1351 28.1574 105.631 43.4857 105.631Z"/>
+</symbol>
+</defs></svg>
+
+<nav class="nav">
+  <div class="wm"><svg viewBox="0 0 391 157"><use href="#pulse-wm"/></svg></div>
+  <span class="n-tag">× Unify · Unified Pulse</span>
+  <a class="n-cta" href="#join">Join free</a>
+</nav>
+
+<div class="urgency">
+  <div class="urgency-inner">
+    <div class="u-copy"><strong id="u-remaining">1,500</strong> rings in this batch · gone Oct 1</div>
+    <div class="bar" title="Live inventory count — real numbers only"><div class="bar-fill" id="u-fill" style="width:0%"></div></div>
+    <a href="eclipse.html">Aug 12 · the Eclipse Moment →</a>
+  </div>
+</div>
+
+<section class="hero">
+  <div class="container">
+    <div class="pulse-stage" aria-hidden="true">
+      <div class="pring"></div><div class="pring"></div><div class="pring"></div>
+      <div class="pulse-core"></div>
+    </div>
+    <div class="kicker">Sept 24–30 · free to join · everywhere</div>
+    <h1>The Week of <em>Wow.</em></h1>
+    <p class="sub">Seven days. Seven hosts. One reset a day — <strong>guided by seven of the people who taught us how to come back.</strong></p>
+    <div class="dates">One pulse a day · 7:00am – 10:00pm window · your time zone</div>
+    <p class="credit">Presented by Pulse and Unify · announced from the Ceremony Garden at the Iceland Eclipse · continuing the Oneness cadence Unify has stewarded since 2012</p>
+    <div class="cta-row">
+      <a class="btn btn-lime" href="#join">Join free</a>
+      <a class="btn btn-ghost" href="#days">See the seven days</a>
+    </div>
+  </div>
+</section>
+
+<section class="recognize">
+  <div class="container">
+    <div class="lines">
+      <div class="line reveal">You already know the feeling. <strong>The day runs away with you.</strong></div>
+      <div class="line reveal">The scroll wins. The tension wins. The reaction gets there before you do.</div>
+    </div>
+  </div>
+</section>
+
+<!-- Film break · autopilot: the days that blur -->
+<div class="filmband cold">
+  <div class="strip-wrap" aria-hidden="true">
+    <div class="sprockets"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+    <div class="strip race" id="strip-auto"></div>
+    <div class="sprockets"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+  </div>
+  <div class="film-cap"><span class="fc"><b>Autopilot</b> — every frame a different blur</span><span class="fc">commute · inbox · dishes · repeat</span></div>
+  <div class="hinge">
+    <div class="h-dot" aria-hidden="true"><div class="h-ring"></div><div class="h-ring" style="animation-delay:1s"></div><div class="h-core"></div></div>
+    <span class="h-t">the pulse slows the reel</span>
+  </div>
+</div>
+
+<!-- Film break · presence: the same moment, held -->
+<div class="filmband warm" style="padding-top:0;">
+  <div class="strip-wrap" aria-hidden="true">
+    <div class="sprockets"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+    <div class="strip crawl" id="strip-same"></div>
+    <div class="sprockets"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+  </div>
+  <div class="film-cap"><span class="fc"><b>Presence</b> — the same moment, at the speed of being here</span><span class="fc">this week, we practice the way back</span></div>
+</div>
+
+<section class="how">
+  <div class="container">
+    <h2 class="h-title">One day. One theme. One <em>reset.</em></h2>
+    <div class="how-grid">
+      <div class="how-card">
+        <div class="n">Morning</div>
+        <h3>A two-minute opening</h3>
+        <p>Your host for the day opens the theme — a short piece of audio or video and one question to carry with you. In by 7am. Done in five minutes.</p>
+      </div>
+      <div class="how-card">
+        <div class="n">During the day</div>
+        <h3>One reset, whenever it finds you</h3>
+        <p>No feed. No streaks. One intentional pause sometime in your day — before the scroll, the rush, or the reaction takes over.</p>
+      </div>
+      <div class="how-card">
+        <div class="n">Evening</div>
+        <h3>A 60-second check-in</h3>
+        <p>One question, one honest answer, and you're done. The window closes at 10pm and the page tells you to go live your evening. That's the design.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="days" id="days">
+  <div class="container">
+    <h2 class="h-title">The seven <em>days.</em></h2>
+    <div class="days-grid">
+      <div class="day reveal" data-d="1">
+        <div class="num">Day 1</div>
+        <div><div class="theme">Joy<small>Wed Sept 24</small></div></div>
+        <div class="tagline">Joy is <b>one pulse away.</b></div>
+        <div class="host-side"><span>Brent Freeman<small>20+ companies · The Alchemy of Joy</small></span><span class="hs-mini">BF<img src="assets/hosts/brent-freeman.jpg" alt="" onerror="this.remove()"></span></div>
+      </div>
+      <div class="day reveal" data-d="2">
+        <div class="num">Day 2</div>
+        <div><div class="theme">Oneness<small>Thu Sept 25</small></div></div>
+        <div class="tagline">Oneness is <b>one pulse away.</b></div>
+        <div class="host-side"><span>Patrick Kronfli<small>Unify · 1,400+ cities synchronized</small></span><span class="hs-mini">PK<img src="assets/hosts/patrick-kronfli.jpg" alt="" onerror="this.remove()"></span></div>
+      </div>
+      <div class="day reveal" data-d="3">
+        <div class="num">Day 3</div>
+        <div><div class="theme">Belonging<small>Fri Sept 26</small></div></div>
+        <div class="tagline">Belonging is <b>one pulse away.</b></div>
+        <div class="host-side"><span>Radha Agrawal<small>Daybreaker · 800K, zero paid ads</small></span><span class="hs-mini">RA<img src="assets/hosts/radha-agrawal.jpg" alt="" onerror="this.remove()"></span></div>
+      </div>
+      <div class="day reveal" data-d="4">
+        <div class="num">Day 4</div>
+        <div><div class="theme">Magic<small>Sat Sept 27</small></div></div>
+        <div class="tagline">Magic is <b>one pulse away.</b></div>
+        <div class="host-side"><span>Emily Fletcher<small>Ziva · 40K+ students</small></span><span class="hs-mini">EF<img src="assets/hosts/emily-fletcher.jpg" alt="" onerror="this.remove()"></span></div>
+      </div>
+      <div class="day reveal" data-d="5">
+        <div class="num">Day 5</div>
+        <div><div class="theme">Stillness<small>Sun Sept 28</small></div></div>
+        <div class="tagline">Stillness is <b>one pulse away.</b></div>
+        <div class="host-side"><span>Cory Allen<small>Now Is the Way · millions of listens</small></span><span class="hs-mini">CA<img src="assets/hosts/cory-allen.jpg" alt="" onerror="this.remove()"></span></div>
+      </div>
+      <div class="day reveal" data-d="6">
+        <div class="num">Day 6</div>
+        <div><div class="theme">Good Vibes<small>Mon Sept 29</small></div></div>
+        <div class="tagline">Good vibes are <b>one pulse away.</b></div>
+        <div class="host-side"><span>Vex King<small>4M+ books · 2.2M followers</small></span><span class="hs-mini">VK<img src="assets/hosts/vex-king.jpg" alt="" onerror="this.remove()"></span></div>
+      </div>
+      <div class="day reveal" data-d="7">
+        <div class="num">Day 7</div>
+        <div><div class="theme">Connection<small>Tue Sept 30</small></div></div>
+        <div class="tagline">Connection is <b>one pulse away.</b></div>
+        <div class="host-side"><span>Adam Schlender<small>Pulse · campaign owner</small></span><span class="hs-mini">AS<img src="assets/hosts/adam-schlender.jpg" alt="" onerror="this.remove()"></span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ring-sec">
+  <div class="container">
+    <p class="big">You don't need a Pulse ring to join.<br>Every day is <em>even better</em> with one.</p>
+    <p class="note">A gentle physical cue — no screen, no notification — that brings you back when the day pulls you out. During Unified Pulse, it's the pulse in "one pulse away."</p>
+    <div class="offer">
+      <div class="code">UNIFIED100</div>
+      <div class="desc">$100 off · arrives before the week begins · feel the difference in 21 days or send it back</div>
+    </div>
+    <div class="cta-row">
+      <a class="btn btn-lime" href="https://pulsemindfulness.com" rel="noopener">Get a Pulse ring</a>
+    </div>
+  </div>
+</section>
+
+<section class="signup" id="join">
+  <div class="container">
+    <h2 class="h-title">Join the <em>week.</em></h2>
+    <p style="color:var(--muted-64);max-width:520px;margin:16px auto 0;font-size:17px;">Free. Seven days. In by 7am, done by 10pm, off your phone in between.</p>
+    <form id="join-form">
+      <input type="text" name="name" placeholder="First name" required>
+      <input type="email" name="email" placeholder="Email" required>
+      <button class="btn btn-lime" type="submit">Count me in</button>
+    </form>
+    <div class="done" id="join-done">
+      <p>You're in. Day 1 opens Sept 24 at 7am — see you there.</p>
+      <p style="font-size:14.5px;color:var(--muted-64);margin-top:12px;">While you're here: the week is even better with the pulse on your finger. <strong>UNIFIED100</strong> takes $100 off and it ships before Day 1. <a href="https://pulsemindfulness.com" rel="noopener" style="color:var(--brown);">Get yours →</a></p>
+    </div>
+    <p class="fine">Two emails a day during the week — morning open, evening check-in. Nothing else. Unsubscribe anytime.</p>
+  </div>
+</section>
+
+<div class="footer">
+  <div class="footer-inner">
+    <div class="wm"><svg viewBox="0 0 391 157"><use href="#pulse-wm"/></svg></div>
+    <span>× Unify · Sept 24–30</span>
+    <span style="margin-left:auto;"><a href="creators.html">Hosts &amp; creators</a> · <a href="eclipse.html">The Eclipse Moment</a></span>
+  </div>
+</div>
+
+<script>
+/* Inventory strip — wire to Shopify Inventory API at launch. Real numbers only. */
+const INVENTORY_TOTAL = 1500, INVENTORY_SOLD = 0;
+document.getElementById('u-remaining').textContent = (INVENTORY_TOTAL - INVENTORY_SOLD).toLocaleString();
+document.getElementById('u-fill').style.width = ((INVENTORY_SOLD/INVENTORY_TOTAL)*100) + '%';
+
+/* Film strips: build from the purpose-shot 24-frame sets (8 frames each, doubled for seamless loop) */
+function buildStrip(id, prefix){
+  const el = document.getElementById(id);
+  const frames = [];
+  for(let i=1;i<=15;i+=2) frames.push(`assets/film-strip/${prefix}-${String(i).padStart(2,'0')}.jpg`);
+  [...frames, ...frames].forEach(src => {
+    const img = document.createElement('img'); img.src = src; img.alt = ''; img.loading = 'lazy';
+    el.appendChild(img);
+  });
+}
+buildStrip('strip-auto','auto');
+buildStrip('strip-same','moment');
+
+document.getElementById('join-form').addEventListener('submit', function(e){
+  e.preventDefault(); this.style.display='none';
+  document.getElementById('join-done').style.display='block';
+});
+
+const io = new IntersectionObserver(es => es.forEach(e => { if(e.isIntersecting){ e.target.classList.add('on'); io.unobserve(e.target);} }), {threshold:0.25});
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
