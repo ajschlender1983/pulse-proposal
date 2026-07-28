@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Week of Wow · Seven days. Seven pulses.</title>
+<meta name="description" content="A free seven-day presence challenge, presented by Pulse and Unify. Sept 24–30. You don't need a Pulse ring to join. Every day is even better with one.">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=DM+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+@font-face{font-family:'TT Norms Pro';src:url('fonts/TT-Norms-Pro-Light.ttf') format('truetype');font-weight:300;font-display:swap;}
+@font-face{font-family:'TT Norms Pro';src:url('fonts/TT-Norms-Pro-Regular.ttf') format('truetype');font-weight:400;font-display:swap;}
+@font-face{font-family:'TT Norms Pro';src:url('fonts/TT-Norms-Pro-DemiBold.ttf') format('truetype');font-weight:600;font-display:swap;}
+:root{
+  --void:rgb(14,10,20); --surface:rgb(18,14,24); --dark:rgba(31,24,36,1);
+  --accent:rgba(86,76,112,1); --light:rgba(228,225,230,1); --midtone:rgba(154,144,163,1);
+  --teal:rgba(106,223,217,1); --magenta:rgba(194,47,205,1); --gold:rgba(255,215,100,1);
+  --green:rgba(99,224,132,1); --orange:rgba(240,147,94,1);
+  --light-64:rgba(228,225,230,0.64); --midtone-64:rgba(154,144,163,0.64);
+  --accent-24:rgba(86,76,112,0.24); --teal-24:rgba(106,223,217,0.24); --gold-24:rgba(255,215,100,0.24);
+  --font-primary:'TT Norms Pro','DM Sans',-apple-system,sans-serif;
+  --font-display:'Playfair Display',Georgia,serif;
+  --font-mono:'DM Mono','SF Mono',Menlo,monospace;
+  --d1:#FFD764; --d2:#6ADFD9; --d3:#F0935E; --d4:#C22FCD; --d5:#9A90A3; --d6:#63E084; --d7:#E4E1E6;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:var(--font-primary); color:var(--light); background:var(--void);
+  background:
+    radial-gradient(1200px 900px at 85% -5%, rgba(106,223,217,0.10), transparent 60%),
+    radial-gradient(1000px 900px at 10% 30%, rgba(194,47,205,0.08), transparent 60%),
+    radial-gradient(900px 900px at 90% 90%, rgba(255,215,100,0.06), transparent 60%),
+    linear-gradient(180deg,rgb(18,14,24) 0%,rgb(24,18,30) 50%,rgb(31,24,36) 100%);
+  line-height:1.5;
+}
+.container{max-width:1100px;margin:0 auto;padding:0 28px;}
+
+/* ===== Progress-bar urgency banner ===== */
+.urgency{
+  position:sticky; top:0; z-index:50;
+  background:rgba(14,10,20,0.92); backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--accent-24);
+  padding:10px 20px;
+}
+.urgency-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;gap:16px;}
+.urgency .u-copy{font-family:var(--font-mono);font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:var(--light-64);white-space:nowrap;}
+.urgency .u-copy strong{color:var(--gold);}
+.urgency .bar{flex:1;height:6px;border-radius:3px;background:rgba(86,76,112,0.3);overflow:hidden;}
+.urgency .bar-fill{height:100%;border-radius:3px;background:linear-gradient(90deg,var(--teal),var(--gold));transition:width 1s ease;}
+.urgency .u-date{font-family:var(--font-mono);font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:var(--midtone);white-space:nowrap;}
+
+/* ===== Hero ===== */
+.hero{padding:110px 0 70px;text-align:center;position:relative;overflow:hidden;}
+.hero .kicker{font-family:var(--font-mono);font-size:15px;letter-spacing:0.22em;text-transform:uppercase;color:var(--teal);margin-bottom:26px;}
+.hero h1{font-size:clamp(46px,8vw,104px);font-weight:300;letter-spacing:-0.03em;line-height:1.0;}
+.hero h1 em{font-family:var(--font-display);font-style:italic;font-weight:400;color:var(--gold);}
+.hero .sub{font-size:clamp(18px,2.4vw,25px);color:var(--light-64);max-width:720px;margin:28px auto 0;}
+.hero .sub strong{color:var(--light);}
+.pulse-dot{
+  width:14px;height:14px;border-radius:50%;background:var(--gold);
+  margin:38px auto 0; animation:pulse 2.8s ease-in-out infinite;
+}
+@keyframes pulse{
+  0%,100%{transform:scale(1);box-shadow:0 0 0 0 rgba(255,215,100,0.5);}
+  50%{transform:scale(1.25);box-shadow:0 0 0 22px rgba(255,215,100,0);}
+}
+.hero .dates{font-family:var(--font-mono);font-size:15px;letter-spacing:0.18em;text-transform:uppercase;color:var(--midtone);margin-top:34px;}
+.hero .credit{font-size:14px;color:var(--midtone-64);margin-top:10px;}
+.cta-row{display:flex;gap:14px;justify-content:center;margin-top:40px;flex-wrap:wrap;}
+.btn{
+  display:inline-block;padding:16px 34px;border-radius:100px;font-size:16px;font-weight:600;
+  text-decoration:none;transition:transform .18s ease, box-shadow .18s ease;letter-spacing:0.01em;
+  border:none;cursor:pointer;font-family:var(--font-primary);
+}
+.btn:hover{transform:translateY(-1px) scale(1.02);}
+.btn-primary{background:var(--gold);color:rgb(24,18,30);box-shadow:0 6px 30px rgba(255,215,100,0.25);}
+.btn-ghost{border:1px solid var(--accent);color:var(--light);background:transparent;}
+.btn-ghost:hover{border-color:var(--teal);}
+
+/* ===== Recognition (the felt problem) ===== */
+.recognize{padding:90px 0;border-top:1px solid var(--accent-24);}
+.recognize .lines{max-width:760px;margin:0 auto;text-align:center;display:flex;flex-direction:column;gap:26px;}
+.recognize .line{font-size:clamp(22px,3.4vw,34px);font-weight:300;color:var(--light-64);opacity:0;transform:translateY(16px);transition:opacity .7s ease, transform .7s ease;}
+.recognize .line.on{opacity:1;transform:none;}
+.recognize .line strong{color:var(--light);font-weight:400;}
+.recognize .answer{font-size:clamp(26px,4vw,42px);color:var(--light);margin-top:16px;}
+.recognize .answer em{font-family:var(--font-display);font-style:italic;color:var(--teal);}
+
+/* ===== How it works ===== */
+.how{padding:80px 0;border-top:1px solid var(--accent-24);}
+.h-title{font-size:clamp(30px,4.6vw,52px);font-weight:300;letter-spacing:-0.02em;text-align:center;}
+.h-title em{font-family:var(--font-display);font-style:italic;color:var(--teal);}
+.how-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:46px;}
+@media(max-width:760px){.how-grid{grid-template-columns:1fr;}}
+.how-card{background:rgba(31,24,36,0.6);border:1px solid var(--accent-24);border-radius:16px;padding:28px;}
+.how-card .n{font-family:var(--font-mono);font-size:13px;letter-spacing:0.16em;color:var(--teal);text-transform:uppercase;}
+.how-card h3{font-size:21px;font-weight:500;margin:10px 0 8px;}
+.how-card p{font-size:15.5px;color:var(--light-64);}
+
+/* ===== The seven days ===== */
+.days{padding:80px 0;border-top:1px solid var(--accent-24);}
+.days-grid{display:flex;flex-direction:column;gap:14px;margin-top:46px;}
+.day{
+  display:grid;grid-template-columns:70px 1.1fr 1.4fr auto;gap:22px;align-items:center;
+  background:rgba(31,24,36,0.55);border:1px solid var(--accent-24);border-radius:16px;
+  padding:22px 28px;border-left:5px solid var(--accent);
+  opacity:0;transform:translateY(18px);transition:opacity .6s ease, transform .6s ease;
+}
+.day.on{opacity:1;transform:none;}
+@media(max-width:860px){.day{grid-template-columns:56px 1fr;}.day .tagline,.day .host-side{grid-column:2;}.day .host-side{text-align:left;}}
+.day .num{font-family:var(--font-mono);font-size:15px;letter-spacing:0.1em;color:var(--midtone);text-transform:uppercase;}
+.day .theme{font-size:25px;font-weight:500;}
+.day .theme small{display:block;font-size:13.5px;font-weight:400;color:var(--midtone);margin-top:3px;}
+.day .tagline{font-family:var(--font-display);font-style:italic;font-size:19px;color:var(--light-64);}
+.day .tagline b{font-style:normal;font-weight:700;}
+.day .host-side{text-align:right;font-size:14px;color:var(--midtone);}
+.day[data-d="1"]{border-left-color:var(--d1);} .day[data-d="1"] .theme{color:var(--d1);}
+.day[data-d="2"]{border-left-color:var(--d2);} .day[data-d="2"] .theme{color:var(--d2);}
+.day[data-d="3"]{border-left-color:var(--d3);} .day[data-d="3"] .theme{color:var(--d3);}
+.day[data-d="4"]{border-left-color:var(--d4);} .day[data-d="4"] .theme{color:#DA7BE4;}
+.day[data-d="5"]{border-left-color:var(--d5);} .day[data-d="5"] .theme{color:var(--d5);}
+.day[data-d="6"]{border-left-color:var(--d6);} .day[data-d="6"] .theme{color:var(--d6);}
+.day[data-d="7"]{border-left-color:var(--d7);} .day[data-d="7"] .theme{color:var(--d7);}
+
+/* ===== Ring section (soft FOMO) ===== */
+.ring-sec{padding:90px 0;border-top:1px solid var(--accent-24);text-align:center;}
+.ring-sec .big{font-size:clamp(28px,4.4vw,48px);font-weight:300;max-width:840px;margin:0 auto;letter-spacing:-0.02em;}
+.ring-sec .big em{font-family:var(--font-display);font-style:italic;color:var(--gold);}
+.ring-sec .note{font-size:17px;color:var(--light-64);max-width:620px;margin:22px auto 0;}
+.ring-sec .offer{
+  display:inline-block;margin-top:34px;padding:18px 30px;border:1px dashed var(--gold-24);
+  border-radius:14px;background:rgba(255,215,100,0.05);
+}
+.ring-sec .offer .code{font-family:var(--font-mono);font-size:22px;letter-spacing:0.2em;color:var(--gold);}
+.ring-sec .offer .desc{font-size:14px;color:var(--midtone);margin-top:6px;}
+
+/* ===== Signup ===== */
+.signup{padding:90px 0;border-top:1px solid var(--accent-24);text-align:center;}
+.signup form{max-width:480px;margin:34px auto 0;display:flex;flex-direction:column;gap:12px;}
+.signup input{
+  padding:16px 20px;border-radius:12px;border:1px solid var(--accent);background:rgba(31,24,36,0.7);
+  color:var(--light);font-size:16px;font-family:var(--font-primary);
+}
+.signup input:focus{outline:none;border-color:var(--teal);}
+.signup .done{display:none;font-size:20px;color:var(--light);margin-top:30px;}
+.signup .fine{font-size:13px;color:var(--midtone-64);margin-top:14px;}
+.footer{padding:44px 0;border-top:1px solid var(--accent-24);text-align:center;font-family:var(--font-mono);font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:var(--midtone-64);}
+.footer a{color:var(--midtone);}
+</style>
+</head>
+<body>
+
+<div class="urgency">
+  <div class="urgency-inner">
+    <div class="u-copy"><strong id="u-remaining">1,500</strong> rings · sold out Oct 1</div>
+    <div class="bar"><div class="bar-fill" id="u-fill" style="width:0%"></div></div>
+    <div class="u-date" id="u-days">— days left</div>
+  </div>
+</div>
+
+<section class="hero">
+  <div class="container">
+    <div class="kicker">Sept 24–30 · Free to join · Everywhere</div>
+    <h1>The Week of <em>Wow.</em></h1>
+    <p class="sub">Seven days. Seven hosts. One reset a day — <strong>guided by seven of the people who taught us how to come back.</strong></p>
+    <div class="pulse-dot" aria-hidden="true"></div>
+    <div class="dates">One pulse a day · 7:00am – 10:00pm window · your time zone</div>
+    <p class="credit">Presented by Pulse and Unify · Continuing the Oneness cadence Unify has stewarded since 2012</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="#join">Join free</a>
+      <a class="btn btn-ghost" href="#days">See the seven days</a>
+    </div>
+  </div>
+</section>
+
+<section class="recognize">
+  <div class="container">
+    <div class="lines">
+      <div class="line reveal">You already know the feeling. <strong>The day runs away with you.</strong></div>
+      <div class="line reveal">The scroll wins. The tension wins. The reaction gets there before you do.</div>
+      <div class="line reveal answer">This week, we practice the way back. <em>One pulse at a time.</em></div>
+    </div>
+  </div>
+</section>
+
+<section class="how">
+  <div class="container">
+    <h2 class="h-title">One day. One theme. One <em>reset.</em></h2>
+    <div class="how-grid">
+      <div class="how-card">
+        <div class="n">Morning</div>
+        <h3>A two-minute opening</h3>
+        <p>Each morning your host for the day opens the theme — a short piece of audio or video and one question to carry with you. In by 7am. Done in five minutes.</p>
+      </div>
+      <div class="how-card">
+        <div class="n">During the day</div>
+        <h3>One reset, whenever it finds you</h3>
+        <p>No feed. No streak-shaming. One intentional pause sometime in your day — before the scroll, the rush, or the reaction takes over.</p>
+      </div>
+      <div class="how-card">
+        <div class="n">Evening</div>
+        <h3>A 60-second check-in</h3>
+        <p>One question, one honest answer, and you're done. The window closes at 10pm and the page tells you to go live your life. That's the design.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="days" id="days">
+  <div class="container">
+    <h2 class="h-title">The seven <em>days.</em></h2>
+    <div class="days-grid">
+      <div class="day reveal" data-d="1">
+        <div class="num">Day 1</div>
+        <div><div class="theme">Joy<small>Wed Sept 24</small></div></div>
+        <div class="tagline">Joy is <b>one pulse away.</b></div>
+        <div class="host-side">Brent Freeman<br>Alchemy of Joy</div>
+      </div>
+      <div class="day reveal" data-d="2">
+        <div class="num">Day 2</div>
+        <div><div class="theme">Oneness<small>Thu Sept 25</small></div></div>
+        <div class="tagline">Oneness is <b>one pulse away.</b></div>
+        <div class="host-side">Patrick Kronfli<br>Unify.org</div>
+      </div>
+      <div class="day reveal" data-d="3">
+        <div class="num">Day 3</div>
+        <div><div class="theme">Belonging<small>Fri Sept 26</small></div></div>
+        <div class="tagline">Belonging is <b>one pulse away.</b></div>
+        <div class="host-side">Radha Agrawal<br>Belong Center · Daybreaker</div>
+      </div>
+      <div class="day reveal" data-d="4">
+        <div class="num">Day 4</div>
+        <div><div class="theme">Magic<small>Sat Sept 27</small></div></div>
+        <div class="tagline">Magic is <b>one pulse away.</b></div>
+        <div class="host-side">Emily Fletcher<br>Ziva</div>
+      </div>
+      <div class="day reveal" data-d="5">
+        <div class="num">Day 5</div>
+        <div><div class="theme">Stillness<small>Sun Sept 28</small></div></div>
+        <div class="tagline">Stillness is <b>one pulse away.</b></div>
+        <div class="host-side">Cory Allen<br>The Astral Hustle</div>
+      </div>
+      <div class="day reveal" data-d="6">
+        <div class="num">Day 6</div>
+        <div><div class="theme">Good Vibes<small>Mon Sept 29</small></div></div>
+        <div class="tagline">Good vibes are <b>one pulse away.</b></div>
+        <div class="host-side">Vex King<br>Good Vibes, Good Life</div>
+      </div>
+      <div class="day reveal" data-d="7">
+        <div class="num">Day 7</div>
+        <div><div class="theme">Connection<small>Tue Sept 30</small></div></div>
+        <div class="tagline">Connection is <b>one pulse away.</b></div>
+        <div class="host-side">Adam Schlender<br>ESU</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ring-sec">
+  <div class="container">
+    <p class="big">You don't need a Pulse ring to join.<br>Every day is <em>even better</em> with one.</p>
+    <p class="note">The ring is a gentle physical cue — no screen, no notification — that brings you back when the day pulls you out. During the Week of Wow, it's the pulse in "one pulse away."</p>
+    <div class="offer">
+      <div class="code">WOW100</div>
+      <div class="desc">$100 off · arrives before the week begins · 21-day guarantee: feel the difference or send it back</div>
+    </div>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="https://pulsemindfulness.com" rel="noopener">Get a Pulse ring</a>
+    </div>
+  </div>
+</section>
+
+<section class="signup" id="join">
+  <div class="container">
+    <h2 class="h-title">Join the <em>week.</em></h2>
+    <p class="sub" style="color:var(--light-64);max-width:560px;margin:18px auto 0;">Free. Seven days. In by 7am, done by 10pm, off your phone in between.</p>
+    <form id="join-form">
+      <input type="text" name="name" placeholder="First name" required>
+      <input type="email" name="email" placeholder="Email" required>
+      <button class="btn btn-primary" type="submit">Count me in</button>
+    </form>
+    <p class="done" id="join-done">You're in. Day 1 opens Sept 24 at 7am — see you there.</p>
+    <p class="fine">Two emails a day during the week — morning open, evening check-in. Nothing else. Unsubscribe anytime.</p>
+  </div>
+</section>
+
+<div class="footer">
+  <div class="container">Pulse × Unify · The Week of Wow · Sept 24–30 · <a href="creators.html">Hosts &amp; creators</a></div>
+</div>
+
+<script>
+/* Progress-bar banner — wire to Shopify Inventory API before launch.
+   RULE: every number must be REAL. Never fabricate the fill. */
+const INVENTORY_TOTAL = 1500;
+const INVENTORY_SOLD  = 0;   /* ← live count via Shopify API at launch */
+const remaining = INVENTORY_TOTAL - INVENTORY_SOLD;
+document.getElementById('u-remaining').textContent = remaining.toLocaleString();
+document.getElementById('u-fill').style.width = ((INVENTORY_SOLD/INVENTORY_TOTAL)*100) + '%';
+const target = new Date('2026-10-01T00:00:00');
+const days = Math.max(0, Math.ceil((target - new Date()) / 86400000));
+document.getElementById('u-days').textContent = days + ' days left';
+
+/* Signup (prototype: swap in ESP endpoint at launch) */
+document.getElementById('join-form').addEventListener('submit', function(e){
+  e.preventDefault();
+  this.style.display = 'none';
+  document.getElementById('join-done').style.display = 'block';
+});
+
+/* Scroll reveal */
+const io = new IntersectionObserver(es => es.forEach(e => { if(e.isIntersecting){ e.target.classList.add('on'); io.unobserve(e.target);} }), {threshold:0.25});
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>

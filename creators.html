@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Host a Day · The Week of Wow · Creators</title>
+<meta name="description" content="Host a day of the Week of Wow. Bring your voice, your practice, your people. Performance-based partnership via Impact.com — $100 per sale plus commission.">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=DM+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+@font-face{font-family:'TT Norms Pro';src:url('fonts/TT-Norms-Pro-Light.ttf') format('truetype');font-weight:300;font-display:swap;}
+@font-face{font-family:'TT Norms Pro';src:url('fonts/TT-Norms-Pro-Regular.ttf') format('truetype');font-weight:400;font-display:swap;}
+@font-face{font-family:'TT Norms Pro';src:url('fonts/TT-Norms-Pro-DemiBold.ttf') format('truetype');font-weight:600;font-display:swap;}
+:root{
+  --void:rgb(14,10,20); --dark:rgba(31,24,36,1); --accent:rgba(86,76,112,1);
+  --light:rgba(228,225,230,1); --midtone:rgba(154,144,163,1);
+  --teal:rgba(106,223,217,1); --gold:rgba(255,215,100,1); --green:rgba(99,224,132,1);
+  --light-64:rgba(228,225,230,0.64); --midtone-64:rgba(154,144,163,0.64);
+  --accent-24:rgba(86,76,112,0.24); --green-24:rgba(99,224,132,0.24);
+  --font-primary:'TT Norms Pro','DM Sans',-apple-system,sans-serif;
+  --font-display:'Playfair Display',Georgia,serif;
+  --font-mono:'DM Mono','SF Mono',Menlo,monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{
+  font-family:var(--font-primary);color:var(--light);
+  background:
+    radial-gradient(1100px 800px at 90% -5%, rgba(99,224,132,0.08), transparent 60%),
+    radial-gradient(900px 800px at 5% 60%, rgba(106,223,217,0.07), transparent 60%),
+    linear-gradient(180deg,rgb(18,14,24) 0%,rgb(31,24,36) 100%);
+  line-height:1.5;min-height:100vh;
+}
+.container{max-width:880px;margin:0 auto;padding:0 28px;}
+.hero{padding:100px 0 60px;text-align:center;}
+.kicker{font-family:var(--font-mono);font-size:14px;letter-spacing:0.22em;text-transform:uppercase;color:var(--green);margin-bottom:24px;}
+h1{font-size:clamp(40px,7vw,84px);font-weight:300;letter-spacing:-0.03em;line-height:1.02;}
+h1 em{font-family:var(--font-display);font-style:italic;font-weight:400;color:var(--green);}
+.sub{font-size:clamp(17px,2.2vw,22px);color:var(--light-64);max-width:640px;margin:24px auto 0;}
+.sub strong{color:var(--light);}
+h2{font-size:clamp(26px,4vw,40px);font-weight:300;letter-spacing:-0.02em;margin-bottom:26px;}
+h2 em{font-family:var(--font-display);font-style:italic;color:var(--teal);}
+section{padding:60px 0;border-top:1px solid var(--accent-24);}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+@media(max-width:720px){.grid3{grid-template-columns:1fr;}}
+.card{background:rgba(31,24,36,0.6);border:1px solid var(--accent-24);border-radius:14px;padding:24px;}
+.card .n{font-family:var(--font-mono);font-size:12px;letter-spacing:0.16em;color:var(--green);text-transform:uppercase;margin-bottom:10px;}
+.card h3{font-size:19px;font-weight:500;margin-bottom:8px;}
+.card p{font-size:14.5px;color:var(--light-64);}
+.terms{background:rgba(99,224,132,0.05);border:1px dashed var(--green-24);border-radius:14px;padding:28px;margin-top:26px;}
+.terms .t-label{font-family:var(--font-mono);font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:var(--green);margin-bottom:14px;}
+.terms ul{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.terms li{font-size:16.5px;color:var(--light-64);padding-left:24px;position:relative;}
+.terms li::before{content:"·";position:absolute;left:6px;top:-6px;font-size:28px;color:var(--green);font-weight:700;}
+.terms li strong{color:var(--light);}
+form{display:flex;flex-direction:column;gap:12px;margin-top:30px;}
+input,textarea,select{
+  padding:15px 18px;border-radius:12px;border:1px solid var(--accent);background:rgba(31,24,36,0.7);
+  color:var(--light);font-size:15.5px;font-family:var(--font-primary);
+}
+input:focus,textarea:focus,select:focus{outline:none;border-color:var(--teal);}
+textarea{min-height:110px;resize:vertical;}
+label{font-family:var(--font-mono);font-size:11.5px;letter-spacing:0.14em;text-transform:uppercase;color:var(--midtone);margin-top:8px;}
+.btn{
+  display:inline-block;padding:16px 34px;border-radius:100px;font-size:16px;font-weight:600;border:none;cursor:pointer;
+  background:var(--green);color:rgb(18,14,24);font-family:var(--font-primary);
+  transition:transform .18s ease;letter-spacing:0.01em;margin-top:10px;
+}
+.btn:hover{transform:translateY(-1px) scale(1.02);}
+.done{display:none;font-size:19px;color:var(--light);margin-top:26px;text-align:center;}
+.fine{font-size:13px;color:var(--midtone-64);margin-top:14px;}
+.footer{padding:40px 0;border-top:1px solid var(--accent-24);text-align:center;font-family:var(--font-mono);font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:var(--midtone-64);}
+.footer a{color:var(--midtone);}
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="container">
+    <div class="kicker">The Week of Wow · Sept 24–30 · Hosted days</div>
+    <h1>Bring your people a <em>day.</em></h1>
+    <p class="sub">Seven days, seven hosts, one theme each. You bring your voice and your practice. We bring the platform, the audience, and a clean performance deal. <strong>Your day. Your register. Your community, met where they are.</strong></p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2>What hosting a day <em>asks</em> of you</h2>
+    <div class="grid3">
+      <div class="card">
+        <div class="n">01 · Record</div>
+        <h3>One short opening</h3>
+        <p>A 2–5 minute audio or video piece opening your day's theme — in your own voice, your own style. Already have a piece that fits? We can feature existing work instead.</p>
+      </div>
+      <div class="card">
+        <div class="n">02 · Prompt</div>
+        <h3>Two questions + one intention</h3>
+        <p>A morning question, an evening question, and your signature intention line for the day. We draft, you approve — always in your voice, never ours.</p>
+      </div>
+      <div class="card">
+        <div class="n">03 · Share</div>
+        <h3>Tell your people</h3>
+        <p>Post your day to your own channels — announcement, reminder, last call. Your links carry your code; everything your audience does is attributed to you.</p>
+      </div>
+    </div>
+
+    <div class="terms">
+      <div class="t-label">The deal · performance-based · no fluff</div>
+      <ul>
+        <li><strong>$100 per ring sold</strong> through your link or code — flat, per sale.</li>
+        <li><strong>Plus commission</strong> on attributed revenue, paid monthly on close via Impact.com.</li>
+        <li><strong>Dedicated tracking</strong> — your own code (e.g. <strong>YOURNAME100</strong>, worth $100 off for your audience), your own dashboard, transparent numbers.</li>
+        <li><strong>No exclusivity, no content fees, no retainers</strong> — you keep your voice, your audience, and your other partnerships.</li>
+        <li><strong>Total time ask: about an hour.</strong> Record once, approve the drafts, post three times.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2>Apply to <em>host.</em></h2>
+    <form id="apply-form">
+      <label for="f-name">Name</label>
+      <input id="f-name" type="text" name="name" placeholder="Your name" required>
+      <label for="f-email">Email</label>
+      <input id="f-email" type="email" name="email" placeholder="you@yourdomain.com" required>
+      <label for="f-handle">Primary channel + handle</label>
+      <input id="f-handle" type="text" name="handle" placeholder="Instagram @you · Substack · Podcast name" required>
+      <label for="f-aud">Audience size (rough)</label>
+      <select id="f-aud" name="audience">
+        <option>Under 10K</option><option>10–50K</option><option>50–250K</option><option>250K–1M</option><option>1M+</option>
+      </select>
+      <label for="f-theme">The day you'd host — theme + one line on how you'd open it</label>
+      <textarea id="f-theme" name="theme" placeholder="e.g. A day of courage. I'd open with the 90-second practice I teach before every hard conversation…"></textarea>
+      <label for="f-link">One piece of your work you're proud of (link)</label>
+      <input id="f-link" type="url" name="work" placeholder="https://…">
+      <button class="btn" type="submit">Submit application</button>
+    </form>
+    <p class="done" id="apply-done">Got it. We review weekly and reply either way. Thank you for offering your voice.</p>
+    <p class="fine">Applications reviewed weekly through August. Hosts confirmed by Sept 5. Performance terms via Impact.com; you'll get your dashboard access with your confirmation.</p>
+  </div>
+</section>
+
+<div class="footer">
+  <div class="container"><a href="wow.html">← The Week of Wow</a> · Pulse × Unify · Performance partnerships, tracked on Impact.com</div>
+</div>
+
+<script>
+document.getElementById('apply-form').addEventListener('submit', function(e){
+  e.preventDefault();
+  /* Prototype: swap in form endpoint (Formspree / Worker) at launch */
+  this.style.display = 'none';
+  document.getElementById('apply-done').style.display = 'block';
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Your Week of Wow · Map</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ===== Wow Map · design DNA from the first-month map (warm, quiet, one-screen-at-a-time) ===== */
+:root{
+  --bg:#EBE7D4; --ink:#1A1C22; --brown:#423D32; --honey:#C9A227; --accent:#E3F47D;
+  --midtone:#8a8578; --midtone-64:#6E6857; --lightc:#F9F6E5;
+  --ink-64:rgba(26,28,34,0.64); --ink-08:rgba(26,28,34,0.06); --line:rgba(26,28,34,0.14);
+  --shadow:0 16px 40px rgba(66,61,50,0.14);
+  --font:'DM Sans',-apple-system,sans-serif; --mono:'DM Mono',monospace;
+  --d1:#C9A227; --d2:#3E8E87; --d3:#C06B36; --d4:#8E4E96; --d5:#6E6857; --d6:#5D8A4A; --d7:#42506B;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:var(--font);background:var(--bg);color:var(--ink);line-height:1.55;min-height:100vh;}
+.wrap{max-width:640px;margin:0 auto;padding:28px 20px 80px;}
+.topbar{display:flex;align-items:center;gap:10px;padding:6px 0 22px;}
+.brand-dot{width:9px;height:9px;border-radius:50%;background:var(--honey);animation:bpulse 3s ease-in-out infinite;}
+@keyframes bpulse{0%,100%{transform:scale(1);opacity:1;}50%{transform:scale(1.3);opacity:0.7;}}
+.brand{font-weight:600;font-size:14.5px;letter-spacing:0.01em;}
+.brand span{color:var(--midtone-64);font-weight:400;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;margin-left:8px;}
+.view{display:none;}
+.view.on{display:block;animation:fadein .4s ease;}
+@keyframes fadein{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:none;}}
+h1{font-size:30px;font-weight:600;letter-spacing:-0.02em;line-height:1.15;}
+h2{font-size:22px;font-weight:600;letter-spacing:-0.01em;}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--midtone-64);margin-bottom:10px;}
+.lede{font-size:16px;color:var(--ink-64);margin-top:10px;}
+.card{background:var(--lightc);border:1px solid var(--line);border-radius:16px;padding:22px;margin-top:18px;box-shadow:var(--shadow);}
+.btn{
+  display:inline-block;border:none;cursor:pointer;font-family:var(--font);
+  background:var(--ink);color:var(--lightc);font-size:15px;font-weight:500;
+  padding:14px 28px;border-radius:100px;margin-top:18px;transition:transform .15s ease;
+}
+.btn:hover{transform:translateY(-1px);}
+.btn.alt{background:transparent;color:var(--ink);border:1px solid var(--line);}
+.btn.honey{background:var(--honey);color:var(--lightc);}
+.btn.small{padding:9px 18px;font-size:13px;margin-top:10px;}
+input[type=text],input[type=email],textarea{
+  width:100%;padding:14px 16px;border-radius:12px;border:1px solid var(--line);
+  background:#fff;font-size:15.5px;font-family:var(--font);color:var(--ink);margin-top:10px;
+}
+input:focus,textarea:focus{outline:none;border-color:var(--honey);}
+textarea{min-height:90px;resize:vertical;}
+label{font-family:var(--mono);font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--midtone-64);display:block;margin-top:16px;}
+.choice{display:flex;gap:10px;margin-top:12px;flex-wrap:wrap;}
+.choice button{
+  flex:1;min-width:130px;padding:16px;border-radius:12px;border:1px solid var(--line);
+  background:#fff;font-family:var(--font);font-size:15px;cursor:pointer;transition:all .15s ease;
+}
+.choice button.sel{border-color:var(--honey);background:rgba(201,162,39,0.08);font-weight:600;}
+.gentle{margin-top:14px;padding:14px 16px;border-radius:12px;background:rgba(201,162,39,0.07);border:1px dashed rgba(201,162,39,0.4);font-size:14px;color:var(--brown);}
+.gentle b{color:var(--ink);}
+.skip{display:block;margin-top:12px;font-size:13px;color:var(--midtone-64);background:none;border:none;cursor:pointer;text-decoration:underline;font-family:var(--font);}
+.fine{font-size:12.5px;color:var(--midtone-64);margin-top:10px;}
+.share-item{display:flex;align-items:flex-start;gap:12px;padding:14px 0;border-bottom:1px dashed var(--line);}
+.share-item:last-child{border-bottom:none;}
+.share-item input[type=checkbox]{margin-top:4px;width:18px;height:18px;accent-color:var(--honey);}
+.share-item .s-body{flex:1;}
+.share-item .s-name{font-weight:600;font-size:15px;}
+.share-item .s-why{font-size:13px;color:var(--ink-64);margin-top:2px;}
+.progress-steps{display:flex;gap:6px;margin-bottom:22px;}
+.progress-steps .p{flex:1;height:4px;border-radius:2px;background:var(--ink-08);}
+.progress-steps .p.done{background:var(--honey);}
+/* Map view */
+.intent-hero{background:var(--ink);color:var(--lightc);border-radius:16px;padding:20px 22px;margin-top:16px;}
+.intent-hero .i-label{font-family:var(--mono);font-size:10.5px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(249,246,229,0.55);}
+.intent-hero .i-text{font-size:17px;margin-top:6px;font-weight:500;}
+.week-bar{display:flex;gap:5px;margin-top:16px;}
+.week-bar .wd{flex:1;height:6px;border-radius:3px;background:var(--ink-08);}
+.week-bar .wd.done{background:var(--honey);}
+.week-bar .wd.today{background:var(--ink);}
+.day-tile{
+  display:flex;align-items:center;gap:16px;background:var(--lightc);border:1px solid var(--line);
+  border-radius:16px;padding:18px 20px;margin-top:12px;cursor:pointer;transition:transform .15s ease, box-shadow .15s ease;
+  border-left:5px solid var(--line);
+}
+.day-tile:hover{transform:translateY(-1px);box-shadow:var(--shadow);}
+.day-tile.locked{opacity:0.55;filter:blur(0.3px);cursor:default;}
+.day-tile.locked:hover{transform:none;box-shadow:none;}
+.day-tile .d-num{font-family:var(--mono);font-size:11px;letter-spacing:0.12em;color:var(--midtone-64);text-transform:uppercase;min-width:48px;}
+.day-tile .d-main{flex:1;}
+.day-tile .d-theme{font-size:18px;font-weight:600;}
+.day-tile .d-host{font-size:13px;color:var(--ink-64);margin-top:2px;}
+.day-tile .d-state{font-family:var(--mono);font-size:10.5px;letter-spacing:0.12em;text-transform:uppercase;color:var(--midtone-64);text-align:right;}
+.day-tile .d-state.open{color:var(--honey);font-weight:500;}
+.day-tile .d-state.done{color:#5D8A4A;}
+/* Day detail */
+.host-ring{
+  width:74px;height:74px;border-radius:50%;border:3px solid var(--honey);padding:3px;margin-bottom:14px;
+  display:flex;align-items:center;justify-content:center;background:#fff;font-size:24px;font-weight:600;color:var(--brown);
+}
+.tagline{font-size:19px;font-style:italic;color:var(--brown);margin-top:8px;}
+.content-slot{
+  margin-top:16px;padding:26px;border-radius:14px;background:var(--ink);color:var(--lightc);
+  text-align:center;
+}
+.content-slot .c-tag{font-family:var(--mono);font-size:10.5px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(249,246,229,0.5);}
+.content-slot .c-title{font-size:17px;font-weight:500;margin-top:8px;}
+.content-slot .c-dur{font-size:13px;color:rgba(249,246,229,0.6);margin-top:4px;}
+.content-slot .play{
+  width:52px;height:52px;border-radius:50%;background:var(--accent);color:var(--ink);border:none;cursor:pointer;
+  font-size:19px;margin-top:14px;transition:transform .15s ease;
+}
+.content-slot .play:hover{transform:scale(1.06);}
+.prompt-block{margin-top:18px;}
+.prompt-q{font-size:16.5px;font-weight:600;}
+.done-state{text-align:center;padding:34px 20px;}
+.done-state .big{font-size:22px;font-weight:600;}
+.done-state .sub{font-size:15px;color:var(--ink-64);margin-top:8px;}
+.gate{background:var(--lightc);border:1px dashed var(--line);border-radius:16px;padding:30px;text-align:center;margin-top:18px;}
+.gate .g-title{font-size:18px;font-weight:600;}
+.gate .g-sub{font-size:14px;color:var(--ink-64);margin-top:6px;}
+/* Dashboard (quiet) */
+.stat-row{display:flex;gap:12px;margin-top:16px;}
+.stat{flex:1;background:var(--lightc);border:1px solid var(--line);border-radius:14px;padding:18px;text-align:center;}
+.stat .s-n{font-size:26px;font-weight:600;}
+.stat .s-l{font-family:var(--mono);font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--midtone-64);margin-top:4px;}
+.quiet-note{margin-top:16px;font-size:13.5px;color:var(--midtone-64);text-align:center;font-style:italic;}
+/* Bottom nav */
+.botnav{
+  position:fixed;bottom:0;left:0;right:0;background:rgba(249,246,229,0.96);backdrop-filter:blur(14px);
+  border-top:1px solid var(--line);display:flex;justify-content:center;gap:8px;padding:10px 16px calc(10px + env(safe-area-inset-bottom));z-index:40;
+}
+.botnav button{
+  font-family:var(--font);font-size:13px;padding:9px 20px;border-radius:100px;border:none;cursor:pointer;
+  background:transparent;color:var(--midtone-64);
+}
+.botnav button.on{background:var(--ink);color:var(--lightc);}
+/* Demo bar */
+.demo{
+  position:fixed;top:0;left:0;right:0;background:var(--ink);color:var(--lightc);z-index:60;
+  display:flex;align-items:center;gap:10px;padding:8px 16px;font-family:var(--mono);font-size:11px;letter-spacing:0.08em;
+  overflow-x:auto;
+}
+.demo .d-l{text-transform:uppercase;color:rgba(249,246,229,0.5);white-space:nowrap;}
+.demo button{
+  font-family:var(--mono);font-size:11px;padding:5px 10px;border-radius:6px;border:1px solid rgba(249,246,229,0.25);
+  background:transparent;color:var(--lightc);cursor:pointer;white-space:nowrap;
+}
+.demo button.on{background:var(--accent);color:var(--ink);border-color:var(--accent);}
+body{padding-top:44px;}
+</style>
+</head>
+<body>
+
+<!-- Demo controls (prototype only — remove for launch) -->
+<div class="demo">
+  <span class="d-l">Prototype demo · simulate:</span>
+  <button data-sim="pre">Before week</button>
+  <button data-sim="1">Day 1</button><button data-sim="2">Day 2</button><button data-sim="3">Day 3</button>
+  <button data-sim="4">Day 4</button><button data-sim="5">Day 5</button><button data-sim="6">Day 6</button>
+  <button data-sim="7">Day 7</button>
+  <button data-sim="night">Outside window</button>
+  <button data-sim="reset">↺ Reset all</button>
+</div>
+
+<div class="wrap">
+  <div class="topbar"><div class="brand-dot"></div><div class="brand">Pulse<span>The Week of Wow</span></div></div>
+
+  <!-- ============ ONBOARDING ============ -->
+  <div class="view" id="v-onboard">
+    <div class="progress-steps" id="ob-steps"></div>
+    <div id="ob-mount"></div>
+  </div>
+
+  <!-- ============ MAP ============ -->
+  <div class="view" id="v-map">
+    <div class="eyebrow">Sept 24–30 · one pulse a day</div>
+    <h1 id="map-greet">Your week.</h1>
+    <div class="intent-hero">
+      <div class="i-label">Your intention for the week</div>
+      <div class="i-text" id="map-intent">—</div>
+    </div>
+    <div class="week-bar" id="week-bar"></div>
+    <div id="tiles"></div>
+  </div>
+
+  <!-- ============ DAY DETAIL ============ -->
+  <div class="view" id="v-day"></div>
+
+  <!-- ============ DASHBOARD (quiet) ============ -->
+  <div class="view" id="v-dash">
+    <div class="eyebrow">Your arc · private by default</div>
+    <h1>Quietly, it's adding up.</h1>
+    <div class="stat-row">
+      <div class="stat"><div class="s-n" id="st-days">0</div><div class="s-l">days completed</div></div>
+      <div class="stat"><div class="s-n" id="st-checks">0</div><div class="s-l">check-ins</div></div>
+      <div class="stat"><div class="s-n" id="st-streak">—</div><div class="s-l">current day</div></div>
+    </div>
+    <div class="card" id="dash-reflections"></div>
+    <p class="quiet-note">Visit here twice a day, for a minute. You're not missing anything by being off your phone — that's the point.</p>
+  </div>
+</div>
+
+<div class="botnav" id="botnav" style="display:none;">
+  <button data-v="v-map" class="on">This week</button>
+  <button data-v="v-dash">Your arc</button>
+</div>
+
+<script>
+/* =====================================================================
+   WOW MAP · participant prototype
+   Design DNA: the first-month map (per-day content · prompt · check-in ·
+   window-gated · anti-doomscroll). State in localStorage. No servers yet —
+   wire to KV additive-sync at launch (five-layer protection per runbook).
+   ===================================================================== */
+const DAYS = [
+  {n:1, slug:'joy',        theme:'Joy',        host:'Brent Freeman',   org:'Alchemy of Joy',      color:'var(--d1)', init:'BF',
+   tag:'Joy is one pulse away.',
+   content:{type:'video', title:'The joy that was here first', dur:'3 min · video'},
+   before:'Where in your day does joy already live — before you earn anything?',
+   after:'Where did joy find you today?',
+   intention:'I am allowed to feel good before the work is done.'},
+  {n:2, slug:'oneness',    theme:'Oneness',    host:'Patrick Kronfli', org:'Unify.org',           color:'var(--d2)', init:'PK',
+   tag:'Oneness is one pulse away.',
+   content:{type:'audio', title:'The noon wave — a synchronized pause', dur:'4 min · audio'},
+   before:'When your clock hits noon today, you will stop for one breath. What do you want that breath to hold?',
+   after:'What did it feel like to pause knowing thousands paused with you?',
+   intention:'One breath, shared, is enough to change the room.'},
+  {n:3, slug:'belonging',  theme:'Belonging',  host:'Radha Agrawal',   org:'Belong Center',       color:'var(--d3)', init:'RA',
+   tag:'Belonging is one pulse away.',
+   content:{type:'video', title:'Belonging is remembered, not built', dur:'4 min · video'},
+   before:'With whom can you be exactly yourself? Message them today — that is the practice.',
+   after:'Did you send it? What moved when you did?',
+   intention:'I stop performing and start belonging.'},
+  {n:4, slug:'magic',      theme:'Magic',      host:'Emily Fletcher',  org:'Ziva',                color:'var(--d4)', init:'EF',
+   tag:'Magic is one pulse away.',
+   content:{type:'audio', title:'Prime the system, then watch', dur:'3 min · guided'},
+   before:'Mid-week check: is your Day-1 intention still true? Rewrite it if it grew.',
+   after:'What showed up today that you would have missed a week ago?',
+   intention:'The practice is the tool. Magic is the byproduct.'},
+  {n:5, slug:'stillness',  theme:'Stillness',  host:'Cory Allen',      org:'The Astral Hustle',   color:'var(--d5)', init:'CA',
+   tag:'Stillness is one pulse away.',
+   content:{type:'audio', title:'Ten minutes with what is actually there', dur:'10 min · sit'},
+   before:'What have you been too busy to hear?',
+   after:'What did you hear? Short answers welcome. Silence counts too.',
+   intention:'Stillness is not the absence of motion. It is the presence of me.'},
+  {n:6, slug:'good-vibes', theme:'Good Vibes', host:'Vex King',        org:'Good Vibes, Good Life', color:'var(--d6)', init:'VK',
+   tag:'Good vibes are one pulse away.',
+   content:{type:'video', title:'Choose the frequency', dur:'3 min · video'},
+   before:'One act of self-love before noon. One act of kindness before night. Name them now.',
+   after:'What did both acts do to the room you were in?',
+   intention:'My vibe is not luck. It is a frequency I choose.'},
+  {n:7, slug:'connection', theme:'Connection', host:'Adam Schlender',  org:'ESU',                 color:'var(--d7)', init:'AS',
+   tag:'Connection is one pulse away.',
+   content:{type:'video', title:'One real conversation', dur:'3 min · video'},
+   before:'One real conversation today, phone in the other room. You know which one. Who is it with?',
+   after:'How did it go? What is different now?',
+   intention:'Being actually here is the point of all of it.'}
+];
+const WINDOW_OPEN = 7, WINDOW_CLOSE = 22; /* local hours */
+const WEEK_START = new Date('2026-09-24T00:00:00');
+
+/* ---------- state ---------- */
+const LS = 'wowmap.v1';
+function loadS(){ try{ return JSON.parse(localStorage.getItem(LS)) || {}; }catch(e){ return {}; } }
+function saveS(s){ localStorage.setItem(LS, JSON.stringify(s)); }
+let S = loadS();
+/* demo overrides */
+let SIM = S.sim || null;
+
+function simNow(){
+  if(SIM === 'pre')   return new Date('2026-09-20T12:00:00');
+  if(SIM === 'night') return new Date('2026-09-25T23:30:00');
+  if(SIM && !isNaN(+SIM)) return new Date(new Date(WEEK_START).setDate(WEEK_START.getDate() + (+SIM - 1)) ).setHours ? new Date(new Date(WEEK_START.getTime() + (+SIM-1)*86400000).setHours(12,0,0,0)) : new Date();
+  return new Date();
+}
+function dayNumberFor(dt){
+  const diff = Math.floor((dt - WEEK_START) / 86400000) + 1;
+  return (diff >= 1 && diff <= 7) ? diff : null;
+}
+function inWindow(dt){ const h = dt.getHours(); return h >= WINDOW_OPEN && h < WINDOW_CLOSE; }
+
+/* ---------- tiny DOM helpers (textContent only — no HTML injection) ---------- */
+function el(tag, cls, text){ const e = document.createElement(tag); if(cls) e.className = cls; if(text !== undefined) e.textContent = text; return e; }
+function show(id){ document.querySelectorAll('.view').forEach(v => v.classList.remove('on')); document.getElementById(id).classList.add('on'); window.scrollTo(0,0); }
+
+/* =====================================================================
+   ONBOARDING · 6 steps
+   ===================================================================== */
+const OB = { step: 0, data: S.profile || {} };
+const OB_STEPS = 6;
+
+function obProgress(){
+  const m = document.getElementById('ob-steps'); m.textContent = '';
+  for(let i=0;i<OB_STEPS;i++){ const p = el('div','p' + (i<=OB.step?' done':'')); m.appendChild(p); }
+}
+function obRender(){
+  obProgress();
+  const m = document.getElementById('ob-mount'); m.textContent = '';
+  const card = el('div','card');
+
+  if(OB.step === 0){
+    m.appendChild(el('div','eyebrow','Welcome'));
+    m.appendChild(el('h1',null,'This week is one pulse away.'));
+    m.appendChild(el('p','lede','Seven days. Seven hosts. One reset a day — in by 7am, done by 10pm, off your phone in between. Let’s set you up. Takes two minutes.'));
+    const b = el('button','btn','Begin'); b.onclick = () => { OB.step = 1; obRender(); };
+    m.appendChild(b);
+  }
+  if(OB.step === 1){
+    m.appendChild(el('h2',null,'First — who are you?'));
+    const l1 = el('label',null,'First name'); card.appendChild(l1);
+    const inName = document.createElement('input'); inName.type='text'; inName.placeholder='Your first name'; inName.value = OB.data.name || ''; card.appendChild(inName);
+    const l2 = el('label',null,'Email'); card.appendChild(l2);
+    const inMail = document.createElement('input'); inMail.type='email'; inMail.placeholder='you@example.com'; inMail.value = OB.data.email || ''; card.appendChild(inMail);
+    card.appendChild(el('p','fine','Two emails a day during the week — morning open, evening check-in. Nothing else.'));
+    const b = el('button','btn','Continue');
+    b.onclick = () => { if(!inName.value.trim() || !inMail.value.trim()){ inName.style.borderColor = '#C06B36'; return; } OB.data.name = inName.value.trim(); OB.data.email = inMail.value.trim(); OB.step = 2; obRender(); };
+    card.appendChild(b); m.appendChild(card);
+  }
+  if(OB.step === 2){
+    m.appendChild(el('h2',null,'Do you already have a Pulse ring?'));
+    m.appendChild(el('p','lede','Either answer is a good answer.'));
+    const ch = el('div','choice');
+    const yes = el('button',null,'Yes, it’s on my finger'); const no = el('button',null,'Not yet');
+    ch.append(yes,no); card.appendChild(ch);
+    const gentle = el('div','gentle');
+    gentle.appendChild(document.createTextNode('You can do the whole week without one. Every day is even better with one — '));
+    const bb = el('b',null,'WOW100 gets you $100 off'); gentle.appendChild(bb);
+    gentle.appendChild(document.createTextNode(', shipped before Day 1.'));
+    gentle.style.display = 'none'; card.appendChild(gentle);
+    function pick(v){
+      OB.data.hasRing = v; yes.classList.toggle('sel', v); no.classList.toggle('sel', !v);
+      gentle.style.display = v ? 'none' : 'block';
+    }
+    yes.onclick = () => pick(true); no.onclick = () => pick(false);
+    if(OB.data.hasRing !== undefined) pick(OB.data.hasRing);
+    const b = el('button','btn','Continue');
+    b.onclick = () => { if(OB.data.hasRing === undefined) pick(true); OB.step = 3; obRender(); };
+    card.appendChild(b); m.appendChild(card);
+  }
+  if(OB.step === 3){
+    m.appendChild(el('h2',null,'Share your heart · optional'));
+    m.appendChild(el('p','lede','Each of these is opt-in, each has one honest reason, and each is skippable.'));
+    const items = [
+      {k:'wearable', name:'Link a wearable · Oura first', why:'Your baseline (HRV · resting HR · sleep) lets your arc show real change across the week. OAuth, one tap, revocable.'},
+      {k:'biometrics', name:'Share a 7-day baseline snapshot', why:'One snapshot before Day 1. Never live-streamed, never shared, deleted on request.'},
+      {k:'location', name:'Share your city or region — broadly, never your address', why:'Unlocks the right 7am–10pm window for your time zone and puts a dot (a dot, not a pin) on the community map.'}
+    ];
+    items.forEach(it => {
+      const row = el('div','share-item');
+      const cb = document.createElement('input'); cb.type = 'checkbox'; cb.checked = !!(OB.data.share && OB.data.share[it.k]);
+      cb.onchange = () => { OB.data.share = OB.data.share || {}; OB.data.share[it.k] = cb.checked; };
+      const body = el('div','s-body');
+      body.appendChild(el('div','s-name', it.name));
+      body.appendChild(el('div','s-why', it.why));
+      row.append(cb, body); card.appendChild(row);
+    });
+    const b = el('button','btn','Continue');
+    b.onclick = () => { OB.step = 4; obRender(); };
+    card.appendChild(b);
+    const sk = el('button','skip','Skip all of this — it changes nothing about your week');
+    sk.onclick = () => { OB.data.share = {}; OB.step = 4; obRender(); };
+    card.appendChild(sk); m.appendChild(card);
+  }
+  if(OB.step === 4){
+    m.appendChild(el('h2',null,'What would be worth pulsing for this week?'));
+    m.appendChild(el('p','lede','One line. Your intention. It sits at the top of your map all week, and we check back on it Day 4 and Day 7.'));
+    const ta = document.createElement('textarea'); ta.placeholder = 'e.g. Being actually present at dinner, every night this week.'; ta.value = OB.data.intention || '';
+    card.appendChild(ta);
+    const b = el('button','btn','Set my intention');
+    b.onclick = () => { if(!ta.value.trim()){ ta.style.borderColor = '#C06B36'; return; } OB.data.intention = ta.value.trim(); OB.step = 5; obRender(); };
+    card.appendChild(b); m.appendChild(card);
+  }
+  if(OB.step === 5){
+    m.appendChild(el('div','eyebrow','You’re in'));
+    m.appendChild(el('h1',null,'See you at 7am, Day 1.'));
+    m.appendChild(el('p','lede','Your intention is set. Your map is ready. Day 1 — Joy, with Brent Freeman — opens Wednesday Sept 24 at 7am your time. Until then: nothing to do, nowhere to scroll. That’s the design.'));
+    const b = el('button','btn honey','Open my map');
+    b.onclick = () => {
+      S.profile = OB.data; S.onboarded = true; saveS(S);
+      document.getElementById('botnav').style.display = 'flex';
+      renderMap(); show('v-map');
+    };
+    m.appendChild(b);
+  }
+}
+
+/* =====================================================================
+   MAP VIEW
+   ===================================================================== */
+function dayState(d){
+  const now = simNow(); const cur = dayNumberFor(now);
+  const rec = (S.checkins || {})[d.n] || {};
+  if(rec.after) return 'done';
+  if(cur === null) return 'locked';
+  if(d.n < cur) return 'missed';       /* soft — no shame, can still view */
+  if(d.n > cur) return 'locked';
+  return inWindow(now) ? 'open' : 'window-closed';
+}
+function renderMap(){
+  const p = S.profile || {};
+  document.getElementById('map-greet').textContent = p.name ? (p.name + ', your week.') : 'Your week.';
+  document.getElementById('map-intent').textContent = p.intention || '—';
+  const wb = document.getElementById('week-bar'); wb.textContent = '';
+  const now = simNow(); const cur = dayNumberFor(now);
+  DAYS.forEach(d => {
+    const seg = el('div','wd');
+    const rec = (S.checkins || {})[d.n] || {};
+    if(rec.after) seg.classList.add('done');
+    else if(cur === d.n) seg.classList.add('today');
+    wb.appendChild(seg);
+  });
+  const t = document.getElementById('tiles'); t.textContent = '';
+  DAYS.forEach(d => {
+    const st = dayState(d);
+    const tile = el('div','day-tile' + ((st==='locked')?' locked':''));
+    tile.style.borderLeftColor = d.color;
+    tile.appendChild(el('div','d-num','Day ' + d.n));
+    const main = el('div','d-main');
+    main.appendChild(el('div','d-theme', d.theme));
+    main.appendChild(el('div','d-host', d.host + ' · ' + d.org));
+    tile.appendChild(main);
+    const stateLabel = {open:'Open now', done:'Complete ✓', locked:'Opens soon', missed:'View', 'window-closed':'Back at 7am'}[st];
+    const stEl = el('div','d-state ' + (st==='open'?'open':(st==='done'?'done':'')), stateLabel);
+    tile.appendChild(stEl);
+    if(st !== 'locked'){ tile.onclick = () => renderDay(d, st); }
+    t.appendChild(tile);
+  });
+}
+
+/* =====================================================================
+   DAY DETAIL
+   ===================================================================== */
+function renderDay(d, st){
+  const v = document.getElementById('v-day'); v.textContent = '';
+  const back = el('button','skip','← back to your week'); back.style.textAlign='left'; back.onclick = () => { renderMap(); show('v-map'); };
+  v.appendChild(back);
+
+  if(st === 'window-closed'){
+    const g = el('div','gate');
+    g.appendChild(el('div','g-title','The day is resting.'));
+    g.appendChild(el('div','g-sub','Day ' + d.n + ' — ' + d.theme + ' — opens at 7am and closes at 10pm. Come back inside the window. Nothing here needs you at this hour, and that’s a feature.'));
+    v.appendChild(g); show('v-day'); return;
+  }
+
+  v.appendChild(el('div','eyebrow','Day ' + d.n + ' · ' + d.theme));
+  const ring = el('div','host-ring', d.init); ring.style.borderColor = d.color; v.appendChild(ring);
+  v.appendChild(el('h1',null, d.theme + ', with ' + d.host));
+  v.appendChild(el('div','tagline', d.tag));
+
+  const rec = (S.checkins = S.checkins || {}, S.checkins[d.n] = S.checkins[d.n] || {});
+
+  /* Morning: before-prompt + content */
+  const card1 = el('div','card');
+  card1.appendChild(el('div','eyebrow','Morning · before'));
+  card1.appendChild(el('div','prompt-q', d.before));
+  const ta1 = document.createElement('textarea'); ta1.placeholder = 'One honest line is plenty.'; ta1.value = rec.before || '';
+  card1.appendChild(ta1);
+  const b1 = el('button','btn small','Save morning check-in');
+  b1.onclick = () => { rec.before = ta1.value.trim(); saveS(S); b1.textContent = 'Saved ✓'; setTimeout(()=>b1.textContent='Save morning check-in',1400); };
+  card1.appendChild(b1);
+  v.appendChild(card1);
+
+  const slot = el('div','content-slot');
+  slot.appendChild(el('div','c-tag', d.host + ' · today’s piece'));
+  slot.appendChild(el('div','c-title', d.content.title));
+  slot.appendChild(el('div','c-dur', d.content.dur + ' · placeholder — creator content drops here'));
+  const play = el('button','play','▶'); play.onclick = () => { play.textContent = '✓'; };
+  slot.appendChild(play);
+  v.appendChild(slot);
+
+  const intentCard = el('div','card');
+  intentCard.appendChild(el('div','eyebrow', d.host + '’s intention for you'));
+  intentCard.appendChild(el('div','tagline','“' + d.intention + '”'));
+  v.appendChild(intentCard);
+
+  /* Evening: after-prompt */
+  const card2 = el('div','card');
+  card2.appendChild(el('div','eyebrow','Evening · after'));
+  card2.appendChild(el('div','prompt-q', d.after));
+  const ta2 = document.createElement('textarea'); ta2.placeholder = '60 seconds. Then you’re done.'; ta2.value = rec.after || '';
+  card2.appendChild(ta2);
+  const b2 = el('button','btn honey','Complete Day ' + d.n);
+  b2.onclick = () => {
+    if(!ta2.value.trim()){ ta2.style.borderColor = '#C06B36'; return; }
+    rec.after = ta2.value.trim(); saveS(S);
+    const done = el('div','done-state');
+    done.appendChild(el('div','big','That’s it. You’re done for today.'));
+    done.appendChild(el('div','sub','Close the phone. ' + (d.n < 7 ? ('Day ' + (d.n+1) + ' opens at 7am.') : 'Tomorrow: your seven-day arc.')));
+    v.textContent = ''; v.appendChild(back); v.appendChild(done);
+  };
+  card2.appendChild(b2);
+  v.appendChild(card2);
+
+  show('v-day');
+}
+
+/* =====================================================================
+   DASHBOARD (quiet)
+   ===================================================================== */
+function renderDash(){
+  const c = S.checkins || {};
+  let days = 0, checks = 0;
+  Object.values(c).forEach(r => { if(r.after) days++; checks += (r.before?1:0) + (r.after?1:0); });
+  document.getElementById('st-days').textContent = days;
+  document.getElementById('st-checks').textContent = checks;
+  const cur = dayNumberFor(simNow());
+  document.getElementById('st-streak').textContent = cur ? ('Day ' + cur) : '—';
+  const dr = document.getElementById('dash-reflections'); dr.textContent = '';
+  dr.appendChild(el('div','eyebrow','Your reflections · yours alone'));
+  const any = Object.keys(c).length > 0;
+  if(!any){ dr.appendChild(el('p','lede','Nothing here yet. Your evening check-ins will collect quietly, and on Day 8 you’ll get your whole arc reflected back.')); }
+  else{
+    DAYS.forEach(d => {
+      const r = c[d.n]; if(!r || (!r.before && !r.after)) return;
+      const b = el('div',null); b.style.marginTop = '14px';
+      b.appendChild(el('div','eyebrow','Day ' + d.n + ' · ' + d.theme));
+      if(r.before) b.appendChild(el('p','lede','AM — ' + r.before));
+      if(r.after)  b.appendChild(el('p','lede','PM — ' + r.after));
+      dr.appendChild(b);
+    });
+  }
+}
+
+/* =====================================================================
+   NAV + DEMO
+   ===================================================================== */
+document.getElementById('botnav').addEventListener('click', e => {
+  const b = e.target.closest('button'); if(!b) return;
+  document.querySelectorAll('.botnav button').forEach(x => x.classList.remove('on'));
+  b.classList.add('on');
+  if(b.dataset.v === 'v-dash') renderDash();
+  if(b.dataset.v === 'v-map') renderMap();
+  show(b.dataset.v);
+});
+document.querySelector('.demo').addEventListener('click', e => {
+  const b = e.target.closest('button'); if(!b) return;
+  if(b.dataset.sim === 'reset'){ localStorage.removeItem(LS); location.reload(); return; }
+  SIM = b.dataset.sim; S.sim = SIM; saveS(S);
+  document.querySelectorAll('.demo button').forEach(x => x.classList.remove('on'));
+  b.classList.add('on');
+  if(S.onboarded){ renderMap(); show('v-map'); }
+});
+
+/* ---------- boot ---------- */
+if(S.onboarded){
+  document.getElementById('botnav').style.display = 'flex';
+  renderMap(); show('v-map');
+} else {
+  obRender(); show('v-onboard');
+}
+</script>
+</body>
+</html>

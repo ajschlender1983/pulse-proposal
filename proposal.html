@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pulse · 60-Day Campaign Proposal · Aug 1 – Oct 1</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=DM+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+@font-face{font-family:'TT Norms Pro';src:url('fonts/TT-Norms-Pro-Light.ttf') format('truetype');font-weight:300;font-display:swap;}
+@font-face{font-family:'TT Norms Pro';src:url('fonts/TT-Norms-Pro-Regular.ttf') format('truetype');font-weight:400;font-display:swap;}
+@font-face{font-family:'TT Norms Pro';src:url('fonts/TT-Norms-Pro-DemiBold.ttf') format('truetype');font-weight:600;font-display:swap;}
+:root{
+  --void:rgb(14,10,20); --dark:rgba(31,24,36,1); --accent:rgba(86,76,112,1);
+  --light:rgba(228,225,230,1); --midtone:rgba(154,144,163,1);
+  --teal:rgba(106,223,217,1); --gold:rgba(255,215,100,1); --green:rgba(99,224,132,1);
+  --orange:rgba(240,147,94,1); --magenta:rgba(194,47,205,1);
+  --light-64:rgba(228,225,230,0.64); --midtone-64:rgba(154,144,163,0.64);
+  --accent-24:rgba(86,76,112,0.24); --gold-24:rgba(255,215,100,0.24);
+  --font-primary:'TT Norms Pro','DM Sans',-apple-system,sans-serif;
+  --font-display:'Playfair Display',Georgia,serif;
+  --font-mono:'DM Mono','SF Mono',Menlo,monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:var(--font-primary);color:var(--light);background:linear-gradient(180deg,rgb(18,14,24) 0%,rgb(31,24,36) 100%);line-height:1.55;}
+.page{max-width:980px;margin:0 auto;padding:60px 32px 80px;}
+.kicker{font-family:var(--font-mono);font-size:13px;letter-spacing:0.2em;text-transform:uppercase;color:var(--teal);}
+h1{font-size:clamp(36px,5.4vw,62px);font-weight:300;letter-spacing:-0.025em;line-height:1.05;margin-top:14px;}
+h1 em{font-family:var(--font-display);font-style:italic;color:var(--gold);}
+.byline{font-family:var(--font-mono);font-size:13px;letter-spacing:0.12em;text-transform:uppercase;color:var(--midtone);margin-top:16px;}
+section{margin-top:64px;}
+h2{font-size:clamp(24px,3.6vw,36px);font-weight:300;letter-spacing:-0.02em;margin-bottom:20px;}
+h2 em{font-family:var(--font-display);font-style:italic;color:var(--teal);}
+h2 .idx{font-family:var(--font-mono);font-size:14px;color:var(--midtone-64);letter-spacing:0.14em;margin-right:12px;}
+p{font-size:16.5px;color:var(--light-64);margin-bottom:14px;max-width:70ch;}
+p strong{color:var(--light);}
+sup{color:var(--gold);font-size:11px;}
+.split{display:grid;grid-template-columns:1fr 240px;gap:28px;align-items:start;}
+@media(max-width:820px){.split{grid-template-columns:1fr;}}
+.sowhat{
+  border-left:3px solid var(--gold);padding:14px 18px;background:rgba(255,215,100,0.04);
+  border-radius:0 10px 10px 0;font-size:14px;color:var(--light-64);
+}
+.sowhat .sw-tag{font-family:var(--font-mono);font-size:10.5px;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:6px;}
+.thesis-line{
+  font-size:clamp(19px,2.6vw,25px);font-weight:300;color:var(--light);line-height:1.5;
+  border:1px solid var(--gold-24);border-left:5px solid var(--gold);border-radius:0 14px 14px 0;
+  padding:26px 30px;background:rgba(255,215,100,0.04);margin:24px 0;max-width:none;
+}
+table{width:100%;border-collapse:collapse;margin:18px 0;font-size:15px;}
+th{font-family:var(--font-mono);font-size:11.5px;letter-spacing:0.14em;text-transform:uppercase;color:var(--midtone);text-align:left;padding:10px 14px;border-bottom:1px solid var(--accent-24);}
+td{padding:12px 14px;border-bottom:1px solid rgba(86,76,112,0.14);color:var(--light-64);vertical-align:top;}
+td strong{color:var(--light);}
+tr.hl td{background:rgba(106,223,217,0.05);}
+td.neg{color:var(--orange);} td.pos{color:var(--green);}
+.num{font-variant-numeric:tabular-nums;font-family:var(--font-mono);font-size:14px;}
+.mtt{list-style:none;margin:14px 0;}
+.mtt li{padding:12px 0 12px 30px;position:relative;border-bottom:1px dashed var(--accent-24);font-size:16px;color:var(--light-64);}
+.mtt li::before{content:"→";position:absolute;left:2px;color:var(--teal);font-family:var(--font-mono);}
+.mtt li strong{color:var(--light);}
+.model-chain{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:22px 0;}
+@media(max-width:760px){.model-chain{grid-template-columns:repeat(2,1fr);}}
+.mc{background:rgba(31,24,36,0.6);border:1px solid var(--accent-24);border-radius:14px;padding:20px;}
+.mc .m-n{font-family:var(--font-mono);font-size:11px;letter-spacing:0.14em;color:var(--teal);text-transform:uppercase;}
+.mc h4{font-size:16.5px;font-weight:500;margin:8px 0 6px;color:var(--light);}
+.mc p{font-size:13.5px;margin:0;}
+.cal{display:flex;flex-direction:column;gap:10px;margin:18px 0;}
+.cal-row{display:grid;grid-template-columns:150px 1fr;gap:18px;padding:14px 18px;background:rgba(31,24,36,0.5);border:1px solid var(--accent-24);border-radius:12px;align-items:baseline;}
+.cal-row .c-when{font-family:var(--font-mono);font-size:12.5px;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);}
+.cal-row .c-what{font-size:15.5px;color:var(--light-64);}
+.cal-row .c-what strong{color:var(--light);}
+.assets{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:18px 0;}
+@media(max-width:700px){.assets{grid-template-columns:1fr;}}
+.asset{background:rgba(31,24,36,0.55);border:1px solid var(--accent-24);border-radius:12px;padding:18px;border-left:4px solid var(--green);}
+.asset h4{font-size:16px;font-weight:500;margin-bottom:4px;}
+.asset p{font-size:13.5px;margin:0;}
+.sources{font-size:13px;color:var(--midtone);}
+.sources li{margin-bottom:8px;list-style:none;padding-left:24px;position:relative;}
+.sources li b{color:var(--gold);position:absolute;left:0;font-weight:400;}
+.footer{margin-top:70px;padding-top:26px;border-top:1px solid var(--accent-24);font-family:var(--font-mono);font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:var(--midtone-64);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header>
+    <div class="kicker">Proposal · for Johan &amp; Elliot · working draft</div>
+    <h1>Sixty days to <em>sold out.</em></h1>
+    <p class="byline">Aug 1 – Oct 1 · Prepared by Adam Schlender · numbers cited inline · July 2026</p>
+  </header>
+
+  <section>
+    <h2><span class="idx">01</span>Executive <em>thesis</em></h2>
+    <div class="thesis-line">
+      For a total campaign cost of <strong>$45,000 over 60 days</strong> — about six weeks of the current ad budget — we test whether this distribution model clears the <strong>1,500 remaining rings</strong> and brings the cost of acquiring a customer down to <strong>$100</strong>. If it works, Pulse has earned the right to raise money for <em>inventory against proven demand</em>. If it doesn't, we've spent less than two months of ad spend to find out — and we keep every asset the campaign built.
+    </div>
+    <div class="split">
+      <div>
+        <p><strong>The comparison that matters.</strong> Every dollar below is judged against one alternative: putting the same $45,000 into Meta ads at today's return of $1.30 in sales per $1 spent<sup>3</sup>. That baseline produces roughly <strong>255 rings sold and a net loss of about $7,800</strong> after product costs. The campaign has to beat that number — not a slide-deck fantasy, that number.</p>
+        <p><strong>Three scenarios, priced honestly.</strong> Variable costs (the $100-off codes and creator commissions) only occur when a ring actually sells — so the downside is capped at the $45,000 of fixed cost, and the upside scales with sales.</p>
+      </div>
+      <aside class="sowhat"><span class="sw-tag">So what · for Elliot</span>Worst case ≈ the same money ads would have lost, plus we keep the film, the community, the partner platform, and the customer list. Best case nets +$69K contribution and a sold-out story to raise on.</aside>
+    </div>
+
+    <table>
+      <tr><th>Scenario</th><th>Rings sold</th><th>Cost per customer*</th><th>Revenue</th><th>Net contribution†</th><th>vs. Meta baseline</th></tr>
+      <tr><td><strong>Meta baseline</strong> (counterfactual)</td><td class="num">≈255</td><td class="num">$176</td><td class="num">$58.5K</td><td class="num neg">−$7.8K</td><td class="num">—</td></tr>
+      <tr><td><strong>Worst</strong> — events under-deliver</td><td class="num">350</td><td class="num">≈$157</td><td class="num">$80K</td><td class="num neg">−$3.9K</td><td class="num pos">+$3.9K</td></tr>
+      <tr><td><strong>Expected</strong> — model works, short of sell-out</td><td class="num">900</td><td class="num">≈$106</td><td class="num">$206K</td><td class="num pos">+$36K</td><td class="num pos">+$44K</td></tr>
+      <tr class="hl"><td><strong>Best</strong> — sold out by Oct 1</td><td class="num">1,500</td><td class="num">≈$100</td><td class="num">$344K</td><td class="num pos">+$69K</td><td class="num pos">+$77K</td></tr>
+    </table>
+    <p style="font-size:13px;color:var(--midtone);">* Cost per customer = all acquisition cost (fixed campaign + discounts + commissions) ÷ rings sold. † Net contribution = revenue − product cost ($83/ring<sup>4</sup>) − all acquisition cost. Adam's retainer is inside the fixed cost; his performance bonus (§05) is paid only out of realized surplus.</p>
+
+    <h2 style="margin-top:40px;font-size:24px;">What must be true</h2>
+    <ul class="mtt">
+      <li><strong>Iceland happens as negotiated</strong> — $12K sponsorship fee<sup>2</sup>, Unify amplification decoupled to September<sup>2</sup>, product integrated into the Ceremony Garden and VIP spaces<sup>1</sup>.</li>
+      <li><strong>At least 4 of 7 Week-of-Wow hosts confirm</strong> on performance-only terms ($100/sale + commission — zero upfront). Fallback bench: the Iceland ceremony roster<sup>1</sup>.</li>
+      <li><strong>The community shows up</strong> — the existing ~490 keepers and WhatsApp group seed the referral wave. Ambassador reach alone does not convert<sup>4</sup>; the offer + code + moment structure has to do the work.</li>
+      <li><strong>Inventory and fulfillment hold</strong> — 1,500 rings in stock, on-site sales at events cleared with ops, WOW100 / ECLIPSE100 codes wired in Shopify + Impact.com.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2><span class="idx">02</span>The <em>model</em></h2>
+    <div class="split">
+      <div>
+        <p>This is not an event sponsorship plus some ads. It's a repeatable sequence:</p>
+        <div class="model-chain">
+          <div class="mc"><div class="m-n">1 · Anchor</div><h4>An event that sells</h4><p>A real cultural moment (the eclipse, a dance floor, a salon) motivates pre-orders *before* the moment — "get the ring in time for it."</p></div>
+          <div class="mc"><div class="m-n">2 · Amplify</div><h4>Partners carry it</h4><p>Unify's 200K list + 2.8M social<sup>1</sup>, seven hosts' audiences, whitelisted ads from their handles — all performance-tracked.</p></div>
+          <div class="mc"><div class="m-n">3 · Sell through</div><h4>The batch clears</h4><p>A real, visible count of 1,500 rings. When it's gone, it's gone until the next production run. Honest scarcity, live number.</p></div>
+          <div class="mc"><div class="m-n">4 · Raise</div><h4>Fund inventory, not hope</h4><p>The next raise buys production against demonstrated sell-through — a batch-financing conversation, not a growth-hope conversation.</p></div>
+        </div>
+      </div>
+      <aside class="sowhat"><span class="sw-tag">So what · for Elliot</span>The $45K isn't a marketing gamble — it's the cost of earning the right to fundraise for inventory with a straight face.</aside>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="idx">03</span>The sixty <em>days</em></h2>
+    <div class="cal">
+      <div class="cal-row"><div class="c-when">Aug 1–10</div><div class="c-what"><strong>Prep.</strong> WhatsApp community workshop co-designs the Week of Wow. Creators recruited (performance-only). Impact.com codes + tracking live. Landing pages up.</div></div>
+      <div class="cal-row"><div class="c-when">Aug 10–12</div><div class="c-what"><strong>The Eclipse test.</strong> First public send: "pause with us at totality — free, no ring required, better with one." A/B tested on the existing list before any big-audience spend. Real conversion data by Aug 13.</div></div>
+      <div class="cal-row"><div class="c-when">Aug 11–15</div><div class="c-what"><strong>Iceland.</strong> Ceremony Garden integration, 4 VIP passes + Bell Tent<sup>1</sup>, founder relationships, content capture. Zero hard-sell during the sacred days; the footage powers all of September.</div></div>
+      <div class="cal-row"><div class="c-when">Aug 16–31</div><div class="c-what"><strong>Bridge.</strong> Iceland content released. Week-of-Wow hosts locked. Whitelisted ad creative approved in each host's voice.</div></div>
+      <div class="cal-row"><div class="c-when">Sept 1–19</div><div class="c-what"><strong>Anchors.</strong> Pre-registration opens (Unify's newsletter + FB fire here, not in August<sup>2</sup>). Let's Be Friends Austin (Sept 19) + Portal Austin salon — on-site sales, WOW100.</div></div>
+      <div class="cal-row"><div class="c-when">Sept 24–30</div><div class="c-what"><strong>The Week of Wow.</strong> Seven days, seven hosts, thousands practicing daily — with the sold-out push running on real inventory numbers through Sept 30.</div></div>
+      <div class="cal-row"><div class="c-when">Oct 1</div><div class="c-what"><strong>The read.</strong> Sold out or not, we have: conversion data per channel per host, a live community, a partner platform, and the evidence file for the raise.</div></div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="idx">04</span>The <em>budget</em></h2>
+    <div class="split">
+      <div>
+        <table>
+          <tr><th>Line</th><th>Amount</th><th>What it buys</th></tr>
+          <tr><td><strong>Iceland Eclipse</strong></td><td class="num">$20,000</td><td>$12K negotiated sponsorship<sup>2</sup> + ~$8K flights/expenses. Ceremony Garden integration, 500-VIP access, Unify's 5.4M-reach amplification package<sup>1</sup> timed to September.</td></tr>
+          <tr><td><strong>Whitelisted ads</strong></td><td class="num">$16,000</td><td>$8K/month × 2. Paid runs from partner handles only — their face, their voice, their audience, our tracking.</td></tr>
+          <tr><td><strong>Let's Be Friends Austin</strong></td><td class="num">$2,000</td><td>Sept 19 · Pulse corner at Daybreaker's Austin morning — demo rings, on-site sales.</td></tr>
+          <tr><td><strong>Portal Austin</strong></td><td class="num">$1,000</td><td>Founder salon at The Portal — invite-only room of Austin operators and investors.</td></tr>
+          <tr><td><strong>Adam retainer</strong></td><td class="num">$6,000</td><td>$3K/month × 2 — full campaign ownership: partners, platform, copy, community, events, reporting.</td></tr>
+          <tr class="hl"><td><strong>Total fixed</strong></td><td class="num"><strong>$45,000</strong></td><td>Creators cost $0 upfront — paid only per sale. Rings already exist; no new product cost.</td></tr>
+        </table>
+      </div>
+      <aside class="sowhat"><span class="sw-tag">So what · for Elliot</span>Fixed exposure is $45K, full stop. Every other cost (discounts, commissions, bonus) only exists if a ring actually sells — self-funding by construction.</aside>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="idx">05</span>Adam's <em>compensation</em></h2>
+    <div class="split">
+      <div>
+        <table>
+          <tr><th>Component</th><th>Amount</th><th>Trigger</th></tr>
+          <tr><td><strong>Retainer</strong></td><td class="num">$3,000 / mo × 2</td><td>Flat. Already counted inside the $45K fixed budget.</td></tr>
+          <tr><td><strong>Fundraising commission</strong></td><td class="num">3% flat</td><td>On capital closed from Adam-sourced introductions. Paid at close.</td></tr>
+          <tr><td><strong>Performance bonus</strong></td><td class="num">20–30% of upside</td><td>Only if BOTH gates hit: (a) 1,500 rings cleared by Oct 1, and (b) blended cost-per-customer at or under target — 20% of upside at ≤$150, 30% at ≤$100. "Upside" = campaign net contribution minus the Meta-baseline counterfactual, with all campaign costs (including this retainer) already subtracted.</td></tr>
+        </table>
+        <p><strong>Worked example (best case):</strong> campaign nets +$69K vs. Meta's −$7.8K → upside ≈ $77K → Adam's 30% ≈ <strong>$23K</strong>, leaving Pulse ≈ <strong>+$46K net</strong> — paid out of money the campaign already collected. Miss either gate: bonus is <strong>$0</strong>. There is no scenario where Pulse pays a bonus out of existing cash.</p>
+      </div>
+      <aside class="sowhat"><span class="sw-tag">So what · for Elliot</span>Adam's big number only exists if Pulse's bigger number exists first. Downside exposure to Adam: $6K total.</aside>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="idx">06</span>Runway <em>impact</em></h2>
+    <div class="split">
+      <div>
+        <table>
+          <tr><th>Path</th><th>Cash effect (60 days)</th><th>Runway</th></tr>
+          <tr><td><strong>Status quo</strong> — same spend on Meta at 1.3×<sup>3</sup></td><td class="num neg">−$7.8K</td><td>Slow bleed continues; the "lose a month" fear<sup>3</sup> is the ads path, not the campaign path.</td></tr>
+          <tr><td><strong>Campaign, expected</strong></td><td class="num pos">+$36K</td><td>Adds roughly a month of runway — and the sell-through evidence for the raise.</td></tr>
+          <tr class="hl"><td><strong>Campaign, sold out</strong></td><td class="num pos">+$46K net of bonus</td><td>Adds runway AND flips the raise to inventory-financing against a demonstrated sell-out.</td></tr>
+        </table>
+      </div>
+      <aside class="sowhat"><span class="sw-tag">So what · for Elliot</span>Every scenario where the campaign works beats every scenario where it doesn't exist. The worst case costs about what ads would have lost anyway.</aside>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="idx">07</span>What's in place on <em>Oct 1</em> — win or lose</h2>
+    <div class="assets">
+      <div class="asset"><h4>Impact.com partner platform</h4><p>Adam-built, Pulse-owned. Every future creator, org, or referral partnership plugs into rails that already exist.</p></div>
+      <div class="asset"><h4>A live WhatsApp community</h4><p>The engine: co-designed the campaign, ran the Week of Wow, and stays as the highest-trust channel Pulse has.</p></div>
+      <div class="asset"><h4>The Week of Wow playbook</h4><p>Repeatable every quarter with new hosts. The format, the flow map, the templates — all reusable.</p></div>
+      <div class="asset"><h4>Iceland film + content library</h4><p>Ceremony footage, testimonials, the eclipse story — durable creative for ads, site, and the fundraise deck.</p></div>
+      <div class="asset"><h4>Named partner relationships</h4><p>Unify, Belong Center/Daybreaker, Portal, and seven hosts — warm, performance-proven, on contract rails.</p></div>
+      <div class="asset"><h4>Conversion data per channel</h4><p>Real numbers per host, per code, per event — the difference between guessing next quarter and knowing it.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="idx">08</span><em>Sources</em></h2>
+    <ul class="sources">
+      <li><b>1</b> Unify · Iceland Eclipse Ceremony Garden deck v5.4 (July 2026): reach stats, VIP inventory, ceremony program, sponsorship terms.</li>
+      <li><b>2</b> Adam ↔ Patrick Kronfli (Unify) correspondence, July 2026: $12K negotiated fee; amplification decoupled from event dates; mini global-meditation extension.</li>
+      <li><b>3</b> Johan/Elliot Meta ads reporting, July 2026: ROAS 1.3× (peaks to 2.0×); "436 rings per $50K" framing; runway sensitivity.</li>
+      <li><b>4</b> Pulse unit + conversion data, July 2026: $229/$259 retail, $83 landed product cost, ~1,500 units remaining; ambassador reality-check (2.2M-follower post → 2 sales; 3 posts from 500K → 26 visits).</li>
+      <li><b>5</b> Live figures at launch: Shopify inventory count (progress bar), Impact.com attribution dashboards.</li>
+    </ul>
+  </section>
+
+  <div class="footer">
+    <span>Pulse · 60-day campaign proposal · draft for discussion</span>
+    <span>Mission Control: mission.html · Flow Map: flow.html</span>
+  </div>
+</div>
+</body>
+</html>

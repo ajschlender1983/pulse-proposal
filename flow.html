@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pulse Flow Map · 60-Day Campaign Choreography</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=DM+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+@font-face{font-family:'TT Norms Pro';src:url('fonts/TT-Norms-Pro-Light.ttf') format('truetype');font-weight:300;font-display:swap;}
+@font-face{font-family:'TT Norms Pro';src:url('fonts/TT-Norms-Pro-Regular.ttf') format('truetype');font-weight:400;font-display:swap;}
+@font-face{font-family:'TT Norms Pro';src:url('fonts/TT-Norms-Pro-DemiBold.ttf') format('truetype');font-weight:600;font-display:swap;}
+:root{
+  --void:rgb(14,10,20); --dark:rgba(31,24,36,1); --accent:rgba(86,76,112,1);
+  --light:rgba(228,225,230,1); --midtone:rgba(154,144,163,1);
+  --teal:rgba(106,223,217,1); --magenta:rgba(194,47,205,1); --gold:rgba(255,215,100,1);
+  --green:rgba(99,224,132,1); --orange:rgba(240,147,94,1);
+  --light-64:rgba(228,225,230,0.64); --midtone-64:rgba(154,144,163,0.64);
+  --accent-24:rgba(86,76,112,0.24);
+  --font-primary:'TT Norms Pro','DM Sans',-apple-system,sans-serif;
+  --font-display:'Playfair Display',Georgia,serif;
+  --font-mono:'DM Mono','SF Mono',Menlo,monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:var(--font-primary);color:var(--light);background:linear-gradient(180deg,rgb(18,14,24) 0%,rgb(31,24,36) 100%);min-height:100vh;line-height:1.5;}
+.container{max-width:1240px;margin:0 auto;padding:0 24px;}
+.top{padding:50px 0 30px;}
+.kicker{font-family:var(--font-mono);font-size:13px;letter-spacing:0.2em;text-transform:uppercase;color:var(--teal);margin-bottom:14px;}
+h1{font-size:clamp(34px,5vw,58px);font-weight:300;letter-spacing:-0.02em;}
+h1 em{font-family:var(--font-display);font-style:italic;color:var(--teal);}
+.lede{font-size:17px;color:var(--light-64);max-width:820px;margin-top:14px;}
+.lede strong{color:var(--light);}
+.rule-note{margin-top:16px;padding:14px 18px;border:1px dashed var(--accent-24);border-radius:10px;font-size:14px;color:var(--midtone);}
+.rule-note strong{color:var(--gold);}
+.filters{display:flex;gap:10px;flex-wrap:wrap;margin:28px 0 8px;position:sticky;top:0;background:rgba(18,14,24,0.95);backdrop-filter:blur(12px);padding:14px 0;z-index:20;}
+.chip{
+  font-family:var(--font-mono);font-size:12px;letter-spacing:0.1em;text-transform:uppercase;
+  padding:8px 16px;border-radius:100px;border:1px solid var(--accent-24);color:var(--midtone);
+  cursor:pointer;background:transparent;transition:all .15s ease;
+}
+.chip:hover{border-color:var(--accent);}
+.chip.on{border-color:var(--teal);color:var(--teal);background:rgba(106,223,217,0.07);}
+.phase{margin:36px 0 12px;}
+.phase-tag{font-family:var(--font-mono);font-size:13px;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);}
+.entity{background:rgba(31,24,36,0.55);border:1px solid var(--accent-24);border-radius:16px;margin:16px 0;overflow:hidden;}
+.entity > summary{list-style:none;cursor:pointer;padding:20px 26px;display:flex;align-items:baseline;gap:18px;flex-wrap:wrap;}
+.entity > summary::-webkit-details-marker{display:none;}
+.entity .e-when{font-family:var(--font-mono);font-size:12.5px;letter-spacing:0.12em;text-transform:uppercase;color:var(--midtone);min-width:120px;}
+.entity .e-name{font-size:20px;font-weight:500;}
+.entity .e-voice{font-size:13.5px;color:var(--midtone-64);margin-left:auto;}
+.entity .e-caret{color:var(--teal);font-family:var(--font-mono);font-size:13px;}
+.matrix{padding:0 26px 24px;display:grid;grid-template-columns:repeat(4,1fr);gap:12px;}
+@media(max-width:960px){.matrix{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:600px){.matrix{grid-template-columns:1fr;}}
+.chan{border:1px solid var(--accent-24);border-radius:12px;padding:16px;background:rgba(14,10,20,0.4);}
+.chan .c-name{font-family:var(--font-mono);font-size:11.5px;letter-spacing:0.16em;text-transform:uppercase;font-weight:500;margin-bottom:12px;}
+.chan[data-c="email"] .c-name{color:var(--teal);}
+.chan[data-c="social"] .c-name{color:var(--magenta);}
+.chan[data-c="whatsapp"] .c-name{color:var(--green);}
+.chan[data-c="ads"] .c-name{color:var(--gold);}
+.touch{margin-bottom:12px;padding-bottom:12px;border-bottom:1px dashed var(--accent-24);}
+.touch:last-child{margin-bottom:0;padding-bottom:0;border-bottom:none;}
+.touch .t-tag{font-family:var(--font-mono);font-size:10.5px;letter-spacing:0.14em;text-transform:uppercase;color:var(--midtone-64);display:block;margin-bottom:5px;}
+.touch .t-copy{font-size:14px;color:var(--light-64);line-height:1.45;}
+.touch .t-copy b{color:var(--light);font-weight:500;}
+.tone{padding:0 26px 22px;font-size:13px;color:var(--midtone);}
+.tone strong{color:var(--light-64);}
+.footer{padding:44px 0;text-align:center;font-family:var(--font-mono);font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:var(--midtone-64);}
+.footer a{color:var(--midtone);}
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="top">
+    <div class="kicker">Pulse · Campaign OS · Aug 1 – Oct 1</div>
+    <h1>The Flow <em>Map.</em></h1>
+    <p class="lede">Every message of the 60-day campaign in one view. <strong>Four channels</strong> (Email · Social · WhatsApp community · Whitelisted ads) × <strong>three touchpoints</strong> (Announcement · Reminder · Last chance) per entity. Copy below is working-draft, written in each host's own register.</p>
+    <div class="rule-note"><strong>Standing rule:</strong> every partner message is drafted in <strong>their voice</strong>, from research on their real content — then approved by them before it ships. Pulse-authored copy obeys the brand guide word list. Status: all cells <em>DRAFT</em> until voice-review.</div>
+  </div>
+
+  <div class="filters" id="filters">
+    <button class="chip on" data-f="all">All channels</button>
+    <button class="chip" data-f="email">Email</button>
+    <button class="chip" data-f="social">Social</button>
+    <button class="chip" data-f="whatsapp">WhatsApp</button>
+    <button class="chip" data-f="ads">Whitelisted ads</button>
+  </div>
+
+  <div id="mount"></div>
+
+  <div class="footer"><a href="mission.html">← Mission Control</a> · Draft copy · voice-review pending · wire sends via ESP + Meta at launch</div>
+</div>
+
+<script>
+/* ============================================================
+   FLOW DATA · entity × channel × touchpoint
+   **bold** markers render safely via mini-formatter (no HTML injection).
+   ============================================================ */
+const FLOW = [
+{ phase:"August · Prep + Iceland", entities:[
+  { when:"Aug 4", name:"WhatsApp Community Workshop", voice:"Pulse · community-first", tone:"Pulse voice per brand guide: reset / come back / real life. Warm, direct, zero hype.",
+    email:{
+      announce:"**Subject: We're building something with you.** The next 60 days are a season for this community. First move: a workshop, in the group, this week — we design the Week of Wow together. What would make seven days actually matter?",
+      remind:"**Subject: Workshop's tomorrow.** Bring one answer: what pulls you out of your day the most? We're designing around real answers, not personas.",
+      last:"**Subject: Doors close tonight.** Last call to shape the week before we lock the seven days. After tonight, we build."},
+    social:{
+      announce:"Something's coming in September. We're designing it with our community first — inside, not in public. If you own a Pulse, check your email.",
+      remind:"The community workshop is live this week. Seven days, seven themes — chosen by the people who actually wear the ring.",
+      last:"Last day to weigh in. Then we build."},
+    whatsapp:{
+      announce:"Hey everyone — Adam here. The next 60 days are big for Pulse and this group is the center of it. Thursday: a live workshop right here to co-design the Week of Wow. One question to sit with: what would a day that actually brings you back look like?",
+      remind:"Workshop tomorrow 12pm CT, right here. Voice notes welcome. One question: which theme matters most to you — joy, stillness, connection…?",
+      last:"Closing the design thread tonight. Everything you shared is going into the seven days. Watch this space — you'll see your fingerprints on it."},
+    ads:{
+      announce:"— (no paid for internal workshop) —", remind:"—", last:"—"}
+  },
+  { when:"Aug 10", name:"Eclipse Test Message", voice:"Pulse · the first public moment", tone:"Soft-FOMO frame, tested A/B. A: 'You don't need a ring, it's better with one.' B: mechanic-first. Winner ports to all Sept sends.",
+    email:{
+      announce:"**Subject: On Tuesday, the sky goes dark. Pause with us.** Aug 12, totality over Iceland — first since 1954. At that exact moment we pause together, from the Ceremony Garden and from wherever you are. One intention, one breath. Free. You don't need a Pulse ring to join — it's better with one. ECLIPSE100 gets you $100 off before the moment.",
+      remind:"**Subject: Tomorrow, 4pm UTC.** Your local totality time is inside. Write your one line tonight: what do you want to carry out of the dark?",
+      last:"**Subject: Today. Don't miss the moment.** The sky goes dark at [local time]. Set an alarm, step outside, one breath. We're with you from Iceland."},
+    social:{
+      announce:"Aug 12. The first total eclipse over Iceland since 1954. At totality, thousands pause together — in the Ceremony Garden with @unify, and everywhere else on Earth. Join free. Link in bio.",
+      remind:"48 hours to totality. One intention. One breath. One pulse. 🌑",
+      last:"Today the sky goes dark. Wherever you are — pause with us. [local times in thread]"},
+    whatsapp:{
+      announce:"Family — Tuesday is the eclipse. We're doing the moment together: at totality, stop, one breath, your intention. I'll be in the Ceremony Garden in Iceland with Patrick and the Unify crew. Photos incoming all week 🌋",
+      remind:"Tomorrow. Your local times: [list]. Set the alarm now — totality doesn't wait.",
+      last:"It's today. See you in the dark. One breath. 🌑"},
+    ads:{
+      announce:"— (organic-only test; paid holds for Sept) —", remind:"—", last:"—"}
+  },
+  { when:"Aug 11–15", name:"Iceland · Live Coverage", voice:"Pulse · field notes register", tone:"Documentary, not promo. Real rooms, real light. Show the ceremony, the garden, the people. Zero sell during the sacred days — one soft CTA at week's end.",
+    email:{
+      announce:"**Subject: Notes from the land of fire and ice.** We're here. The garden is built — four totem gates, a water altar, 2,000 seats in a mandala. Tomorrow the sky goes dark. Following along all week.",
+      remind:"**Subject: What totality felt like.** Two minutes of dark in the middle of the day. Here's what people said, in their own words, an hour after. [3 short quotes + photos]",
+      last:"**Subject: The moment passed. The practice stays.** The week is over; the intention isn't. Here's the one-pause-a-day practice we're carrying home — and an invitation to September."},
+    social:{
+      announce:"The Ceremony Garden, built. 111 feet across. Four gates. One water altar. Tomorrow: totality. [photo]",
+      remind:"Totality, from the center of the mandala. No caption does it justice. [video]",
+      last:"What we brought home from Iceland: one intention, one pause a day. September, we practice together. 👀"},
+    whatsapp:{
+      announce:"On the ground on Snæfellsnes 🌋 Garden build day. This place is unreal — photo dump incoming.",
+      remind:"TOTALITY. I have no words. Voice note incoming when my hands stop shaking.",
+      last:"Heading home. This group gets everything first: the film cut, the September plan, all of it. Thank you for being here."},
+    ads:{
+      announce:"—", remind:"—", last:"— (content capture week; paid launches Sept 1)"}
+  }
+]},
+{ phase:"September · Anchors + Week of Wow", entities:[
+  { when:"Sept 1", name:"WOW Pre-Registration Open", voice:"Pulse · invitation register", tone:"Pulse brand voice. Recognition first ('the day runs away with you'), then the invitation. WOW100 code enters here.",
+    email:{
+      announce:"**Subject: Seven days. Seven hosts. One reset a day.** Sept 24–30: the Week of Wow. Joy · Oneness · Belonging · Magic · Stillness · Good Vibes · Connection — one theme a day, hosted by the people who taught us how to come back. Free. In by 7am, done by 10pm, off your phone in between.",
+      remind:"**Subject: Your seven hosts.** Brent Freeman. Patrick Kronfli. Radha Agrawal. Emily Fletcher. Cory Allen. Vex King. And one more we'll announce soon. Each brings a day. You bring one pause.",
+      last:"**Subject: The week starts Wednesday.** Last call to join free. If you want the ring in hand for Day 1 — WOW100, $100 off, ships in time."},
+    social:{
+      announce:"THE WEEK OF WOW · Sept 24–30 · Seven days, seven hosts, one reset a day. Free, everywhere. Presented with @unify. Link in bio.",
+      remind:"Joy is one pulse away. Belonging is one pulse away. Stillness is one pulse away. Seven days. Starting Sept 24.",
+      last:"Doors close for Day 1 cohort tonight. One pause a day for seven days. That's the whole ask."},
+    whatsapp:{
+      announce:"It's live 🎉 The thing we designed together — the Week of Wow, Sept 24–30. You all built this. First-look link before anyone else sees it: [link]",
+      remind:"1,000+ people in already. Bring one person who needs this — your link gives them $100 off a ring AND credits you.",
+      last:"Week of Wow starts Wednesday. This group is Day 1 royalty — you'll see features nobody else has yet."},
+    ads:{
+      announce:"[Whitelisted @radhaagrawal] The most important thing I've learned building communities of 800,000 people: belonging starts with showing up — for yourself first. Sept 24–30 I'm hosting a Day of Belonging. Free, everywhere. Join us.",
+      remind:"[Whitelisted @vexking] Good vibes aren't luck. They're a practice. One day, one theme, one reset — I'm hosting Sept 29. Come feel it.",
+      last:"[Whitelisted @unify] For 14 years we've gathered millions in synchronized moments. This September: seven days of them. The Week of Wow. Free."}
+  },
+  { when:"Sept 19", name:"Let's Be Friends · Austin", voice:"Daybreaker · ecstatic morning register", tone:"Radha/Daybreaker voice: exuberant, hugging-strangers energy, morning-dance culture. Pulse enters as the quiet after the loud.",
+    email:{
+      announce:"**Subject: Austin! Wake up and dance with us Sept 19.** Let's Be Friends lands in ATX — 3 hours of morning magic, zero substances, maximum aliveness. Pulse is there: try the ring, feel the pulse, take the quiet home after the loud.",
+      remind:"**Subject: This Saturday. Dance floor + reset corner.** After you dance your face off, come find the Pulse corner — the comedown is the point.",
+      last:"**Subject: Tomorrow morning, Austin.** Doors 8am. Dance first, reset after. WOW100 works on-site."},
+    social:{
+      announce:"AUSTIN Sept 19 — Let's Be Friends with @daybreaker. Morning dance, then the reset. We'll be there with rings on. 🕺",
+      remind:"Saturday: dance 3 hours, then feel your own pulse for 2 minutes. Both are the practice.",
+      last:"Tomorrow ATX. Come sweaty, leave settled."},
+    whatsapp:{
+      announce:"Austin fam — Daybreaker LBF, Sept 19, we have a Pulse corner. Come through, bring friends, rings on-site with WOW100.",
+      remind:"Who's coming Saturday? Meetup at the Pulse corner 10:30am — first coffee's on me ☕",
+      last:"TOMORROW. 8am doors. Find me at the Pulse corner."},
+    ads:{
+      announce:"[Whitelisted @daybreaker] Austin: Sept 19. We dance at dawn. Then we get quiet together. Let's Be Friends + Pulse. Tickets live.",
+      remind:"[Whitelisted @daybreaker] The best morning of your month is this Saturday. ATX.",
+      last:"— (organic close-out only) —"}
+  },
+  { when:"Sept 20–23", name:"Portal Austin Activation", voice:"Portal · founder-salon register", tone:"Understated, high-trust, member-club energy. No hype. The room does the selling.",
+    email:{
+      announce:"**Subject: A salon at The Portal.** A conversation on attention, autopilot, and what it costs founders — hosted by Adam Schlender at The Portal Austin. Demo rings in the room. Limited seats.",
+      remind:"**Subject: Thursday · The Portal.** Seats nearly filled. If your name's on the list, confirm today.",
+      last:"**Subject: Tonight.** Doors 6:30. Come early — the good seats face the sunset."},
+    social:{
+      announce:"This week: a salon on attention + autopilot at @theportal Austin. Founders, operators, the overstimulated. Request an invite.",
+      remind:"Two seats left for Thursday's Portal salon.",
+      last:"Tonight, 601 Rio Grande. 🌇"},
+    whatsapp:{
+      announce:"Austin crew — hosting a small salon at The Portal this week. DM me if you want in; it's capped small on purpose.",
+      remind:"Portal salon Thursday. 3 seats left in this group's allocation.",
+      last:"Tonight. Bring one good question."},
+    ads:{ announce:"— (invite-only; no paid) —", remind:"—", last:"—"}
+  },
+  { when:"Sept 24", name:"WOW Day 1 · Joy · Brent Freeman", voice:"Brent · Alchemy of Joy register", tone:"Brent's register: joy-not-hustle, neuroscience-meets-heart, entrepreneur-who-woke-up. Warm authority.",
+    email:{
+      announce:"**Subject: Day 1: Joy. It was already here.** [Brent] I spent 20 years building companies chasing a feeling that was available the whole time. Today we start there — not the joy you earn, the joy that's underneath. Two minutes this morning: [content]. One question all day: where is joy already?",
+      remind:"**Subject: Midday pulse: find one.** One moment of unearned joy before dinner. That's the whole practice.",
+      last:"**Subject: Check in before the window closes.** 60 seconds: where did joy find you today? The window closes at 10 — then go live your evening."},
+    social:{
+      announce:"[Brent] Day 1 of the Week of Wow: JOY. Not the kind you hustle for. The kind that was here first. Join free — link up.",
+      remind:"[Brent] Joy is one pulse away. Today, prove it to yourself once.",
+      last:"[Brent] Day 1 closes at 10pm. One check-in. Then rest — that's part of it too."},
+    whatsapp:{
+      announce:"DAY 1 IS LIVE 🌅 Brent Freeman opens with Joy. Two minutes, then carry the question: where is joy already?",
+      remind:"Midday joy check — drop a 🌞 when you catch one unearned moment.",
+      last:"Window closes 10pm. Check in, then close the phone. Day 2 (Oneness with Patrick) opens 7am."},
+    ads:{
+      announce:"[Whitelisted @brentjfreeman] I built 20 companies before I learned joy isn't the reward — it's the fuel. Hosting Day 1 of the Week of Wow. Free. Today.",
+      remind:"[Whitelisted @brentjfreeman] One unearned moment of joy today. That's the assignment.",
+      last:"— (day closes organically) —"}
+  },
+  { when:"Sept 25", name:"WOW Day 2 · Oneness · Patrick Kronfli", voice:"Unify · ceremonial-warm register", tone:"Patrick's register: global-we, ceremony, synchronized moments, decades of practice. Sacred but never solemn.",
+    email:{
+      announce:"**Subject: Day 2: Oneness. Same breath, everywhere.** [Patrick] For 14 years we've gathered millions in the same moment. Today it's us — this community, one synchronized pause at 12pm your time. Morning practice: [content]. Tonight: the world checks in together.",
+      remind:"**Subject: 12 o'clock. Wherever you are.** When your clock strikes noon, stop. One breath. Millions of noons, one moment.",
+      last:"**Subject: How did the moment land?** Check in before 10. Tomorrow Radha brings Belonging."},
+    social:{
+      announce:"[Unify] Day 2: ONENESS. At noon in every time zone, we pause. A rolling wave of stillness around the planet. Join it.",
+      remind:"[Unify] Your noon is coming. Be ready to stop.",
+      last:"[Unify] The wave went around the world today. Tomorrow: Belonging."},
+    whatsapp:{
+      announce:"Day 2: Patrick from Unify 🌍 The noon wave — when YOUR clock hits 12, stop for one breath. The group rides the wave through every time zone today.",
+      remind:"Noon check — drop your city when your wave passes 🌊",
+      last:"Beautiful wave today. Check-in closes 10pm. Radha tomorrow."},
+    ads:{
+      announce:"[Whitelisted @unify] We've synchronized millions across 1,400 cities. Today, a noon wave of stillness around the Earth. Day 2 of the Week of Wow. Free.",
+      remind:"[Whitelisted @unify] Wherever you are at noon — that's the ceremony.",
+      last:"—"}
+  },
+  { when:"Sept 26", name:"WOW Day 3 · Belonging · Radha Agrawal", voice:"Radha · Belong register", tone:"Radha's register: community-architect, playful-wise, 'find your people' energy. Direct, warm, zero pretense.",
+    email:{
+      announce:"**Subject: Day 3: Belonging. It's remembered, not built.** [Radha] I've helped 800,000 people dance at sunrise, and the secret is embarrassingly simple: belonging starts when you stop performing. Today's practice: [content]. Your question: with whom can I be exactly myself?",
+      remind:"**Subject: Text that person.** The one you thought of this morning. One message. That's the practice.",
+      last:"**Subject: Who came to mind?** Check in before 10 — then maybe call them instead of scrolling."},
+    social:{
+      announce:"[Radha] Day 3: BELONGING. Not networking. Not community-as-content. The real thing. One practice, one question, one person. Free — join today.",
+      remind:"[Radha] Belonging is one pulse away. Usually one text away too. Send it.",
+      last:"[Radha] Day 3 closes tonight. Tomorrow, Emily brings the magic. ✨"},
+    whatsapp:{
+      announce:"Day 3 with RADHA 💛 Belonging. Practice is live. Today's dare: message the person you can be fully yourself with. Report back.",
+      remind:"Did you send it? The group wants receipts (screenshots optional, feelings mandatory).",
+      last:"Check-ins close 10pm. This thread today was the whole point. ✨ tomorrow: Magic."},
+    ads:{
+      announce:"[Whitelisted @radhaagrawal] 800,000 people taught me: belonging isn't found, it's remembered. Day 3 of the Week of Wow — hosted by me. Free, everywhere.",
+      remind:"[Whitelisted @radhaagrawal] One text to one person. That's today's whole practice.",
+      last:"—"}
+  },
+  { when:"Sept 27", name:"WOW Day 4 · Magic · Emily Fletcher", voice:"Ziva · high-performance magic register", tone:"Emily's register: no-nonsense meets mystical, 'meditation for people with deadlines', results-language. Sharp and sparkly.",
+    email:{
+      announce:"**Subject: Day 4: Magic. The practical kind.** [Emily] I teach stressed-out high performers, and here's what they learn: the practice is the tool, magic is the byproduct. Today: [content] — 3 minutes, eyes closed, then watch your day get weird in the best way. Mid-week intention check: is yours still true?",
+      remind:"**Subject: Notice one synchronicity.** You've primed the system. Now catch it working — one 'no way' moment before tonight.",
+      last:"**Subject: What showed up?** Check in. And if your Day-1 intention shifted — rewrite it. That's allowed. That's growth."},
+    social:{
+      announce:"[Emily] Day 4: MAGIC. Not woo — wiring. Prime the nervous system, then watch what shows up. Join the Week of Wow, free.",
+      remind:"[Emily] The magic count so far today: keep your eyes open. It's working.",
+      last:"[Emily] Halfway through the week. The back half is where it compounds."},
+    whatsapp:{
+      announce:"Day 4: MAGIC with Emily Fletcher ✨ 3-minute practice live now. Then: catch one synchronicity today and drop it here. This thread gets wild by evening, promise.",
+      remind:"Synchronicity thread check — the stories today 🤯 keep them coming.",
+      last:"Mid-week intention check with your evening check-in: still true? Rewrite if not. Day 5 = Stillness with Cory."},
+    ads:{
+      announce:"[Whitelisted @emilystellafletcher] I teach meditation to people with deadlines. The magic isn't the goal — it's the byproduct. Day 4, Week of Wow. Come see.",
+      remind:"[Whitelisted @emilystellafletcher] Prime the system. Catch it working. Today.",
+      last:"—"}
+  },
+  { when:"Sept 28", name:"WOW Day 5 · Stillness · Cory Allen", voice:"Cory · Astral Hustle register", tone:"Cory's register: quiet depth, Austin-cool, 'the more you understand yourself, the less you suffer.' Spare sentences. No exclamation points.",
+    email:{
+      announce:"**Subject: Day 5: Stillness.** [Cory] Everyone thinks stillness is the absence of motion. It's the presence of you. Today: [content] — ten minutes, sit with what's actually there. The question: what have I been too busy to hear?",
+      remind:"**Subject: The noise isn't outside.** Find four minutes of quiet before the day ends. No fixing. Just listening.",
+      last:"**Subject: What did you hear?** Check in before ten. Short answers welcome. Silence counts too."},
+    social:{
+      announce:"[Cory] Day 5: Stillness. Not emptiness — presence. One sit, one question, one honest minute. Free.",
+      remind:"[Cory] The more we understand ourselves, the less we suffer. Four quiet minutes today.",
+      last:"[Cory] Day closes at ten. Then two days left."},
+    whatsapp:{
+      announce:"Day 5. Cory Allen. Stillness. Ten minutes, then one question: what have you been too busy to hear? Slower thread today — on purpose.",
+      remind:"Quiet check: 🤫 if you got your four minutes.",
+      last:"Check in, then rest. Vex brings the vibes tomorrow."},
+    ads:{
+      announce:"[Whitelisted @cory.allen] Stillness isn't the absence of motion. It's the presence of you. Day 5 of the Week of Wow.",
+      remind:"[Whitelisted @cory.allen] Four quiet minutes today. That's it.",
+      last:"—"}
+  },
+  { when:"Sept 29", name:"WOW Day 6 · Good Vibes · Vex King", voice:"Vex · Good Vibes register", tone:"Vex's register: self-love as foundation, vibration language, millions-of-readers accessibility. Uplifting, aphoristic, generous.",
+    email:{
+      announce:"**Subject: Day 6: Good Vibes. Raise them on purpose.** [Vex] Your vibe isn't luck — it's a frequency you choose. Today: [content], then the practice: one act of self-love before noon, one act of kindness before night. Watch what both do to the room you're in.",
+      remind:"**Subject: Kindness check.** The self-love half is done or due. Now the outward half — one genuine act before the day closes.",
+      last:"**Subject: How's the frequency?** Check in. Tomorrow: the final day. Connection. Bring someone."},
+    social:{
+      announce:"[Vex] Day 6: GOOD VIBES. Self-love before noon, kindness before night. Two acts, one frequency. Join free.",
+      remind:"[Vex] Good vibes are one pulse away. Choose the frequency.",
+      last:"[Vex] One day left. Tomorrow we finish together — bring one person."},
+    whatsapp:{
+      announce:"Day 6 with VEX KING 🌟 Two-part practice: self-love before noon, kindness before night. Drop a 💛 for part one, 🤝 for part two.",
+      remind:"Afternoon check: 💛s are rolling in, where are the 🤝s?",
+      last:"Last check-in of Day 6. Tomorrow is the finale — Connection, with Adam. Bring one friend into the group for Day 7."},
+    ads:{
+      announce:"[Whitelisted @vexking] I've written four books on this and it still comes down to one thing: self-love is the foundation. Day 6 of the Week of Wow. Free, today.",
+      remind:"[Whitelisted @vexking] One act of self-love. One act of kindness. Today.",
+      last:"—"}
+  },
+  { when:"Sept 30", name:"WOW Day 7 · Connection · Adam Schlender", voice:"Adam · ESU register", tone:"Adam's register: builder-heart, direct, the-thing-behind-the-thing. Closes the week, opens the door to what's next.",
+    email:{
+      announce:"**Subject: Day 7: Connection. The point of all of it.** [Adam] Six days of practice — joy, oneness, belonging, magic, stillness, good vibes — all of it was training for this: being actually here with the people in front of you. Today: [content]. The practice: one real conversation, phone in the other room.",
+      remind:"**Subject: One conversation.** Not a catch-up. A real one. You know which one you've been putting off.",
+      last:"**Subject: The week closes tonight.** Final check-in. Tomorrow you get your seven-day arc — everything you noticed, reflected back. And one honest note about what's next."},
+    social:{
+      announce:"[Pulse] Day 7: CONNECTION. The final day. One real conversation, phone in the other room. Finish the week with us.",
+      remind:"[Pulse] Connection is one pulse away. Usually one conversation away.",
+      last:"[Pulse] The Week of Wow closes at 10 tonight. 8 weeks ago this was an idea in a WhatsApp group. Thank you."},
+    whatsapp:{
+      announce:"DAY 7, family. Connection. This one's mine to host and I mean every word of it: [content]. One real conversation today, phone in the other room. This group is the proof it works.",
+      remind:"Last practice of the week. Who's your conversation with? (No names needed — just 🎯 when it's done.)",
+      last:"Final check-ins close at 10. Tomorrow: your arc. I'm proud of this group beyond words. One more thing coming — watch this space."},
+    ads:{
+      announce:"[Whitelisted @pulse] Seven days ago, thousands of people started practicing one reset a day. Today they finish. The next cohort is coming — get on the list.",
+      remind:"—", last:"—"}
+  },
+  { when:"Sept 26–30", name:"Sold-Out Final Push", voice:"Pulse · honest scarcity register", tone:"Every number real (live inventory API). No fake urgency. The bar tells the story; copy stays calm.",
+    email:{
+      announce:"**Subject: [N] rings left.** The batch we committed to this season is almost gone. When it's gone, it's gone until the next production run. If the week has meant something and you want the pulse to carry it forward — this is the window. WOW100 still works.",
+      remind:"**Subject: Under [N] now.** No countdown theatrics — just the real number and the real date. Oct 1, whatever's left is what's left.",
+      last:"**Subject: Last day of the batch.** The Week of Wow ends tonight; so does this run of rings. Next batch ships [est]. The practice doesn't need hardware — but if you want it on your finger, today's the day."},
+    social:{
+      announce:"[Pulse] The season batch is [N] rings from gone. Real number, updated live. Oct 1 the window closes.",
+      remind:"[Pulse] Under [N] left. When they're gone: waitlist for the next production run.",
+      last:"[Pulse] Final day. The bar's nearly full. Thank you for an unreal 60 days."},
+    whatsapp:{
+      announce:"Transparency post: [N] rings left in the batch. This group gets the real numbers first, always.",
+      remind:"Update: [N]. If someone you love has been on the fence, this is the honest nudge.",
+      last:"Last day of the batch. Whatever happens at midnight, this community made this season. 🙏"},
+    ads:{
+      announce:"[Whitelisted @pulse] The season batch is nearly gone — [N] rings, real count, live. Sold out Oct 1.",
+      remind:"[Whitelisted @pulse] Under [N] left. The next run ships [est]. Your call.",
+      last:"[Whitelisted @pulse] Final hours of the batch. When the bar fills, the waitlist opens."}
+  }
+]}
+];
+
+/* ===== Safe mini-formatter: renders **bold** runs via DOM (no HTML parsing) ===== */
+function renderCopy(el, text){
+  const parts = String(text).split('**');
+  parts.forEach((p, i) => {
+    if(i % 2 === 1){ const b = document.createElement('b'); b.textContent = p; el.appendChild(b); }
+    else if(p){ el.appendChild(document.createTextNode(p)); }
+  });
+}
+
+/* ===== Render ===== */
+const mount = document.getElementById('mount');
+const CHANNELS = [["email","Email"],["social","Social"],["whatsapp","WhatsApp"],["ads","Whitelisted ads"]];
+const TOUCH = [["announce","Announcement"],["remind","Reminder"],["last","Last chance"]];
+
+FLOW.forEach(ph => {
+  const phEl = document.createElement('div');
+  phEl.className = 'phase';
+  const tag = document.createElement('div'); tag.className='phase-tag'; tag.textContent = ph.phase; phEl.appendChild(tag);
+  mount.appendChild(phEl);
+  ph.entities.forEach(ent => {
+    const d = document.createElement('details'); d.className = 'entity';
+    const s = document.createElement('summary');
+    const w = document.createElement('span'); w.className='e-when'; w.textContent = ent.when;
+    const n = document.createElement('span'); n.className='e-name'; n.textContent = ent.name;
+    const v = document.createElement('span'); v.className='e-voice'; v.textContent = ent.voice;
+    const c = document.createElement('span'); c.className='e-caret'; c.textContent = '▾ expand';
+    s.append(w,n,v,c); d.appendChild(s);
+    const m = document.createElement('div'); m.className='matrix';
+    CHANNELS.forEach(([key,label]) => {
+      const ch = document.createElement('div'); ch.className='chan'; ch.dataset.c = key;
+      const cn = document.createElement('div'); cn.className='c-name'; cn.textContent = label; ch.appendChild(cn);
+      TOUCH.forEach(([tk,tl]) => {
+        const t = document.createElement('div'); t.className='touch';
+        const tt = document.createElement('span'); tt.className='t-tag'; tt.textContent = tl;
+        const tc = document.createElement('div'); tc.className='t-copy';
+        renderCopy(tc, (ent[key] && ent[key][tk]) ? ent[key][tk] : '—');
+        t.append(tt,tc); ch.appendChild(t);
+      });
+      m.appendChild(ch);
+    });
+    d.appendChild(m);
+    const tone = document.createElement('div'); tone.className='tone';
+    const ts = document.createElement('strong'); ts.textContent = 'Tone brief: ';
+    tone.appendChild(ts); tone.appendChild(document.createTextNode(ent.tone));
+    d.appendChild(tone);
+    phEl.appendChild(d);
+  });
+});
+
+/* ===== Channel filter ===== */
+document.getElementById('filters').addEventListener('click', e => {
+  const b = e.target.closest('.chip'); if(!b) return;
+  document.querySelectorAll('.chip').forEach(c => c.classList.remove('on'));
+  b.classList.add('on');
+  const f = b.dataset.f;
+  document.querySelectorAll('.chan').forEach(ch => {
+    ch.style.display = (f === 'all' || ch.dataset.c === f) ? '' : 'none';
+  });
+  document.querySelectorAll('.matrix').forEach(m => {
+    m.style.gridTemplateColumns = (f === 'all') ? '' : '1fr';
+  });
+});
+</script>
+</body>
+</html>

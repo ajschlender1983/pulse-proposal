@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Eclipse Moment · Aug 12 · Pulse × Unify</title>
+<meta name="description" content="On Aug 12, at the moment of totality over Iceland, we pause together — from the Ceremony Garden and from wherever you are. Free to join. Even better with a Pulse ring.">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=DM+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+@font-face{font-family:'TT Norms Pro';src:url('fonts/TT-Norms-Pro-Light.ttf') format('truetype');font-weight:300;font-display:swap;}
+@font-face{font-family:'TT Norms Pro';src:url('fonts/TT-Norms-Pro-Regular.ttf') format('truetype');font-weight:400;font-display:swap;}
+@font-face{font-family:'TT Norms Pro';src:url('fonts/TT-Norms-Pro-DemiBold.ttf') format('truetype');font-weight:600;font-display:swap;}
+:root{
+  --void:rgb(10,8,16); --dark:rgba(31,24,36,1); --accent:rgba(86,76,112,1);
+  --light:rgba(228,225,230,1); --midtone:rgba(154,144,163,1);
+  --teal:rgba(106,223,217,1); --gold:rgba(255,215,100,1); --orange:rgba(240,147,94,1);
+  --light-64:rgba(228,225,230,0.64); --midtone-64:rgba(154,144,163,0.64);
+  --accent-24:rgba(86,76,112,0.24); --gold-24:rgba(255,215,100,0.24);
+  --font-primary:'TT Norms Pro','DM Sans',-apple-system,sans-serif;
+  --font-display:'Playfair Display',Georgia,serif;
+  --font-mono:'DM Mono','SF Mono',Menlo,monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:var(--font-primary);color:var(--light);
+  background:
+    radial-gradient(1000px 700px at 50% -10%, rgba(240,147,94,0.12), transparent 55%),
+    radial-gradient(900px 800px at 10% 70%, rgba(106,223,217,0.06), transparent 60%),
+    linear-gradient(180deg,rgb(10,8,16) 0%,rgb(20,15,26) 55%,rgb(31,24,36) 100%);
+  line-height:1.5;
+}
+.container{max-width:960px;margin:0 auto;padding:0 28px;}
+.hero{padding:110px 0 60px;text-align:center;position:relative;}
+/* Eclipse disc */
+.disc{
+  width:150px;height:150px;border-radius:50%;margin:0 auto 44px;position:relative;
+  background:rgb(10,8,16);
+  box-shadow:0 0 60px 18px rgba(240,147,94,0.35), 0 0 140px 60px rgba(240,147,94,0.12), inset 0 0 30px rgba(0,0,0,0.9);
+  animation:corona 6s ease-in-out infinite;
+}
+@keyframes corona{
+  0%,100%{box-shadow:0 0 60px 18px rgba(240,147,94,0.35), 0 0 140px 60px rgba(240,147,94,0.12), inset 0 0 30px rgba(0,0,0,0.9);}
+  50%{box-shadow:0 0 80px 26px rgba(255,215,100,0.4), 0 0 180px 80px rgba(240,147,94,0.16), inset 0 0 30px rgba(0,0,0,0.9);}
+}
+.kicker{font-family:var(--font-mono);font-size:14px;letter-spacing:0.22em;text-transform:uppercase;color:var(--orange);margin-bottom:22px;}
+h1{font-size:clamp(42px,7.4vw,92px);font-weight:300;letter-spacing:-0.03em;line-height:1.0;}
+h1 em{font-family:var(--font-display);font-style:italic;font-weight:400;color:var(--gold);}
+.sub{font-size:clamp(17px,2.3vw,23px);color:var(--light-64);max-width:680px;margin:26px auto 0;}
+.sub strong{color:var(--light);}
+.count{font-family:var(--font-mono);font-size:15px;letter-spacing:0.16em;text-transform:uppercase;color:var(--midtone);margin-top:30px;}
+.count strong{color:var(--gold);font-size:19px;}
+.cta-row{display:flex;gap:14px;justify-content:center;margin-top:38px;flex-wrap:wrap;}
+.btn{display:inline-block;padding:16px 34px;border-radius:100px;font-size:16px;font-weight:600;text-decoration:none;border:none;cursor:pointer;font-family:var(--font-primary);transition:transform .18s ease;}
+.btn:hover{transform:translateY(-1px) scale(1.02);}
+.btn-primary{background:var(--gold);color:rgb(18,14,24);box-shadow:0 6px 30px rgba(255,215,100,0.25);}
+.btn-ghost{border:1px solid var(--accent);color:var(--light);background:transparent;}
+section{padding:70px 0;border-top:1px solid var(--accent-24);}
+h2{font-size:clamp(26px,4.2vw,44px);font-weight:300;letter-spacing:-0.02em;text-align:center;margin-bottom:34px;}
+h2 em{font-family:var(--font-display);font-style:italic;color:var(--teal);}
+.moment-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+@media(max-width:720px){.moment-steps{grid-template-columns:1fr;}}
+.step{background:rgba(31,24,36,0.6);border:1px solid var(--accent-24);border-radius:14px;padding:26px;text-align:center;}
+.step .t{font-family:var(--font-mono);font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:var(--orange);margin-bottom:12px;}
+.step h3{font-size:19px;font-weight:500;margin-bottom:8px;}
+.step p{font-size:14.5px;color:var(--light-64);}
+.quotebox{max-width:720px;margin:0 auto;text-align:center;}
+.quotebox .q{font-family:var(--font-display);font-style:italic;font-size:clamp(21px,3.2vw,30px);color:var(--light);line-height:1.4;}
+.quotebox .a{font-family:var(--font-mono);font-size:13px;letter-spacing:0.14em;text-transform:uppercase;color:var(--midtone);margin-top:18px;}
+.ring-note{text-align:center;}
+.ring-note .big{font-size:clamp(26px,4vw,44px);font-weight:300;letter-spacing:-0.02em;max-width:800px;margin:0 auto;}
+.ring-note .big em{font-family:var(--font-display);font-style:italic;color:var(--gold);}
+.offer{display:inline-block;margin-top:30px;padding:18px 30px;border:1px dashed var(--gold-24);border-radius:14px;background:rgba(255,215,100,0.05);}
+.offer .code{font-family:var(--font-mono);font-size:22px;letter-spacing:0.2em;color:var(--gold);}
+.offer .desc{font-size:14px;color:var(--midtone);margin-top:6px;}
+.garden{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center;}
+@media(max-width:760px){.garden{grid-template-columns:1fr;}}
+.garden img{width:100%;border-radius:14px;border:1px solid var(--accent-24);}
+.garden .g-copy p{font-size:16.5px;color:var(--light-64);margin-bottom:14px;}
+.garden .g-copy p strong{color:var(--light);}
+.signup{text-align:center;}
+.signup form{max-width:460px;margin:30px auto 0;display:flex;flex-direction:column;gap:12px;}
+.signup input{padding:16px 20px;border-radius:12px;border:1px solid var(--accent);background:rgba(31,24,36,0.7);color:var(--light);font-size:16px;font-family:var(--font-primary);}
+.signup input:focus{outline:none;border-color:var(--teal);}
+.done{display:none;font-size:19px;color:var(--light);margin-top:26px;}
+.fine{font-size:13px;color:var(--midtone-64);margin-top:14px;}
+.footer{padding:40px 0;border-top:1px solid var(--accent-24);text-align:center;font-family:var(--font-mono);font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:var(--midtone-64);}
+.footer a{color:var(--midtone);}
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="container">
+    <div class="disc" aria-hidden="true"></div>
+    <div class="kicker">Aug 12 · 4:00pm UTC · Iceland &amp; everywhere</div>
+    <h1>The Eclipse <em>Moment.</em></h1>
+    <p class="sub">For the first time since 1954, the sky over Iceland goes dark in the middle of the day. At the moment of totality, thousands pause together — in the Ceremony Garden with Unify, and <strong>from wherever you are in the world.</strong> One intention. One breath. One pulse.</p>
+    <div class="count"><strong id="cd">—</strong> until totality</div>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="#join">Join the moment — free</a>
+      <a class="btn btn-ghost" href="#how">How it works</a>
+    </div>
+  </div>
+</section>
+
+<section id="how">
+  <div class="container">
+    <h2>Three minutes. <em>One moment.</em></h2>
+    <div class="moment-steps">
+      <div class="step">
+        <div class="t">Before</div>
+        <h3>Set one intention</h3>
+        <p>In the hour before totality, write one line: what you want to carry out of the dark. We'll send the exact time for your time zone.</p>
+      </div>
+      <div class="step">
+        <div class="t">At totality</div>
+        <h3>Pause with us</h3>
+        <p>When the sky goes dark over Iceland, stop wherever you are. One breath. Your intention. Two minutes of the world holding still together.</p>
+      </div>
+      <div class="step">
+        <div class="t">After</div>
+        <h3>Carry it forward</h3>
+        <p>The moment ends. The intention doesn't. In the days after, one small pause a day keeps it alive — that's the practice the ring was built for.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="quotebox">
+      <p class="q">"At the moment of the eclipse everyone says a prayer, an intention — and then the pulse on your finger becomes the reminder afterwards. The moment passes. The practice stays."</p>
+      <p class="a">The Eclipse Moment · Pulse × Unify</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="garden">
+      <img src="assets/eclipse-lineup.png" alt="Iceland Eclipse festival lineup poster">
+      <div class="g-copy">
+        <h2 style="text-align:left;">Live from the <em>Ceremony Garden.</em></h2>
+        <p>On the Snæfellsnes Peninsula, <strong>Unify hosts the Eclipse Ceremony</strong> — a 2,000-person mandala with a water altar at its center, 30 singers, 12 drummers, and an Icelandic elder opening the moment.</p>
+        <p><strong>Pulse is there as a partner</strong> — in the garden, in the VIP spaces, and on the wrists and fingers of the people holding the ceremony.</p>
+        <p>The live audio broadcast streams on unify.org and icelandeclipse.com — so the moment reaches every time zone at once.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ring-note">
+  <div class="container">
+    <p class="big">You don't need a Pulse ring to join.<br>The moment is <em>even better</em> with one.</p>
+    <div class="offer">
+      <div class="code">ECLIPSE100</div>
+      <div class="desc">$100 off before Aug 12 · the pulse that carries your intention past the eclipse</div>
+    </div>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="https://pulsemindfulness.com" rel="noopener">Get a Pulse ring</a>
+    </div>
+  </div>
+</section>
+
+<section class="signup" id="join">
+  <div class="container">
+    <h2>Be in the <em>moment.</em></h2>
+    <p class="sub" style="max-width:520px;margin:0 auto;">One email before totality with your local time and your intention prompt. One after, with what comes next. That's all.</p>
+    <form id="join-form">
+      <input type="text" name="name" placeholder="First name" required>
+      <input type="email" name="email" placeholder="Email" required>
+      <button class="btn btn-primary" type="submit">Join free</button>
+    </form>
+    <p class="done" id="join-done">You're in. Watch for your totality time — see you in the dark.</p>
+    <p class="fine">Aug 12 · totality over Iceland at 4:00pm UTC · joined from every time zone</p>
+  </div>
+</section>
+
+<div class="footer">
+  <div class="container"><a href="wow.html">The Week of Wow →</a> · Pulse × Unify · Iceland Eclipse · Aug 11–15</div>
+</div>
+
+<script>
+/* Countdown to totality */
+const totality = new Date('2026-08-12T16:00:00Z');
+function tick(){
+  const ms = totality - new Date();
+  if(ms <= 0){ document.getElementById('cd').textContent = 'Totality'; return; }
+  const d = Math.floor(ms/86400000), h = Math.floor(ms%86400000/3600000), m = Math.floor(ms%3600000/60000);
+  document.getElementById('cd').textContent = d + 'd ' + h + 'h ' + m + 'm';
+}
+tick(); setInterval(tick, 30000);
+
+document.getElementById('join-form').addEventListener('submit', function(e){
+  e.preventDefault();
+  this.style.display = 'none';
+  document.getElementById('join-done').style.display = 'block';
+});
+</script>
+</body>
+</html>
