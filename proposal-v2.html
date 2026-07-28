@@ -96,7 +96,9 @@ details.wd > summary::-webkit-details-marker{display:none;}
   display:flex;align-items:center;justify-content:center;background:rgba(14,10,20,0.6);
   font-size:26px;font-weight:600;color:var(--light-64);
 }
-.headshot img{width:100%;height:100%;border-radius:50%;object-fit:cover;}
+.headshot{position:relative;overflow:hidden;}
+.headshot img.hs{position:absolute;inset:3px;width:calc(100% - 6px);height:calc(100% - 6px);border-radius:50%;object-fit:cover;}
+.hstats{font-family:var(--font-mono);font-size:11.5px;letter-spacing:0.04em;color:var(--gold);line-height:1.7;margin-bottom:10px;}
 .wd-col .wl{font-family:var(--font-mono);font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--midtone-64);display:block;margin-bottom:6px;}
 .wd-col p{font-size:14px;margin-bottom:10px;}
 .wd-col a{color:var(--teal);text-decoration:none;border-bottom:1px dotted rgba(106,223,217,0.3);font-size:14px;}
@@ -337,10 +339,11 @@ details.dd .dd-body p{font-size:15px;}
       <details class="wd" data-d="1">
         <summary><span class="w-n">Day 1</span><span class="w-t">Joy</span><span class="w-tag">Joy is one pulse away.</span><span class="w-h">Brent Freeman · Alchemy of Joy</span><span class="w-c">＋</span></summary>
         <div class="wd-body">
-          <div class="headshot">BF</div>
+          <div class="headshot">BF<img class="hs" src="assets/hosts/brent-freeman.jpg" alt="" onerror="this.remove()"></div>
           <div class="wd-col">
             <span class="wl">Who</span>
             <p>Serial founder (20+ companies), knighted for philanthropy, author of <em>The Alchemy of Joy</em>. His thesis: joy, not hustle, is the fuel — neuroscience meets heart.</p>
+            <p class="hstats">Founder of 20+ companies · author, The Alchemy of Joy · knighted for philanthropy · Inc. + Entrepreneur contributor</p>
             <span class="wl">Home</span>
             <a href="https://brentfreeman.com" rel="noopener">brentfreeman.com</a>
           </div>
@@ -355,10 +358,11 @@ details.dd .dd-body p{font-size:15px;}
       <details class="wd" data-d="2">
         <summary><span class="w-n">Day 2</span><span class="w-t">Oneness</span><span class="w-tag">Oneness is one pulse away.</span><span class="w-h">Patrick Kronfli · Unify</span><span class="w-c">＋</span></summary>
         <div class="wd-body">
-          <div class="headshot">PK</div>
+          <div class="headshot">PK<img class="hs" src="assets/hosts/patrick-kronfli.jpg" alt="" onerror="this.remove()"></div>
           <div class="wd-col">
             <span class="wl">Who</span>
             <p>Producer of the Iceland Eclipse Ceremony. Unify has synchronized millions across 1,400+ cities since 2012 — the noon wave is his native art form.</p>
+            <p class="hstats">Co-founder, Unify · 100+ global synchronized campaigns · 1,400+ cities · produced eclipse ceremonies for 20K+ people</p>
             <span class="wl">Home</span>
             <a href="https://unify.org" rel="noopener">unify.org</a>
           </div>
@@ -373,10 +377,11 @@ details.dd .dd-body p{font-size:15px;}
       <details class="wd" data-d="3">
         <summary><span class="w-n">Day 3</span><span class="w-t">Belonging</span><span class="w-tag">Belonging is one pulse away.</span><span class="w-h">Radha Agrawal · Belong Center</span><span class="w-c">＋</span></summary>
         <div class="wd-body">
-          <div class="headshot">RA</div>
+          <div class="headshot">RA<img class="hs" src="assets/hosts/radha-agrawal.jpg" alt="" onerror="this.remove()"></div>
           <div class="wd-col">
             <span class="wl">Who</span>
             <p>Daybreaker CEO (800K dancers, zero ads), founder of the Belong Center, author of <em>Belong</em> — used as the community-building blueprint at universities worldwide.</p>
+            <p class="hstats">Daybreaker CEO — 800K community built with zero paid ads · author of Belong · founder, Belong Center · Opus investor</p>
             <span class="wl">Home</span>
             <a href="https://radhaagrawal.com" rel="noopener">radhaagrawal.com</a>
           </div>
@@ -391,10 +396,11 @@ details.dd .dd-body p{font-size:15px;}
       <details class="wd" data-d="4">
         <summary><span class="w-n">Day 4</span><span class="w-t">Magic</span><span class="w-tag">Magic is one pulse away.</span><span class="w-h">Emily Fletcher · Ziva</span><span class="w-c">＋</span></summary>
         <div class="wd-body">
-          <div class="headshot">EF</div>
+          <div class="headshot">EF<img class="hs" src="assets/hosts/emily-fletcher.jpg" alt="" onerror="this.remove()"></div>
           <div class="wd-col">
             <span class="wl">Who</span>
             <p>Founder of Ziva Meditation — practice for high performers with deadlines. Already confirmed at Iceland as a ceremony Prayer Keeper; we meet her in the Garden.</p>
+            <p class="hstats">Founder, Ziva Meditation · 40K+ students taught · author, Stress Less, Accomplish More · Iceland ceremony Prayer Keeper</p>
             <span class="wl">Home</span>
             <a href="https://zivameditation.com" rel="noopener">zivameditation.com</a>
           </div>
@@ -409,10 +415,11 @@ details.dd .dd-body p{font-size:15px;}
       <details class="wd" data-d="5">
         <summary><span class="w-n">Day 5</span><span class="w-t">Stillness</span><span class="w-tag">Stillness is one pulse away.</span><span class="w-h">Cory Allen · The Astral Hustle</span><span class="w-c">＋</span></summary>
         <div class="wd-body">
-          <div class="headshot">CA</div>
+          <div class="headshot">CA<img class="hs" src="assets/hosts/cory-allen.jpg" alt="" onerror="this.remove()"></div>
           <div class="wd-col">
             <span class="wl">Who</span>
             <p>Austin author + podcaster (<em>Now Is the Way</em>, The Astral Hustle — millions of downloads). His line: the more we understand ourselves, the less we suffer.</p>
+            <p class="hstats">Author, Now Is the Way (Penguin Random House) · The Astral Hustle — millions of downloads · 25+ years of practice</p>
             <span class="wl">Home</span>
             <a href="https://www.cory-allen.com" rel="noopener">cory-allen.com</a>
           </div>
@@ -427,10 +434,11 @@ details.dd .dd-body p{font-size:15px;}
       <details class="wd" data-d="6">
         <summary><span class="w-n">Day 6</span><span class="w-t">Good Vibes</span><span class="w-tag">Good vibes are one pulse away.</span><span class="w-h">Vex King · Good Vibes, Good Life</span><span class="w-c">＋</span></summary>
         <div class="wd-body">
-          <div class="headshot">VK</div>
+          <div class="headshot">VK<img class="hs" src="assets/hosts/vex-king.jpg" alt="" onerror="this.remove()"></div>
           <div class="wd-col">
             <span class="wl">Who</span>
             <p>2.2M followers, four books, millions of copies sold — and already a Pulse brand ambassador. Self-love as the foundation; vibration as a choice.</p>
+            <p class="hstats">2.2M followers · 4M+ books sold · Good Vibes, Good Life — global bestseller · existing Pulse brand ambassador</p>
             <span class="wl">Home</span>
             <a href="https://www.vexking.com" rel="noopener">vexking.com</a>
           </div>
@@ -445,10 +453,11 @@ details.dd .dd-body p{font-size:15px;}
       <details class="wd" data-d="7">
         <summary><span class="w-n">Day 7</span><span class="w-t">Connection</span><span class="w-tag">Connection is one pulse away.</span><span class="w-h">Adam Schlender · ESU</span><span class="w-c">＋</span></summary>
         <div class="wd-body">
-          <div class="headshot">AS</div>
+          <div class="headshot">AS<img class="hs" src="assets/hosts/adam-schlender.jpg" alt="" onerror="this.remove()"></div>
           <div class="wd-col">
             <span class="wl">Who</span>
             <p>Campaign owner, closes the week. Six days of practice were training for this one: being actually here with the people in front of you.</p>
+            <p class="hstats">Campaign owner · builder, OPUS SoundBed · runs the platform, the community, and the 60-day sprint</p>
             <span class="wl">Home</span>
             <a href="mission.html">the campaign OS</a>
           </div>
@@ -461,7 +470,7 @@ details.dd .dd-body p{font-size:15px;}
         </div>
       </details>
     </div>
-    <div class="logo-note">Headshot rings are placeholders — real portraits drop in on host confirmation</div>
+    <div class="logo-note">Headshots: drop square images at assets/hosts/&lt;name&gt;.jpg (see README there) — they appear automatically; initials show until then</div>
     <p>Hosts are paid <strong>on results only</strong> — $100 per ring sold through their own tracked code, plus commission. No content fees, no retainers. Their audiences hear it in their voice, not ours.</p>
   </section>
 

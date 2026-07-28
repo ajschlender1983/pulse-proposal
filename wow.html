@@ -116,7 +116,10 @@ body{font-family:var(--font);background:var(--cream);color:var(--ink);line-heigh
 .day .theme small{display:block;font-size:12.5px;font-weight:400;color:var(--muted);margin-top:2px;}
 .day .tagline{font-style:italic;font-size:17.5px;color:var(--muted-64);font-weight:300;}
 .day .tagline b{font-style:normal;font-weight:700;color:var(--ink);}
-.day .host-side{text-align:right;font-size:13.5px;color:var(--muted-64);}
+.day .host-side{display:flex;align-items:center;gap:10px;justify-content:flex-end;text-align:right;font-size:13.5px;color:var(--muted-64);}
+.day .hs-mini{position:relative;width:44px;height:44px;border-radius:50%;border:2px solid var(--line);flex:0 0 auto;display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:12px;color:var(--muted);background:#fff;overflow:hidden;}
+.day .hs-mini img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+.day .host-side small{display:block;font-size:10.5px;color:var(--muted);}
 .day[data-d="1"]{border-left-color:var(--d1);} .day[data-d="1"] .theme{color:var(--d1);}
 .day[data-d="2"]{border-left-color:var(--d2);} .day[data-d="2"] .theme{color:var(--d2);}
 .day[data-d="3"]{border-left-color:var(--d3);} .day[data-d="3"] .theme{color:var(--d3);}
@@ -256,43 +259,43 @@ body{font-family:var(--font);background:var(--cream);color:var(--ink);line-heigh
         <div class="num">Day 1</div>
         <div><div class="theme">Joy<small>Wed Sept 24</small></div></div>
         <div class="tagline">Joy is <b>one pulse away.</b></div>
-        <div class="host-side">Brent Freeman<br>Alchemy of Joy</div>
+        <div class="host-side"><span>Brent Freeman<small>20+ companies · The Alchemy of Joy</small></span><span class="hs-mini">BF<img src="assets/hosts/brent-freeman.jpg" alt="" onerror="this.remove()"></span></div>
       </div>
       <div class="day reveal" data-d="2">
         <div class="num">Day 2</div>
         <div><div class="theme">Oneness<small>Thu Sept 25</small></div></div>
         <div class="tagline">Oneness is <b>one pulse away.</b></div>
-        <div class="host-side">Patrick Kronfli<br>Unify.org</div>
+        <div class="host-side"><span>Patrick Kronfli<small>Unify · 1,400+ cities synchronized</small></span><span class="hs-mini">PK<img src="assets/hosts/patrick-kronfli.jpg" alt="" onerror="this.remove()"></span></div>
       </div>
       <div class="day reveal" data-d="3">
         <div class="num">Day 3</div>
         <div><div class="theme">Belonging<small>Fri Sept 26</small></div></div>
         <div class="tagline">Belonging is <b>one pulse away.</b></div>
-        <div class="host-side">Radha Agrawal<br>Belong Center · Daybreaker</div>
+        <div class="host-side"><span>Radha Agrawal<small>Daybreaker · 800K, zero paid ads</small></span><span class="hs-mini">RA<img src="assets/hosts/radha-agrawal.jpg" alt="" onerror="this.remove()"></span></div>
       </div>
       <div class="day reveal" data-d="4">
         <div class="num">Day 4</div>
         <div><div class="theme">Magic<small>Sat Sept 27</small></div></div>
         <div class="tagline">Magic is <b>one pulse away.</b></div>
-        <div class="host-side">Emily Fletcher<br>Ziva</div>
+        <div class="host-side"><span>Emily Fletcher<small>Ziva · 40K+ students</small></span><span class="hs-mini">EF<img src="assets/hosts/emily-fletcher.jpg" alt="" onerror="this.remove()"></span></div>
       </div>
       <div class="day reveal" data-d="5">
         <div class="num">Day 5</div>
         <div><div class="theme">Stillness<small>Sun Sept 28</small></div></div>
         <div class="tagline">Stillness is <b>one pulse away.</b></div>
-        <div class="host-side">Cory Allen<br>The Astral Hustle</div>
+        <div class="host-side"><span>Cory Allen<small>Now Is the Way · millions of listens</small></span><span class="hs-mini">CA<img src="assets/hosts/cory-allen.jpg" alt="" onerror="this.remove()"></span></div>
       </div>
       <div class="day reveal" data-d="6">
         <div class="num">Day 6</div>
         <div><div class="theme">Good Vibes<small>Mon Sept 29</small></div></div>
         <div class="tagline">Good vibes are <b>one pulse away.</b></div>
-        <div class="host-side">Vex King<br>Good Vibes, Good Life</div>
+        <div class="host-side"><span>Vex King<small>4M+ books · 2.2M followers</small></span><span class="hs-mini">VK<img src="assets/hosts/vex-king.jpg" alt="" onerror="this.remove()"></span></div>
       </div>
       <div class="day reveal" data-d="7">
         <div class="num">Day 7</div>
         <div><div class="theme">Connection<small>Tue Sept 30</small></div></div>
         <div class="tagline">Connection is <b>one pulse away.</b></div>
-        <div class="host-side">Adam Schlender<br>ESU</div>
+        <div class="host-side"><span>Adam Schlender<small>Pulse · campaign owner</small></span><span class="hs-mini">AS<img src="assets/hosts/adam-schlender.jpg" alt="" onerror="this.remove()"></span></div>
       </div>
     </div>
   </div>
