@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Unified Pulse · Seven days. Seven pulses.</title>
+<title>Pulse & Unify · Seven days. Seven pulses.</title>
 <meta name="description" content="A free seven-day presence practice, presented by Pulse and Unify. Sept 24–30. You don't need a Pulse ring to join. Every day is even better with one.">
-<meta property="og:title" content="Unified Pulse · Seven days. Seven hosts. One reset a day.">
+<meta property="og:title" content="Pulse & Unify · Seven days. Seven hosts. One reset a day.">
 <meta property="og:description" content="Sept 24–30 · free everywhere · presented by Pulse and Unify.">
 <meta property="og:type" content="website">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2240%22 fill=%22%23E3F47D%22/></svg>">
@@ -149,6 +149,20 @@ body{font-family:var(--font);background:var(--cream);color:var(--ink);line-heigh
 .footer .wm{height:15px;color:var(--cream-warm);opacity:0.8;}
 .footer .wm svg{height:100%;width:auto;}
 .footer a{color:var(--blue);text-decoration:none;}
+
+/* ===== Pulse & Unify lockup ===== */
+.lockup{display:inline-flex;align-items:center;gap:14px;vertical-align:middle;}
+.lockup .lk-pulse{height:1em;width:auto;display:block;}
+.lockup .lk-amp{font-weight:300;opacity:.5;line-height:1;}
+.lockup .lk-unify{display:inline-flex;align-items:center;gap:7px;}
+.lockup .lk-unify svg{height:1.05em;width:auto;display:block;}
+.lockup .lk-unify .lk-word{
+  font-family:var(--mono,'DM Mono',monospace);font-weight:500;
+  letter-spacing:0.16em;line-height:1;
+  background:linear-gradient(90deg,#e35b5b,#e3a35b,#cbe35b,#5be38a,#5bc9e3,#8a5be3,#e35bc9);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.lockup img.lk-real{height:1.15em;width:auto;display:block;}
 </style>
 </head>
 <body>
@@ -161,11 +175,23 @@ body{font-family:var(--font);background:var(--cream);color:var(--ink);line-heigh
   <path fill="currentColor" d="M139.423 105.131C154.585 105.131 162.916 91.9685 162.916 76.8068V37.4863H179.41V78.8061C179.41 102.465 165.081 121.126 139.423 121.126C114.098 121.126 99.7695 102.298 99.7695 78.6395V37.4863H116.264V76.9734C116.264 91.9685 124.428 105.131 139.423 105.131Z"/>
   <path fill="currentColor" d="M16.4946 156.614H0V78.14C0 53.8146 18.8272 35.4873 43.4857 35.4873C68.1443 35.4873 86.8049 54.8143 86.8049 78.14C86.8049 102.799 68.9774 121.126 44.1522 121.126C33.1558 121.126 23.1591 116.294 16.4946 108.963V156.614ZM43.4857 105.631C58.6474 105.631 70.3103 93.1351 70.3103 78.3066C70.3103 63.3115 58.6474 51.1488 43.4857 51.1488C28.1574 51.1488 16.4946 63.3115 16.4946 78.3066C16.4946 93.1351 28.1574 105.631 43.4857 105.631Z"/>
 </symbol>
+<symbol id="unify-mark" viewBox="0 0 100 100">
+  <g>
+    <ellipse cx="50" cy="30" rx="11" ry="21" fill="#e35b5b" opacity=".85"/>
+    <ellipse cx="50" cy="30" rx="11" ry="21" fill="#e3a35b" opacity=".85" transform="rotate(45 50 50)"/>
+    <ellipse cx="50" cy="30" rx="11" ry="21" fill="#cbe35b" opacity=".85" transform="rotate(90 50 50)"/>
+    <ellipse cx="50" cy="30" rx="11" ry="21" fill="#5be38a" opacity=".85" transform="rotate(135 50 50)"/>
+    <ellipse cx="50" cy="30" rx="11" ry="21" fill="#5bc9e3" opacity=".85" transform="rotate(180 50 50)"/>
+    <ellipse cx="50" cy="30" rx="11" ry="21" fill="#5b7ae3" opacity=".85" transform="rotate(225 50 50)"/>
+    <ellipse cx="50" cy="30" rx="11" ry="21" fill="#8a5be3" opacity=".85" transform="rotate(270 50 50)"/>
+    <ellipse cx="50" cy="30" rx="11" ry="21" fill="#e35bc9" opacity=".85" transform="rotate(315 50 50)"/>
+  </g>
+</symbol>
 </defs></svg>
 
 <nav class="nav">
   <div class="wm"><svg viewBox="0 0 391 157"><use href="#pulse-wm"/></svg></div>
-  <span class="n-tag">× Unify · Unified Pulse</span>
+  <span class="n-tag">Sept 24–30 · seven days</span>
   <a class="n-cta" href="#join">Join free</a>
 </nav>
 
@@ -184,7 +210,7 @@ body{font-family:var(--font);background:var(--cream);color:var(--ink);line-heigh
       <div class="pulse-core"></div>
     </div>
     <div class="kicker">Sept 24–30 · free to join · everywhere</div>
-    <h1>The Week of <em>Wow.</em></h1>
+    <h1 style="line-height:1.2;"><span class="lockup" style="font-size:clamp(40px,7.2vw,88px);"><svg class="lk-pulse" viewBox="0 0 391 157"><use href="#pulse-wm"/></svg><span class="lk-amp" style="opacity:.45;">&amp;</span><span class="lk-unify"><img class="lk-real" src="assets/partners/unify.svg" alt="Unify" onerror="this.style.display='none';this.nextElementSibling.style.display='inline-flex'"><span style="display:none;align-items:center;gap:7px;"><svg viewBox="0 0 100 100"><use href="#unify-mark"/></svg><span class="lk-word">UNIFY</span></span></span></span></h1>
     <p class="sub">Seven days. Seven hosts. One reset a day — <strong>guided by seven of the people who taught us how to come back.</strong></p>
     <div class="dates">One pulse a day · 7:00am – 10:00pm window · your time zone</div>
     <p class="credit">Presented by Pulse and Unify · announced from the Ceremony Garden at the Iceland Eclipse · continuing the Oneness cadence Unify has stewarded since 2012</p>
@@ -304,7 +330,7 @@ body{font-family:var(--font);background:var(--cream);color:var(--ink);line-heigh
 <section class="ring-sec">
   <div class="container">
     <p class="big">You don't need a Pulse ring to join.<br>Every day is <em>even better</em> with one.</p>
-    <p class="note">A gentle physical cue — no screen, no notification — that brings you back when the day pulls you out. During Unified Pulse, it's the pulse in "one pulse away."</p>
+    <p class="note">A gentle physical cue — no screen, no notification — that brings you back when the day pulls you out. During Pulse &amp; Unify, it's the pulse in "one pulse away."</p>
     <div class="offer">
       <div class="code">UNIFIED100</div>
       <div class="desc">$100 off · arrives before the week begins · feel the difference in 21 days or send it back</div>

@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Your Unified Pulse · Map</title>
+<title>Your Pulse & Unify Map</title>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-/* ===== Unified Pulse Map · design DNA from the first-month map (warm, quiet, one-screen-at-a-time) ===== */
+/* ===== Pulse &amp; Unify Map · design DNA from the first-month map (warm, quiet, one-screen-at-a-time) ===== */
 :root{
   --bg:#EBE7D4; --ink:#1A1C22; --brown:#423D32; --honey:#C9A227; --accent:#E3F47D;
   --midtone:#8a8578; --midtone-64:#6E6857; --lightc:#F9F6E5;
@@ -146,6 +146,20 @@ label{font-family:var(--mono);font-size:11px;letter-spacing:0.14em;text-transfor
 }
 .demo button.on{background:var(--accent);color:var(--ink);border-color:var(--accent);}
 body{padding-top:44px;}
+
+/* ===== Pulse & Unify lockup ===== */
+.lockup{display:inline-flex;align-items:center;gap:14px;vertical-align:middle;}
+.lockup .lk-pulse{height:1em;width:auto;display:block;}
+.lockup .lk-amp{font-weight:300;opacity:.5;line-height:1;}
+.lockup .lk-unify{display:inline-flex;align-items:center;gap:7px;}
+.lockup .lk-unify svg{height:1.05em;width:auto;display:block;}
+.lockup .lk-unify .lk-word{
+  font-family:var(--mono,'DM Mono',monospace);font-weight:500;
+  letter-spacing:0.16em;line-height:1;
+  background:linear-gradient(90deg,#e35b5b,#e3a35b,#cbe35b,#5be38a,#5bc9e3,#8a5be3,#e35bc9);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.lockup img.lk-real{height:1.15em;width:auto;display:block;}
 </style>
 </head>
 <body>
@@ -171,10 +185,23 @@ body{padding-top:44px;}
       <path fill="currentColor" d="M139.423 105.131C154.585 105.131 162.916 91.9685 162.916 76.8068V37.4863H179.41V78.8061C179.41 102.465 165.081 121.126 139.423 121.126C114.098 121.126 99.7695 102.298 99.7695 78.6395V37.4863H116.264V76.9734C116.264 91.9685 124.428 105.131 139.423 105.131Z"/>
       <path fill="currentColor" d="M16.4946 156.614H0V78.14C0 53.8146 18.8272 35.4873 43.4857 35.4873C68.1443 35.4873 86.8049 54.8143 86.8049 78.14C86.8049 102.799 68.9774 121.126 44.1522 121.126C33.1558 121.126 23.1591 116.294 16.4946 108.963V156.614ZM43.4857 105.631C58.6474 105.631 70.3103 93.1351 70.3103 78.3066C70.3103 63.3115 58.6474 51.1488 43.4857 51.1488C28.1574 51.1488 16.4946 63.3115 16.4946 78.3066C16.4946 93.1351 28.1574 105.631 43.4857 105.631Z"/>
     </symbol>
-    </defs></svg>
+    
+<symbol id="unify-mark" viewBox="0 0 100 100">
+  <g>
+    <ellipse cx="50" cy="30" rx="11" ry="21" fill="#e35b5b" opacity=".85"/>
+    <ellipse cx="50" cy="30" rx="11" ry="21" fill="#e3a35b" opacity=".85" transform="rotate(45 50 50)"/>
+    <ellipse cx="50" cy="30" rx="11" ry="21" fill="#cbe35b" opacity=".85" transform="rotate(90 50 50)"/>
+    <ellipse cx="50" cy="30" rx="11" ry="21" fill="#5be38a" opacity=".85" transform="rotate(135 50 50)"/>
+    <ellipse cx="50" cy="30" rx="11" ry="21" fill="#5bc9e3" opacity=".85" transform="rotate(180 50 50)"/>
+    <ellipse cx="50" cy="30" rx="11" ry="21" fill="#5b7ae3" opacity=".85" transform="rotate(225 50 50)"/>
+    <ellipse cx="50" cy="30" rx="11" ry="21" fill="#8a5be3" opacity=".85" transform="rotate(270 50 50)"/>
+    <ellipse cx="50" cy="30" rx="11" ry="21" fill="#e35bc9" opacity=".85" transform="rotate(315 50 50)"/>
+  </g>
+</symbol>
+</defs></svg>
     <div class="brand-dot"></div>
     <svg viewBox="0 0 391 157" style="height:15px;width:auto;color:var(--ink);"><use href="#pulse-wm"/></svg>
-    <div class="brand"><span>Unified Pulse</span></div>
+    <div class="brand"><span>Pulse &amp; Unify</span></div>
   </div>
 
   <!-- ============ ONBOARDING ============ -->
@@ -219,7 +246,7 @@ body{padding-top:44px;}
 
 <script>
 /* =====================================================================
-   WOW MAP · participant prototype
+   PULSE & UNIFY MAP · participant prototype
    Design DNA: the first-month map (per-day content · prompt · check-in ·
    window-gated · anti-doomscroll). State in localStorage. No servers yet —
    wire to KV additive-sync at launch (five-layer protection per runbook).

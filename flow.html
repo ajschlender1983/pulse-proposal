@@ -66,6 +66,20 @@ h1 em{font-family:var(--font-display);font-style:italic;color:var(--teal);}
 .tone strong{color:var(--light-64);}
 .footer{padding:44px 0;text-align:center;font-family:var(--font-mono);font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:var(--midtone-64);}
 .footer a{color:var(--midtone);}
+
+/* ===== Pulse & Unify lockup ===== */
+.lockup{display:inline-flex;align-items:center;gap:14px;vertical-align:middle;}
+.lockup .lk-pulse{height:1em;width:auto;display:block;}
+.lockup .lk-amp{font-weight:300;opacity:.5;line-height:1;}
+.lockup .lk-unify{display:inline-flex;align-items:center;gap:7px;}
+.lockup .lk-unify svg{height:1.05em;width:auto;display:block;}
+.lockup .lk-unify .lk-word{
+  font-family:var(--mono,'DM Mono',monospace);font-weight:500;
+  letter-spacing:0.16em;line-height:1;
+  background:linear-gradient(90deg,#e35b5b,#e3a35b,#cbe35b,#5be38a,#5bc9e3,#8a5be3,#e35bc9);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.lockup img.lk-real{height:1.15em;width:auto;display:block;}
 </style>
 </head>
 <body>
@@ -76,6 +90,18 @@ h1 em{font-family:var(--font-display);font-style:italic;color:var(--teal);}
   <path fill="currentColor" d="M199.974 0H216.469V119.128H199.974V0Z"/>
   <path fill="currentColor" d="M139.423 105.131C154.585 105.131 162.916 91.9685 162.916 76.8068V37.4863H179.41V78.8061C179.41 102.465 165.081 121.126 139.423 121.126C114.098 121.126 99.7695 102.298 99.7695 78.6395V37.4863H116.264V76.9734C116.264 91.9685 124.428 105.131 139.423 105.131Z"/>
   <path fill="currentColor" d="M16.4946 156.614H0V78.14C0 53.8146 18.8272 35.4873 43.4857 35.4873C68.1443 35.4873 86.8049 54.8143 86.8049 78.14C86.8049 102.799 68.9774 121.126 44.1522 121.126C33.1558 121.126 23.1591 116.294 16.4946 108.963V156.614ZM43.4857 105.631C58.6474 105.631 70.3103 93.1351 70.3103 78.3066C70.3103 63.3115 58.6474 51.1488 43.4857 51.1488C28.1574 51.1488 16.4946 63.3115 16.4946 78.3066C16.4946 93.1351 28.1574 105.631 43.4857 105.631Z"/>
+</symbol>
+<symbol id="unify-mark" viewBox="0 0 100 100">
+  <g>
+    <ellipse cx="50" cy="30" rx="11" ry="21" fill="#e35b5b" opacity=".85"/>
+    <ellipse cx="50" cy="30" rx="11" ry="21" fill="#e3a35b" opacity=".85" transform="rotate(45 50 50)"/>
+    <ellipse cx="50" cy="30" rx="11" ry="21" fill="#cbe35b" opacity=".85" transform="rotate(90 50 50)"/>
+    <ellipse cx="50" cy="30" rx="11" ry="21" fill="#5be38a" opacity=".85" transform="rotate(135 50 50)"/>
+    <ellipse cx="50" cy="30" rx="11" ry="21" fill="#5bc9e3" opacity=".85" transform="rotate(180 50 50)"/>
+    <ellipse cx="50" cy="30" rx="11" ry="21" fill="#5b7ae3" opacity=".85" transform="rotate(225 50 50)"/>
+    <ellipse cx="50" cy="30" rx="11" ry="21" fill="#8a5be3" opacity=".85" transform="rotate(270 50 50)"/>
+    <ellipse cx="50" cy="30" rx="11" ry="21" fill="#e35bc9" opacity=".85" transform="rotate(315 50 50)"/>
+  </g>
 </symbol>
 </defs></svg>
 <div class="container">
@@ -111,7 +137,7 @@ const FLOW = [
 { phase:"August · Prep + Iceland", entities:[
   { when:"Aug 4", name:"WhatsApp Community Workshop", voice:"Pulse · community-first", tone:"Pulse voice per brand guide: reset / come back / real life. Warm, direct, zero hype.",
     email:{
-      announce:"**Subject: We're building something with you.** The next 60 days are a season for this community. First move: a workshop, in the group, this week — we design Unified Pulse together. What would make seven days actually matter?",
+      announce:"**Subject: We're building something with you.** The next 60 days are a season for this community. First move: a workshop, in the group, this week — we design Pulse &amp; Unify together. What would make seven days actually matter?",
       remind:"**Subject: Workshop's tomorrow.** Bring one answer: what pulls you out of your day the most? We're designing around real answers, not personas.",
       last:"**Subject: Doors close tonight.** Last call to shape the week before we lock the seven days. After tonight, we build."},
     social:{
@@ -119,7 +145,7 @@ const FLOW = [
       remind:"The community workshop is live this week. Seven days, seven themes — chosen by the people who actually wear the ring.",
       last:"Last day to weigh in. Then we build."},
     whatsapp:{
-      announce:"Hey everyone — Adam here. The next 60 days are big for Pulse and this group is the center of it. Thursday: a live workshop right here to co-design Unified Pulse. One question to sit with: what would a day that actually brings you back look like?",
+      announce:"Hey everyone — Adam here. The next 60 days are big for Pulse and this group is the center of it. Thursday: a live workshop right here to co-design Pulse &amp; Unify. One question to sit with: what would a day that actually brings you back look like?",
       remind:"Workshop tomorrow 12pm CT, right here. Voice notes welcome. One question: which theme matters most to you — joy, stillness, connection…?",
       last:"Closing the design thread tonight. Everything you shared is going into the seven days. Watch this space — you'll see your fingerprints on it."},
     ads:{
@@ -145,37 +171,37 @@ const FLOW = [
     email:{
       announce:"**Subject: Notes from the land of fire and ice.** We're here. The garden is built — four totem gates, a water altar, 2,000 seats in a mandala. Tomorrow the sky goes dark. Following along all week.",
       remind:"**Subject: What totality felt like.** Two minutes of dark in the middle of the day. Here's what people said, in their own words, an hour after. [3 short quotes + photos]",
-      last:"**Subject: The moment passed. The practice starts now.** From the Ceremony Garden we announced the integration event — Unified Pulse, Sept 24–30. Registration is open, and ECLIPSE100 still gets you the ring that carries your intention there."},
+      last:"**Subject: The moment passed. The practice starts now.** From the Ceremony Garden we announced the integration event — Pulse &amp; Unify, Sept 24–30. Registration is open, and ECLIPSE100 still gets you the ring that carries your intention there."},
     social:{
       announce:"The Ceremony Garden, built. 111 feet across. Four gates. One water altar. Tomorrow: totality. [photo]",
       remind:"Totality, from the center of the mandala. No caption does it justice. [video]",
-      last:"Announced from the Ceremony Garden: Unified Pulse, Sept 24–30. The integration of totality. Registration open now."},
+      last:"Announced from the Ceremony Garden: Pulse &amp; Unify, Sept 24–30. The integration of totality. Registration open now."},
     whatsapp:{
       announce:"On the ground on Snæfellsnes 🌋 Garden build day. This place is unreal — photo dump incoming.",
       remind:"TOTALITY. I have no words. Voice note incoming when my hands stop shaking.",
-      last:"Heading home. The integration event is real — Unified Pulse, Sept 24–30, announced from the Garden itself. This group gets first access to everything."},
+      last:"Heading home. The integration event is real — Pulse &amp; Unify, Sept 24–30, announced from the Garden itself. This group gets first access to everything."},
     ads:{
       announce:"—", remind:"—", last:"— (content capture week; paid launches Sept 1)"}
   }
 ]},
-{ phase:"September · Anchors + Unified Pulse", entities:[
-  { when:"Sept 1", name:"Unified Pulse Pre-Registration Open", voice:"Pulse · invitation register", tone:"Pulse brand voice. Recognition first ('the day runs away with you'), then the invitation. UNIFIED100 code enters here.",
+{ phase:"September · Anchors + Pulse &amp; Unify", entities:[
+  { when:"Sept 1", name:"Pulse &amp; Unify Pre-Registration Open", voice:"Pulse · invitation register", tone:"Pulse brand voice. Recognition first ('the day runs away with you'), then the invitation. UNIFIED100 code enters here.",
     email:{
-      announce:"**Subject: Seven days. Seven hosts. One reset a day.** Sept 24–30: Unified Pulse. Joy · Oneness · Belonging · Magic · Stillness · Good Vibes · Connection — one theme a day, hosted by the people who taught us how to come back. Free. In by 7am, done by 10pm, off your phone in between.",
+      announce:"**Subject: Seven days. Seven hosts. One reset a day.** Sept 24–30: Pulse &amp; Unify. Joy · Oneness · Belonging · Magic · Stillness · Good Vibes · Connection — one theme a day, hosted by the people who taught us how to come back. Free. In by 7am, done by 10pm, off your phone in between.",
       remind:"**Subject: Your seven hosts.** Brent Freeman. Patrick Kronfli. Radha Agrawal. Emily Fletcher. Cory Allen. Vex King. And one more we'll announce soon. Each brings a day. You bring one pause.",
       last:"**Subject: The week starts Wednesday.** Last call to join free. If you want the ring in hand for Day 1 — UNIFIED100, $100 off, ships in time."},
     social:{
-      announce:"THE UNIFIED PULSE · Sept 24–30 · Seven days, seven hosts, one reset a day. Free, everywhere. Presented with @unify. Link in bio.",
+      announce:"THE PULSE &amp; UNIFY · Sept 24–30 · Seven days, seven hosts, one reset a day. Free, everywhere. Presented with @unify. Link in bio.",
       remind:"Joy is one pulse away. Belonging is one pulse away. Stillness is one pulse away. Seven days. Starting Sept 24.",
       last:"Doors close for Day 1 cohort tonight. One pause a day for seven days. That's the whole ask."},
     whatsapp:{
-      announce:"It's live 🎉 The thing we designed together — Unified Pulse, Sept 24–30. You all built this. First-look link before anyone else sees it: [link]",
+      announce:"It's live 🎉 The thing we designed together — Pulse &amp; Unify, Sept 24–30. You all built this. First-look link before anyone else sees it: [link]",
       remind:"1,000+ people in already. Bring one person who needs this — your link gives them $100 off a ring AND credits you.",
-      last:"Unified Pulse starts Wednesday. This group is Day 1 royalty — you'll see features nobody else has yet."},
+      last:"Pulse &amp; Unify starts Wednesday. This group is Day 1 royalty — you'll see features nobody else has yet."},
     ads:{
       announce:"[Whitelisted @radhaagrawal] The most important thing I've learned building communities of 800,000 people: belonging starts with showing up — for yourself first. Sept 24–30 I'm hosting a Day of Belonging. Free, everywhere. Join us.",
       remind:"[Whitelisted @vexking] Good vibes aren't luck. They're a practice. One day, one theme, one reset — I'm hosting Sept 29. Come feel it.",
-      last:"[Whitelisted @unify] For 14 years we've gathered millions in synchronized moments. This September: seven days of them. Unified Pulse. Free."}
+      last:"[Whitelisted @unify] For 14 years we've gathered millions in synchronized moments. This September: seven days of them. Pulse &amp; Unify. Free."}
   },
   { when:"Sept 19", name:"Let's Be Friends · Austin", voice:"Daybreaker · ecstatic morning register", tone:"Radha/Daybreaker voice: exuberant, hugging-strangers energy, morning-dance culture. Pulse enters as the quiet after the loud.",
     email:{
@@ -210,13 +236,13 @@ const FLOW = [
       last:"Tonight. Bring one good question."},
     ads:{ announce:"— (invite-only; no paid) —", remind:"—", last:"—"}
   },
-  { when:"Sept 24", name:"Unified Pulse · Day 1 · Joy · Brent Freeman", voice:"Brent · Alchemy of Joy register", tone:"Brent's register: joy-not-hustle, neuroscience-meets-heart, entrepreneur-who-woke-up. Warm authority.",
+  { when:"Sept 24", name:"Pulse &amp; Unify · Day 1 · Joy · Brent Freeman", voice:"Brent · Alchemy of Joy register", tone:"Brent's register: joy-not-hustle, neuroscience-meets-heart, entrepreneur-who-woke-up. Warm authority.",
     email:{
       announce:"**Subject: Day 1: Joy. It was already here.** [Brent] I spent 20 years building companies chasing a feeling that was available the whole time. Today we start there — not the joy you earn, the joy that's underneath. Two minutes this morning: [content]. One question all day: where is joy already?",
       remind:"**Subject: Midday pulse: find one.** One moment of unearned joy before dinner. That's the whole practice.",
       last:"**Subject: Check in before the window closes.** 60 seconds: where did joy find you today? The window closes at 10 — then go live your evening."},
     social:{
-      announce:"[Brent] Day 1 of Unified Pulse: JOY. Not the kind you hustle for. The kind that was here first. Join free — link up.",
+      announce:"[Brent] Day 1 of Pulse &amp; Unify: JOY. Not the kind you hustle for. The kind that was here first. Join free — link up.",
       remind:"[Brent] Joy is one pulse away. Today, prove it to yourself once.",
       last:"[Brent] Day 1 closes at 10pm. One check-in. Then rest — that's part of it too."},
     whatsapp:{
@@ -224,11 +250,11 @@ const FLOW = [
       remind:"Midday joy check — drop a 🌞 when you catch one unearned moment.",
       last:"Window closes 10pm. Check in, then close the phone. Day 2 (Oneness with Patrick) opens 7am."},
     ads:{
-      announce:"[Whitelisted @brentjfreeman] I built 20 companies before I learned joy isn't the reward — it's the fuel. Hosting Day 1 of Unified Pulse. Free. Today.",
+      announce:"[Whitelisted @brentjfreeman] I built 20 companies before I learned joy isn't the reward — it's the fuel. Hosting Day 1 of Pulse &amp; Unify. Free. Today.",
       remind:"[Whitelisted @brentjfreeman] One unearned moment of joy today. That's the assignment.",
       last:"— (day closes organically) —"}
   },
-  { when:"Sept 25", name:"Unified Pulse · Day 2 · Oneness · Patrick Kronfli", voice:"Unify · ceremonial-warm register", tone:"Patrick's register: global-we, ceremony, synchronized moments, decades of practice. Sacred but never solemn.",
+  { when:"Sept 25", name:"Pulse &amp; Unify · Day 2 · Oneness · Patrick Kronfli", voice:"Unify · ceremonial-warm register", tone:"Patrick's register: global-we, ceremony, synchronized moments, decades of practice. Sacred but never solemn.",
     email:{
       announce:"**Subject: Day 2: Oneness. Same breath, everywhere.** [Patrick] For 14 years we've gathered millions in the same moment. Today it's us — this community, one synchronized pause at 12pm your time. Morning practice: [content]. Tonight: the world checks in together.",
       remind:"**Subject: 12 o'clock. Wherever you are.** When your clock strikes noon, stop. One breath. Millions of noons, one moment.",
@@ -242,11 +268,11 @@ const FLOW = [
       remind:"Noon check — drop your city when your wave passes 🌊",
       last:"Beautiful wave today. Check-in closes 10pm. Radha tomorrow."},
     ads:{
-      announce:"[Whitelisted @unify] We've synchronized millions across 1,400 cities. Today, a noon wave of stillness around the Earth. Day 2 of Unified Pulse. Free.",
+      announce:"[Whitelisted @unify] We've synchronized millions across 1,400 cities. Today, a noon wave of stillness around the Earth. Day 2 of Pulse &amp; Unify. Free.",
       remind:"[Whitelisted @unify] Wherever you are at noon — that's the ceremony.",
       last:"—"}
   },
-  { when:"Sept 26", name:"Unified Pulse · Day 3 · Belonging · Radha Agrawal", voice:"Radha · Belong register", tone:"Radha's register: community-architect, playful-wise, 'find your people' energy. Direct, warm, zero pretense.",
+  { when:"Sept 26", name:"Pulse &amp; Unify · Day 3 · Belonging · Radha Agrawal", voice:"Radha · Belong register", tone:"Radha's register: community-architect, playful-wise, 'find your people' energy. Direct, warm, zero pretense.",
     email:{
       announce:"**Subject: Day 3: Belonging. It's remembered, not built.** [Radha] I've helped 800,000 people dance at sunrise, and the secret is embarrassingly simple: belonging starts when you stop performing. Today's practice: [content]. Your question: with whom can I be exactly myself?",
       remind:"**Subject: Text that person.** The one you thought of this morning. One message. That's the practice.",
@@ -260,17 +286,17 @@ const FLOW = [
       remind:"Did you send it? The group wants receipts (screenshots optional, feelings mandatory).",
       last:"Check-ins close 10pm. This thread today was the whole point. ✨ tomorrow: Magic."},
     ads:{
-      announce:"[Whitelisted @radhaagrawal] 800,000 people taught me: belonging isn't found, it's remembered. Day 3 of Unified Pulse — hosted by me. Free, everywhere.",
+      announce:"[Whitelisted @radhaagrawal] 800,000 people taught me: belonging isn't found, it's remembered. Day 3 of Pulse &amp; Unify — hosted by me. Free, everywhere.",
       remind:"[Whitelisted @radhaagrawal] One text to one person. That's today's whole practice.",
       last:"—"}
   },
-  { when:"Sept 27", name:"Unified Pulse · Day 4 · Magic · Emily Fletcher", voice:"Ziva · high-performance magic register", tone:"Emily's register: no-nonsense meets mystical, 'meditation for people with deadlines', results-language. Sharp and sparkly.",
+  { when:"Sept 27", name:"Pulse &amp; Unify · Day 4 · Magic · Emily Fletcher", voice:"Ziva · high-performance magic register", tone:"Emily's register: no-nonsense meets mystical, 'meditation for people with deadlines', results-language. Sharp and sparkly.",
     email:{
       announce:"**Subject: Day 4: Magic. The practical kind.** [Emily] I teach stressed-out high performers, and here's what they learn: the practice is the tool, magic is the byproduct. Today: [content] — 3 minutes, eyes closed, then watch your day get weird in the best way. Mid-week intention check: is yours still true?",
       remind:"**Subject: Notice one synchronicity.** You've primed the system. Now catch it working — one 'no way' moment before tonight.",
       last:"**Subject: What showed up?** Check in. And if your Day-1 intention shifted — rewrite it. That's allowed. That's growth."},
     social:{
-      announce:"[Emily] Day 4: MAGIC. Not woo — wiring. Prime the nervous system, then watch what shows up. Join Unified Pulse, free.",
+      announce:"[Emily] Day 4: MAGIC. Not woo — wiring. Prime the nervous system, then watch what shows up. Join Pulse &amp; Unify, free.",
       remind:"[Emily] The magic count so far today: keep your eyes open. It's working.",
       last:"[Emily] Halfway through the week. The back half is where it compounds."},
     whatsapp:{
@@ -278,11 +304,11 @@ const FLOW = [
       remind:"Synchronicity thread check — the stories today 🤯 keep them coming.",
       last:"Mid-week intention check with your evening check-in: still true? Rewrite if not. Day 5 = Stillness with Cory."},
     ads:{
-      announce:"[Whitelisted @emilystellafletcher] I teach meditation to people with deadlines. The magic isn't the goal — it's the byproduct. Day 4, Unified Pulse. Come see.",
+      announce:"[Whitelisted @emilystellafletcher] I teach meditation to people with deadlines. The magic isn't the goal — it's the byproduct. Day 4, Pulse &amp; Unify. Come see.",
       remind:"[Whitelisted @emilystellafletcher] Prime the system. Catch it working. Today.",
       last:"—"}
   },
-  { when:"Sept 28", name:"Unified Pulse · Day 5 · Stillness · Cory Allen", voice:"Cory · Astral Hustle register", tone:"Cory's register: quiet depth, Austin-cool, 'the more you understand yourself, the less you suffer.' Spare sentences. No exclamation points.",
+  { when:"Sept 28", name:"Pulse &amp; Unify · Day 5 · Stillness · Cory Allen", voice:"Cory · Astral Hustle register", tone:"Cory's register: quiet depth, Austin-cool, 'the more you understand yourself, the less you suffer.' Spare sentences. No exclamation points.",
     email:{
       announce:"**Subject: Day 5: Stillness.** [Cory] Everyone thinks stillness is the absence of motion. It's the presence of you. Today: [content] — ten minutes, sit with what's actually there. The question: what have I been too busy to hear?",
       remind:"**Subject: The noise isn't outside.** Find four minutes of quiet before the day ends. No fixing. Just listening.",
@@ -296,11 +322,11 @@ const FLOW = [
       remind:"Quiet check: 🤫 if you got your four minutes.",
       last:"Check in, then rest. Vex brings the vibes tomorrow."},
     ads:{
-      announce:"[Whitelisted @cory.allen] Stillness isn't the absence of motion. It's the presence of you. Day 5 of Unified Pulse.",
+      announce:"[Whitelisted @cory.allen] Stillness isn't the absence of motion. It's the presence of you. Day 5 of Pulse &amp; Unify.",
       remind:"[Whitelisted @cory.allen] Four quiet minutes today. That's it.",
       last:"—"}
   },
-  { when:"Sept 29", name:"Unified Pulse · Day 6 · Good Vibes · Vex King", voice:"Vex · Good Vibes register", tone:"Vex's register: self-love as foundation, vibration language, millions-of-readers accessibility. Uplifting, aphoristic, generous.",
+  { when:"Sept 29", name:"Pulse &amp; Unify · Day 6 · Good Vibes · Vex King", voice:"Vex · Good Vibes register", tone:"Vex's register: self-love as foundation, vibration language, millions-of-readers accessibility. Uplifting, aphoristic, generous.",
     email:{
       announce:"**Subject: Day 6: Good Vibes. Raise them on purpose.** [Vex] Your vibe isn't luck — it's a frequency you choose. Today: [content], then the practice: one act of self-love before noon, one act of kindness before night. Watch what both do to the room you're in.",
       remind:"**Subject: Kindness check.** The self-love half is done or due. Now the outward half — one genuine act before the day closes.",
@@ -314,11 +340,11 @@ const FLOW = [
       remind:"Afternoon check: 💛s are rolling in, where are the 🤝s?",
       last:"Last check-in of Day 6. Tomorrow is the finale — Connection, with Adam. Bring one friend into the group for Day 7."},
     ads:{
-      announce:"[Whitelisted @vexking] I've written four books on this and it still comes down to one thing: self-love is the foundation. Day 6 of Unified Pulse. Free, today.",
+      announce:"[Whitelisted @vexking] I've written four books on this and it still comes down to one thing: self-love is the foundation. Day 6 of Pulse &amp; Unify. Free, today.",
       remind:"[Whitelisted @vexking] One act of self-love. One act of kindness. Today.",
       last:"—"}
   },
-  { when:"Sept 30", name:"Unified Pulse · Day 7 · Connection · Adam Schlender", voice:"Adam · ESU register", tone:"Adam's register: builder-heart, direct, the-thing-behind-the-thing. Closes the week, opens the door to what's next.",
+  { when:"Sept 30", name:"Pulse &amp; Unify · Day 7 · Connection · Adam Schlender", voice:"Adam · ESU register", tone:"Adam's register: builder-heart, direct, the-thing-behind-the-thing. Closes the week, opens the door to what's next.",
     email:{
       announce:"**Subject: Day 7: Connection. The point of all of it.** [Adam] Six days of practice — joy, oneness, belonging, magic, stillness, good vibes — all of it was training for this: being actually here with the people in front of you. Today: [content]. The practice: one real conversation, phone in the other room.",
       remind:"**Subject: One conversation.** Not a catch-up. A real one. You know which one you've been putting off.",
@@ -326,7 +352,7 @@ const FLOW = [
     social:{
       announce:"[Pulse] Day 7: CONNECTION. The final day. One real conversation, phone in the other room. Finish the week with us.",
       remind:"[Pulse] Connection is one pulse away. Usually one conversation away.",
-      last:"[Pulse] Unified Pulse closes at 10 tonight. 8 weeks ago this was an idea in a WhatsApp group. Thank you."},
+      last:"[Pulse] Pulse &amp; Unify closes at 10 tonight. 8 weeks ago this was an idea in a WhatsApp group. Thank you."},
     whatsapp:{
       announce:"DAY 7, family. Connection. This one's mine to host and I mean every word of it: [content]. One real conversation today, phone in the other room. This group is the proof it works.",
       remind:"Last practice of the week. Who's your conversation with? (No names needed — just 🎯 when it's done.)",
@@ -339,7 +365,7 @@ const FLOW = [
     email:{
       announce:"**Subject: [N] rings left.** The batch we committed to this season is almost gone. When it's gone, it's gone until the next production run. If the week has meant something and you want the pulse to carry it forward — this is the window. UNIFIED100 still works.",
       remind:"**Subject: Under [N] now.** No countdown theatrics — just the real number and the real date. Oct 1, whatever's left is what's left.",
-      last:"**Subject: Last day of the batch.** Unified Pulse ends tonight; so does this run of rings. Next batch ships [est]. The practice doesn't need hardware — but if you want it on your finger, today's the day."},
+      last:"**Subject: Last day of the batch.** Pulse &amp; Unify ends tonight; so does this run of rings. Next batch ships [est]. The practice doesn't need hardware — but if you want it on your finger, today's the day."},
     social:{
       announce:"[Pulse] The season batch is [N] rings from gone. Real number, updated live. Oct 1 the window closes.",
       remind:"[Pulse] Under [N] left. When they're gone: waitlist for the next production run.",

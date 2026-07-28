@@ -77,6 +77,20 @@ td.neg{color:var(--orange);} td.pos{color:var(--green);}
 .sources li{margin-bottom:8px;list-style:none;padding-left:24px;position:relative;}
 .sources li b{color:var(--gold);position:absolute;left:0;font-weight:400;}
 .footer{margin-top:70px;padding-top:26px;border-top:1px solid var(--accent-24);font-family:var(--font-mono);font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:var(--midtone-64);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;}
+
+/* ===== Pulse & Unify lockup ===== */
+.lockup{display:inline-flex;align-items:center;gap:14px;vertical-align:middle;}
+.lockup .lk-pulse{height:1em;width:auto;display:block;}
+.lockup .lk-amp{font-weight:300;opacity:.5;line-height:1;}
+.lockup .lk-unify{display:inline-flex;align-items:center;gap:7px;}
+.lockup .lk-unify svg{height:1.05em;width:auto;display:block;}
+.lockup .lk-unify .lk-word{
+  font-family:var(--mono,'DM Mono',monospace);font-weight:500;
+  letter-spacing:0.16em;line-height:1;
+  background:linear-gradient(90deg,#e35b5b,#e3a35b,#cbe35b,#5be38a,#5bc9e3,#8a5be3,#e35bc9);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.lockup img.lk-real{height:1.15em;width:auto;display:block;}
 </style>
 </head>
 <body>
@@ -87,6 +101,18 @@ td.neg{color:var(--orange);} td.pos{color:var(--green);}
   <path fill="currentColor" d="M199.974 0H216.469V119.128H199.974V0Z"/>
   <path fill="currentColor" d="M139.423 105.131C154.585 105.131 162.916 91.9685 162.916 76.8068V37.4863H179.41V78.8061C179.41 102.465 165.081 121.126 139.423 121.126C114.098 121.126 99.7695 102.298 99.7695 78.6395V37.4863H116.264V76.9734C116.264 91.9685 124.428 105.131 139.423 105.131Z"/>
   <path fill="currentColor" d="M16.4946 156.614H0V78.14C0 53.8146 18.8272 35.4873 43.4857 35.4873C68.1443 35.4873 86.8049 54.8143 86.8049 78.14C86.8049 102.799 68.9774 121.126 44.1522 121.126C33.1558 121.126 23.1591 116.294 16.4946 108.963V156.614ZM43.4857 105.631C58.6474 105.631 70.3103 93.1351 70.3103 78.3066C70.3103 63.3115 58.6474 51.1488 43.4857 51.1488C28.1574 51.1488 16.4946 63.3115 16.4946 78.3066C16.4946 93.1351 28.1574 105.631 43.4857 105.631Z"/>
+</symbol>
+<symbol id="unify-mark" viewBox="0 0 100 100">
+  <g>
+    <ellipse cx="50" cy="30" rx="11" ry="21" fill="#e35b5b" opacity=".85"/>
+    <ellipse cx="50" cy="30" rx="11" ry="21" fill="#e3a35b" opacity=".85" transform="rotate(45 50 50)"/>
+    <ellipse cx="50" cy="30" rx="11" ry="21" fill="#cbe35b" opacity=".85" transform="rotate(90 50 50)"/>
+    <ellipse cx="50" cy="30" rx="11" ry="21" fill="#5be38a" opacity=".85" transform="rotate(135 50 50)"/>
+    <ellipse cx="50" cy="30" rx="11" ry="21" fill="#5bc9e3" opacity=".85" transform="rotate(180 50 50)"/>
+    <ellipse cx="50" cy="30" rx="11" ry="21" fill="#5b7ae3" opacity=".85" transform="rotate(225 50 50)"/>
+    <ellipse cx="50" cy="30" rx="11" ry="21" fill="#8a5be3" opacity=".85" transform="rotate(270 50 50)"/>
+    <ellipse cx="50" cy="30" rx="11" ry="21" fill="#e35bc9" opacity=".85" transform="rotate(315 50 50)"/>
+  </g>
 </symbol>
 </defs></svg>
 <div class="page">
@@ -148,12 +174,12 @@ td.neg{color:var(--orange);} td.pos{color:var(--green);}
   <section>
     <h2><span class="idx">03</span>The sixty <em>days</em></h2>
     <div class="cal">
-      <div class="cal-row"><div class="c-when">Aug 1–10</div><div class="c-what"><strong>Prep.</strong> WhatsApp community workshop co-designs Unified Pulse. Creators recruited (performance-only). Impact.com codes + tracking live. Landing pages up.</div></div>
+      <div class="cal-row"><div class="c-when">Aug 1–10</div><div class="c-what"><strong>Prep.</strong> WhatsApp community workshop co-designs Pulse &amp; Unify. Creators recruited (performance-only). Impact.com codes + tracking live. Landing pages up.</div></div>
       <div class="cal-row"><div class="c-when">Aug 10–12</div><div class="c-what"><strong>The Eclipse test.</strong> First public send: "pause with us at totality — free, no ring required, better with one." A/B tested on the existing list before any big-audience spend. Real conversion data by Aug 13.</div></div>
       <div class="cal-row"><div class="c-when">Aug 11–15</div><div class="c-what"><strong>Iceland — confirmed.</strong> Integrated into the primary ceremony, direct contact with the 500 VIPs (investors, partners, ambassadors, and beyond), 4 VIP passes + Bell Tent<sup>1</sup>. We announce the integration event from the Garden and sell rings on-site for it. The footage powers all of September.</div></div>
       <div class="cal-row"><div class="c-when">Aug 16–31</div><div class="c-what"><strong>Bridge.</strong> Iceland content released. Unified-Pulse hosts locked. Whitelisted ad creative approved in each host's voice — September's existing $8K ad budget points here.</div></div>
       <div class="cal-row"><div class="c-when">Sept 1–19</div><div class="c-what"><strong>Anchors.</strong> Pre-registration opens (Unify's newsletter + FB fire here, not in August<sup>2</sup>). Let's Be Friends Austin (Sept 19) + Portal Austin salon — on-site sales, UNIFIED100.</div></div>
-      <div class="cal-row"><div class="c-when">Sept 24–30</div><div class="c-what"><strong>Unified Pulse.</strong> Seven days, seven hosts, thousands practicing daily — with the sold-out push running on real inventory numbers through Sept 30.</div></div>
+      <div class="cal-row"><div class="c-when">Sept 24–30</div><div class="c-what"><strong>Pulse &amp; Unify.</strong> Seven days, seven hosts, thousands practicing daily — with the sold-out push running on real inventory numbers through Sept 30.</div></div>
       <div class="cal-row"><div class="c-when">Oct 1</div><div class="c-what"><strong>The read.</strong> Sold out or not, we have: conversion data per channel per host, a live community, a partner platform, and the evidence file for the raise.</div></div>
     </div>
   </section>
@@ -212,8 +238,8 @@ td.neg{color:var(--orange);} td.pos{color:var(--green);}
     <h2><span class="idx">07</span>What's in place on <em>Oct 1</em> — win or lose</h2>
     <div class="assets">
       <div class="asset"><h4>Impact.com partner platform</h4><p>Adam-built, Pulse-owned. Every future creator, org, or referral partnership plugs into rails that already exist.</p></div>
-      <div class="asset"><h4>A live WhatsApp community</h4><p>The engine: co-designed the campaign, ran Unified Pulse, and stays as the highest-trust channel Pulse has.</p></div>
-      <div class="asset"><h4>Unified Pulse playbook</h4><p>Repeatable every quarter with new hosts. The format, the flow map, the templates — all reusable.</p></div>
+      <div class="asset"><h4>A live WhatsApp community</h4><p>The engine: co-designed the campaign, ran Pulse &amp; Unify, and stays as the highest-trust channel Pulse has.</p></div>
+      <div class="asset"><h4>Pulse &amp; Unify playbook</h4><p>Repeatable every quarter with new hosts. The format, the flow map, the templates — all reusable.</p></div>
       <div class="asset"><h4>Iceland film + content library</h4><p>Ceremony footage, testimonials, the eclipse story — durable creative for ads, site, and the fundraise deck.</p></div>
       <div class="asset"><h4>Named partner relationships</h4><p>Unify, Belong Center/Daybreaker, Portal, and seven hosts — warm, performance-proven, on contract rails.</p></div>
       <div class="asset"><h4>Conversion data per channel</h4><p>Real numbers per host, per code, per event — the difference between guessing next quarter and knowing it.</p></div>

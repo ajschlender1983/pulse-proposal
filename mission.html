@@ -114,6 +114,20 @@ a.surface p{font-size:13px;color:var(--midtone);}
 .runbook li{font-size:15px;color:var(--light-64);padding:8px 0;border-bottom:1px dashed var(--accent-24);}
 .runbook li strong{color:var(--light);}
 .footer{padding:40px 0;border-top:1px solid var(--accent-24);text-align:center;font-family:var(--font-mono);font-size:11.5px;letter-spacing:0.12em;text-transform:uppercase;color:var(--midtone-64);}
+
+/* ===== Pulse & Unify lockup ===== */
+.lockup{display:inline-flex;align-items:center;gap:14px;vertical-align:middle;}
+.lockup .lk-pulse{height:1em;width:auto;display:block;}
+.lockup .lk-amp{font-weight:300;opacity:.5;line-height:1;}
+.lockup .lk-unify{display:inline-flex;align-items:center;gap:7px;}
+.lockup .lk-unify svg{height:1.05em;width:auto;display:block;}
+.lockup .lk-unify .lk-word{
+  font-family:var(--mono,'DM Mono',monospace);font-weight:500;
+  letter-spacing:0.16em;line-height:1;
+  background:linear-gradient(90deg,#e35b5b,#e3a35b,#cbe35b,#5be38a,#5bc9e3,#8a5be3,#e35bc9);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.lockup img.lk-real{height:1.15em;width:auto;display:block;}
 </style>
 </head>
 <body>
@@ -124,6 +138,18 @@ a.surface p{font-size:13px;color:var(--midtone);}
   <path fill="currentColor" d="M199.974 0H216.469V119.128H199.974V0Z"/>
   <path fill="currentColor" d="M139.423 105.131C154.585 105.131 162.916 91.9685 162.916 76.8068V37.4863H179.41V78.8061C179.41 102.465 165.081 121.126 139.423 121.126C114.098 121.126 99.7695 102.298 99.7695 78.6395V37.4863H116.264V76.9734C116.264 91.9685 124.428 105.131 139.423 105.131Z"/>
   <path fill="currentColor" d="M16.4946 156.614H0V78.14C0 53.8146 18.8272 35.4873 43.4857 35.4873C68.1443 35.4873 86.8049 54.8143 86.8049 78.14C86.8049 102.799 68.9774 121.126 44.1522 121.126C33.1558 121.126 23.1591 116.294 16.4946 108.963V156.614ZM43.4857 105.631C58.6474 105.631 70.3103 93.1351 70.3103 78.3066C70.3103 63.3115 58.6474 51.1488 43.4857 51.1488C28.1574 51.1488 16.4946 63.3115 16.4946 78.3066C16.4946 93.1351 28.1574 105.631 43.4857 105.631Z"/>
+</symbol>
+<symbol id="unify-mark" viewBox="0 0 100 100">
+  <g>
+    <ellipse cx="50" cy="30" rx="11" ry="21" fill="#e35b5b" opacity=".85"/>
+    <ellipse cx="50" cy="30" rx="11" ry="21" fill="#e3a35b" opacity=".85" transform="rotate(45 50 50)"/>
+    <ellipse cx="50" cy="30" rx="11" ry="21" fill="#cbe35b" opacity=".85" transform="rotate(90 50 50)"/>
+    <ellipse cx="50" cy="30" rx="11" ry="21" fill="#5be38a" opacity=".85" transform="rotate(135 50 50)"/>
+    <ellipse cx="50" cy="30" rx="11" ry="21" fill="#5bc9e3" opacity=".85" transform="rotate(180 50 50)"/>
+    <ellipse cx="50" cy="30" rx="11" ry="21" fill="#5b7ae3" opacity=".85" transform="rotate(225 50 50)"/>
+    <ellipse cx="50" cy="30" rx="11" ry="21" fill="#8a5be3" opacity=".85" transform="rotate(270 50 50)"/>
+    <ellipse cx="50" cy="30" rx="11" ry="21" fill="#e35bc9" opacity=".85" transform="rotate(315 50 50)"/>
+  </g>
 </symbol>
 </defs></svg>
 
@@ -174,7 +200,7 @@ a.surface p{font-size:13px;color:var(--midtone);}
         <div class="tl-seg" data-s="2026-08-11" data-e="2026-08-15"><div class="t-n">Aug 11–15</div><div class="t-d">Iceland</div></div>
         <div class="tl-seg" data-s="2026-08-16" data-e="2026-08-31"><div class="t-n">Aug 16–31</div><div class="t-d">Bridge</div></div>
         <div class="tl-seg" data-s="2026-09-01" data-e="2026-09-23"><div class="t-n">Sept 1–23</div><div class="t-d">Anchors</div></div>
-        <div class="tl-seg" data-s="2026-09-24" data-e="2026-09-30"><div class="t-n">Sept 24–30</div><div class="t-d">Unified Pulse</div></div>
+        <div class="tl-seg" data-s="2026-09-24" data-e="2026-09-30"><div class="t-n">Sept 24–30</div><div class="t-d">Pulse &amp; Unify</div></div>
         <div class="tl-seg" data-s="2026-10-01" data-e="2026-10-01"><div class="t-n">Oct 1</div><div class="t-d">The read</div></div>
       </div>
       <div class="board">
@@ -196,7 +222,7 @@ a.surface p{font-size:13px;color:var(--midtone);}
           <div class="item"><span class="pill a">In flight</span><span>Unified-Pulse host confirmations — 4 warm out, Vex + Cory next</span><span class="own">Adam · Aug 14</span></div>
           <div class="item"><span class="pill a">In flight</span><span>Eclipse test email A/B — drafts in Flow Map, list segmentation pending</span><span class="own">Adam · Aug 8</span></div>
           <div class="item"><span class="pill g">On track</span><span>Landing pages LP1/LP2/LP3 — built, in polish</span><span class="own">Adam</span></div>
-          <div class="item"><span class="pill g">On track</span><span>Unified Pulse Map participant prototype — functional, creator content slots empty</span><span class="own">Adam</span></div>
+          <div class="item"><span class="pill g">On track</span><span>Pulse &amp; Unify Map participant prototype — functional, creator content slots empty</span><span class="own">Adam</span></div>
         </div>
         <div class="panel">
           <span class="p-tag" style="color:var(--midtone)">KPIs · wire at launch</span>
@@ -214,11 +240,11 @@ a.surface p{font-size:13px;color:var(--midtone);}
       <h2>Campaign <em>surfaces.</em></h2>
       <p class="sub">Every page the campaign runs on. All live in this repo, all deploy together.</p>
       <div class="links-grid">
-        <a class="surface" href="unified.html"><span class="s-t">LP 1 · public</span><h4>Unified Pulse</h4><p>Seven days · seven hosts · join free · UNIFIED100</p></a>
+        <a class="surface" href="unified.html"><span class="s-t">LP 1 · public</span><h4>Pulse &amp; Unify</h4><p>Seven days · seven hosts · join free · UNIFIED100</p></a>
         <a class="surface" href="creators.html"><span class="s-t">LP 2 · recruit</span><h4>Creators / Hosts</h4><p>The ask + performance terms + application</p></a>
         <a class="surface" href="eclipse.html"><span class="s-t">LP 3 · moment</span><h4>The Eclipse Moment</h4><p>Aug 12 totality · join free · ECLIPSE100</p></a>
         <a class="surface" href="flow.html"><span class="s-t">Campaign OS</span><h4>The Flow Map</h4><p>Every message · 4 channels × 3 touchpoints · in-voice drafts</p></a>
-        <a class="surface" href="map.html"><span class="s-t">Participant</span><h4>The Unified Pulse Map</h4><p>Onboarding → 7 days → check-ins · window-gated prototype</p></a>
+        <a class="surface" href="map.html"><span class="s-t">Participant</span><h4>The Pulse &amp; Unify Map</h4><p>Onboarding → 7 days → check-ins · window-gated prototype</p></a>
         <a class="surface" href="proposal-v2.html"><span class="s-t">Internal · V2 story-first</span><h4>The Proposal</h4><p>The story · the map · 60 days you can feel · numbers in drop-downs</p></a>
         <a class="surface" href="proposal.html"><span class="s-t">Internal · V1 detail-first</span><h4>Proposal V1</h4><p>Executive thesis · scenarios · budget · comp · runway</p></a>
       </div>
@@ -258,7 +284,7 @@ a.surface p{font-size:13px;color:var(--midtone);}
         <div class="item"><span>Per-day taglines ×7 (see Voices)</span><span class="status draft">draft</span></div>
         <div class="item"><span>Host portraits · consistent ring-portrait style token</span><span class="status todo">todo</span></div>
         <div class="item"><span>Higgsfield prompt-template library (reuse-first; batch generation)</span><span class="status todo">todo</span></div>
-        <div class="item"><span>Color-per-day palette · motion specs (pulse-then-pause)</span><span class="status draft">draft in map.html + wow.html</span></div>
+        <div class="item"><span>Color-per-day palette · motion specs (pulse-then-pause)</span><span class="status draft">draft in map.html + unified.html</span></div>
         <div class="item"><span>Attribution guide — SubID + code naming (UNIFIED100 · ECLIPSE100 · NAME100)</span><span class="status draft">draft</span></div>
         <div class="item"><span>Legal / compliance guardrails (LEXIS review)</span><span class="status todo">todo</span></div>
       </div>
@@ -287,7 +313,7 @@ a.surface p{font-size:13px;color:var(--midtone);}
           <ol>
             <li><strong>Provision brand account</strong> — Adam owner-level. Confirm Shopify integration app installed.</li>
             <li><strong>Wire attribution</strong> — checkout postback + promo-code tracking. Test with a $1 SKU end-to-end before any partner goes live.</li>
-            <li><strong>Naming conventions</strong> — SubID per partner (<span style="font-family:var(--font-mono)">wow-radha</span>, <span style="font-family:var(--font-mono)">wow-vex</span>…); code = NAME100, always worth $100 off.</li>
+            <li><strong>Naming conventions</strong> — SubID per partner (<span style="font-family:var(--font-mono)">pu-radha</span>, <span style="font-family:var(--font-mono)">pu-vex</span>…); code = NAME100, always worth $100 off.</li>
             <li><strong>Contract template</strong> — performance-only: $100/sale + commission %, monthly on close, no exclusivity. One page.</li>
             <li><strong>Onboard each host</strong> — invite → contract → SubID + code issued → dashboard access → test link verified.</li>
             <li><strong>Dynamic payouts</strong> — first-touch credit for creators; any-touch split when a whitelisted ad assists. Configure before Sept 1.</li>
@@ -314,7 +340,7 @@ a.surface p{font-size:13px;color:var(--midtone);}
       <h2>The <em>model.</em></h2>
       <p class="sub">Why this campaign is shaped like this. Five panels, plain English. Full financial detail in the <a href="proposal.html" style="color:var(--teal)">proposal</a>.</p>
       <div class="panel" style="margin-bottom:14px;"><span class="p-tag" style="color:var(--gold)">1 · The problem with buying customers</span><p style="font-size:15px;color:var(--light-64);">At today's ad performance, Pulse loses money on every ad-bought ring. Spending more of the same is the "lose a month of runway" path.</p></div>
-      <div class="panel" style="margin-bottom:14px;"><span class="p-tag" style="color:var(--gold)">2 · Anchor events flip the motivation</span><p style="font-size:15px;color:var(--light-64);">"Get the ring before the moment" beats "buy a ring" — the eclipse, the dance floor, and Unified Pulse give people a reason to order now.</p></div>
+      <div class="panel" style="margin-bottom:14px;"><span class="p-tag" style="color:var(--gold)">2 · Anchor events flip the motivation</span><p style="font-size:15px;color:var(--light-64);">"Get the ring before the moment" beats "buy a ring" — the eclipse, the dance floor, and Pulse &amp; Unify give people a reason to order now.</p></div>
       <div class="panel" style="margin-bottom:14px;"><span class="p-tag" style="color:var(--gold)">3 · Partners are paid on results only</span><p style="font-size:15px;color:var(--light-64);">Creators and orgs earn per sale through their own tracked codes — no upfront fees, no wasted reach. Their audiences hear it in their voice, not ours.</p></div>
       <div class="panel" style="margin-bottom:14px;"><span class="p-tag" style="color:var(--gold)">4 · Honest scarcity does the selling</span><p style="font-size:15px;color:var(--light-64);">1,500 rings, real count, live progress bar. When it's gone it's gone until the next batch. No fake urgency anywhere, ever.</p></div>
       <div class="panel"><span class="p-tag" style="color:var(--gold)">5 · Sold-out is the fundraise</span><p style="font-size:15px;color:var(--light-64);">If the batch clears, the next raise buys inventory against proven demand — a completely different conversation than raising for hoped-for growth.</p></div>
@@ -328,7 +354,7 @@ a.surface p{font-size:13px;color:var(--midtone);}
         <ol>
           <li><strong>What's a SubID?</strong> A tracking tag on every partner link so each sale credits the right person. It's how creators get paid and how we know what's working.</li>
           <li><strong>Why is the progress bar "real numbers only"?</strong> Trust is the brand. A faked counter would cost more than it converts. The bar reads live Shopify inventory or it doesn't ship.</li>
-          <li><strong>How does the Unified Pulse Map window work?</strong> Each day opens 7am and closes 10pm in the participant's own time zone. Outside the window, the day rests. It's an anti-doomscroll product — the design says "go live your life."</li>
+          <li><strong>How does the Pulse &amp; Unify Map window work?</strong> Each day opens 7am and closes 10pm in the participant's own time zone. Outside the window, the day rests. It's an anti-doomscroll product — the design says "go live your life."</li>
           <li><strong>Why test at the eclipse before September?</strong> The Aug 10 send is a small, real A/B on our own list. It gives Elliot conversion data before a single big-audience dollar is spent.</li>
           <li><strong>What if we don't hit 1,500?</strong> The proposal prices that honestly: worst case loses about what ads would have lost, and every asset (community, platform, film, data) survives into the next attempt.</li>
           <li><strong>Who approves copy?</strong> Pulse-voice copy: the word-list check + Joyce. Partner-voice copy: the partner, always, before it ships.</li>
