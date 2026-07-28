@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pulse · The Week of Wow · 60 Days to Sold Out</title>
+<meta property="og:title" content="Pulse · The Week of Wow · 60 days to sold out">
+<meta property="og:description" content="An eclipse, three cities, seven hosts, one community — and 1,500 rings, gone by Oct 1.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2240%22 fill=%22%23FFD764%22/></svg>">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=DM+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+@font-face{font-family:'TT Norms Pro';src:url('fonts/TT-Norms-Pro-Light.ttf') format('truetype');font-weight:300;font-display:swap;}
+@font-face{font-family:'TT Norms Pro';src:url('fonts/TT-Norms-Pro-Regular.ttf') format('truetype');font-weight:400;font-display:swap;}
+@font-face{font-family:'TT Norms Pro';src:url('fonts/TT-Norms-Pro-DemiBold.ttf') format('truetype');font-weight:600;font-display:swap;}
+:root{
+  --void:rgb(14,10,20); --dark:rgba(31,24,36,1); --accent:rgba(86,76,112,1);
+  --light:rgba(228,225,230,1); --midtone:rgba(154,144,163,1);
+  --teal:rgba(106,223,217,1); --gold:rgba(255,215,100,1); --green:rgba(99,224,132,1);
+  --orange:rgba(240,147,94,1); --magenta:rgba(194,47,205,1);
+  --light-64:rgba(228,225,230,0.64); --midtone-64:rgba(154,144,163,0.64);
+  --accent-24:rgba(86,76,112,0.24); --gold-24:rgba(255,215,100,0.24);
+  --font-primary:'TT Norms Pro','DM Sans',-apple-system,sans-serif;
+  --font-display:'Playfair Display',Georgia,serif;
+  --font-mono:'DM Mono','SF Mono',Menlo,monospace;
+  --d1:#FFD764; --d2:#6ADFD9; --d3:#F0935E; --d4:#DA7BE4; --d5:#9A90A3; --d6:#63E084; --d7:#E4E1E6;
+}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:var(--font-primary);color:var(--light);line-height:1.55;
+  background:
+    radial-gradient(1100px 800px at 88% -4%, rgba(106,223,217,0.09), transparent 60%),
+    radial-gradient(1000px 900px at 6% 40%, rgba(194,47,205,0.07), transparent 60%),
+    radial-gradient(900px 800px at 92% 92%, rgba(255,215,100,0.06), transparent 60%),
+    linear-gradient(180deg,rgb(18,14,24) 0%,rgb(24,18,30) 60%,rgb(31,24,36) 100%);
+}
+.page{max-width:980px;margin:0 auto;padding:64px 30px 90px;}
+.kicker{font-family:var(--font-mono);font-size:13px;letter-spacing:0.2em;text-transform:uppercase;color:var(--teal);}
+h1{font-size:clamp(40px,6.4vw,76px);font-weight:300;letter-spacing:-0.028em;line-height:1.02;margin-top:16px;}
+h1 em,h2 em{font-family:var(--font-display);font-style:italic;font-weight:400;}
+h1 em{color:var(--gold);}
+.byline{font-family:var(--font-mono);font-size:12.5px;letter-spacing:0.12em;text-transform:uppercase;color:var(--midtone);margin-top:16px;}
+section{margin-top:76px;}
+h2{font-size:clamp(26px,3.8vw,40px);font-weight:300;letter-spacing:-0.02em;margin-bottom:18px;}
+h2 em{color:var(--teal);}
+p{font-size:17px;color:var(--light-64);margin-bottom:15px;max-width:66ch;}
+p strong{color:var(--light);}
+p em{font-family:var(--font-display);color:var(--light);}
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .7s ease, transform .7s ease;}
+.reveal.on{opacity:1;transform:none;}
+
+/* ===== Partner strip ===== */
+.partners{
+  display:flex;gap:12px;flex-wrap:wrap;margin-top:34px;
+}
+.pt{
+  flex:1;min-width:150px;background:rgba(31,24,36,0.6);border:1px solid var(--accent-24);
+  border-radius:14px;padding:18px 16px;text-align:center;
+}
+.pt .p-logo{font-size:19px;font-weight:600;letter-spacing:0.01em;}
+.pt .p-role{font-family:var(--font-mono);font-size:9.5px;letter-spacing:0.14em;text-transform:uppercase;color:var(--midtone-64);margin-top:6px;}
+.pt.unify .p-logo{background:linear-gradient(90deg,#e35b5b,#e3a35b,#cbe35b,#5be38a,#5bc9e3,#8a5be3,#e35bc9);-webkit-background-clip:text;background-clip:text;color:transparent;}
+.pt.belong .p-logo{color:var(--orange);}
+.pt.daybreaker .p-logo{color:#F7E96B;letter-spacing:0.14em;font-family:var(--font-mono);font-size:16px;}
+.pt.portal .p-logo{color:var(--teal);font-weight:300;letter-spacing:0.22em;}
+.pt.pulse .p-logo{color:var(--light);}
+.pt.pulse .p-logo b{color:var(--gold);}
+.logo-note{font-family:var(--font-mono);font-size:10.5px;color:var(--midtone-64);letter-spacing:0.08em;margin-top:10px;text-transform:uppercase;}
+
+/* ===== Story imagery ===== */
+.filmstrip{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:28px 0 8px;}
+@media(max-width:700px){.filmstrip{grid-template-columns:1fr;}}
+.filmstrip figure{border-radius:14px;overflow:hidden;border:1px solid var(--accent-24);background:var(--void);}
+.filmstrip img{width:100%;height:210px;object-fit:cover;display:block;}
+.filmstrip figcaption{font-family:var(--font-mono);font-size:10.5px;letter-spacing:0.12em;text-transform:uppercase;color:var(--midtone-64);padding:10px 14px;}
+.posters{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:20px 0;}
+@media(max-width:700px){.posters{grid-template-columns:1fr;}}
+.posters figure{border-radius:14px;overflow:hidden;border:1px solid var(--accent-24);}
+.posters img{width:100%;height:280px;object-fit:cover;object-position:top;display:block;}
+.posters figcaption{font-family:var(--font-mono);font-size:10.5px;letter-spacing:0.12em;text-transform:uppercase;color:var(--midtone-64);padding:10px 14px;background:rgba(14,10,20,0.5);}
+
+/* ===== The week: expandable day cards ===== */
+.week{display:flex;flex-direction:column;gap:10px;margin:26px 0;}
+details.wd{border-radius:14px;background:rgba(31,24,36,0.6);border:1px solid var(--accent-24);border-left:5px solid var(--accent);overflow:hidden;}
+details.wd > summary{list-style:none;cursor:pointer;padding:16px 22px;display:flex;align-items:baseline;gap:16px;flex-wrap:wrap;}
+details.wd > summary::-webkit-details-marker{display:none;}
+.wd .w-n{font-family:var(--font-mono);font-size:11px;letter-spacing:0.12em;color:var(--midtone-64);text-transform:uppercase;min-width:52px;}
+.wd .w-t{font-size:18px;font-weight:600;}
+.wd .w-tag{font-family:var(--font-display);font-style:italic;font-size:15px;color:var(--light-64);}
+.wd .w-h{font-size:12.5px;color:var(--midtone);margin-left:auto;}
+.wd .w-c{font-family:var(--font-mono);font-size:11px;color:var(--midtone-64);}
+.wd-body{display:grid;grid-template-columns:96px 1fr 1fr;gap:20px;padding:6px 22px 22px;}
+@media(max-width:760px){.wd-body{grid-template-columns:96px 1fr;}}
+.headshot{
+  width:84px;height:84px;border-radius:50%;border:3px solid var(--accent);padding:3px;
+  display:flex;align-items:center;justify-content:center;background:rgba(14,10,20,0.6);
+  font-size:26px;font-weight:600;color:var(--light-64);
+}
+.headshot img{width:100%;height:100%;border-radius:50%;object-fit:cover;}
+.wd-col .wl{font-family:var(--font-mono);font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--midtone-64);display:block;margin-bottom:6px;}
+.wd-col p{font-size:14px;margin-bottom:10px;}
+.wd-col a{color:var(--teal);text-decoration:none;border-bottom:1px dotted rgba(106,223,217,0.3);font-size:14px;}
+.wd-col .prompt{font-family:var(--font-display);font-style:italic;font-size:15px;color:var(--light);}
+.wd-col .tools{font-family:var(--font-mono);font-size:12px;color:var(--midtone);line-height:1.8;}
+details.wd[data-d="1"]{border-left-color:var(--d1);} details.wd[data-d="1"] .w-t,details.wd[data-d="1"] .headshot{color:var(--d1);border-color:var(--d1);}
+details.wd[data-d="2"]{border-left-color:var(--d2);} details.wd[data-d="2"] .w-t,details.wd[data-d="2"] .headshot{color:var(--d2);border-color:var(--d2);}
+details.wd[data-d="3"]{border-left-color:var(--d3);} details.wd[data-d="3"] .w-t,details.wd[data-d="3"] .headshot{color:var(--d3);border-color:var(--d3);}
+details.wd[data-d="4"]{border-left-color:var(--d4);} details.wd[data-d="4"] .w-t,details.wd[data-d="4"] .headshot{color:var(--d4);border-color:var(--d4);}
+details.wd[data-d="5"]{border-left-color:var(--d5);} details.wd[data-d="5"] .w-t,details.wd[data-d="5"] .headshot{color:var(--d5);border-color:var(--d5);}
+details.wd[data-d="6"]{border-left-color:var(--d6);} details.wd[data-d="6"] .w-t,details.wd[data-d="6"] .headshot{color:var(--d6);border-color:var(--d6);}
+details.wd[data-d="7"]{border-left-color:var(--d7);} details.wd[data-d="7"] .w-t,details.wd[data-d="7"] .headshot{color:var(--d7);border-color:var(--d7);}
+
+/* ===== Mini map mock ===== */
+.mapmock{display:grid;grid-template-columns:300px 1fr;gap:30px;align-items:center;margin:26px 0;}
+@media(max-width:760px){.mapmock{grid-template-columns:1fr;}}
+.phone{
+  background:#EBE7D4;border-radius:26px;padding:22px 18px;color:#1A1C22;
+  box-shadow:0 24px 60px rgba(0,0,0,0.5);font-family:'DM Sans',sans-serif;
+}
+.phone .ph-brand{display:flex;align-items:center;gap:7px;font-size:12px;font-weight:600;}
+.phone .ph-dot{width:7px;height:7px;border-radius:50%;background:#C9A227;}
+.phone .ph-int{background:#1A1C22;color:#F9F6E5;border-radius:12px;padding:12px 14px;margin-top:14px;}
+.phone .ph-int .l{font-family:var(--font-mono);font-size:8px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(249,246,229,0.5);}
+.phone .ph-int .t{font-size:12.5px;margin-top:4px;font-weight:500;}
+.phone .ph-day{display:flex;align-items:center;gap:10px;background:#F9F6E5;border:1px solid rgba(26,28,34,0.12);border-left:4px solid #C9A227;border-radius:12px;padding:11px 12px;margin-top:10px;}
+.phone .ph-day .n{font-family:var(--font-mono);font-size:8.5px;color:#6E6857;text-transform:uppercase;}
+.phone .ph-day .t{font-size:13px;font-weight:600;}
+.phone .ph-day .s{font-size:10px;color:#6E6857;}
+.phone .ph-day .open{margin-left:auto;font-family:var(--font-mono);font-size:8px;color:#C9A227;text-transform:uppercase;letter-spacing:0.1em;}
+.phone .ph-done{text-align:center;font-size:11.5px;color:#6E6857;margin-top:12px;font-style:italic;}
+.mapcopy p{font-size:16.5px;}
+
+/* ===== Felt timeline ===== */
+.chapters{display:flex;flex-direction:column;gap:14px;margin-top:26px;}
+.chapter{
+  display:grid;grid-template-columns:130px 1fr;gap:22px;
+  background:rgba(31,24,36,0.55);border:1px solid var(--accent-24);border-radius:16px;padding:24px 28px;
+  border-left:5px solid var(--accent);
+}
+@media(max-width:640px){.chapter{grid-template-columns:1fr;}}
+.chapter .c-when{font-family:var(--font-mono);font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);line-height:1.6;}
+.chapter h3{font-size:20px;font-weight:500;margin-bottom:8px;}
+.chapter h3 em{font-family:var(--font-display);font-style:italic;color:var(--teal);font-weight:400;}
+.chapter p{font-size:15.5px;margin-bottom:8px;}
+.chapter .c-do{font-family:var(--font-mono);font-size:12px;color:var(--midtone);letter-spacing:0.04em;line-height:1.7;}
+.chapter[data-c="1"]{border-left-color:var(--teal);}
+.chapter[data-c="2"]{border-left-color:var(--orange);}
+.chapter[data-c="3"]{border-left-color:var(--magenta);}
+.chapter[data-c="4"]{border-left-color:var(--green);}
+.chapter[data-c="5"]{border-left-color:var(--gold);}
+
+/* ===== Thesis + numbers ===== */
+.thesis-line{
+  font-size:clamp(19px,2.5vw,24px);font-weight:300;color:var(--light);line-height:1.55;
+  border:1px solid var(--gold-24);border-left:5px solid var(--gold);border-radius:0 14px 14px 0;
+  padding:26px 30px;background:rgba(255,215,100,0.04);margin:24px 0;max-width:none;
+}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:14.5px;}
+th{font-family:var(--font-mono);font-size:11px;letter-spacing:0.13em;text-transform:uppercase;color:var(--midtone);text-align:left;padding:9px 13px;border-bottom:1px solid var(--accent-24);}
+td{padding:11px 13px;border-bottom:1px solid rgba(86,76,112,0.14);color:var(--light-64);vertical-align:top;}
+td strong{color:var(--light);}
+tr.hl td{background:rgba(106,223,217,0.05);}
+td.neg{color:var(--orange);} td.pos{color:var(--green);}
+.num{font-variant-numeric:tabular-nums;font-family:var(--font-mono);font-size:13.5px;}
+.bottomline{
+  border-left:3px solid var(--gold);padding:13px 17px;background:rgba(255,215,100,0.04);
+  border-radius:0 10px 10px 0;font-size:14.5px;color:var(--light-64);margin:16px 0;max-width:none;
+}
+.bottomline b{font-family:var(--font-mono);font-size:10.5px;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:5px;font-weight:400;}
+
+/* ===== Drop-downs ===== */
+details.dd{
+  background:rgba(31,24,36,0.55);border:1px solid var(--accent-24);border-radius:14px;
+  margin-top:12px;overflow:hidden;
+}
+details.dd > summary{
+  list-style:none;cursor:pointer;padding:18px 24px;display:flex;align-items:baseline;gap:14px;
+  font-size:17px;font-weight:500;
+}
+details.dd > summary::-webkit-details-marker{display:none;}
+details.dd > summary .dc{font-family:var(--font-mono);font-size:12px;color:var(--teal);}
+details.dd > summary .dhint{margin-left:auto;font-family:var(--font-mono);font-size:11px;color:var(--midtone-64);letter-spacing:0.08em;text-transform:uppercase;}
+details.dd .dd-body{padding:4px 24px 22px;}
+details.dd .dd-body p{font-size:15px;}
+.mtt{list-style:none;margin:10px 0;}
+.mtt li{padding:10px 0 10px 28px;position:relative;border-bottom:1px dashed var(--accent-24);font-size:15px;color:var(--light-64);}
+.mtt li::before{content:"→";position:absolute;left:2px;color:var(--teal);font-family:var(--font-mono);}
+.mtt li strong{color:var(--light);}
+.assets{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:18px 0;}
+@media(max-width:700px){.assets{grid-template-columns:1fr;}}
+.asset{background:rgba(31,24,36,0.55);border:1px solid var(--accent-24);border-radius:12px;padding:17px;border-left:4px solid var(--green);}
+.asset h4{font-size:15.5px;font-weight:500;margin-bottom:4px;}
+.asset p{font-size:13px;margin:0;}
+.sources{font-size:12.5px;color:var(--midtone);}
+.sources li{margin-bottom:8px;list-style:none;padding-left:22px;position:relative;}
+.sources li b{color:var(--gold);position:absolute;left:0;font-weight:400;}
+.footer{margin-top:80px;padding-top:26px;border-top:1px solid var(--accent-24);font-family:var(--font-mono);font-size:11.5px;letter-spacing:0.12em;text-transform:uppercase;color:var(--midtone-64);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;}
+.footer a{color:var(--midtone);}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- ================= HERO + PARTNERS ================= -->
+  <header>
+    <div class="kicker">Pulse · 60-day campaign · Aug 1 – Oct 1</div>
+    <h1>An eclipse. Three cities.<br>Seven hosts. <em>Sold out.</em></h1>
+    <p class="byline">Prepared by Adam Schlender · July 2026 · every number sourced</p>
+    <div class="partners">
+      <div class="pt pulse"><div class="p-logo">PULSE<b>.</b></div><div class="p-role">The ring · the reset</div></div>
+      <div class="pt unify"><div class="p-logo">UNIFY</div><div class="p-role">Global meditation · 2.8M reach</div></div>
+      <div class="pt belong"><div class="p-logo">Belong Center</div><div class="p-role">Radha Agrawal · community</div></div>
+      <div class="pt daybreaker"><div class="p-logo">DAYBREAKER</div><div class="p-role">800K dancers · Austin Sept 19</div></div>
+      <div class="pt portal"><div class="p-logo">THE PORTAL</div><div class="p-role">Community + retail partner</div></div>
+    </div>
+    <div class="logo-note">Wordmark placeholders — official partner logos drop in on final</div>
+  </header>
+
+  <!-- ================= THE STORY ================= -->
+  <section class="reveal">
+    <h2>First, the <em>story.</em></h2>
+    <p>On <strong>August 12</strong>, for the first time since 1954, the sky over Iceland goes dark in the middle of the day. Two thousand people will be seated in a mandala on the Snæfellsnes Peninsula — a ceremony Unify has spent a year building. At the moment of totality, everyone sets an intention.</p>
+    <p><strong>And then the moment passes.</strong> That's the problem with peak experiences — Monday comes back. The scroll comes back. Autopilot comes back.</p>
+    <p>That's exactly the problem Pulse was built for. The ring is the little physical cue that carries the intention <em>past</em> the moment — no screen, no notification, one gentle pulse that brings you back. So we're not sponsoring an event. <strong>We're attaching the product to the exact moment its purpose is most obvious</strong> — then spending the next seven weeks giving thousands of people reasons to keep practicing, together, until the batch of 1,500 rings is gone.</p>
+    <div class="posters">
+      <figure><img src="assets/eclipse-lineup.png" alt="Iceland Eclipse festival lineup"><figcaption>Aug 11–15 · Iceland Eclipse · the Ceremony Garden, with Unify</figcaption></figure>
+      <figure><img src="assets/daybreaker-alive-la.png" alt="Daybreaker Alive"><figcaption>September · Daybreaker's world — Let's Be Friends lands in Austin Sept 19</figcaption></figure>
+    </div>
+    <div class="filmstrip">
+      <figure><img src="assets/film-lib/film-16-ring-ecu.png" alt="The ring, first pulse"><figcaption>The cue — one pulse</figcaption></figure>
+      <figure><img src="assets/film-lib/film-17-sync-hands.png" alt="Hands pulsing together"><figcaption>The community — together</figcaption></figure>
+      <figure><img src="assets/film-lib/film-08-tag-ring.png" alt="One ring, ripple settling"><figcaption>The practice — it stays</figcaption></figure>
+    </div>
+  </section>
+
+  <!-- ================= THE WEEK OF WOW ================= -->
+  <section class="reveal">
+    <h2>The Week of <em>Wow.</em></h2>
+    <p><strong>Sept 24–30. Free, everywhere. One theme a day, hosted by a voice people already trust.</strong> Each morning the day's host opens the theme in two minutes. During the day: one reset, whenever it finds you. Each evening: a sixty-second check-in, and the page tells you to go live your life. You don't need a ring to participate. <em>Every day is even better with one.</em></p>
+    <div class="week">
+      <details class="wd" data-d="1">
+        <summary><span class="w-n">Day 1</span><span class="w-t">Joy</span><span class="w-tag">Joy is one pulse away.</span><span class="w-h">Brent Freeman · Alchemy of Joy</span><span class="w-c">＋</span></summary>
+        <div class="wd-body">
+          <div class="headshot">BF</div>
+          <div class="wd-col">
+            <span class="wl">Who</span>
+            <p>Serial founder (20+ companies), knighted for philanthropy, author of <em>The Alchemy of Joy</em>. His thesis: joy, not hustle, is the fuel — neuroscience meets heart.</p>
+            <span class="wl">Home</span>
+            <a href="https://brentfreeman.com" rel="noopener">brentfreeman.com</a>
+          </div>
+          <div class="wd-col">
+            <span class="wl">Example prompt</span>
+            <p class="prompt">"Where in your day does joy already live — before you earn anything?"</p>
+            <span class="wl">Tools of the day</span>
+            <p class="tools">2-min opening video · one unearned-joy catch · evening check-in</p>
+          </div>
+        </div>
+      </details>
+      <details class="wd" data-d="2">
+        <summary><span class="w-n">Day 2</span><span class="w-t">Oneness</span><span class="w-tag">Oneness is one pulse away.</span><span class="w-h">Patrick Kronfli · Unify</span><span class="w-c">＋</span></summary>
+        <div class="wd-body">
+          <div class="headshot">PK</div>
+          <div class="wd-col">
+            <span class="wl">Who</span>
+            <p>Producer of the Iceland Eclipse Ceremony. Unify has synchronized millions across 1,400+ cities since 2012 — the noon wave is his native art form.</p>
+            <span class="wl">Home</span>
+            <a href="https://unify.org" rel="noopener">unify.org</a>
+          </div>
+          <div class="wd-col">
+            <span class="wl">Example prompt</span>
+            <p class="prompt">"When your clock hits noon, stop for one breath. What do you want that breath to hold?"</p>
+            <span class="wl">Tools of the day</span>
+            <p class="tools">4-min audio · the synchronized noon wave · evening check-in</p>
+          </div>
+        </div>
+      </details>
+      <details class="wd" data-d="3">
+        <summary><span class="w-n">Day 3</span><span class="w-t">Belonging</span><span class="w-tag">Belonging is one pulse away.</span><span class="w-h">Radha Agrawal · Belong Center</span><span class="w-c">＋</span></summary>
+        <div class="wd-body">
+          <div class="headshot">RA</div>
+          <div class="wd-col">
+            <span class="wl">Who</span>
+            <p>Daybreaker CEO (800K dancers, zero ads), founder of the Belong Center, author of <em>Belong</em> — used as the community-building blueprint at universities worldwide.</p>
+            <span class="wl">Home</span>
+            <a href="https://radhaagrawal.com" rel="noopener">radhaagrawal.com</a>
+          </div>
+          <div class="wd-col">
+            <span class="wl">Example prompt</span>
+            <p class="prompt">"With whom can you be exactly yourself? Message them today — that is the practice."</p>
+            <span class="wl">Tools of the day</span>
+            <p class="tools">4-min video · one real message sent · evening check-in</p>
+          </div>
+        </div>
+      </details>
+      <details class="wd" data-d="4">
+        <summary><span class="w-n">Day 4</span><span class="w-t">Magic</span><span class="w-tag">Magic is one pulse away.</span><span class="w-h">Emily Fletcher · Ziva</span><span class="w-c">＋</span></summary>
+        <div class="wd-body">
+          <div class="headshot">EF</div>
+          <div class="wd-col">
+            <span class="wl">Who</span>
+            <p>Founder of Ziva Meditation — practice for high performers with deadlines. Already confirmed at Iceland as a ceremony Prayer Keeper; we meet her in the Garden.</p>
+            <span class="wl">Home</span>
+            <a href="https://zivameditation.com" rel="noopener">zivameditation.com</a>
+          </div>
+          <div class="wd-col">
+            <span class="wl">Example prompt</span>
+            <p class="prompt">"Mid-week check: is your Day-1 intention still true? Rewrite it if it grew."</p>
+            <span class="wl">Tools of the day</span>
+            <p class="tools">3-min guided practice · catch one synchronicity · evening check-in</p>
+          </div>
+        </div>
+      </details>
+      <details class="wd" data-d="5">
+        <summary><span class="w-n">Day 5</span><span class="w-t">Stillness</span><span class="w-tag">Stillness is one pulse away.</span><span class="w-h">Cory Allen · The Astral Hustle</span><span class="w-c">＋</span></summary>
+        <div class="wd-body">
+          <div class="headshot">CA</div>
+          <div class="wd-col">
+            <span class="wl">Who</span>
+            <p>Austin author + podcaster (<em>Now Is the Way</em>, The Astral Hustle — millions of downloads). His line: the more we understand ourselves, the less we suffer.</p>
+            <span class="wl">Home</span>
+            <a href="https://www.cory-allen.com" rel="noopener">cory-allen.com</a>
+          </div>
+          <div class="wd-col">
+            <span class="wl">Example prompt</span>
+            <p class="prompt">"What have you been too busy to hear?"</p>
+            <span class="wl">Tools of the day</span>
+            <p class="tools">10-min sit · four quiet minutes · evening check-in — silence counts</p>
+          </div>
+        </div>
+      </details>
+      <details class="wd" data-d="6">
+        <summary><span class="w-n">Day 6</span><span class="w-t">Good Vibes</span><span class="w-tag">Good vibes are one pulse away.</span><span class="w-h">Vex King · Good Vibes, Good Life</span><span class="w-c">＋</span></summary>
+        <div class="wd-body">
+          <div class="headshot">VK</div>
+          <div class="wd-col">
+            <span class="wl">Who</span>
+            <p>2.2M followers, four books, millions of copies sold — and already a Pulse brand ambassador. Self-love as the foundation; vibration as a choice.</p>
+            <span class="wl">Home</span>
+            <a href="https://www.vexking.com" rel="noopener">vexking.com</a>
+          </div>
+          <div class="wd-col">
+            <span class="wl">Example prompt</span>
+            <p class="prompt">"One act of self-love before noon. One act of kindness before night. Name them now."</p>
+            <span class="wl">Tools of the day</span>
+            <p class="tools">3-min video · the two-acts practice · evening check-in</p>
+          </div>
+        </div>
+      </details>
+      <details class="wd" data-d="7">
+        <summary><span class="w-n">Day 7</span><span class="w-t">Connection</span><span class="w-tag">Connection is one pulse away.</span><span class="w-h">Adam Schlender · ESU</span><span class="w-c">＋</span></summary>
+        <div class="wd-body">
+          <div class="headshot">AS</div>
+          <div class="wd-col">
+            <span class="wl">Who</span>
+            <p>Campaign owner, closes the week. Six days of practice were training for this one: being actually here with the people in front of you.</p>
+            <span class="wl">Home</span>
+            <a href="mission.html">the campaign OS</a>
+          </div>
+          <div class="wd-col">
+            <span class="wl">Example prompt</span>
+            <p class="prompt">"One real conversation today, phone in the other room. You know which one."</p>
+            <span class="wl">Tools of the day</span>
+            <p class="tools">3-min video · the conversation · final check-in → Day-8 arc</p>
+          </div>
+        </div>
+      </details>
+    </div>
+    <div class="logo-note">Headshot rings are placeholders — real portraits drop in on host confirmation</div>
+    <p>Hosts are paid <strong>on results only</strong> — $100 per ring sold through their own tracked code, plus commission. No content fees, no retainers. Their audiences hear it in their voice, not ours.</p>
+  </section>
+
+  <!-- ================= THE MAP ================= -->
+  <section class="reveal">
+    <h2>The <em>map</em> each participant holds.</h2>
+    <div class="mapmock">
+      <div class="phone">
+        <div class="ph-brand"><div class="ph-dot"></div>Pulse · The Week of Wow</div>
+        <div class="ph-int"><div class="l">Your intention for the week</div><div class="t">"Actually present at dinner, every night."</div></div>
+        <div class="ph-day"><div><div class="n">Day 3</div><div class="t">Belonging</div><div class="s">Radha Agrawal</div></div><div class="open">Open now</div></div>
+        <div class="ph-day" style="opacity:.55;border-left-color:#8E4E96;"><div><div class="n">Day 4</div><div class="t">Magic</div><div class="s">Emily Fletcher</div></div><div class="open" style="color:#6E6857;">Opens 7am</div></div>
+        <div class="ph-done">You're done for today. Close the phone. ✓</div>
+      </div>
+      <div class="mapcopy">
+        <p>Every participant gets a personal map — the same design we built for guided first-month journeys on SoundBed, adapted to seven days. <strong>They set one intention at signup.</strong> It sits at the top of their map all week.</p>
+        <p>Each day holds the host's short piece, a morning question, and an evening check-in. Days open at 7am and close at 10pm — <strong>outside the window, the map rests.</strong> No feed, no streaks, no doomscrolling. The product's philosophy, embodied by the campaign that sells it.</p>
+        <p>At signup, participants tell us if they own a ring. If they don't: a gentle note, once — <em>"the week is even better with one, WOW100 takes $100 off."</em> That's the whole pitch. The week itself does the convincing.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= THE 60 DAYS, FELT ================= -->
+  <section class="reveal">
+    <h2>Sixty days, so you can <em>feel it.</em></h2>
+    <div class="chapters">
+      <div class="chapter" data-c="1">
+        <div class="c-when">Aug 1–10<br>Prep</div>
+        <div>
+          <h3>The community picks up its <em>tools.</em></h3>
+          <p>We don't announce anything. We go into our own WhatsApp group — the ~490 people who kept the ring — and design the Week of Wow with them. What themes matter. What a day should feel like. By the time it launches, hundreds of people already feel like it's theirs.</p>
+          <div class="c-do">Ships: community workshop · creator briefs to the warm four · codes wired · landing pages live</div>
+        </div>
+      </div>
+      <div class="chapter" data-c="2">
+        <div class="c-when">Aug 10–15<br>Iceland</div>
+        <div>
+          <h3>The sky goes dark. The intention <em>lands.</em></h3>
+          <p>Two days before totality, our list gets one email: pause with us at the moment, wherever you are — free, no ring required, better with one. Then Adam is on the ground: the Ceremony Garden, the VIP spaces, forty of the most aligned voices in the space, and a film crew's worth of once-in-a-century footage. We sell nothing during the sacred days. We don't have to.</p>
+          <div class="c-do">Ships: the first real conversion test · founder relationships · the content that powers all of September</div>
+        </div>
+      </div>
+      <div class="chapter" data-c="3">
+        <div class="c-when">Aug 16–31<br>Bridge</div>
+        <div>
+          <h3>The story starts <em>traveling.</em></h3>
+          <p>Iceland footage rolls out. Hosts lock in. The whitelisted ad engine warms up — every ad runs from a partner's own handle, in their own voice, to their own audience. Unify's newsletter and 2.8-million-person page hold their fire until the moment they'll matter most.</p>
+          <div class="c-do">Ships: film cuts · host confirmations · ad creative approved in-voice</div>
+        </div>
+      </div>
+      <div class="chapter" data-c="4">
+        <div class="c-when">Sept 1–23<br>Anchors</div>
+        <div>
+          <h3>Three rooms, one <em>city.</em></h3>
+          <p>Pre-registration opens and Unify's channels finally fire — into a campaign, not an ad. Then Austin: Daybreaker's Let's Be Friends on Sept 19, sweaty and alive, with a Pulse corner where the quiet after the loud is the demo. The same week, a small founder salon at The Portal — our community <em>and</em> retail partner — where the room does the selling.</p>
+          <div class="c-do">Ships: registrations · on-site sales · Portal retail relationship · the crowd for the Week</div>
+        </div>
+      </div>
+      <div class="chapter" data-c="5">
+        <div class="c-when">Sept 24–Oct 1<br>The Week</div>
+        <div>
+          <h3>Seven days. Thousands practicing. One number <em>falling.</em></h3>
+          <p>Joy, Oneness, Belonging, Magic, Stillness, Good Vibes, Connection — one day at a time, one host at a time, with a live inventory bar that never lies: <strong>when the 1,500 are gone, they're gone until the next batch.</strong> The week ends Sept 30. The batch ends when it ends. Both stories finish together.</p>
+          <div class="c-do">Ships: the Week of Wow · the sold-out push · the evidence file for the raise</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= THE NUMBERS ================= -->
+  <section class="reveal">
+    <h2>The <em>numbers.</em></h2>
+    <div class="thesis-line">
+      Total fixed cost: <strong>$45,000 over 60 days</strong> — about six weeks of the current ad budget. The test: does this model clear <strong>1,500 rings at ~$100 per customer?</strong> If yes, the next raise funds <em>inventory against proven demand.</em> If no, we spent less than two months of ad spend to find out — and keep everything the campaign built.
+    </div>
+    <table>
+      <tr><th>Scenario</th><th>Rings</th><th>Cost / customer</th><th>Net contribution</th><th>vs. same $ on Meta</th></tr>
+      <tr><td><strong>Same spend on Meta</strong> (baseline)</td><td class="num">≈255</td><td class="num">$176</td><td class="num neg">−$7.8K</td><td class="num">—</td></tr>
+      <tr><td><strong>Worst</strong></td><td class="num">350</td><td class="num">≈$157</td><td class="num neg">−$3.9K</td><td class="num pos">+$3.9K</td></tr>
+      <tr><td><strong>Expected</strong></td><td class="num">900</td><td class="num">≈$106</td><td class="num pos">+$36K</td><td class="num pos">+$44K</td></tr>
+      <tr class="hl"><td><strong>Sold out</strong></td><td class="num">1,500</td><td class="num">≈$100</td><td class="num pos">+$69K</td><td class="num pos">+$77K</td></tr>
+    </table>
+    <div class="bottomline"><b>The bottom line</b>Worst case costs about what ads would have lost anyway — and every scenario keeps the film, the community, the partner platform, and the data. Discounts and commissions only exist when a ring actually sells, so downside is capped at the fixed $45K.</div>
+
+    <!-- ===== Drop-downs: the full rigor, expandable ===== -->
+    <details class="dd">
+      <summary><span class="dc">＋</span>The budget, line by line<span class="dhint">$45K fixed</span></summary>
+      <div class="dd-body">
+        <table>
+          <tr><th>Line</th><th>Amount</th><th>What it buys</th></tr>
+          <tr><td><strong>Iceland Eclipse</strong></td><td class="num">$20,000</td><td>$12K negotiated sponsorship² + ~$8K travel. Ceremony Garden integration, 500-VIP access, Bell Tent, and Unify's 5.4M-reach amplification¹ — timed to September, not wasted on August.</td></tr>
+          <tr><td><strong>Whitelisted ads</strong></td><td class="num">$16,000</td><td>$8K/mo × 2. Paid media exclusively from partner handles — their face, their voice, our tracking.</td></tr>
+          <tr><td><strong>Let's Be Friends Austin</strong></td><td class="num">$2,000</td><td>Sept 19 Pulse corner at Daybreaker's Austin morning.</td></tr>
+          <tr><td><strong>The Portal Austin</strong></td><td class="num">$1,000</td><td>Founder salon — community + retail partnership seeded in one room.</td></tr>
+          <tr><td><strong>Adam retainer</strong></td><td class="num">$6,000</td><td>$3K/mo × 2 — full campaign ownership.</td></tr>
+          <tr class="hl"><td><strong>Total fixed</strong></td><td class="num"><strong>$45,000</strong></td><td>Creators: $0 upfront, paid per sale. Rings already exist — no new product cost.</td></tr>
+        </table>
+      </div>
+    </details>
+
+    <details class="dd">
+      <summary><span class="dc">＋</span>Adam's compensation<span class="dhint">aligned to the upside</span></summary>
+      <div class="dd-body">
+        <table>
+          <tr><th>Component</th><th>Amount</th><th>Trigger</th></tr>
+          <tr><td><strong>Retainer</strong></td><td class="num">$3,000/mo × 2</td><td>Flat — already inside the $45K.</td></tr>
+          <tr><td><strong>Fundraising commission</strong></td><td class="num">3% flat</td><td>On capital closed from Adam-sourced introductions.</td></tr>
+          <tr><td><strong>Performance bonus</strong></td><td class="num">20–30% of upside</td><td>Only if BOTH gates hit: 1,500 cleared by Oct 1 AND cost-per-customer at target — 20% of upside at ≤$150, 30% at ≤$100. Upside = campaign contribution minus the Meta counterfactual.</td></tr>
+        </table>
+        <p><strong>Worked example, sold-out case:</strong> +$69K vs. −$7.8K baseline → ≈$77K upside → 30% ≈ $23K to Adam, ≈ +$46K net to Pulse — paid entirely out of money the campaign already collected. Miss either gate: bonus is $0. There is no scenario where the bonus comes out of existing cash.</p>
+      </div>
+    </details>
+
+    <details class="dd">
+      <summary><span class="dc">＋</span>Runway impact<span class="dhint">the fear, inverted</span></summary>
+      <div class="dd-body">
+        <table>
+          <tr><th>Path</th><th>Cash effect · 60 days</th><th>What it means</th></tr>
+          <tr><td><strong>Status quo</strong> — same $ on Meta³</td><td class="num neg">−$7.8K</td><td>The slow bleed. The "lose a month of runway" fear is this path, not the campaign.</td></tr>
+          <tr><td><strong>Campaign, expected</strong></td><td class="num pos">+$36K</td><td>Adds ≈ a month of runway plus the sell-through evidence.</td></tr>
+          <tr class="hl"><td><strong>Campaign, sold out</strong></td><td class="num pos">+$46K net of bonus</td><td>Adds runway AND flips the raise to inventory-financing against a demonstrated sell-out.</td></tr>
+        </table>
+      </div>
+    </details>
+
+    <details class="dd">
+      <summary><span class="dc">＋</span>What must be true<span class="dhint">the honest list</span></summary>
+      <div class="dd-body">
+        <ul class="mtt">
+          <li><strong>Iceland happens as negotiated</strong> — $12K fee², September-timed amplification², Ceremony Garden product integration¹.</li>
+          <li><strong>At least 4 of 7 hosts confirm</strong> on performance-only terms. Fallback bench: the Iceland ceremony roster¹.</li>
+          <li><strong>The community shows up</strong> — reach alone doesn't convert⁴; the offer + code + moment structure has to do the work.</li>
+          <li><strong>Inventory and fulfillment hold</strong> — 1,500 in stock, on-site sales cleared, codes wired end-to-end.</li>
+        </ul>
+      </div>
+    </details>
+
+    <details class="dd">
+      <summary><span class="dc">＋</span>The deeper scope &amp; prior work<span class="dhint">everything else</span></summary>
+      <div class="dd-body">
+        <p>The full working system behind this page: <a href="mission.html" style="color:var(--teal)">Mission Control</a> (dashboard, runbooks, brand guide, voices) · <a href="flow.html" style="color:var(--teal)">the Flow Map</a> (every message, four channels × three touchpoints, drafted in each host's voice) · <a href="map.html" style="color:var(--teal)">the Wow Map</a> (working participant prototype) · <a href="wow.html" style="color:var(--teal)">the Week of Wow page</a> · <a href="eclipse.html" style="color:var(--teal)">the Eclipse Moment page</a> · <a href="creators.html" style="color:var(--teal)">the host application</a> · and the <a href="scope.html" style="color:var(--teal)">earlier scope work</a> this campaign consolidated (performance partnerships on Impact.com, the $200-CAC framing, the activation deep-dives).</p>
+      </div>
+    </details>
+
+    <details class="dd">
+      <summary><span class="dc">＋</span>Sources<span class="dhint">every claim, cited</span></summary>
+      <div class="dd-body">
+        <ul class="sources">
+          <li><b>1</b> Unify · Iceland Eclipse Ceremony Garden deck v5.4 (July 2026): reach, VIP inventory, ceremony program, sponsorship terms.</li>
+          <li><b>2</b> Adam ↔ Patrick Kronfli (Unify), July 2026: $12K negotiated fee; amplification decoupled from event dates; global-meditation extension.</li>
+          <li><b>3</b> Meta ads reporting, July 2026: ROAS 1.3× (peaks 2.0×); runway sensitivity framing.</li>
+          <li><b>4</b> Pulse unit + conversion data, July 2026: $229/$259 retail, $83 landed cost, ~1,500 units remaining; ambassador reality-check (2.2M-follower post → 2 sales).</li>
+          <li><b>5</b> Live at launch: Shopify inventory (the progress bar), Impact.com attribution dashboards.</li>
+        </ul>
+      </div>
+    </details>
+  </section>
+
+  <!-- ================= WHAT REMAINS ================= -->
+  <section class="reveal">
+    <h2>What's standing on <em>Oct 1</em> — win or lose.</h2>
+    <div class="assets">
+      <div class="asset"><h4>The partner platform</h4><p>Impact.com rails, built and owned — every future creator or org plugs straight in.</p></div>
+      <div class="asset"><h4>A live community</h4><p>The WhatsApp group that co-designed the campaign and ran the Week — the highest-trust channel Pulse has.</p></div>
+      <div class="asset"><h4>The Week of Wow playbook</h4><p>Repeatable every quarter, new hosts each time. Format, flow map, templates — all reusable.</p></div>
+      <div class="asset"><h4>The Iceland film</h4><p>Once-in-a-century footage: ads, site, and the fundraise deck, for years.</p></div>
+      <div class="asset"><h4>Five named partnerships</h4><p>Unify, Belong Center, Daybreaker, The Portal (community + retail), and seven hosts — warm and performance-proven.</p></div>
+      <div class="asset"><h4>The data</h4><p>Conversion per channel, per host, per code — the difference between guessing next quarter and knowing it.</p></div>
+    </div>
+  </section>
+
+  <div class="footer">
+    <span>Pulse · the Week of Wow · 60 days to sold out</span>
+    <span><a href="proposal.html">V1 (detail-first) →</a> · <a href="mission.html">Mission Control →</a></span>
+  </div>
+</div>
+
+<script>
+const io = new IntersectionObserver(es => es.forEach(e => { if(e.isIntersecting){ e.target.classList.add('on'); io.unobserve(e.target);} }), {threshold:0.12});
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
