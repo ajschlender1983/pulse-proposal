@@ -84,6 +84,7 @@ h1 em{font-family:var(--font-display);font-style:italic;color:var(--teal);}
     <button class="chip" data-f="social">Social</button>
     <button class="chip" data-f="whatsapp">WhatsApp</button>
     <button class="chip" data-f="ads">Whitelisted ads</button>
+    <button class="chip" id="toggle-all" style="margin-left:auto;">Expand all</button>
   </div>
 
   <div id="mount"></div>
@@ -394,9 +395,17 @@ FLOW.forEach(ph => {
   });
 });
 
+/* ===== Expand / collapse all ===== */
+let allOpen = false;
+document.getElementById('toggle-all').addEventListener('click', () => {
+  allOpen = !allOpen;
+  document.querySelectorAll('.entity').forEach(d => d.open = allOpen);
+  document.getElementById('toggle-all').textContent = allOpen ? 'Collapse all' : 'Expand all';
+});
+
 /* ===== Channel filter ===== */
 document.getElementById('filters').addEventListener('click', e => {
-  const b = e.target.closest('.chip'); if(!b) return;
+  const b = e.target.closest('.chip'); if(!b || b.id === 'toggle-all') return;
   document.querySelectorAll('.chip').forEach(c => c.classList.remove('on'));
   b.classList.add('on');
   const f = b.dataset.f;

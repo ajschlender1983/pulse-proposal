@@ -5,6 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>The Eclipse Moment · Aug 12 · Pulse × Unify</title>
 <meta name="description" content="On Aug 12, at the moment of totality over Iceland, we pause together — from the Ceremony Garden and from wherever you are. Free to join. Even better with a Pulse ring.">
+<meta property="og:title" content="The Eclipse Moment · Aug 12 · pause with us at totality">
+<meta property="og:description" content="The first total eclipse over Iceland since 1954. One intention. One breath. One pulse — from the Ceremony Garden and everywhere on Earth. Free.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2240%22 fill=%22%23140F1A%22 stroke=%22%23F0935E%22 stroke-width=%226%22/></svg>">
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=DM+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 <style>
 @font-face{font-family:'TT Norms Pro';src:url('fonts/TT-Norms-Pro-Light.ttf') format('truetype');font-weight:300;font-display:swap;}
@@ -97,6 +101,7 @@ h2 em{font-family:var(--font-display);font-style:italic;color:var(--teal);}
     <h1>The Eclipse <em>Moment.</em></h1>
     <p class="sub">For the first time since 1954, the sky over Iceland goes dark in the middle of the day. At the moment of totality, thousands pause together — in the Ceremony Garden with Unify, and <strong>from wherever you are in the world.</strong> One intention. One breath. One pulse.</p>
     <div class="count"><strong id="cd">—</strong> until totality</div>
+    <div class="count" style="margin-top:8px;color:var(--light-64);text-transform:none;letter-spacing:0.04em;">Totality is 4:00pm UTC — that's <strong id="local-t" style="font-size:15px;">—</strong> where you are.</div>
     <div class="cta-row">
       <a class="btn btn-primary" href="#join">Join the moment — free</a>
       <a class="btn btn-ghost" href="#how">How it works</a>
@@ -191,6 +196,9 @@ function tick(){
   document.getElementById('cd').textContent = d + 'd ' + h + 'h ' + m + 'm';
 }
 tick(); setInterval(tick, 30000);
+document.getElementById('local-t').textContent =
+  totality.toLocaleTimeString([], {hour:'numeric', minute:'2-digit'}) + ' on ' +
+  totality.toLocaleDateString([], {weekday:'long', month:'short', day:'numeric'});
 
 document.getElementById('join-form').addEventListener('submit', function(e){
   e.preventDefault();

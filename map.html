@@ -267,7 +267,11 @@ let SIM = S.sim || null;
 function simNow(){
   if(SIM === 'pre')   return new Date('2026-09-20T12:00:00');
   if(SIM === 'night') return new Date('2026-09-25T23:30:00');
-  if(SIM && !isNaN(+SIM)) return new Date(new Date(WEEK_START).setDate(WEEK_START.getDate() + (+SIM - 1)) ).setHours ? new Date(new Date(WEEK_START.getTime() + (+SIM-1)*86400000).setHours(12,0,0,0)) : new Date();
+  if(SIM && !isNaN(+SIM)){
+    const d = new Date(WEEK_START.getTime() + (+SIM - 1) * 86400000);
+    d.setHours(12, 0, 0, 0);
+    return d;
+  }
   return new Date();
 }
 function dayNumberFor(dt){
@@ -539,6 +543,11 @@ document.querySelector('.demo').addEventListener('click', e => {
 });
 
 /* ---------- boot ---------- */
+/* ?clean hides the demo bar (for stakeholder walkthroughs) */
+if(location.search.indexOf('clean') !== -1){
+  document.querySelector('.demo').style.display = 'none';
+  document.body.style.paddingTop = '0';
+}
 if(S.onboarded){
   document.getElementById('botnav').style.display = 'flex';
   renderMap(); show('v-map');
