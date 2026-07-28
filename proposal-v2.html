@@ -421,7 +421,7 @@ details.dd .dd-body p{font-size:15px;}
         </div>
       </details>
       <details class="wd" data-d="4">
-        <summary><span class="w-n">Day 4</span><span class="w-t">Magic</span><span class="w-tag">Magic is one pulse away.</span><span class="w-h">Emily Fletcher · Ziva</span><span class="w-c">＋</span></summary>
+        <summary><span class="w-n">Day 4</span><span class="w-t">Pleasure</span><span class="w-tag">Pleasure is one pulse away.</span><span class="w-h">Emily Fletcher · Ziva</span><span class="w-c">＋</span></summary>
         <div class="wd-body">
           <div class="headshot">EF<img class="hs" src="assets/hosts/emily-fletcher.jpg" alt="" onerror="this.remove()"></div>
           <div class="wd-col">
@@ -433,9 +433,9 @@ details.dd .dd-body p{font-size:15px;}
           </div>
           <div class="wd-col">
             <span class="wl">Example prompt</span>
-            <p class="prompt">"Mid-week check: is your Day-1 intention still true? Rewrite it if it grew."</p>
+            <p class="prompt">"Mid-week check: is your Day-1 intention still true? And be honest — have you enjoyed anything today, or only accomplished things?"</p>
             <span class="wl">Tools of the day</span>
-            <p class="tools">3-min guided practice · catch one synchronicity · evening check-in</p>
+            <p class="tools">3-min guided practice · one thing enjoyed on purpose · evening check-in</p>
           </div>
         </div>
       </details>
@@ -509,7 +509,7 @@ details.dd .dd-body p{font-size:15px;}
         <div class="ph-brand"><div class="ph-dot"></div>Pulse · Pulse &amp; Unify</div>
         <div class="ph-int"><div class="l">Your intention for the week</div><div class="t">"Actually present at dinner, every night."</div></div>
         <div class="ph-day"><div><div class="n">Day 3</div><div class="t">Belonging</div><div class="s">Radha Agrawal</div></div><div class="open">Open now</div></div>
-        <div class="ph-day" style="opacity:.55;border-left-color:#8E4E96;"><div><div class="n">Day 4</div><div class="t">Magic</div><div class="s">Emily Fletcher</div></div><div class="open" style="color:#6E6857;">Opens 7am</div></div>
+        <div class="ph-day" style="opacity:.55;border-left-color:#8E4E96;"><div><div class="n">Day 4</div><div class="t">Pleasure</div><div class="s">Emily Fletcher</div></div><div class="open" style="color:#6E6857;">Opens 7am</div></div>
         <div class="ph-done">You're done for today. Close the phone. ✓</div>
       </div>
       <div class="mapcopy">
@@ -560,7 +560,7 @@ details.dd .dd-body p{font-size:15px;}
         <div class="c-when">Sept 24–Oct 1<br>The Week</div>
         <div>
           <h3>Seven days. The batch sells down in <em>public.</em></h3>
-          <p>Joy, Oneness, Belonging, Magic, Stillness, Good Vibes, Connection — one day at a time, one host at a time, with a live inventory bar that never lies: <strong>when the 1,500 are gone, they're gone until the next batch.</strong> The week ends Sept 30. The batch ends when it ends. Both stories finish together.</p>
+          <p>Joy, Oneness, Belonging, Pleasure, Stillness, Good Vibes, Connection — one day at a time, one host at a time, with a live inventory bar that never lies: <strong>when the 1,500 are gone, they're gone until the next batch.</strong> The week ends Sept 30. The batch ends when it ends. Both stories finish together.</p>
           <div class="c-do">Ships: Pulse &amp; Unify · the sold-out push · the evidence file for the raise</div>
         </div>
       </div>
@@ -674,8 +674,17 @@ details.dd .dd-body p{font-size:15px;}
 </div>
 
 <script>
-const io = new IntersectionObserver(es => es.forEach(e => { if(e.isIntersecting){ e.target.classList.add('on'); io.unobserve(e.target);} }), {threshold:0.12});
-document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+/* ?print — everything open, everything revealed, nothing animating. For PDF export. */
+const PRINT_MODE = location.search.indexOf('print') > -1;
+if(PRINT_MODE){
+  document.documentElement.classList.add('printing');
+  document.querySelectorAll('details').forEach(d => d.open = true);
+  document.querySelectorAll('.reveal').forEach(el => el.classList.add('on'));
+  document.querySelectorAll('img[loading]').forEach(i => i.loading = 'eager');
+} else {
+  const io = new IntersectionObserver(es => es.forEach(e => { if(e.isIntersecting){ e.target.classList.add('on'); io.unobserve(e.target);} }), {threshold:0.12});
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+}
 
 /* Warm same-moment strip (brand film device) */
 (function(){
@@ -689,6 +698,24 @@ document.querySelectorAll('.reveal').forEach(el => io.observe(el));
   });
 })();
 </script>
-<style>@keyframes race{from{transform:translateX(0);}to{transform:translateX(-50%);}}@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;}}</style>
+<style>@keyframes race{from{transform:translateX(0);}to{transform:translateX(-50%);}}@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;}}
+.printing *{animation:none!important;transition:none!important;}
+.printing details>summary{list-style:none;}
+.printing details>summary::-webkit-details-marker{display:none;}
+@media print{
+  @page{size:1100px 1480px;margin:0;}
+  html,body{background:rgb(18,14,24)!important;}
+  .page{max-width:1000px;padding:52px 40px 60px;}
+  section{margin-top:52px;}
+  details.wd,.pt,.filmstrip figure,.posters figure,.chapter,.sc-row,.step,.host,.num-card,
+  .ph-day,.wd-body,figure,table{break-inside:avoid;page-break-inside:avoid;}
+  h1,h2,h3,summary{break-after:avoid;page-break-after:avoid;}
+  /* Chrome evaluates the narrow breakpoints against the print box — restore the desktop grids. */
+  .filmstrip{grid-template-columns:repeat(3,1fr)!important;}
+  .posters,.assets{grid-template-columns:1fr 1fr!important;}
+  .mapmock{grid-template-columns:300px 1fr!important;}
+  .wd-body{grid-template-columns:96px 1fr 1fr!important;}
+  .chapter{grid-template-columns:130px 1fr!important;}
+}</style>
 </body>
 </html>
