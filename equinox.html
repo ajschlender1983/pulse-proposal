@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Equinox Moment · Sept 23 · Pulse &amp; Unify</title>
+<meta name="description" content="At 00:05 UTC on September 23, day and night stand level — and then the dark starts winning. One breath, everywhere at once. Free to join. Even better with a Pulse ring.">
+<meta property="og:title" content="The Equinox Moment · Sept 23 · the day the year starts getting away from you">
+<meta property="og:description" content="One instant, every time zone. The opening of seven days with seven hosts. Free.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2240%22 fill=%22%230d0d0f%22 stroke=%22%23B3C7D3%22 stroke-width=%226%22/></svg>">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=DM+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+@font-face{font-family:'TT Norms Pro';src:url('fonts/TT-Norms-Pro-Light.ttf') format('truetype');font-weight:300;font-display:swap;}
+@font-face{font-family:'TT Norms Pro';src:url('fonts/TT-Norms-Pro-Regular.ttf') format('truetype');font-weight:400;font-display:swap;}
+@font-face{font-family:'TT Norms Pro';src:url('fonts/TT-Norms-Pro-DemiBold.ttf') format('truetype');font-weight:600;font-display:swap;}
+:root{
+  --void:#0d0d0f; --dark:#16161a; --accent:rgba(249,246,229,0.16);
+  --light:#F9F6E5; --midtone:#9a968a;
+  --teal:#B3C7D3; --gold:#E3F47D; --orange:rgba(240,147,94,1);
+  --light-64:rgba(249,246,229,0.62); --midtone-64:rgba(154,150,138,0.7);
+  --accent-24:rgba(249,246,229,0.12); --gold-24:rgba(227,244,125,0.28);
+  --lime:#E3F47D; --lime-text:#101828;
+  --font-primary:'TT Norms Pro','DM Sans',-apple-system,sans-serif;
+  --font-display:'DM Sans',-apple-system,sans-serif;
+  --font-mono:'DM Mono','SF Mono',Menlo,monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:var(--font-primary);color:var(--light);
+  background:
+    radial-gradient(1000px 700px at 50% -10%, rgba(179,199,211,0.13), transparent 55%),
+    radial-gradient(900px 800px at 12% 72%, rgba(227,244,125,0.05), transparent 60%),
+    linear-gradient(180deg,rgb(10,10,14) 0%,rgb(18,18,24) 55%,rgb(28,26,34) 100%);
+  line-height:1.5;
+}
+.nav{display:flex;align-items:center;gap:14px;padding:22px 5vw;max-width:1440px;margin:0 auto;position:relative;z-index:5;}
+.nav .wm{height:19px;color:var(--light);}
+.nav .wm svg{height:100%;width:auto;display:block;}
+.nav .n-tag{font-family:var(--font-mono);font-size:10.5px;letter-spacing:0.16em;text-transform:uppercase;color:var(--midtone-64);}
+.nav a.n-back{margin-left:auto;font-family:var(--font-mono);font-size:11.5px;letter-spacing:0.1em;text-transform:uppercase;color:var(--midtone);text-decoration:none;}
+.container{max-width:960px;margin:0 auto;padding:0 28px;}
+.hero{padding:100px 0 60px;text-align:center;position:relative;}
+
+/* The equinox disc — light and dark exactly level, then the dark starts gaining. */
+.disc{
+  width:150px;height:150px;border-radius:50%;margin:0 auto 44px;position:relative;overflow:hidden;
+  background:var(--void);border:1px solid rgba(249,246,229,0.22);
+  box-shadow:0 0 70px 14px rgba(179,199,211,0.16), inset 0 0 30px rgba(0,0,0,0.6);
+}
+.disc .lit{
+  position:absolute;top:0;left:0;bottom:0;width:50%;
+  background:linear-gradient(180deg,#F9F6E5 0%,#D8D2BC 100%);
+  animation:tip 9s ease-in-out infinite;
+}
+@keyframes tip{0%,100%{width:50%;}50%{width:41%;}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;}}
+
+.kicker{font-family:var(--font-mono);font-size:14px;letter-spacing:0.22em;text-transform:uppercase;color:var(--teal);margin-bottom:22px;}
+h1{font-size:clamp(42px,7.4vw,92px);font-weight:300;letter-spacing:-0.03em;line-height:1.0;}
+h1 em{font-family:var(--font-display);font-style:italic;font-weight:400;color:var(--gold);}
+.sub{font-size:clamp(17px,2.3vw,23px);color:var(--light-64);max-width:700px;margin:26px auto 0;}
+.sub strong{color:var(--light);}
+.count{font-family:var(--font-mono);font-size:15px;letter-spacing:0.16em;text-transform:uppercase;color:var(--midtone);margin-top:30px;}
+.count strong{color:var(--gold);font-size:19px;}
+.cta-row{display:flex;gap:14px;justify-content:center;margin-top:38px;flex-wrap:wrap;}
+.btn{display:inline-block;padding:16px 34px;border-radius:100px;font-size:16px;font-weight:600;text-decoration:none;border:none;cursor:pointer;font-family:var(--font-primary);transition:transform .18s ease;}
+.btn:hover{transform:translateY(-1px) scale(1.02);}
+.btn-primary{background:var(--lime);color:var(--lime-text);box-shadow:0 6px 30px rgba(227,244,125,0.2);}
+.btn:focus-visible{outline:3px solid var(--lime);outline-offset:2px;}
+.btn-ghost{border:1px solid var(--accent);color:var(--light);background:transparent;}
+section{padding:70px 0;border-top:1px solid var(--accent-24);}
+h2{font-size:clamp(26px,4.2vw,44px);font-weight:300;letter-spacing:-0.02em;text-align:center;margin-bottom:34px;}
+h2 em{font-family:var(--font-display);font-style:italic;color:var(--teal);}
+.moment-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+@media(max-width:720px){.moment-steps{grid-template-columns:1fr;}}
+.step{background:rgba(28,26,34,0.65);border:1px solid var(--accent-24);border-radius:14px;padding:26px;text-align:center;}
+.step .t{font-family:var(--font-mono);font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:var(--teal);margin-bottom:12px;}
+.step h3{font-size:19px;font-weight:500;margin-bottom:8px;}
+.step p{font-size:14.5px;color:var(--light-64);}
+
+/* Why this date */
+.why{max-width:760px;margin:0 auto;}
+.why p{font-size:17.5px;color:var(--light-64);margin-bottom:16px;}
+.why p strong{color:var(--light);}
+.why .pull{
+  font-family:var(--font-display);font-style:italic;font-size:clamp(21px,3vw,29px);
+  color:var(--light);line-height:1.35;text-align:center;margin:34px 0;padding:0 10px;
+}
+.why .pull b{color:var(--gold);font-weight:400;}
+
+/* Four stations */
+.stations{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:8px;}
+@media(max-width:820px){.stations{grid-template-columns:1fr 1fr;}}
+@media(max-width:460px){.stations{grid-template-columns:1fr;}}
+.st{background:rgba(28,26,34,0.65);border:1px solid var(--accent-24);border-radius:14px;padding:22px 18px;}
+.st.now{border-color:var(--gold-24);background:rgba(227,244,125,0.06);}
+.st .s-when{font-family:var(--font-mono);font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--teal);}
+.st.now .s-when{color:var(--gold);}
+.st .s-name{font-size:17px;font-weight:500;margin-top:8px;}
+.st .s-note{font-size:13.5px;color:var(--light-64);margin-top:8px;}
+.st .s-badge{font-family:var(--font-mono);font-size:9.5px;letter-spacing:0.16em;text-transform:uppercase;color:var(--lime-text);background:var(--lime);border-radius:100px;padding:3px 9px;display:inline-block;margin-top:12px;}
+
+/* Film strip */
+.strip-wrap{border-top:1px solid var(--accent-24);border-bottom:1px solid var(--accent-24);background:#000;overflow:hidden;margin-top:44px;}
+.sprockets{display:flex;justify-content:space-around;padding:7px 0;background:#000;}
+.sprockets i{width:14px;height:9px;border-radius:2.5px;background:var(--light);opacity:0.75;}
+.strip{display:flex;gap:4px;width:max-content;}
+.strip img{height:140px;width:auto;display:block;}
+.strip.crawl{animation:race 80s linear infinite;filter:sepia(0.3) saturate(1.1) brightness(1.02);}
+@keyframes race{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+.film-cap{max-width:960px;margin:16px auto 0;padding:0 28px;font-family:var(--font-mono);font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--midtone-64);text-align:center;}
+.film-cap b{color:var(--light);font-weight:500;}
+
+.ring-note{text-align:center;}
+.ring-note .big{font-size:clamp(26px,4vw,44px);font-weight:300;letter-spacing:-0.02em;max-width:800px;margin:0 auto;}
+.ring-note .big em{font-family:var(--font-display);font-style:italic;color:var(--gold);}
+.offer{display:inline-block;margin-top:30px;padding:18px 30px;border:1px dashed var(--gold-24);border-radius:14px;background:rgba(227,244,125,0.05);}
+.offer .code{font-family:var(--font-mono);font-size:22px;letter-spacing:0.2em;color:var(--gold);}
+.offer .desc{font-size:14px;color:var(--midtone);margin-top:6px;}
+.signup{text-align:center;}
+.signup form{max-width:460px;margin:30px auto 0;display:flex;flex-direction:column;gap:12px;}
+.signup input{padding:16px 20px;border-radius:12px;border:1px solid var(--accent);background:rgba(28,26,34,0.7);color:var(--light);font-size:16px;font-family:var(--font-primary);}
+.signup input:focus{outline:none;border-color:var(--teal);}
+.done{display:none;font-size:19px;color:var(--light);margin-top:26px;}
+.fine{font-size:13px;color:var(--midtone-64);margin-top:14px;}
+.footer{padding:40px 0;border-top:1px solid var(--accent-24);text-align:center;font-family:var(--font-mono);font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:var(--midtone-64);}
+.footer a{color:var(--midtone);}
+
+/* ===== Pulse & Unify lockup ===== */
+.lockup{display:inline-flex;align-items:center;gap:14px;vertical-align:middle;}
+.lockup .lk-pulse{height:1em;width:auto;display:block;}
+.lockup .lk-amp{font-weight:300;opacity:.5;line-height:1;}
+.lockup .lk-unify{display:inline-flex;align-items:center;gap:7px;}
+.lockup .lk-unify svg{height:1.05em;width:auto;display:block;}
+.lockup .lk-unify .lk-word{
+  font-family:var(--font-mono);font-weight:500;
+  letter-spacing:0.16em;line-height:1;
+  background:linear-gradient(90deg,#e35b5b,#e3a35b,#cbe35b,#5be38a,#5bc9e3,#8a5be3,#e35bc9);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.lockup img.lk-real{height:1.15em;width:auto;display:block;}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="pulse-wm" viewBox="0 0 391 157">
+  <path fill="currentColor" d="M353.012 120.96C328.187 120.96 309.693 102.965 309.693 77.807C309.693 54.3147 326.521 35.1543 351.013 35.1543C375.672 35.1543 391 52.9818 391 75.8076V82.4721H325.688C327.521 96.4675 338.184 106.298 352.846 106.298C362.843 106.298 371.84 101.966 376.671 92.9687L389.334 99.4665C382.17 113.462 369.007 120.96 353.012 120.96ZM326.355 71.8089H374.505C373.839 58.8132 364.342 49.9828 350.847 49.9828C337.018 49.9828 328.021 59.6463 326.355 71.8089Z"/>
+  <path fill="currentColor" d="M267.664 120.96C252.502 120.96 240.839 114.962 234.508 102.799L247.17 95.8016C251.336 103.966 258 106.965 266.997 106.965C276.327 106.965 283.492 103.133 283.492 95.9682C283.492 78.8072 236.674 91.8029 236.674 60.6465C236.674 46.3178 249.336 35.8213 267.164 35.8213C282.325 35.8213 292.655 42.819 297.82 52.3159L285.158 59.4802C281.659 52.3159 274.995 49.8167 267.497 49.8167C259.833 49.8167 253.168 53.8154 253.168 60.3133C253.168 76.9745 299.986 64.8118 299.986 95.635C299.986 111.13 284.991 120.96 267.664 120.96Z"/>
+  <path fill="currentColor" d="M199.974 0H216.469V119.128H199.974V0Z"/>
+  <path fill="currentColor" d="M139.423 105.131C154.585 105.131 162.916 91.9685 162.916 76.8068V37.4863H179.41V78.8061C179.41 102.465 165.081 121.126 139.423 121.126C114.098 121.126 99.7695 102.298 99.7695 78.6395V37.4863H116.264V76.9734C116.264 91.9685 124.428 105.131 139.423 105.131Z"/>
+  <path fill="currentColor" d="M16.4946 156.614H0V78.14C0 53.8146 18.8272 35.4873 43.4857 35.4873C68.1443 35.4873 86.8049 54.8143 86.8049 78.14C86.8049 102.799 68.9774 121.126 44.1522 121.126C33.1558 121.126 23.1591 116.294 16.4946 108.963V156.614ZM43.4857 105.631C58.6474 105.631 70.3103 93.1351 70.3103 78.3066C70.3103 63.3115 58.6474 51.1488 43.4857 51.1488C28.1574 51.1488 16.4946 63.3115 16.4946 78.3066C16.4946 93.1351 28.1574 105.631 43.4857 105.631Z"/>
+</symbol>
+<symbol id="unify-mark" viewBox="0 0 100 100">
+  <g>
+    <ellipse cx="50" cy="30" rx="11" ry="21" fill="#e35b5b" opacity=".85"/>
+    <ellipse cx="50" cy="30" rx="11" ry="21" fill="#e3a35b" opacity=".85" transform="rotate(45 50 50)"/>
+    <ellipse cx="50" cy="30" rx="11" ry="21" fill="#cbe35b" opacity=".85" transform="rotate(90 50 50)"/>
+    <ellipse cx="50" cy="30" rx="11" ry="21" fill="#5be38a" opacity=".85" transform="rotate(135 50 50)"/>
+    <ellipse cx="50" cy="30" rx="11" ry="21" fill="#5bc9e3" opacity=".85" transform="rotate(180 50 50)"/>
+    <ellipse cx="50" cy="30" rx="11" ry="21" fill="#5b7ae3" opacity=".85" transform="rotate(225 50 50)"/>
+    <ellipse cx="50" cy="30" rx="11" ry="21" fill="#8a5be3" opacity=".85" transform="rotate(270 50 50)"/>
+    <ellipse cx="50" cy="30" rx="11" ry="21" fill="#e35bc9" opacity=".85" transform="rotate(315 50 50)"/>
+  </g>
+</symbol>
+</defs></svg>
+
+<nav class="nav">
+  <div class="wm"><svg viewBox="0 0 391 157"><use href="#pulse-wm"/></svg></div>
+  <span class="n-tag">× Unify · Sept 23</span>
+  <a class="n-back" href="unified.html">The seven days →</a>
+</nav>
+
+<section class="hero">
+  <div class="container">
+    <div class="disc" aria-hidden="true"><div class="lit"></div></div>
+    <div class="kicker">Sept 23 · 00:05 UTC · everywhere at once</div>
+    <h1>The Equinox <em>Moment.</em></h1>
+    <p class="sub">At 00:05 UTC the sun crosses the equator and the year tips. Light and dark stand level — and from that instant the dark gains a few minutes every single day until December. <strong>Most people don't notice until it's dark at five and they can't account for the year.</strong> This is the moment to notice. One breath, one line, every time zone at once.</p>
+    <div class="count"><strong id="cd">—</strong> until the moment</div>
+    <div class="count" style="margin-top:8px;color:var(--light-64);text-transform:none;letter-spacing:0.04em;">That's <strong id="local-t" style="font-size:15px;">—</strong> where you are.</div>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="#join">Join the moment — free</a>
+      <a class="btn btn-ghost" href="#how">How it works</a>
+    </div>
+  </div>
+</section>
+
+<section id="how">
+  <div class="container">
+    <h2>Two minutes. <em>One instant.</em></h2>
+    <div class="moment-steps">
+      <div class="step">
+        <div class="t">Before</div>
+        <h3>Write one line</h3>
+        <p>In the hour before, write what you want the last quarter of the year to actually contain. Not a goal. One line. We send the exact time for your time zone.</p>
+      </div>
+      <div class="step">
+        <div class="t">At 00:05 UTC</div>
+        <h3>Stop where you are</h3>
+        <p>Unify runs the moment — the same instant on every clock on Earth. One breath. Your line. Two minutes of the world standing level together.</p>
+      </div>
+      <div class="step">
+        <div class="t">After</div>
+        <h3>Seven days begin</h3>
+        <p>The instant passes. The tipping doesn't. The next morning Day 1 opens — seven days, seven hosts, one reset a day. The ring is what carries the line past the moment.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="why">
+      <h2>Why <em>this</em> date.</h2>
+      <p>We could have run this any week. We picked one that isn't ours.</p>
+      <p>The equinox is not a mood — it's a measurable instant, the same one for everybody alive, set by the solar system and not by a marketing calendar. <strong>Nobody owns it. Nobody can move it.</strong> And it happens to land at 8:05pm on the East Coast, 7:05 in Austin, 5:05 in California — an hour when people are actually free.</p>
+      <p class="pull">Pulse exists to <b>interrupt autopilot before the day runs away with you.</b> The equinox is the day the <b>year</b> starts running away. Same problem. Bigger clock.</p>
+      <p>That's the whole reason to gather on it. Not because the date is spiritual, but because it's the one day a year the calendar itself tells the truth about what's happening to your time — and almost nobody stops to hear it.</p>
+    </div>
+    <div class="strip-wrap" aria-hidden="true">
+      <div class="sprockets"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+      <div class="strip crawl" id="strip-same"></div>
+      <div class="sprockets"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+    </div>
+    <div class="film-cap"><b>After the moment</b> — the same instant, carried at the speed of being here</div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2>Four times a year. <em>Set by the sky.</em></h2>
+    <p class="sub" style="text-align:center;margin:0 auto 34px;">The equinox is the first station, not a one-off. Every quarter, one instant, one batch, one week. The dates are already fixed for the rest of the decade.</p>
+    <div class="stations">
+      <div class="st now">
+        <div class="s-when">Sept 23, 2026</div>
+        <div class="s-name">September equinox</div>
+        <div class="s-note">The year starts getting away from you.</div>
+        <div class="s-badge">This one</div>
+      </div>
+      <div class="st">
+        <div class="s-when">Dec 21, 2026</div>
+        <div class="s-name">December solstice</div>
+        <div class="s-note">The longest night — and the turn back toward light.</div>
+      </div>
+      <div class="st">
+        <div class="s-when">Mar 20, 2027</div>
+        <div class="s-name">March equinox</div>
+        <div class="s-note">Level again, tipping the other way.</div>
+      </div>
+      <div class="st">
+        <div class="s-when">Jun 21, 2027</div>
+        <div class="s-name">June solstice</div>
+        <div class="s-note">Peak light, peak noise, hardest to be present in.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ring-note">
+  <div class="container">
+    <p class="big">You don't need a Pulse ring to be in the moment.<br>The moment is <em>even better</em> with one.</p>
+    <div class="offer">
+      <div class="code">EQUINOX100</div>
+      <div class="desc">$100 off before Sept 23 · the cue that carries your line past the instant</div>
+    </div>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="https://pulsemindfulness.com" rel="noopener">Get a Pulse ring</a>
+      <a class="btn btn-ghost" href="unified.html">See the seven days</a>
+    </div>
+  </div>
+</section>
+
+<section class="signup" id="join">
+  <div class="container">
+    <h2>Be in the <em>moment.</em></h2>
+    <p class="sub" style="max-width:520px;margin:0 auto;">One email before, with your local time and your one-line prompt. One after, when Day 1 opens. That's all.</p>
+    <form id="join-form">
+      <input type="text" name="name" placeholder="First name" required>
+      <input type="email" name="email" placeholder="Email" required>
+      <button class="btn btn-primary" type="submit">Join free</button>
+    </form>
+    <p class="done" id="join-done">You're in. Watch for your local time — see you at the tipping point.</p>
+    <p class="fine">Sept 23 · 00:05 UTC · joined from every time zone · seven days follow</p>
+  </div>
+</section>
+
+<div class="footer">
+  <div class="container"><a href="unified.html">Pulse &amp; Unify →</a> · <a href="eclipse.html">The Eclipse Moment →</a> · Sept 23–29</div>
+</div>
+
+<!--
+  TEAM NOTE — before this goes to print or paid:
+  1. Confirm the equinox instant against a proper ephemeris. Working value:
+     2026-09-23 00:05 UTC. It is derived from the known 2025 value (Sept 22,
+     18:19 UTC) plus the standard ~5h46m common-year drift, so it should be
+     within a couple of minutes — but "within a couple of minutes" is not
+     good enough for a countdown that people set an alarm by.
+  2. Do NOT write "day and night are exactly equal." The equinox is the
+     instant the sun crosses the celestial equator; true equal-day-night is
+     the equilux, a few days later and latitude-dependent. "Light and dark
+     stand level" is the safe phrasing and is what's used above.
+  3. Brand guide: this page deliberately avoids meditation / mindfulness /
+     wellness / zen. Keep it that way. The register is astronomy + autopilot,
+     not ceremony. Unify's own channels can use their vocabulary; Pulse's
+     cannot.
+-->
+
+<script>
+/* Countdown to the equinox instant */
+const moment = new Date('2026-09-23T00:05:00Z');
+function tick(){
+  const ms = moment - new Date();
+  if(ms <= 0){ document.getElementById('cd').textContent = 'Now'; return; }
+  const d = Math.floor(ms/86400000), h = Math.floor(ms%86400000/3600000), m = Math.floor(ms%3600000/60000);
+  document.getElementById('cd').textContent = d + 'd ' + h + 'h ' + m + 'm';
+}
+tick(); setInterval(tick, 30000);
+document.getElementById('local-t').textContent =
+  moment.toLocaleTimeString([], {hour:'numeric', minute:'2-digit'}) + ' on ' +
+  moment.toLocaleDateString([], {weekday:'long', month:'short', day:'numeric'});
+
+document.getElementById('join-form').addEventListener('submit', function(e){
+  e.preventDefault();
+  this.style.display = 'none';
+  document.getElementById('join-done').style.display = 'block';
+});
+
+/* Warm same-moment film strip */
+(function(){
+  const el = document.getElementById('strip-same'); if(!el) return;
+  const frames = [];
+  for(let i=1;i<=15;i+=2) frames.push('assets/film-strip/moment-' + String(i).padStart(2,'0') + '.jpg');
+  [...frames, ...frames].forEach(src => {
+    const img = document.createElement('img'); img.src = src; img.alt=''; img.loading='lazy';
+    el.appendChild(img);
+  });
+})();
+</script>
+</body>
+</html>

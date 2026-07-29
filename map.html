@@ -212,7 +212,7 @@ body{padding-top:44px;}
 
   <!-- ============ MAP ============ -->
   <div class="view" id="v-map">
-    <div class="eyebrow">Sept 24–30 · one pulse a day</div>
+    <div class="eyebrow">Sept 23–29 · one pulse a day</div>
     <h1 id="map-greet">Your week.</h1>
     <div class="intent-hero">
       <div class="i-label">Your intention for the week</div>
@@ -296,7 +296,7 @@ const DAYS = [
    intention:'Being actually here is the point of all of it.'}
 ];
 const WINDOW_OPEN = 7, WINDOW_CLOSE = 22; /* local hours */
-const WEEK_START = new Date('2026-09-24T00:00:00');
+const WEEK_START = new Date('2026-09-23T00:00:00');
 
 /* ---------- state ---------- */
 const LS = 'wowmap.v1';
@@ -308,7 +308,7 @@ let SIM = S.sim || null;
 
 function simNow(){
   if(SIM === 'pre')   return new Date('2026-09-20T12:00:00');
-  if(SIM === 'night') return new Date('2026-09-25T23:30:00');
+  if(SIM === 'night') return new Date('2026-09-24T23:30:00');
   if(SIM && !isNaN(+SIM)){
     const d = new Date(WEEK_START.getTime() + (+SIM - 1) * 86400000);
     d.setHours(12, 0, 0, 0);
@@ -416,7 +416,7 @@ function obRender(){
   if(OB.step === 5){
     m.appendChild(el('div','eyebrow','You’re in'));
     m.appendChild(el('h1',null,'See you at 7am, Day 1.'));
-    m.appendChild(el('p','lede','Your intention is set. Your map is ready. Day 1 — Joy, with Brent Freeman — opens Wednesday Sept 24 at 7am your time. Until then: nothing to do, nowhere to scroll. That’s the design.'));
+    m.appendChild(el('p','lede','Your intention is set. Your map is ready. Day 1 — Joy, with Brent Freeman — opens Wednesday Sept 23 at 7am your time. Until then: nothing to do, nowhere to scroll. That’s the design.'));
     const b = el('button','btn honey','Open my map');
     b.onclick = () => {
       S.profile = OB.data; S.onboarded = true; saveS(S);

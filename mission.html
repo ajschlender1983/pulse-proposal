@@ -192,6 +192,7 @@ a.surface p{font-size:13px;color:var(--midtone);}
       <p class="sub">Sixty days, one screen. Everything below links out; nothing lives anywhere else.</p>
       <div class="count-strip">
         <div class="count"><div class="c-n" id="cd-eclipse">—</div><div class="c-l">to eclipse totality · Aug 12</div></div>
+        <div class="count"><div class="c-n" id="cd-equinox">—</div><div class="c-l">to the equinox moment · Sept 23</div></div>
         <div class="count"><div class="c-n" id="cd-oct">—</div><div class="c-l">to sold-out target · Oct 1</div></div>
         <div class="count"><div class="c-n">1,500 <span style="font-size:15px;color:var(--midtone)">/ 1,500</span></div><div class="c-l">rings remaining · wire live via Shopify</div></div>
       </div>
@@ -199,15 +200,15 @@ a.surface p{font-size:13px;color:var(--midtone);}
         <div class="tl-seg" data-s="2026-08-01" data-e="2026-08-10"><div class="t-n">Aug 1–10</div><div class="t-d">Prep</div></div>
         <div class="tl-seg" data-s="2026-08-11" data-e="2026-08-15"><div class="t-n">Aug 11–15</div><div class="t-d">Iceland</div></div>
         <div class="tl-seg" data-s="2026-08-16" data-e="2026-08-31"><div class="t-n">Aug 16–31</div><div class="t-d">Bridge</div></div>
-        <div class="tl-seg" data-s="2026-09-01" data-e="2026-09-23"><div class="t-n">Sept 1–23</div><div class="t-d">Anchors</div></div>
-        <div class="tl-seg" data-s="2026-09-24" data-e="2026-09-30"><div class="t-n">Sept 24–30</div><div class="t-d">Pulse &amp; Unify</div></div>
-        <div class="tl-seg" data-s="2026-10-01" data-e="2026-10-01"><div class="t-n">Oct 1</div><div class="t-d">The read</div></div>
+        <div class="tl-seg" data-s="2026-09-01" data-e="2026-09-22"><div class="t-n">Sept 1–22</div><div class="t-d">Anchors</div></div>
+        <div class="tl-seg" data-s="2026-09-23" data-e="2026-09-29"><div class="t-n">Sept 23–29</div><div class="t-d">Pulse &amp; Unify</div></div>
+        <div class="tl-seg" data-s="2026-09-30" data-e="2026-10-01"><div class="t-n">Sept 30–Oct 1</div><div class="t-d">Last call</div></div>
       </div>
       <div class="board">
         <div class="panel">
           <span class="p-tag" style="color:var(--orange)">Awaiting your decision</span>
           <div class="item"><span class="pill g">Done</span><span><strong>Iceland confirmed — $12K committed.</strong> Ceremony integration + 500-VIP access locked. Logistics + early-arrival Aug 8 now in motion.</span><span class="own">Adam</span></div>
-          <div class="item"><span class="pill r">Decide</span><span><strong>LP #3 concept</strong> — <a href="eclipse.html" style="color:var(--teal)">eclipse page (built, draft)</a> vs. direct ring page</span><span class="own">Adam</span></div>
+          <div class="item"><span class="pill g">Resolved</span><span><strong>The moment pages</strong> — <a href="eclipse.html" style="color:var(--teal)">eclipse (Aug 12)</a> and <a href="equinox.html" style="color:var(--teal)">equinox (Sept 23)</a> are both built. Two stations of the same cadence, not competing concepts.</span><span class="own">Adam</span></div>
           <div class="item"><span class="pill a">Review</span><span><strong>Joyce sign-off</strong> — PROMISE &amp; BENEFITS addition + campaign word-use plan</span><span class="own">Joyce</span></div>
         </div>
         <div class="panel">
@@ -243,6 +244,7 @@ a.surface p{font-size:13px;color:var(--midtone);}
         <a class="surface" href="unified.html"><span class="s-t">LP 1 · public</span><h4>Pulse &amp; Unify</h4><p>Seven days · seven hosts · join free · UNIFIED100</p></a>
         <a class="surface" href="creators.html"><span class="s-t">LP 2 · recruit</span><h4>Creators / Hosts</h4><p>The ask + performance terms + application</p></a>
         <a class="surface" href="eclipse.html"><span class="s-t">LP 3 · moment</span><h4>The Eclipse Moment</h4><p>Aug 12 totality · join free · ECLIPSE100</p></a>
+        <a class="surface" href="equinox.html"><span class="s-t">LP 4 · moment</span><h4>The Equinox Moment</h4><p>Sept 23 · 00:05 UTC · opens the week · EQUINOX100</p></a>
         <a class="surface" href="flow.html"><span class="s-t">Campaign OS</span><h4>The Flow Map</h4><p>Every message · 4 channels × 3 touchpoints · in-voice drafts</p></a>
         <a class="surface" href="map.html"><span class="s-t">Participant</span><h4>The Pulse &amp; Unify Map</h4><p>Onboarding → 7 days → check-ins · window-gated prototype</p></a>
         <a class="surface" href="proposal-v2.html"><span class="s-t">Internal · V2 story-first</span><h4>The Proposal</h4><p>The story · the map · 60 days you can feel · numbers in drop-downs</p></a>
@@ -408,6 +410,7 @@ document.getElementById('tabs').addEventListener('click', e => {
 /* ===== Countdowns + timeline "today" ===== */
 function dleft(iso){ return Math.max(0, Math.ceil((new Date(iso) - new Date())/86400000)); }
 document.getElementById('cd-eclipse').textContent = dleft('2026-08-12T16:00:00Z') + 'd';
+document.getElementById('cd-equinox').textContent = dleft('2026-09-23T00:05:00Z') + 'd';
 document.getElementById('cd-oct').textContent = dleft('2026-10-01T00:00:00') + 'd';
 const now = new Date();
 document.querySelectorAll('.tl-seg').forEach(s => {
