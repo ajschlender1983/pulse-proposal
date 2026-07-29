@@ -119,6 +119,23 @@ body{font-family:var(--font);background:var(--cream);color:var(--ink);line-heigh
 .eq-sub{font-size:15px;color:rgba(249,246,229,0.62);max-width:62ch;}
 .eq-go{font-family:var(--mono);font-size:11.5px;letter-spacing:0.14em;text-transform:uppercase;color:var(--lime);margin-top:4px;}
 @media(max-width:640px){.equinox-open{flex-direction:column;align-items:flex-start;gap:18px;padding:26px;}}
+/* ===== Austin mornings ===== */
+.austin-sec{padding:78px 0;background:var(--cream-warm);border-top:1px solid var(--line);}
+.austin-wrap{max-width:900px;margin:0 auto;}
+.austin-head{text-align:center;margin-bottom:34px;}
+.austin-head .a-tag{font-family:var(--mono);font-size:11.5px;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted-64);}
+.austin-head h2{font-size:clamp(28px,4.2vw,46px);font-weight:300;letter-spacing:-0.025em;color:var(--ink);margin-top:12px;}
+.austin-head h2 em{font-style:italic;color:var(--brown);}
+.austin-head .a-sub{font-size:17px;color:var(--muted-64);max-width:620px;margin:16px auto 0;}
+.austin-head .a-sub strong{color:var(--ink);}
+.a-cards{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+@media(max-width:680px){.a-cards{grid-template-columns:1fr;}}
+.a-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px;box-shadow:0 10px 30px rgba(66,61,50,0.06);}
+.a-card .a-k{font-family:var(--mono);font-size:10.5px;letter-spacing:0.16em;text-transform:uppercase;color:var(--honey);}
+.a-card h4{font-size:19px;font-weight:600;margin-top:8px;color:var(--ink);}
+.a-card p{font-size:15px;color:var(--muted-64);margin-top:8px;}
+.a-when{display:flex;align-items:center;gap:14px;justify-content:center;margin-top:26px;font-family:var(--mono);font-size:12.5px;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted-64);flex-wrap:wrap;}
+.a-when b{color:var(--ink);font-weight:500;}
 .h-title{font-size:clamp(30px,4.4vw,50px);font-weight:300;letter-spacing:-0.025em;text-align:center;color:var(--ink);}
 .h-title em{font-style:italic;color:var(--brown);}
 .how-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:44px;}
@@ -354,6 +371,35 @@ body{font-family:var(--font);background:var(--cream);color:var(--ink);line-heigh
         <div><div class="theme">Connection<small>Tue Sept 29</small></div></div>
         <div class="tagline">Connection is <b>one pulse away.</b></div>
         <div class="host-side"><span>Adam Schlender<small>Pulse · campaign owner</small></span><span class="hs-mini">AS<img src="assets/hosts/adam-schlender.jpg" alt="" onerror="this.remove()"></span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="austin-sec">
+  <div class="container">
+    <div class="austin-wrap">
+      <div class="austin-head">
+        <div class="a-tag">If you're in Austin</div>
+        <h2>We meet in the <em>mornings.</em></h2>
+        <p class="a-sub">Every morning of the week, we do the day's reset together in a room — then coffee. <strong>You don't need a ring, and you don't need to have signed up for anything.</strong> Just come.</p>
+      </div>
+      <div class="a-cards">
+        <div class="a-card">
+          <div class="a-k">Already ordered</div>
+          <h4>Pick your ring up here.</h4>
+          <p>Skip the post. Collect it in the room on the morning you actually want to start wearing it, and put it on before you leave.</p>
+        </div>
+        <div class="a-card">
+          <div class="a-k">Don't have one yet</div>
+          <h4>You can get one on the spot.</h4>
+          <p>We'll have rings there. Try it, buy it, wear it out — no waiting, no shipping, nothing to schedule.</p>
+        </div>
+      </div>
+      <div class="a-when">
+        <span><b>Sept 23–29</b> · every morning</span>
+        <span><b>7:30 – 9:00am</b></span>
+        <span>Austin · <b>The Portal</b></span>
       </div>
     </div>
   </div>
